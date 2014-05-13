@@ -9,25 +9,78 @@
     display: none;
 }
 
-
-.editing.used-region-side-post.used-region-side-pre {
+.dir-ltr.editing.used-region-side-post.used-region-side-pre {
     #region-main {
-        .make-sm-column(4);
-        .make-md-column(6);
-        .make-sm-column-push(4);
-        .make-md-column-push(3);
+        .make-sm-column(6);
+        .make-lg-column(8);
+        .make-sm-column-push(3);
+        .make-lg-column-push(2);
     }
     #block-region-side-post {
-        .make-sm-column(4);
-        .make-md-column(3);
+        .make-sm-column(3);
+        .make-lg-column(2);
         min-height: 100px;
     }
     #block-region-side-pre {
-        .make-sm-column(4);
-        .make-md-column(3);
-        .make-sm-column-pull(4);
-        .make-md-column-pull(6);
+        .make-sm-column(3);
+        .make-lg-column(2);
+        .make-sm-column-pull(6);
+        .make-lg-column-pull(8);
         min-height: 100px;
+    }
+}
+
+.dir-rtl.editing.used-region-side-post.used-region-side-pre {
+    #region-main {
+        .make-sm-column(6);
+        .make-lg-column(8);
+        .make-sm-column-push(3);
+        .make-lg-column-push(2);
+    }
+    #block-region-side-pre {
+        .make-sm-column(3);
+        .make-lg-column(2);
+        .make-sm-column-push(3);
+        .make-lg-column-push(2);
+        min-height: 100px;
+    }
+    #block-region-side-post {
+        .make-sm-column(3);
+        .make-lg-column(2);
+        .make-sm-column-pull(9);
+        .make-lg-column-pull(10);
+        min-height: 100px;
+    }
+}
+
+.has_dock.used-region-side-post.empty-region-side-pre {
+    #region-main {
+        .make-sm-column(9);
+        .make-lg-column(8);
+        .make-sm-column-push(0);
+        .make-lg-column-push(0);
+    }
+    #block-region-side-post {
+        .make-sm-column(3);
+        .make-lg-column(2);
+        min-height: 100px;
+    }
+    #block-region-side-pre {
+        display: none;
+    }
+}
+.has_dock.empty-region-side-post.empty-region-side-pre {
+    #region-main {
+        .make-sm-column(12);
+        .make-lg-column(12);
+        .make-sm-column-push(0);
+        .make-lg-column-push(0);
+    }
+    #block-region-side-post {
+        display: none;
+    }
+    #block-region-side-pre {
+        display: none;
     }
 }
 
@@ -261,7 +314,7 @@ img.icon-post {
     width: 50%;
 }
 .boxwidthwide {
-    width: 80%;
+    width: 100%;
 }
 .headermain {
     font-weight: bold;
@@ -534,6 +587,7 @@ a.skip:active {
 .completion-expired .completion-expected {
     font-weight: bold;
 }
+
 /**
 * Web Service
 */
