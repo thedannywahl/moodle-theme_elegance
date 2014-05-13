@@ -38,8 +38,8 @@
 
 $plugins = array(
     'bootstrap' => array('files' => array('bootstrap-3_1_1.js')),
-    'fitvids'	=> array('files' => array('fitvids-1.0.3.js')),
-    'modernizr'     => array('files' => array('modernizr_2.6.2.js')),
+    'fitvids'	=> array('files' => array('fitvids-1.1.0.js')),
+    'modernizr'     => array('files' => array('modernizr_2.8.1.js')),
     'unslider'     => array('files' => array('unslider_1.0.2.js')),
     'eventswipe'     => array('files' => array('eventswipe_0.5.js')),
     'nprogress'     => array('files' => array('nprogress.js')),
