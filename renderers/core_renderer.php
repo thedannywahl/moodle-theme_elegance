@@ -26,77 +26,6 @@ defined('MOODLE_INTERNAL') || die();
 
 class theme_elegance_core_renderer extends core_renderer {
 
-    public function notification($message, $classes = 'notifyproblem') {
-        $message = clean_text($message);
-
-        if ($classes == 'notifyproblem') {
-            return html_writer::div($message, 'alert alert-danger');
-        }
-        if ($classes == 'notifywarning') {
-            return html_writer::div($message, 'alert alert-warning');
-        }
-        if ($classes == 'notifysuccess') {
-            return html_writer::div($message, 'alert alert-success');
-        }
-        if ($classes == 'notifymessage') {
-            return html_writer::div($message, 'alert alert-info');
-        }
-        if ($classes == 'redirectmessage') {
-            return html_writer::div($message, 'alert alert-block alert-info');
-        }
-        if ($classes == 'notifytiny') {
-            // Not an appropriate semantic alert class!
-            return $this->debug_listing($message);
-        }
-        return html_writer::div($message, $classes);
-    }
-
-    private function debug_listing($message) {
-        $message = str_replace('<ul style', '<ul class="list-unstyled" style', $message);
-        return html_writer::tag('pre', $message, array('class' => 'alert alert-info'));
-    }
-
-    public function navbar() {
-        $breadcrumbs = '';
-        foreach ($this->page->navbar->get_items() as $item) {
-            $item->hideicon = true;
-            $breadcrumbs .= '<li>'.$this->render($item).'</li>';
-        }
-        return "<ol class=breadcrumb>$breadcrumbs</ol>";
-    }
-
-    public function custom_menu($custommenuitems = '') {
-    // The custom menu is always shown, even if no menu items
-    // are configured in the global theme settings page.
-        global $CFG;
-
-        if (!empty($CFG->custommenuitems)) {
-            $custommenuitems .= $CFG->custommenuitems;
-        }
-        $custommenu = new custom_menu($custommenuitems, current_language());
-        return $this->render_custom_menu($custommenu);
-    }
-
-    protected function render_custom_menu(custom_menu $menu) {
-        global $CFG, $USER;
-
-        // TODO: eliminate this duplicated logic, it belongs in core, not
-        // here. See MDL-39565.
-
-        $content = '<ul class="nav navbar-nav">';
-        foreach ($menu->get_children() as $item) {
-            $content .= $this->render_custom_menu_item($item, 1);
-        }
-
-        return $content.'</ul>';
-    }
-
-    public function user_menu() {
-        global $CFG;
-        $usermenu = new custom_menu('', current_language());
-        return $this->render_user_menu($usermenu);
-    }
-
     protected function render_user_menu(custom_menu $menu) {
         global $CFG, $USER, $DB, $PAGE; //Elegance add $PAGE;
 
@@ -358,84 +287,6 @@ class theme_elegance_core_renderer extends core_renderer {
         return $messagecontent;
     }
 
-    protected function render_custom_menu_item(custom_menu_item $menunode, $level = 0 ) {
-        static $submenucount = 0;
-
-        if ($menunode->has_children()) {
-
-            if ($level == 1) {
-                $dropdowntype = 'dropdown';
-            } else {
-                $dropdowntype = 'dropdown-submenu';
-            }
-
-            $content = html_writer::start_tag('li', array('class' => $dropdowntype));
-            // If the child has menus render it as a sub menu.
-            $submenucount++;
-            if ($menunode->get_url() !== null) {
-                $url = $menunode->get_url();
-            } else {
-                $url = '#cm_submenu_'.$submenucount;
-            }
-            $linkattributes = array(
-                'href' => $url,
-                'class' => 'dropdown-toggle',
-                'data-toggle' => 'dropdown',
-                'title' => $menunode->get_title(),
-            );
-            $content .= html_writer::start_tag('a', $linkattributes);
-            $content .= $menunode->get_text();
-            if ($level == 1) {
-                $content .= '<b class="caret"></b>';
-            }
-            $content .= '</a>';
-            $content .= '<ul class="dropdown-menu">';
-            foreach ($menunode->get_children() as $menunode) {
-                $content .= $this->render_custom_menu_item($menunode, 0);
-            }
-            $content .= '</ul>';
-        } else {
-            $content = '<li>';
-            // The node doesn't have children so produce a final menuitem.
-            if ($menunode->get_url() !== null) {
-                $url = $menunode->get_url();
-            } else {
-                $url = '#';
-            }
-            $content .= html_writer::link($url, $menunode->get_text(), array('title' => $menunode->get_title()));
-        }
-        return $content;
-    }
-
-    protected function render_tabtree(tabtree $tabtree) {
-        if (empty($tabtree->subtree)) {
-            return '';
-        }
-        $firstrow = $secondrow = '';
-        foreach ($tabtree->subtree as $tab) {
-            $firstrow .= $this->render($tab);
-            if (($tab->selected || $tab->activated) && !empty($tab->subtree) && $tab->subtree !== array()) {
-                $secondrow = $this->tabtree($tab->subtree);
-            }
-        }
-        return html_writer::tag('ul', $firstrow, array('class' => 'nav nav-tabs nav-justified')) . $secondrow;
-    }
-
-    protected function render_tabobject(tabobject $tab) {
-        if ($tab->selected or $tab->activated) {
-            return html_writer::tag('li', html_writer::tag('a', $tab->text), array('class' => 'active'));
-        } else if ($tab->inactive) {
-            return html_writer::tag('li', html_writer::tag('a', $tab->text), array('class' => 'disabled'));
-        } else {
-            if (!($tab->link instanceof moodle_url)) {
-                // Backward compatibility when link was passed as quoted string.
-                $link = "<a href=\"$tab->link\" title=\"$tab->title\">$tab->text</a>";
-            } else {
-                $link = html_writer::link($tab->link, $tab->text, array('title' => $tab->title));
-            }
-            return html_writer::tag('li', $link);
-        }
-    }
     protected function render_pix_icon(pix_icon $icon) {
         if ($this->page->theme->settings->fonticons === '1'
             && $icon->attributes["alt"] === ''
@@ -499,14 +350,6 @@ class theme_elegance_core_renderer extends core_renderer {
             return false;
         }
     }
-
-    public function box($contents, $classes = 'generalbox', $id = null, $attributes = array()) {
-        if (isset($attributes['data-rel']) && $attributes['data-rel'] === 'fatalerror') {
-            return html_writer::div($contents, 'alert alert-danger', $attributes);
-        }
-        return parent::box($contents, $classes, $id, $attributes);
-    }
-
 
     //Dynamic My Page boxes
     protected function mycourses($CFG,$sidebar){
