@@ -24,6 +24,60 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+
+function theme_elegance_get_nav_links($course, $sections, $sectionno) {
+  // FIXME: This is really evil and should by using the navigation API.
+  $courseformat = course_get_format($course);
+  $course = $courseformat->get_course();
+  $previousarrow= '<i class="nav_icon fa fa-chevron-circle-left"></i>';
+  $nextarrow= '<i class="nav_icon fa fa-chevron-circle-right"></i>';
+  $canviewhidden = has_capability('moodle/course:viewhiddensections', context_course::instance($course->id))
+    or !$course->hiddensections;
+
+  $links = array('previous' => '', 'next' => '');
+  $back = $sectionno - 1;
+  while ($back > 0 and empty($links['previous'])) {
+    if ($canviewhidden || $sections[$back]->uservisible) {
+      $params = array('id' => 'previous_section');
+      if (!$sections[$back]->visible) {
+        $params = array('id' => 'previous_section', 'class' => 'dimmed_text');
+      }
+      $previouslink = $previousarrow;
+      $previouslink .= html_writer::start_tag('span', array('class' => 'text'));
+      $previouslink .= html_writer::start_tag('span', array('class' => 'nav_guide'));
+      $previouslink .= get_string('previoussection', 'theme_elegance');
+      $previouslink .= html_writer::end_tag('span');
+      $previouslink .= html_writer::empty_tag('br');
+      $previouslink .= $courseformat->get_section_name($sections[$back]);
+      $previouslink .= html_writer::end_tag('span');
+      $links['previous'] = html_writer::link(course_get_url($course, $back), $previouslink, $params);
+    }
+    $back--;
+  }
+
+  $forward = $sectionno + 1;
+  while ($forward <= $course->numsections and empty($links['next'])) {
+    if ($canviewhidden || $sections[$forward]->uservisible) {
+      $params = array('id' => 'next_section');
+      if (!$sections[$forward]->visible) {
+        $params = array('id' => 'next_section', 'class' => 'dimmed_text');
+      }
+      $nextlink = $nextarrow;
+      $nextlink .= html_writer::start_tag('span', array('class' => 'text'));
+      $nextlink .= html_writer::start_tag('span', array('class' => 'nav_guide'));
+      $nextlink .= get_string('nextsection', 'theme_elegance');
+      $nextlink .= html_writer::end_tag('span');
+      $nextlink .= html_writer::empty_tag('br');
+      $nextlink .= $courseformat->get_section_name($sections[$forward]);
+      $nextlink .= html_writer::end_tag('span');
+      $links['next'] = html_writer::link(course_get_url($course, $forward), $nextlink, $params);
+    }
+    $forward++;
+  }
+
+  return $links;
+}
+
 function bootstrap3_grid($hassidepost) {
 
         $regions = array('content' => 'col-sm-8 col-md-9');
