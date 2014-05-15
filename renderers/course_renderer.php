@@ -27,37 +27,6 @@ require_once($CFG->dirroot . "/course/renderer.php");
 
 class theme_elegance_core_course_renderer extends core_course_renderer {
 
-    public function course_search_form($value = '', $format = 'plain') {
-        static $count = 0;
-        $formid = 'coursesearch';
-        if ((++$count) > 1) {
-            $formid .= $count;
-        }
-        $inputid = 'coursesearchbox';
-        $inputsize = 30;
-
-        if ($format === 'navbar') {
-            $formid = 'coursesearchnavbar';
-            $inputid = 'navsearchbox';
-        }
-
-        $strsearchcourses = get_string("searchcourses");
-        $searchurl = new moodle_url('/course/search.php');
-
-        $form = array('id' => $formid, 'action' => $searchurl, 'method' => 'get', 'class' => "form-inline", 'role' => 'form');
-        $output = html_writer::start_tag('form', $form);
-        $output .= html_writer::start_div('form-group');
-        $output .= html_writer::tag('label', $strsearchcourses, array('for' => $inputid, 'class' => 'sr-only'));
-        $search = array('type' => 'text', 'id' => $inputid, 'size' => $inputsize, 'name' => 'search',
-                        'class' => 'form-control', 'value' => s($value), 'placeholder' => $strsearchcourses);
-        $output .= html_writer::empty_tag('input', $search);
-        $output .= html_writer::end_div(); // Close form-group.
-        $button = array('type' => 'submit', 'class' => 'btn btn-default');
-        $output .= html_writer::tag('button', get_string('go'), $button);
-        $output .= html_writer::end_tag('form');
-
-        return $output;
-    }
 }
 
 function theme_elegance_get_nav_links($course, $sections, $sectionno) {
