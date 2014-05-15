@@ -26,6 +26,12 @@ defined('MOODLE_INTERNAL') || die();
 
 class theme_elegance_core_renderer extends core_renderer {
 
+    public function user_menu() {
+        global $CFG;
+        $usermenu = new custom_menu('', current_language());
+        return $this->render_user_menu($usermenu);
+    }
+
     protected function render_user_menu(custom_menu $menu) {
         global $CFG, $USER, $DB, $PAGE; //Elegance add $PAGE;
 
