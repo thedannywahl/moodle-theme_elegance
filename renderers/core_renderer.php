@@ -26,6 +26,69 @@ defined('MOODLE_INTERNAL') || die();
 
 class theme_elegance_core_renderer extends core_renderer {
 
+    protected function render_custom_menu(custom_menu $menu) {
+        global $CFG, $USER;
+
+        // TODO: eliminate this duplicated logic, it belongs in core, not
+        // here. See MDL-39565.
+
+        $content = '<ul class="nav navbar-nav">';
+        foreach ($menu->get_children() as $item) {
+            $content .= $this->render_custom_menu_item($item, 1);
+        }
+
+        return $content.'</ul>';
+    }
+    
+    protected function render_custom_menu_item(custom_menu_item $menunode, $level = 0 ) {
+        static $submenucount = 0;
+
+        if ($menunode->has_children()) {
+
+            if ($level == 1) {
+                $dropdowntype = 'dropdown';
+            } else {
+                $dropdowntype = 'dropdown-submenu';
+            }
+
+            $content = html_writer::start_tag('li', array('class' => $dropdowntype));
+            // If the child has menus render it as a sub menu.
+            $submenucount++;
+            if ($menunode->get_url() !== null) {
+                $url = $menunode->get_url();
+            } else {
+                $url = '#cm_submenu_'.$submenucount;
+            }
+            $linkattributes = array(
+                'href' => $url,
+                'class' => 'dropdown-toggle',
+                'data-toggle' => 'dropdown',
+                'title' => $menunode->get_title(),
+            );
+            $content .= html_writer::start_tag('a', $linkattributes);
+            $content .= $menunode->get_text();
+            if ($level == 1) {
+                $content .= '<b class="caret"></b>';
+            }
+            $content .= '</a>';
+            $content .= '<ul class="dropdown-menu">';
+            foreach ($menunode->get_children() as $menunode) {
+                $content .= $this->render_custom_menu_item($menunode, 0);
+            }
+            $content .= '</ul>';
+        } else {
+            $content = '<li>';
+            // The node doesn't have children so produce a final menuitem.
+            if ($menunode->get_url() !== null) {
+                $url = $menunode->get_url();
+            } else {
+                $url = '#';
+            }
+            $content .= html_writer::link($url, $menunode->get_text(), array('title' => $menunode->get_title()));
+        }
+        return $content;
+    }
+
     public function user_menu() {
         global $CFG;
         $usermenu = new custom_menu('', current_language());
