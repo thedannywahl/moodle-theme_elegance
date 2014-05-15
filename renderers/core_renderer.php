@@ -26,6 +26,15 @@ defined('MOODLE_INTERNAL') || die();
 
 class theme_elegance_core_renderer extends core_renderer {
 
+    public function navbar() {
+        $breadcrumbs = '';
+        foreach ($this->page->navbar->get_items() as $item) {
+            $item->hideicon = true;
+            $breadcrumbs .= '<li>'.$this->render($item).'</li>';
+        }
+        return "<ol class=breadcrumb>$breadcrumbs</ol>";
+    }
+
     protected function render_custom_menu(custom_menu $menu) {
         global $CFG, $USER;
 
