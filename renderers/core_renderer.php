@@ -24,11 +24,7 @@ defined('MOODLE_INTERNAL') || die();
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-<<<<<<< HEAD
-class theme_elegance_core_renderer extends core_renderer {
-=======
 class theme_elegance_core_renderer extends theme_bootstrap_core_renderer {
->>>>>>> origin/remove_theme_bootstrap_components
 
     public function navbar() {
         $breadcrumbs = '';
