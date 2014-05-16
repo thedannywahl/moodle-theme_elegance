@@ -428,46 +428,4 @@ class theme_elegance_core_renderer extends theme_bootstrap_core_renderer {
             return false;
         }
     }
-
-    //Dynamic My Page boxes
-    protected function mycourses($CFG,$sidebar){
-        $mycourses = enrol_get_users_courses($_SESSION['USER']->id);
-
-        $courselist = array();
-        foreach ($mycourses as $key=>$val){
-            $courselist[] = $val->id;
-        }
-
-        $content = '';
-
-        for($x=1;$x<=sizeof($courselist);$x++){
-            $course = get_course($courselist[$x-1]);
-            $title = $course->fullname;
-
-            if ($course instanceof stdClass) {
-                require_once($CFG->libdir. '/coursecatlib.php');
-                $course = new course_in_list($course);
-            }
-
-            $url = $CFG->wwwroot."/theme/elegance/pix/coursenoimage.jpg";
-            foreach ($course->get_course_overviewfiles() as $file) {
-                $isimage = $file->is_valid_image();
-                $url = file_encode_url("$CFG->wwwroot/pluginfile.php",
-                        '/'. $file->get_contextid(). '/'. $file->get_component(). '/'.
-                        $file->get_filearea(). $file->get_filepath(). $file->get_filename(), !$isimage);
-                if (!$isimage) {
-                    $url = $CFG->wwwroot."/theme/elegance/pix/coursenoimage.jpg";
-                }
-            }
-
-            $content .= '<div class="view view-second view-mycourse '.(($x%3==0)?'view-nomargin':'').'">
-                            <img src="'.$url.'" />
-                            <div class="mask">
-                                <h2>'.$title.'</h2>
-                                <a href="'.$CFG->wwwroot.'/course/view.php?id='.$courselist[$x-1].'" class="info">Enter</a>
-                            </div>
-                        </div>';
-        }
-        return $content;
-    }
 }
