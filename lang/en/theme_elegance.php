@@ -107,9 +107,6 @@ $string['videowidth'] = 'Set Max Video Width';
 $string['videowidthdesc'] = 'Tis theme dynamically sizes embedded video. By default they go 100% width. You can override this here.<br>
 <strong>Important Note:</strong> Remember to add a % or px after your number or it won\'t work';
 
-$string['bootstrapcdn'] = 'FontAwesome from CDN';
-$string['bootstrapcdndesc'] = 'If enabled this will load FontAwesome from the online Bootstrap CDN source. Enable this if you are having issues getting the Font Awesome icons to display in your site.';
-
 $string['alwaysdisplay'] = 'Always Show';
 $string['displaybeforelogin'] = 'Show before login only';
 $string['displayafterlogin'] = 'Show after login only';
