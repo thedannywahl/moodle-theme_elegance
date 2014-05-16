@@ -87,9 +87,9 @@ if ((!empty($THEME->settings->tiles)) && ($THEME->settings->tiles == '1')) {
 }
 
 if ('ltr' === get_string('thisdirection', 'langconfig')) {
-    $THEME->sheets = array('font-awesome', $categorysheet , $tilessheet, $loginsheet, ' nprogress', 'elegance');
+    $THEME->sheets = array('font-awesome', 'google-fonts', $categorysheet , $tilessheet, $loginsheet, ' nprogress', 'elegance');
 } else {
-    $THEME->sheets = array('tinymce-rtl', 'font-awesome', $categorysheet , $tilessheet, $loginsheet, ' nprogress', 'elegance');
+    $THEME->sheets = array('tinymce-rtl', 'font-awesome', 'google-fonts', $categorysheet , $tilessheet, $loginsheet, ' nprogress', 'elegance');
 }
 
 $THEME->layouts = array(
