@@ -32,14 +32,6 @@ $haslogo = (empty($PAGE->theme->settings->logo)) ? false : $PAGE->theme->setting
 $invert = (!empty($PAGE->theme->settings->invert)) ? true : $PAGE->theme->settings->invert;
 $fluid = (!empty($PAGE->layout_options['fluid']));
 
-$usereader = (!empty($PAGE->layout_options['usereader']));
-$navbarbtn = '';
-
-if ($usereader) {
-    theme_elegance_initialise_reader($PAGE);
-    $navbarbtn = $OUTPUT->navbar_button_reader('#region-main', 'hidden-xs');
-}
-
 if ($haslogo) {
     $logo = '<div id="logo"></div>';
 } else {

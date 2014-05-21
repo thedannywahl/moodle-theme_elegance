@@ -121,7 +121,6 @@ $THEME->layouts = array(
         'file' => 'default.php',
         'regions' => array('side-post'),
         'defaultregion' => 'side-post',
-        'options' => array('usereader' => true),
     ),
     // The site home page.
     'frontpage' => array(
@@ -195,7 +194,6 @@ $THEME->layouts = array(
         'file' => 'default.php',
         'regions' => array('side-post'),
         'defaultregion' => 'side-post',
-        'options' => array('usereader' => true),
     ),
     // The pagelayout used for safebrowser and securewindow.
     'secure' => array(
