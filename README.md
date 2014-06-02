@@ -54,10 +54,11 @@ New in 2.6.1
 
 Contributors (no particular order...)
 ==================
-- [https://github.com/aaronmarruk/](Aaron Marr)
-- [https://github.com/moodleman](Julian Ridden)
-- [https://github.com/gjb2048](Gareth J Barnard)
-- [https://github.com/mpuusaar](mpuusaar)
+- [Aaron Marr](https://github.com/aaronmarruk)
+- [Julian Ridden](https://github.com/moodleman)
+- [Gareth J Barnard](https://github.com/gjb2048)
+- [mpuusaar](https://github.com/mpuusaar)
+- [Danny Wahl](http://www.iyware.com)
 - anyone else that's filed a bug or griped on the forums :)
 
 Documentation
