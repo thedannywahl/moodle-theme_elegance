@@ -23,6 +23,8 @@ defined('MOODLE_INTERNAL') || die();
  * @copyright  2012
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+ 
+include_once($CFG->dirroot . "/theme/bootstrap/renderers/core_renderer.php");
 
 class theme_elegance_core_renderer extends theme_bootstrap_core_renderer {
 
