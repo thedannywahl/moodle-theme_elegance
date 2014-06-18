@@ -1,3 +1,6 @@
+*This is the new official repository for moodle-theme_elegance*
+[Julian Ridden](https://github.com/moodleman/) has ceased work on the original [moodle-theme_elegance](https://github.com/moodleman/moodle-theme_elegance/) and has graciously allowed us to continue development as the new official repo.
+
 The "Elegance" Moodle Theme
 ======================
 
