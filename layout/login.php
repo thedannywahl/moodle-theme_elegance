@@ -93,7 +93,7 @@ if ($show_instructions) {
     $columns = 'onecolumn';
 }
 
-$regions = bootstrap3_grid($hassidepost);
+$regions = theme_elegance_bootstrap3_grid($hassidepost);
 $PAGE->set_popup_notification_allowed(false);
 $PAGE->requires->jquery();
 

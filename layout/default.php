@@ -55,7 +55,7 @@ if ($fluid) {
 
 $knownregionpost = $PAGE->blocks->is_known_region('side-post');
 
-$regions = bootstrap3_grid($hassidepost);
+$regions = theme_elegance_bootstrap3_grid($hassidepost);
 $PAGE->set_popup_notification_allowed(false);
 $PAGE->requires->jquery();
 
