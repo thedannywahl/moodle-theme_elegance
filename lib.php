@@ -78,7 +78,7 @@ function theme_elegance_get_nav_links($course, $sections, $sectionno) {
   return $links;
 }
 
-function bootstrap3_grid($hassidepost) {
+function theme_elegance_bootstrap3_grid($hassidepost) {
 
         $regions = array('content' => 'col-sm-8 col-md-9');
         $regions['pre'] = 'empty';
