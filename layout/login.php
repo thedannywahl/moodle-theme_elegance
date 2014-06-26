@@ -389,7 +389,7 @@ echo $OUTPUT->doctype() ?>
     </div>
 </div>
 
-<footer id="page-footer" class="footer-fixed-bottom hidden-sm hidden-xs">
+<footer id="page-footer" class="hidden-sm hidden-xs">
 	<?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
 </footer>
 

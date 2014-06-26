@@ -973,16 +973,6 @@ border-bottom-color: #888;
 	align-content: center;
 }
 
-.footer-fixed-bottom {
- 	bottom: 0;
- 	display: block;
- 	left: 0;
-	 margin-bottom: 0;
- 	position: fixed;
- 	right: 0;
- 	z-index: 1030;
-}
-
 /* @group Social Buttons */
 
 
