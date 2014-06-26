@@ -49,7 +49,6 @@ html.login-page{
 
 .loginpanel form{
     background: [[setting:themecolor]];
-    height: 100px; 
     width: 95%;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
@@ -99,7 +98,7 @@ html.login-page{
     position: relative;
     float: right;
     right: -30px;
-    top: -75px;
+    top: -90px;
     width: 63px;
     padding: 0px 0px 0px 5px;
     text-align: center;
@@ -114,12 +113,9 @@ html.login-page{
 .loginpanel .icon-submit:hover{
     background-color: #388f9d;
 }
-.loginpanel form .inputarea{
-    height: 95px;
-}
 
-.loginpanel form .inputarea div input[type="text"],
-.loginpanel form .inputarea div input[type="password"]{
+.loginpanel form .inputarea input[type="text"],
+.loginpanel form .inputarea input[type="password"]{
     box-sizing: border-box;
     -webkit-box-sizing: border-box; 
     -moz-box-sizing: border-box;
@@ -134,24 +130,22 @@ html.login-page{
     padding: 2px 4px 0 20px;
     width: 100%;
 }
-.loginpanel form .inputarea div input[type="text"]:focus,
-.loginpanel form .inputarea div input[type="password"]:focus{
+.loginpanel form .inputarea input[type="text"]:focus,
+.loginpanel form .inputarea input[type="password"]:focus{
     outline:none;
 }
-.loginpanel form .inputarea div input[type="text"]:-moz-placeholder,
-.loginpanel form .inputarea div input[type="password"]:-moz-placeholder,
-.loginpanel form .inputarea div input[type="text"]::-moz-placeholder,
-.loginpanel form .inputarea div input[type="password"]::-moz-placeholder,
-.loginpanel form .inputarea div input[type="text"]::-webkit-input-placeholder,
-.loginpanel form .inputarea div input[type="password"]::-webkit-input-placeholder,
-.loginpanel form .inputarea div input[type="text"]:-ms-input-placeholder,
-.loginpanel form .inputarea div input[type="password"]:-ms-input-placeholder{
+.loginpanel form .inputarea input[type="text"]:-moz-placeholder,
+.loginpanel form .inputarea input[type="password"]:-moz-placeholder,
+.loginpanel form .inputarea input[type="text"]::-moz-placeholder,
+.loginpanel form .inputarea input[type="password"]::-moz-placeholder,
+.loginpanel form .inputarea input[type="text"]::-webkit-input-placeholder,
+.loginpanel form .inputarea input[type="password"]::-webkit-input-placeholder,
+.loginpanel form .inputarea input[type="text"]:-ms-input-placeholder,
+.loginpanel form .inputarea input[type="password"]:-ms-input-placeholder{
     color: #FFFFFF !important;
 }
-.loginpanel form .inputarea div input[type="password"]{
-    border-top: 5px solid #FFFFFF;
-}
-.loginpanel form .inputarea div input[type="text"]{
+
+.loginpanel form .inputarea input[type="text"]{
     margin-right: 15px;
 }
 .loginpanel form p{
@@ -190,23 +184,23 @@ html.login-page{
     float: left;
 }
 
-.loginpanel form .inputarea div input[type="text"]::-webkit-input-placeholder,
-.loginpanel form .inputarea div input[type="password"]::-webkit-input-placeholder{
+.loginpanel form .inputarea input[type="text"]::-webkit-input-placeholder,
+.loginpanel form .inputarea input[type="password"]::-webkit-input-placeholder{
    color: #FFFFFF;
 }
 
-.loginpanel form .inputarea div input[type="text"]:-moz-placeholder,
-.loginpanel form .inputarea div input[type="password"]:-moz-placeholder{ /* Firefox 18- */
+.loginpanel form .inputarea input[type="text"]:-moz-placeholder,
+.loginpanel form .inputarea input[type="password"]:-moz-placeholder{ /* Firefox 18- */
    color: #FFFFFF;  
 }
 
-.loginpanel form .inputarea div input[type="text"]::-moz-placeholder,
-.loginpanel form .inputarea div input[type="password"]::-moz-placeholder{  /* Firefox 19+ */
+.loginpanel form .inputarea input[type="text"]::-moz-placeholder,
+.loginpanel form .inputarea input[type="password"]::-moz-placeholder{  /* Firefox 19+ */
    color: #FFFFFF;  
 }
 
-.loginpanel form .inputarea div input[type="text"]:-ms-input-placeholder,
-.loginpanel form .inputarea div input[type="password"]:-ms-input-placeholder{  
+.loginpanel form .inputarea input[type="text"]:-ms-input-placeholder,
+.loginpanel form .inputarea input[type="password"]:-ms-input-placeholder{  
    color: #FFFFFF;  
 }
 
