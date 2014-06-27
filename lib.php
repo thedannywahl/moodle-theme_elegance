@@ -292,10 +292,11 @@ function theme_elegance_process_css($css, $theme) {
  * @return string The parsed CSS
  */
 function theme_elegance_set_logo($css, $logo) {
+    global $OUTPUT;
     $tag = '[[setting:logo]]';
     $replacement = $logo;
     if (is_null($replacement)) {
-        $replacement = '';
+        $replacement = $OUTPUT->pix_url('bg/logo', 'theme');
     }
 
     $css = str_replace($tag, $replacement, $css);
