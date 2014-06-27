@@ -1864,12 +1864,6 @@ blockquote>.icon-quote-left{
 }
 
 .course-content .current{
-	margin-left: -20px !important;
-	margin-right: -20px !important;
-	margin-top: -20px !important;
-	padding-top: 20px !important;
-	padding-left: 20px !important;
-	padding-right: 20px !important;
 	color: #388f9d !important;
 	background-color: #EFF5F7 !important;
 	border: 2px solid #75ccda !important;
