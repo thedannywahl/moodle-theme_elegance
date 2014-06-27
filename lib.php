@@ -493,7 +493,7 @@ function theme_elegance_set_bodybg($css, $bodybg, $setting) {
     $replacement = $bodybg;
     if (is_null($replacement)) {
         // Get default image from themes 'bg' folder of the name in $setting.
-        $replacement = $OUTPUT->pix_url('', 'theme');
+        $replacement = $OUTPUT->pix_url('bg/body', 'theme');
     }
     $css = str_replace($tag, $replacement, $css);
     return $css;
