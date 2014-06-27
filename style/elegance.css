@@ -1864,12 +1864,16 @@ blockquote>.icon-quote-left{
 }
 
 .course-content .current{
-	color: #388f9d !important;
-	background-color: #EFF5F7 !important;
-	border: 2px solid #75ccda !important;
-	-webkit-border-radius: 4px !important;
-	-moz-border-radius: 4px !important;
-	border-radius: 4px !important;
+	color: #388f9d;
+	background-color: #EFF5F7;
+	border: 2px solid #75ccda;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+.course-content ul li.section.main.current {
+    border-bottom-color: #75ccda;
 }
 
 .course-content .single-section .section-navigation .title,
