@@ -85,14 +85,6 @@ defined('MOODLE_INTERNAL') || die;
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
 
-    // Course Tiles.
-    $name = 'theme_elegance/tiles';
-    $title = get_string('tiles', 'theme_elegance');
-    $description = get_string('tilesdesc', 'theme_elegance');
-    $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
-
     // Embedded Video Max Width.
     $name = 'theme_elegance/videowidth';
     $title = get_string('videowidth', 'theme_elegance');

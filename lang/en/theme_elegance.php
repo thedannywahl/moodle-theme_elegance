@@ -100,9 +100,6 @@ $string['copyrightdesc'] = 'The name of your organisation.';
 /* General */
 $string['geneicsettings'] = 'General Settings';
 
-$string['tiles'] = 'Tile Course resources';
-$string['tilesdesc'] = 'Displayes resources and activities as tiles in a course';
-
 $string['videowidth'] = 'Set Max Video Width';
 $string['videowidthdesc'] = 'Tis theme dynamically sizes embedded video. By default they go 100% width. You can override this here.<br>
 <strong>Important Note:</strong> Remember to add a % or px after your number or it won\'t work';
