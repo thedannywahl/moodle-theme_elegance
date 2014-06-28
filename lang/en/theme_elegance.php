@@ -65,7 +65,7 @@ $string['customcss'] = 'Custom CSS';
 $string['customcssdesc'] = 'Whatever CSS rules you add to this textarea will be reflected in every page, making for easier customization of this theme.';
 
 $string['frontpagecontent'] = 'Frontpage Content';
-$string['frontpagecontentdesc'] = 'This location appears as a higlight under the slideshw on the frontpage';
+$string['frontpagecontentdesc'] = 'This location appears as a highlight under the slideshow on the frontpage';
 
 $string['footnote'] = 'Footnote';
 $string['footnotedesc'] = 'Whatever you add to this textarea will be displayed in the footer throughout your Moodle site.';
