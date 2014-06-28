@@ -46,7 +46,7 @@ defined('MOODLE_INTERNAL') || die;
     // Turn on fluid width
     $name = 'theme_elegance/fluidwidth';
     $title = get_string('fluidwidth', 'theme_elegance');
-    $description = get_string('fluidwidth_desc', 'theme_elegance');
+    $description = get_string('fluidwidthdesc', 'theme_elegance');
     $default = '0';
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
     $temp->add($setting);
