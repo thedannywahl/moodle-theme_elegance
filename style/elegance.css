@@ -2887,39 +2887,6 @@ radio input[type="radio"],
     margin-top: 5px;
 }
 
-/* to left-adjust the table columns and content*/
-table#categoryquestions {
-    display: inline;
-}
-
-#categoryquestions .header {
-  text-align: left;
-}
-
-/* to correct the repository list width for the earlier inline statement */
-#page-mod-quiz-edit div.container div.generalbox {
-    overflow: auto;
-}
-
-/* to correct table width of grade report */
-.gradetreebox {
-    overflow:auto;
-}
-
-/* to correct the repository list width  */
-#page-mod-quiz-edit div.container div.generalbox {
-    overflow: hidden;
-}
-
-#page-mod-quiz-edit .modulespecificbuttonscontainer {
-    width: 400px;
-}
-
-#page-mod-quiz-edit .questionbankwindow .container,
-#page-mod-quiz-edit div.questionbank {
-    padding: 0;
-}
-
 /* @end */
 
 /* @group Misc */
