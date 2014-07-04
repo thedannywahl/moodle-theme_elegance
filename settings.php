@@ -314,7 +314,7 @@ defined('MOODLE_INTERNAL') || die;
 		$title = get_string('customlinkicon', 'theme_elegance', $customlinknumber);
 		$description = get_string('customlinkicondesc', 'theme_elegance', $customlinknumber);
 		$default = 'dot-circle-o';
-		$setting = new admin_setting_configtextarea($name, $title, $description, $default);
+		$setting = new admin_setting_configtext($name, $title, $description, $default);
 		$setting->set_updatedcallback('theme_reset_all_caches');
 		$temp->add($setting);
 
