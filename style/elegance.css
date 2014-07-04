@@ -2277,6 +2277,7 @@ img.profilepicture
 
 .nav-tabs, .nav-pills {
     text-align:center;
+    margin: 0;
 }
 
 .nav>.disabled>a {
@@ -2874,6 +2875,21 @@ table#user-grades th.userreport.c1 {
 	transition: 0.25s;
 	font-family: "Roboto";
 }
+
+/* @end */
+
+/* @group Quiz */
+
+/* add space below nav tabs and questions */
+#page-mod-quiz-edit #region-main .nav {
+    padding-bottom: 10px;
+}
+
+/* adust the width of the container on question bank */
+.questionbankwindow .container {
+    padding: 0;
+}
+
 
 /* @end */
 
