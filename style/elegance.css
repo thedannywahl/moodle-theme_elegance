@@ -2915,6 +2915,10 @@ table#categoryquestions {
     width: 400px;
 }
 
+#page-mod-quiz-edit div.questionbank {
+    padding: 0;
+}
+
 /* @end */
 
 /* @group Misc */
