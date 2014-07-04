@@ -29,26 +29,7 @@ $string['choosereadme'] = '
 <div class="well">
 <h2>Elegance Theme</h2>
 <p><img class=img-polaroid src="elegance/pix/screenshot.jpg" /></p>
-</div>
-<div class="well">
-<h3>About</h3>
 <p>Elegance is a 2 column, clean and highly customisable theme built on the Bootstrap 3 framework.</p>
-<h3>Theme Credits</h3>
-<p>Author: Julian (Moodleman) Ridden<br>
-Contact: julian@moodleman.net<br>
-Website: <a href="http://moodleman.net">www.moodleman.net</a>
-</p>
-<p>Supportng Author: Bas Brands (for the Bootstrap 3 work)<br>
-Contact: bas@sonsbeekmedia.nl<br>
-Website: <a href="http://www.basbrands.nl">www.basbrands.nl</a>
-</p>
-<h3>Report a bug:</h3>
-<p><a href="http://tracker.moodle.org">http://tracker.moodle.org</a></p>
-<h3>Donate if you can</h3>
-<p>Elegance, and all my themes, will always be free to the Moodle community. However the time it is taking to ceate and maintain these is inscreasing with every release. If you like this theme and the support I provide in the forums I would like to encourage you to donate with the button below. This is in no way required to use this theme.</p>
-
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KNV2ZPHCYTB8E" class="btn btn-lrg btn-info">Donate AUD$15</a>
-
 </div></div>';
 
 $string['pluginname'] = 'Elegance';
