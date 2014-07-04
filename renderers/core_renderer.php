@@ -257,7 +257,7 @@ class theme_elegance_core_renderer extends theme_bootstrap_core_renderer {
                         if (!empty($PAGE->theme->settings->$cln) && !empty($PAGE->theme->settings->$clu)) {
                             $usermenu->add(
                                 '<i class="fa fa-'.$PAGE->theme->settings->$cli.'"></i>' .$PAGE->theme->settings->$cln,
-                                new moodle_url($PAGE->theme->settings->$clu, array('id' => $USER->id)),
+                                new moodle_url($PAGE->theme->settings->$clu),
                                 $PAGE->theme->settings->$cln
                             );
                         }
