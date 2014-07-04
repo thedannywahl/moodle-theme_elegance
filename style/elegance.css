@@ -2915,6 +2915,7 @@ table#categoryquestions {
     width: 400px;
 }
 
+#page-mod-quiz-edit .questionbankwindow .container,
 #page-mod-quiz-edit div.questionbank {
     padding: 0;
 }
