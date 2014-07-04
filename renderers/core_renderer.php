@@ -251,12 +251,17 @@ class theme_elegance_core_renderer extends theme_bootstrap_core_renderer {
                 if ($customlinksnum !=0) {
                     foreach (range(1, $customlinksnum) as $customlinksnumber) {
                         $cli = "customlinkicon$customlinksnumber";
+                        if(!empty($PAGE->theme->settings->$cli)) {
+                            $cli = '<i class="fa fa-'. $PAGE->theme->settings->$cli . '"></i>';
+                        } else {
+                            $cli = '';
+                        }
                         $cln = "customlinkname$customlinksnumber";
                         $clu = "customlinkurl$customlinksnumber";
 
                         if (!empty($PAGE->theme->settings->$cln) && !empty($PAGE->theme->settings->$clu)) {
                             $usermenu->add(
-                                '<i class="fa fa-'.$PAGE->theme->settings->$cli.'"></i>' .$PAGE->theme->settings->$cln,
+                                $cli . $PAGE->theme->settings->$cln,
                                 new moodle_url($PAGE->theme->settings->$clu),
                                 $PAGE->theme->settings->$cln
                             );
