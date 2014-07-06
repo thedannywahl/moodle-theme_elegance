@@ -2903,6 +2903,10 @@ table#user-grades th.userreport.c1 {
     display: block;
 }
 
+#page-mod-quiz-edit .questioncontainer input[type="text"] {
+    height: inherit;
+}
+
 /* @end */
 
 /* @group Fixes */
