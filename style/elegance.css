@@ -2898,6 +2898,11 @@ table#user-grades th.userreport.c1 {
     margin: 0;
 }
 
+/* fix quiz question label controls */
+#page-mod-quiz-edit #quizquestions .questioncontentcontainer label {
+    display: block;
+}
+
 /* @end */
 
 /* @group Fixes */
