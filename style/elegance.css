@@ -2890,6 +2890,13 @@ table#user-grades th.userreport.c1 {
     padding: 0;
 }
 
+#page-mod-quiz-edit div.container div.generalbox {
+    padding: 0;
+}
+
+#page-mod-quiz-edit div.questionbank .categoryquestionscontainer {
+    margin: 0;
+}
 
 /* @end */
 
