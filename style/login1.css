@@ -59,6 +59,7 @@ html.login-page{
 	background: transparent;
 	border: 0px none;
 	height: auto;
+	clear: both;
 }
 
 .loginpanel form#guestlogin input[type="submit"] {
