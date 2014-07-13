@@ -115,6 +115,14 @@ function theme_elegance_process_css($css, $theme) {
     }
     $css = theme_elegance_set_customcss($css, $customcss);
 
+    // Set custom Moodle Mobile CSS.
+    if (!empty($theme->settings->moodlemobilecss)) {
+        $moodlemobilecss = $theme->settings->moodlemobilecss;
+    } else {
+        $moodlemobilecss = null;
+    }
+    $css = theme_elegance_set_moodlemobilecss($css, $moodlemobilecss);
+
     // Set the theme main color.
     if (!empty($theme->settings->themecolor)) {
         $themecolor = $theme->settings->themecolor;
@@ -395,6 +403,25 @@ function theme_elegance_pluginfile($course, $cm, $context, $filearea, $args, $fo
 function theme_elegance_set_customcss($css, $customcss) {
     $tag = '[[setting:customcss]]';
     $replacement = $customcss;
+    if (is_null($replacement)) {
+        $replacement = '';
+    }
+
+    $css = str_replace($tag, $replacement, $css);
+
+    return $css;
+}
+
+/**
+ * Adds any custom Moodle Mobile CSS to the CSS before it is cached.
+ *
+ * @param string $css The original CSS.
+ * @param string $moodlemobilecss The custom CSS to add.
+ * @return string The CSS which now contains our custom Moodle Mobile CSS.
+ */
+function theme_elegance_set_moodlemobilecss($css, $moodlemobilecss) {
+    $tag = '[[setting:moodlemobilecss]]';
+    $replacement = $moodlemobilecss;
     if (is_null($replacement)) {
         $replacement = '';
     }

@@ -81,9 +81,9 @@ if ((!empty($THEME->settings->enablecustomlogin)) && ($THEME->settings->enablecu
 }
 
 if ('ltr' === get_string('thisdirection', 'langconfig')) {
-    $THEME->sheets = array('font-awesome', 'google-fonts', $categorysheet, $loginsheet, 'nprogress', 'elegance');
+    $THEME->sheets = array('font-awesome', 'google-fonts', $categorysheet, $loginsheet, 'nprogress', 'elegance', 'mobile');
 } else {
-    $THEME->sheets = array('tinymce-rtl', 'font-awesome', 'google-fonts', $categorysheet, $loginsheet, 'nprogress', 'elegance');
+    $THEME->sheets = array('tinymce-rtl', 'font-awesome', 'google-fonts', $categorysheet, $loginsheet, 'nprogress', 'elegance', 'mobile');
 }
 
 $THEME->layouts = array(

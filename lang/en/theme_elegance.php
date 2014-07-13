@@ -45,6 +45,9 @@ $string['mydashboard'] = 'My Dashboard';
 $string['customcss'] = 'Custom CSS';
 $string['customcssdesc'] = 'Whatever CSS rules you add to this textarea will be reflected in every page, making for easier customization of this theme.';
 
+$string['moodlemobilecss'] = 'Moodle Mobile CSS';
+$string['moodlemobilecssdesc'] = 'The Moodle Mobile Application allows you to define an external stylesheet to style the application.Whatever CSS rules you add to this textarea will be displayed in the official Moodle Mobile application.  Simply copy the URL below and store it in the "mobilecssurl" setting under "Web Services -> Mobile".';
+
 $string['frontpagecontent'] = 'Frontpage Content';
 $string['frontpagecontentdesc'] = 'This location appears as a highlight under the slideshow on the frontpage.';
 
