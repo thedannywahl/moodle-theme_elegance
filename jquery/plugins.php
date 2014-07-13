@@ -38,7 +38,7 @@
 
 $plugins = array(
     'fitvids'	=> array('files' => array('fitvids-1.1.0.js')),
-    'modernizr'     => array('files' => array('modernizr_2.8.1.js')),
+    'modernizr'     => array('files' => array('modernizr_2.8.3.js')),
     'unslider'     => array('files' => array('unslider_1.0.2.js')),
     'eventswipe'     => array('files' => array('eventswipe_0.5.js')),
     'nprogress'     => array('files' => array('nprogress.js')),
