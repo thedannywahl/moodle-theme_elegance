@@ -120,57 +120,58 @@ echo $OUTPUT->doctype() ?>
     </div>
 </header>
 
-
-<div id="page" class="<?php echo $container; ?>">
-
-    <!-- Start Marketing Spots -->
-    <?php
-    	if($hasmarketing==1) {
-    		require_once(dirname(__FILE__).'/includes/marketing.php');
-    	} else if($hasmarketing==2 && !isloggedin()) {
-    		require_once(dirname(__FILE__).'/includes/marketing.php');
-    	} else if($hasmarketing==3 && isloggedin()) {
-    		require_once(dirname(__FILE__).'/includes/marketing.php');
-    	}
-    ?>
-    <!-- End Marketing Spots -->
-
-    <div id="page-content" class="row">
-        <div id="region-main" class="<?php echo $regions['content']; ?>">
-
-		    <!-- Start Quick Links -->
-		    <?php
-		    	if($hasquicklinks==1) {
-		    		require_once(dirname(__FILE__).'/includes/quicklinks.php');
-		    	} else if($hasquicklinks==2 && !isloggedin()) {
-		    		require_once(dirname(__FILE__).'/includes/quicklinks.php');
-		    	} else if($hasquicklinks==3 && isloggedin()) {
-		    		require_once(dirname(__FILE__).'/includes/quicklinks.php');
-		    	}
-		    ?>
-		    <!-- End Quick Links -->
-
-            <?php
-            echo $OUTPUT->course_content_header();
-            echo $OUTPUT->main_content();
-            echo $OUTPUT->course_content_footer();
-            ?>
-        </div>
-
+<section id="main" class="clearfix">
+    <div id="page" class="<?php echo $container; ?>">
+    
+        <!-- Start Marketing Spots -->
         <?php
-        if ($hassidepost) {
-            echo $OUTPUT->blocks('side-post', $regions['post']);
-        }?>
-
-		<?php if (is_siteadmin()) { ?>
-        <div id="hidden-blocks" class="<?php echo $regions['content']; ?>">
-        		<h4><?php echo get_string('visibleadminonly', 'theme_elegance') ?></h4>
-        		<?php echo $OUTPUT->blocks('hidden-dock'); ?>
+        	if($hasmarketing==1) {
+        		require_once(dirname(__FILE__).'/includes/marketing.php');
+        	} else if($hasmarketing==2 && !isloggedin()) {
+        		require_once(dirname(__FILE__).'/includes/marketing.php');
+        	} else if($hasmarketing==3 && isloggedin()) {
+        		require_once(dirname(__FILE__).'/includes/marketing.php');
+        	}
+        ?>
+        <!-- End Marketing Spots -->
+    
+        <div id="page-content" class="row">
+            <div id="region-main" class="<?php echo $regions['content']; ?>">
+    
+    		    <!-- Start Quick Links -->
+    		    <?php
+    		    	if($hasquicklinks==1) {
+    		    		require_once(dirname(__FILE__).'/includes/quicklinks.php');
+    		    	} else if($hasquicklinks==2 && !isloggedin()) {
+    		    		require_once(dirname(__FILE__).'/includes/quicklinks.php');
+    		    	} else if($hasquicklinks==3 && isloggedin()) {
+    		    		require_once(dirname(__FILE__).'/includes/quicklinks.php');
+    		    	}
+    		    ?>
+    		    <!-- End Quick Links -->
+    
+                <?php
+                echo $OUTPUT->course_content_header();
+                echo $OUTPUT->main_content();
+                echo $OUTPUT->course_content_footer();
+                ?>
+            </div>
+    
+            <?php
+            if ($hassidepost) {
+                echo $OUTPUT->blocks('side-post', $regions['post']);
+            }?>
+    
+    		<?php if (is_siteadmin()) { ?>
+            <div id="hidden-blocks" class="<?php echo $regions['content']; ?>">
+            		<h4><?php echo get_string('visibleadminonly', 'theme_elegance') ?></h4>
+            		<?php echo $OUTPUT->blocks('hidden-dock'); ?>
+            </div>
+            <?php } ?>
         </div>
-        <?php } ?>
+    
     </div>
-
-</div>
+</section>
 
 <footer id="page-footer">
 	<?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>

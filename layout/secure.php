@@ -89,30 +89,30 @@ echo $OUTPUT->doctype() ?>
     </div>
 </nav>
 
-
-<div id="page" class="<?php echo $container; ?>">
-    <header id="page-header" class="clearfix">
-        <div id="course-header">
-            <?php echo $OUTPUT->course_header(); ?>
-        </div>
-    </header>
-
-    <div id="page-content" class="row">
-        <div id="region-main" class="<?php echo $regions['content']; ?>">
+<section id="main" class="clearfix">
+    <div id="page" class="<?php echo $container; ?>">
+        <header id="page-header" class="clearfix">
+            <div id="course-header">
+                <?php echo $OUTPUT->course_header(); ?>
+            </div>
+        </header>
+    
+        <div id="page-content" class="row">
+            <div id="region-main" class="<?php echo $regions['content']; ?>">
+                <?php
+                echo $OUTPUT->course_content_header();
+                echo $OUTPUT->main_content();
+                echo $OUTPUT->course_content_footer();
+                ?>
+            </div>
+    
             <?php
-            echo $OUTPUT->course_content_header();
-            echo $OUTPUT->main_content();
-            echo $OUTPUT->course_content_footer();
-            ?>
+            if ($knownregionpost) {
+                echo $OUTPUT->blocks('side-post', $regions['post']);
+            }?>
         </div>
-
-        <?php
-        if ($knownregionpost) {
-            echo $OUTPUT->blocks('side-post', $regions['post']);
-        }?>
     </div>
-
-</div>
+</section>
 
 <footer id="page-footer">
   <?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
