@@ -121,7 +121,7 @@ class theme_elegance_core_course_renderer extends core_course_renderer {
      */
     protected function coursecat_category(coursecat_helper $chelper, $coursecat, $depth) {
         // open category tag
-        $classes = array('category', 'col-md-3');
+        $classes = array('category', 'col-sm-6', 'col-md-3');
         if (empty($coursecat->visible)) {
             $classes[] = 'dimmed_category';
         }
