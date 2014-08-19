@@ -1550,6 +1550,11 @@ content: "\e079";
 
 /* @group Bootstrap */
 
+/* override from theme_bootstrap- not sure where it's coming from */
+.row {
+	margin: 0;
+}
+
 /* @group Buttons */
 
 .btn a:hover{
