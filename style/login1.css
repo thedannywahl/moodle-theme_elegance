@@ -1,7 +1,11 @@
-
 /* @group Login */
+
 #page-login-index {
 	background: transparent;
+}
+
+#page-login-index #main {
+  background: none;
 }
 
 #page-login-index #region-main {
