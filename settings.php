@@ -117,11 +117,19 @@ defined('MOODLE_INTERNAL') || die;
     'type' => 'theme', 'sheet' => 'mobile'));
     $description = get_string('moodlemobilecssdesc', 'theme_elegance') . "<br/><pre>" . $url . "</pre>";
     $default = '/* Header */
+.user-menu header,
 .header-main { background: inherit; }
+
 /* User Menu */
 .panel.user-menu { background: inherit; }
+
 /* Pop-ups */
-#app-dialog > div { background: inherit; }';
+#app-dialog > div { background: inherit; }
+#app-dialog .modalHeader {background: inherit; }
+
+/* Center and Right column of app */
+#panel-center,
+#panel-right {background: inherit}';
     $setting = new admin_setting_configtextarea($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $temp->add($setting);
