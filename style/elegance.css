@@ -86,7 +86,7 @@ ul ul, ul ol, ol ol, ol ul {
 h1, h2, h3, h4, h5, h6{
 	font-family: 'Roboto', sans-serif;
 	font-weight: 400;
-	color: [[setting:themecolor]];
+	color: [[setting:fontcolor]];
 }
 
 h1 {
