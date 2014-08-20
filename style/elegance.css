@@ -64,7 +64,6 @@ body, html {
 p {
 	margin-bottom: 21px;
 	font-family: "Roboto";
-	font-size: 14px;
 	line-height: 21px;
 	letter-spacing: 0px;
 	color: [[setting:fontcolor]];
