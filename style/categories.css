@@ -38,9 +38,8 @@
 } 
  
 /* Adjust the position of the name */ 
-.course_category_tree .category .info .name { 
-	padding: 0px 0px 0px 0px; 
-	text-align: center; 
+.course_category_tree .category .categoryname { 
+	font-size: 16px;
 }
 
 /* Hide icon 'collapsed' because it makes no sense here */ 
