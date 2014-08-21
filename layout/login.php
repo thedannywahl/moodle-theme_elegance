@@ -313,13 +313,6 @@ echo $OUTPUT->doctype() ?>
                             } ?>
                         </div>
     
-                        <?php if (isset($CFG->rememberusername) and $CFG->rememberusername == 2) { ?>
-                            <div class="remember">
-                                <input type="checkbox" name="rememberusername" value="1"/>
-                                <label><?php echo get_string('rememberusername', 'admin'); ?></label>
-                            </div>
-                        <?php } ?>
-    
                         <a href="forgot_password.php" id="forgotten"><?php echo get_string('passwordforgotten'); ?></a>
                     </form>
     
