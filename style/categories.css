@@ -8,10 +8,10 @@
  /* @group Core */
  
  .collapsible-actions {
- 	display: none !important;
+ 	display: none;
  }
 
- * Set the position on the frontpage */ 
+ /* Set the position on the frontpage */ 
  
 #frontpage-category-names, 
 #frontpage-category-names .course_category_tree { 
