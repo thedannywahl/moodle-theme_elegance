@@ -99,7 +99,7 @@ class theme_elegance_core_renderer extends theme_bootstrap_core_renderer {
         return $content;
     }
 
-    public function user_menu() {
+    public function user_menu($user = NULL, $withlinks = NULL) {
         global $CFG;
         $usermenu = new custom_menu('', current_language());
         return $this->render_user_menu($usermenu);
