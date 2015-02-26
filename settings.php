@@ -825,12 +825,12 @@ defined('MOODLE_INTERNAL') || die;
 
     }
 
- 	$ADMIN->add('theme_elegance', $temp);
+    $ADMIN->add('theme_elegance', $temp);
 
- 	/* Social Network Settings */
-	$temp = new admin_settingpage('theme_elegance_social', get_string('socialheading', 'theme_elegance'));
-	$temp->add(new admin_setting_heading('theme_elegance_social', get_string('socialheadingsub', 'theme_elegance'),
-            format_text(get_string('socialdesc' , 'theme_elegance'), FORMAT_MARKDOWN)));
+    /* Social Network Settings */
+    $temp = new admin_settingpage('theme_elegance_social', get_string('socialheading', 'theme_elegance'));
+    $temp->add(new admin_setting_heading('theme_elegance_social', get_string('socialheadingsub', 'theme_elegance'),
+        format_text(get_string('socialdesc' , 'theme_elegance'), FORMAT_MARKDOWN)));
 
     // Website url setting.
     $name = 'theme_elegance/website';
@@ -953,6 +953,49 @@ defined('MOODLE_INTERNAL') || die;
     $name = 'theme_elegance/vk';
     $title = get_string('vk', 'theme_elegance');
     $description = get_string('vkdesc', 'theme_elegance');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    $ADMIN->add('theme_elegance', $temp);
+
+    /* Apps Settings */
+    $temp = new admin_settingpage('theme_elegance_mobile', get_string('mobileappsheading', 'theme_elegance'));
+    $temp->add(new admin_setting_heading('theme_elegance_mobileapps', get_string('mobileappsheadingsub', 'theme_elegance'),
+        format_text(get_string('mobileappsdesc', 'theme_elegance'), FORMAT_MARKDOWN)));
+
+    // Android App url setting.
+    $name = 'theme_elegance/android';
+    $title = get_string('androidurl', 'theme_elegance');
+    $description = get_string('androiddesc', 'theme_elegance');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // iOS App url setting.
+    $name = 'theme_elegance/ios';
+    $title = get_string('iosurl', 'theme_elegance');
+    $description = get_string('iosdesc', 'theme_elegance');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Windows App url setting.
+    $name = 'theme_elegance/windows';
+    $title = get_string('windowsurl', 'theme_elegance');
+    $description = get_string('windowsdesc', 'theme_elegance');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $temp->add($setting);
+
+    // Windows PhoneApp url setting.
+    $name = 'theme_elegance/winphone';
+    $title = get_string('winphoneurl', 'theme_elegance');
+    $description = get_string('winphonedesc', 'theme_elegance');
     $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');

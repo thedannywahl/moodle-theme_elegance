@@ -1022,6 +1022,14 @@ border-bottom-color: #888;
     background: #98cd32;
 }
 
+.windows:hover, button.windows:focus {
+    background: #008A00;
+}
+
+.winphone:hover, button.winphone:focus {
+    background: #9B4F96;
+}
+
 .vk:hover, button.vk:focus {
     background: #4a6ea9;
 }
