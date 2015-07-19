@@ -100,13 +100,16 @@ $string['usermenusettingssub'] = 'Options for logged in users.';
 $string['usermenusettingsdesc'] = 'Determine which links show in the logged in user menu.';
 
 $string['enablemy'] = 'My Dashboard';
-$string['enablemydesc'] = 'Display a link to the My Moodle page.';
+$string['enablemydesc'] = 'Display a link to the Dashboard page.';
 
 $string['enableprofile'] = 'User Profile';
 $string['enableprofiledesc'] = 'Display a link to the users profile.';
 
 $string['enableeditprofile'] = 'Edit Profile';
 $string['enableeditprofiledesc'] = 'Display a link to edit the users profile.';
+
+$string['enablegrades'] = 'Grades';
+$string['enablegradesdesc'] = 'Display a link to grader report.';
 
 $string['enablebadges'] = 'Badges';
 $string['enablebadgesdesc'] = 'Display a link to the users badges.';

@@ -221,6 +221,14 @@ class theme_elegance_core_renderer extends theme_bootstrap_core_renderer {
                   );
                 }
 
+                if (!empty($PAGE->theme->settings->enablegrades)) {
+                  $usermenu->add(
+                    '<i class="fa fa-check-circle"></i>' . get_string('grades', 'grades'),
+                    new moodle_url('/grade/report/mygrades.php', array('id' => $USER->id)),
+                    get_string('grades', 'grades')
+                  );
+                }
+
                 if (!empty($PAGE->theme->settings->enableprivatefiles)) {
                   $usermenu->add(
                     '<i class="fa fa-file"></i>' . get_string('privatefiles', 'block_private_files'),

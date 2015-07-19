@@ -268,6 +268,15 @@ defined('MOODLE_INTERNAL') || die;
     	$setting->set_updatedcallback('theme_reset_all_caches');
     	$temp->add($setting);
 
+        // Enable Grades.
+    	$name = 'theme_elegance/enablegrades';
+    	$title = get_string('enablegrades', 'theme_elegance');
+    	$description = get_string('enablegradesdesc', 'theme_elegance');
+    	$default = true;
+    	$setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+    	$setting->set_updatedcallback('theme_reset_all_caches');
+    	$temp->add($setting);
+
     	// Enable Calendar.
     	$name = 'theme_elegance/enablecalendar';
     	$title = get_string('enablecalendar', 'theme_elegance');
