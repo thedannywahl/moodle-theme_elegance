@@ -100,13 +100,16 @@ $string['usermenusettingssub'] = 'Options for logged in users.';
 $string['usermenusettingsdesc'] = 'Determine which links show in the logged in user menu.';
 
 $string['enablemy'] = 'My Dashboard';
-$string['enablemydesc'] = 'Display a link to the My Moodle page.';
+$string['enablemydesc'] = 'Display a link to the Dashboard page.';
 
-$string['enableprofile'] = 'User Profile';
+$string['enableprofile'] = 'Profile';
 $string['enableprofiledesc'] = 'Display a link to the users profile.';
 
-$string['enableeditprofile'] = 'Edit Profile';
-$string['enableeditprofiledesc'] = 'Display a link to edit the users profile.';
+$string['enablepreferences'] = 'Preferences';
+$string['enablepreferencesdesc'] = 'Display a link to the users preferences.';
+
+$string['enablegrades'] = 'Grades';
+$string['enablegradesdesc'] = 'Display a link to grader report.';
 
 $string['enablebadges'] = 'Badges';
 $string['enablebadgesdesc'] = 'Display a link to the users badges.';
@@ -124,7 +127,7 @@ $string['customlinkindicator'] = 'Custom Link Number ';
 $string['customlinkindicatordesc'] = 'Set up this custom link.';
 
 $string['customlinkicon'] = 'Link Icon';
-$string['customlinkicondesc'] = 'Name of the icon you wish to use next to your link.<br> List is <a href="http://fontawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after the "fa-".';
+$string['customlinkicondesc'] = 'Name of the icon you wish to use next to your link.<br> List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after the "fa-".';
 
 $string['customlinkname'] = 'Link Name';
 $string['customlinknamedesc'] = 'Name shown to users for your link.';
@@ -228,8 +231,7 @@ $string['togglemarketing'] = 'Marketing Spot display';
 $string['togglemarketingdesc'] = 'Choose if you wish to hide or show the three Marketing Spots.';
 
 $string['marketingtitleicon'] = 'Heading Icon';
-$string['marketingtitleicondesc'] = 'Name of the icon you wish to use in the heading for the marketing spots. List is <a href="http://fontawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after the "fa-".';
-
+$string['marketingtitleicondesc'] = 'Name of the icon you wish to use in the heading for the marketing spots. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after the "fa-".';
 
 $string['marketing1'] = 'Marketing Spot One';
 $string['marketing2'] = 'Marketing Spot Two';
@@ -239,7 +241,7 @@ $string['marketing4'] = 'Marketing Spot Four';
 $string['marketingtitle'] = 'Title';
 $string['marketingtitledesc'] = 'Title to show in this marketing spot.';
 $string['marketingicon'] = 'Icon';
-$string['marketingicondesc'] = 'Name of the icon you wish to use. List is <a href="http://fontawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after the "fa-".';
+$string['marketingicondesc'] = 'Name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after the "fa-".';
 $string['marketingimage'] = 'Image';
 $string['marketingimagedesc'] = 'This provides the option of displaying an image above the text in the marketing spot.';
 $string['marketingcontent'] = 'Content';
@@ -260,7 +262,7 @@ $string['togglequicklinks'] = 'Quick Links Display';
 $string['togglequicklinksdesc'] = 'Choose if you wish to hide or show the Quick Links area.';
 
 $string['quicklinksicon'] = 'Heading Icon';
-$string['quicklinksicondesc'] = 'Name of the icon you wish to use in the heading for the Quick Links spots. List is <a href="http://fontawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after the "fa-".';
+$string['quicklinksicondesc'] = 'Name of the icon you wish to use in the heading for the Quick Links spots. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after the "fa-".';
 
 $string['quicklinks'] = 'Quick Link Number ';
 
@@ -271,7 +273,7 @@ $string['quicklinkstitle'] = 'Area heading';
 $string['quicklinkstitledesc'] = 'The name associated with the Quick Links area on the Frontpage.';
 
 $string['quicklinkicon'] = 'Icon';
-$string['quicklinkicondesc'] = 'Name of the icon you wish to use. List is <a href="http://fontawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after the "fa-".';
+$string['quicklinkicondesc'] = 'Name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after the "fa-".';
 $string['quicklinkiconcolor'] = 'Quick Link Colour';
 $string['quicklinkiconcolordesc'] = 'Background colour behind the Quick Link icon.';
 $string['quicklinkbuttontext'] = 'Link Text';
@@ -340,7 +342,7 @@ $string['defaultcategoryicon'] = 'Default Category Icons';
 $string['defaultcategoryicondesc'] = 'If you do not enter a value in any of your categories below then this default value will be used.  This is an easy way to quickly change many category icons.';
 
 $string['categoryiconinfo'] = 'Set Custom Category Icons';
-$string['categoryiconinfodesc'] = 'Each icon is set by "category ID". You get these by looking at the URL or each category. List is <a href="http://fontawesome.github.io/Font-Awesome/cheatsheet/">here</a>.  Just enter what is after the "fa-".';
+$string['categoryiconinfodesc'] = 'Each icon is set by "category ID". You get these by looking at the URL or each category. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/">here</a>.  Just enter what is after the "fa-".';
 
 $string['enablecategoryicon'] = 'Enable Category Icons';
 $string['enablecategoryicondesc'] = 'If enabled you will be able to select category icons after clicking "Save changes".';
@@ -362,3 +364,20 @@ $string['socialnetworksicondescriptiontumblr'] = 'Find us on Tumblr';
 $string['socialnetworksicondescriptioninstagram'] = 'Find us on Instagram';
 $string['socialnetworksicondescriptionvk'] = 'Like us on VK';
 $string['socialnetworksicondescriptionskype'] = 'Call us on Skype';
+
+/* Mobile Apps */
+$string['mobileappsheading'] = 'Apps';
+$string['mobileappsheadingsub'] = 'Link to your app to get your students using mobiles';
+$string['mobileappsdesc'] = 'Have you got a web app on the App Store or Google Play Store? Provide a link here so your users can grab the apps online.';
+$string['android'] = 'Download the android app from Google Play';
+$string['androiddesc'] = 'Provide an URL to your mobile App on the Google Play Store. If you do not have one of your own maybe consider linking to the official Moodle Mobile app. (https://play.google.com/store/apps/details?id=com.moodle.moodlemobile)';
+$string['androidurl'] = 'Android (Google Play)';
+$string['windows'] = 'Download the desktop app from the Windows store';
+$string['windowsdesc'] = 'Provide an URL to your mobile App on the Windows Store. If you do not have one of your own maybe consider linking to the official Moodle Mobile app. (http://apps.microsoft.com/windows/en-us/app/9df51338-015c-41b7-8a85-db2fdfb870bc)';
+$string['windowsurl'] = 'Windows Desktop';
+$string['winphone'] = 'Download the mobile app from the Windows store';
+$string['winphonedesc'] = 'Provide an URL to your mobile App on the Windows Phone Store. If you do not have one of your own maybe consider linking to the official Moodle Mobile app. (http://www.windowsphone.com/en-us/store/app/moodlemobile/d0732b88-3c6d-4127-8f24-3fca2452a4dc)';
+$string['winphoneurl'] = 'Windows Mobile';
+$string['ios'] = 'Download the iPhone/iPad app from the app store';
+$string['iosdesc'] = 'Provide an URL to your mobile App on the App Store. If you do not have one of your own maybe consider linking to the official Moodle Mobile app (https://itunes.apple.com/en/app/moodle-mobile/id633359593).';
+$string['iosurl'] = 'iPhone/iPad (App Store)';

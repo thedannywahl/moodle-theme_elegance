@@ -99,7 +99,7 @@ class theme_elegance_core_renderer extends theme_bootstrap_core_renderer {
         return $content;
     }
 
-    public function user_menu() {
+    public function user_menu($user = NULL, $withlinks = NULL) {
         global $CFG;
         $usermenu = new custom_menu('', current_language());
         return $this->render_user_menu($usermenu);
@@ -213,11 +213,19 @@ class theme_elegance_core_renderer extends theme_bootstrap_core_renderer {
                   );
                 }
 
-                if (!empty($PAGE->theme->settings->enableeditprofile)) {
+                if (!empty($PAGE->theme->settings->enablepreferences)) {
                   $usermenu->add(
-                    '<i class="fa fa-cog"></i>' . get_string('editmyprofile'),
-                    new moodle_url('/user/edit.php', array('id' => $USER->id)),
-                    get_string('editmyprofile')
+                    '<i class="fa fa-cog"></i>' . get_string('preferences'),
+                    new moodle_url('/user/preferences.php'),
+                    get_string('preferences')
+                  );
+                }
+
+                if (!empty($PAGE->theme->settings->enablegrades)) {
+                  $usermenu->add(
+                    '<i class="fa fa-check-circle"></i>' . get_string('grades', 'grades'),
+                    new moodle_url('/grade/report/mygrades.php', array('id' => $USER->id)),
+                    get_string('grades', 'grades')
                   );
                 }
 
