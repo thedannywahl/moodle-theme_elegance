@@ -102,11 +102,11 @@ $string['usermenusettingsdesc'] = 'Determine which links show in the logged in u
 $string['enablemy'] = 'My Dashboard';
 $string['enablemydesc'] = 'Display a link to the Dashboard page.';
 
-$string['enableprofile'] = 'User Profile';
+$string['enableprofile'] = 'Profile';
 $string['enableprofiledesc'] = 'Display a link to the users profile.';
 
-$string['enableeditprofile'] = 'Edit Profile';
-$string['enableeditprofiledesc'] = 'Display a link to edit the users profile.';
+$string['enablepreferences'] = 'Preferences';
+$string['enablepreferencesdesc'] = 'Display a link to the users preferences.';
 
 $string['enablegrades'] = 'Grades';
 $string['enablegradesdesc'] = 'Display a link to grader report.';
@@ -232,7 +232,6 @@ $string['togglemarketingdesc'] = 'Choose if you wish to hide or show the three M
 
 $string['marketingtitleicon'] = 'Heading Icon';
 $string['marketingtitleicondesc'] = 'Name of the icon you wish to use in the heading for the marketing spots. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after the "fa-".';
-
 
 $string['marketing1'] = 'Marketing Spot One';
 $string['marketing2'] = 'Marketing Spot Two';

@@ -259,10 +259,10 @@ defined('MOODLE_INTERNAL') || die;
     	$setting->set_updatedcallback('theme_reset_all_caches');
     	$temp->add($setting);
 
-    	// Enable Edit Profile.
-    	$name = 'theme_elegance/enableeditprofile';
-    	$title = get_string('enableeditprofile', 'theme_elegance');
-    	$description = get_string('enableeditprofiledesc', 'theme_elegance');
+    	// Enable Preferences.
+    	$name = 'theme_elegance/enablepreferences';
+    	$title = get_string('enablepreferences', 'theme_elegance');
+    	$description = get_string('enablepreferencesdesc', 'theme_elegance');
     	$default = true;
     	$setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
     	$setting->set_updatedcallback('theme_reset_all_caches');

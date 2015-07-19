@@ -213,11 +213,11 @@ class theme_elegance_core_renderer extends theme_bootstrap_core_renderer {
                   );
                 }
 
-                if (!empty($PAGE->theme->settings->enableeditprofile)) {
+                if (!empty($PAGE->theme->settings->enablepreferences)) {
                   $usermenu->add(
-                    '<i class="fa fa-cog"></i>' . get_string('editmyprofile'),
-                    new moodle_url('/user/edit.php', array('id' => $USER->id)),
-                    get_string('editmyprofile')
+                    '<i class="fa fa-cog"></i>' . get_string('preferences'),
+                    new moodle_url('/user/preferences.php'),
+                    get_string('preferences')
                   );
                 }
 
