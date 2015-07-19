@@ -3073,6 +3073,11 @@ table#explaincaps>tbody>tr:nth-child(odd)>td, table#defineroletable>tbody>tr:nth
 	max-width: [[setting:videowidth]];
 }
 
+/* Grader report */
+.path-grade-report-grader #region-main {
+        width: auto;
+        float: left;
+}
 
 /* @end */
 
