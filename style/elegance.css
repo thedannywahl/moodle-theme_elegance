@@ -3063,6 +3063,9 @@ table#explaincaps>tbody>tr:nth-child(odd)>td, table#defineroletable>tbody>tr:nth
 	background: transparent;
 	border: 0px none;
 }
+#page-my-index .block_course_overview .course_title h2.title {
+    font-size:24px
+}
 
 .player .video-wrapper,
 #player {
