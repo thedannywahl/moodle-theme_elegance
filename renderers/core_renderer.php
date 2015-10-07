@@ -50,7 +50,7 @@ class theme_elegance_core_renderer extends theme_bootstrap_core_renderer {
         return $content.'</ul>';
     }
     
-    protected function render_custom_menu_item(custom_menu_item $menunode, $level = 0 ) {
+    protected function render_custom_menu_item(custom_menu_item $menunode, $level = 0, $direction = '') {
         static $submenucount = 0;
 
         if ($menunode->has_children()) {
@@ -99,13 +99,13 @@ class theme_elegance_core_renderer extends theme_bootstrap_core_renderer {
         return $content;
     }
 
-    public function user_menu() {
-        global $CFG;
+    public function user_menu($user = NULL, $withlinks = NULL) {
+        global $CFG, $USER;
         $usermenu = new custom_menu('', current_language());
-        return $this->render_user_menu($usermenu);
+        return $this->render_user_menu($usermenu, $USER);
     }
 
-    protected function render_user_menu(custom_menu $menu) {
+    protected function render_user_menu(custom_menu $menu, $user) {
         global $CFG, $USER, $DB, $PAGE; //Elegance add $PAGE;
 
         $addusermenu = true;
