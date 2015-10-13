@@ -43,4 +43,5 @@ $plugins = array(
     'eventswipe'     => array('files' => array('eventswipe_0.5.js')),
     'nprogress'     => array('files' => array('nprogress.js')),
     'backstretch'     => array('files' => array('backstretch_2.0.6.js')),
+    'elegance'     => array('files' => array('elegance.js')),
 );

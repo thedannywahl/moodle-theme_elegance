@@ -57,8 +57,8 @@ $string['footnotedesc'] = 'Whatever you add to this textarea will be displayed i
 $string['invert'] = 'Invert Navbar';
 $string['invertdesc'] = 'Swaps text and background for the navbar at the top of the page between black and white.';
 
-$string['fluidwidth'] = 'Fluid Width Theme';
-$string['fluidwidthdesc'] = 'Enable this option to allow using your full screen.';
+$string['maxwidth'] = 'Max page width';
+$string['maxwidthdesc'] = 'Please set this to a reasonable number between 850 - 1400 px';
 
 $string['fonticons'] = 'Use Icon Font';
 $string['fonticonsdesc'] = 'Enable this option to use the Glyphicon icon font.';
@@ -166,12 +166,15 @@ $string['headingcolordesc'] = 'Set the colour used for the majority of Headings 
 
 /* Banners */
 
+$string['enableslideshow'] = 'Enable Slideshow';
+$string['enableslideshowdesc'] = 'Use to turn off slideshow entirely';
+
 $string['bannersettings'] = 'Slideshow Settings';
 $string['bannersettingssub'] = 'These settings control the slideshow that appears on the Moodle Frontpage.';
 $string['bannersettingsdesc'] = 'Enable and determine settings for each slide below.';
 
 
-$string['bannerindicator'] = 'Slide Number ';
+$string['bannerindicator'] = 'Slide Number {$a}';
 $string['bannerindicatordesc'] = 'Set up this slide.';
 
 $string['slidespeed'] = 'Slide Duration ';
@@ -230,11 +233,14 @@ $string['togglemarketingdesc'] = 'Choose if you wish to hide or show the three M
 $string['marketingtitleicon'] = 'Heading Icon';
 $string['marketingtitleicondesc'] = 'Name of the icon you wish to use in the heading for the marketing spots. List is <a href="http://fontawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after the "fa-".';
 
+$string['marketingspots'] = 'Marketing Spots';
 
-$string['marketing1'] = 'Marketing Spot One';
-$string['marketing2'] = 'Marketing Spot Two';
-$string['marketing3'] = 'Marketing Spot Three';
-$string['marketing4'] = 'Marketing Spot Four';
+$string['marketingheading'] = 'Marketing Spot {$a}';
+$string['marketingheadingdesc'] = '';
+
+$string['marketingurl'] = 'Marketing URL';
+$string['marketingurldesc'] = 'If set this Marketing Spot will link to an (external) URL';
+
 
 $string['marketingtitle'] = 'Title';
 $string['marketingtitledesc'] = 'Title to show in this marketing spot.';
@@ -249,6 +255,10 @@ $string['marketingbuttontextdesc'] = 'Text to appear on the button.';
 $string['marketingbuttonurl'] = 'Link URL';
 $string['marketingbuttonurldesc'] = 'URL the button will point to.';
 
+$string['marketingspotsinrow'] = 'Number of Marketing spots in row';
+$string['marketingspotsinrowdesc'] = 'Select the number of marketing spots you want to in one row when using fullscreen. Note that this number will be devided by 2 on smaller devices';
+$string['marketingspotsnr'] = 'Number of Marketing spots';
+$string['marketingspotsnrdesc'] = 'Select the Number of Marketing Spots to show';
 
 /* Quick Links */
 $string['quicklinksheading'] = 'Quick links';
@@ -348,17 +358,17 @@ $string['enablecategoryicondesc'] = 'If enabled you will be able to select categ
 $string['categoryicondesc'] = 'Select the icon to use for the category ';
 
 /* Social Networks Icon Descriptions */
-$string['socialnetworksicondescriptionblog'] = 'Read our Blog';
-$string['socialnetworksicondescriptionwebsite'] = 'Visit our Website';
-$string['socialnetworksicondescriptiongoogleplus'] = 'Follow us on Google Plus';
-$string['socialnetworksicondescriptiontwitter'] = 'Follow us on Twitter';
-$string['socialnetworksicondescriptionfacebook'] = 'Like us on Facebook';
-$string['socialnetworksicondescriptionlinkedin'] = 'Connect with us on LinkedIn';
-$string['socialnetworksicondescriptionyoutube'] = 'Watch us on Youtube';
-$string['socialnetworksicondescriptionvimeo'] = 'Watch us on Vimeo';
-$string['socialnetworksicondescriptionflickr'] = 'View us on Flickr';
-$string['socialnetworksicondescriptionpinterest'] = 'Pin us on Pinterest';
-$string['socialnetworksicondescriptiontumblr'] = 'Find us on Tumblr';
-$string['socialnetworksicondescriptioninstagram'] = 'Find us on Instagram';
-$string['socialnetworksicondescriptionvk'] = 'Like us on VK';
-$string['socialnetworksicondescriptionskype'] = 'Call us on Skype';
+$string['socioblog'] = 'Read our Blog';
+$string['sociowebsite'] = 'Visit our Website';
+$string['sociogoogleplus'] = 'Follow us on Google Plus';
+$string['sociotwitter'] = 'Follow us on Twitter';
+$string['sociofacebook'] = 'Like us on Facebook';
+$string['sociolinkedin'] = 'Connect with us on LinkedIn';
+$string['socioyoutube'] = 'Watch us on Youtube';
+$string['sociovimeo'] = 'Watch us on Vimeo';
+$string['socioflickr'] = 'View us on Flickr';
+$string['sociopinterest'] = 'Pin us on Pinterest';
+$string['sociotumblr'] = 'Find us on Tumblr';
+$string['socioinstagram'] = 'Find us on Instagram';
+$string['sociovk'] = 'Like us on VK';
+$string['socioskype'] = 'Call us on Skype';

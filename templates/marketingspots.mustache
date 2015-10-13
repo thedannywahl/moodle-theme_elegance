@@ -1,0 +1,36 @@
+
+<div class="elegancewidth eboxshadow">
+    <div id="page-marketing" class="row row-flex row-flex-wrap ">
+        <h2 class="marketingheader col-xs-12">
+            <i class="fa fa-{{marketingtitleicon}}"></i>
+            {{marketingtitle}}
+        </h2>
+        {{#spots}}
+            {{#title}}
+
+            <div class="{{spotclass}}">
+                {{#url}}
+                <a href="{{{url}}}" target="new" title="{{title}}" class="marketing-block flex-col"> 
+                {{/url}}
+                {{^url}}
+                <div class="marketing-block flex-col">
+                {{/url}}
+                    <h3>
+                        {{#icon}}
+                        <i class="fa fa-{{icon}}"></i>
+                        {{/icon}}
+                        {{title}}
+                    </h3>
+                    {{{content}}}
+                {{^url}}
+                </div>
+                {{/url}}
+                {{#url}}
+                    </a>
+                {{/url}}
+            </div>
+
+            {{/title}}
+        {{/spots}}
+    </div>
+</div>

@@ -24,6 +24,50 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+function elegance_grid($hassidepre, $hassidepost) {
+
+    if ($hassidepre && $hassidepost) {
+        $regions = array('content' => 'col-sm-6 col-sm-push-3');
+        $regions['pre'] = 'col-sm-3 col-sm-pull-6';
+        $regions['post'] = 'col-sm-3';
+    } else if ($hassidepre && !$hassidepost) {
+        $regions = array('content' => 'col-sm-9 col-sm-push-3');
+        $regions['pre'] = 'col-sm-3 col-sm-pull-9';
+        $regions['post'] = 'emtpy';
+    } else if (!$hassidepre && $hassidepost) {
+        $regions = array('content' => 'col-sm-9');
+        $regions['pre'] = 'empty';
+        $regions['post'] = 'col-sm-3';
+    } else if (!$hassidepre && !$hassidepost) {
+        $regions = array('content' => 'col-md-12');
+        $regions['pre'] = 'empty';
+        $regions['post'] = 'empty';
+    }
+
+    if ('rtl' === get_string('thisdirection', 'langconfig')) {
+        if ($hassidepre && $hassidepost) {
+            $regions['pre'] = 'col-sm-3  col-sm-push-3';
+            $regions['post'] = 'col-sm-3 col-sm-pull-9';
+        } else if ($hassidepre && !$hassidepost) {
+            $regions = array('content' => 'col-sm-9');
+            $regions['pre'] = 'col-sm-3';
+            $regions['post'] = 'empty';
+        } else if (!$hassidepre && $hassidepost) {
+            $regions = array('content' => 'col-sm-9 col-sm-push-3');
+            $regions['pre'] = 'empty';
+            $regions['post'] = 'col-sm-3 col-sm-pull-9';
+        }
+    }
+    return $regions;
+}
+
+function elegance_settings() {
+    $theme = theme_config::load('elegance');
+    foreach ($theme->settings as $setting) {
+
+    }
+}
+
 
 function theme_elegance_get_nav_links($course, $sections, $sectionno) {
   // FIXME: This is really evil and should by using the navigation API.
@@ -78,14 +122,7 @@ function theme_elegance_get_nav_links($course, $sections, $sectionno) {
   return $links;
 }
 
-function theme_elegance_bootstrap3_grid($hassidepost) {
 
-        $regions = array('content' => 'col-sm-8 col-md-9');
-        $regions['pre'] = 'empty';
-        $regions['post'] = 'col-sm-4 col-md-3';
-
-       return $regions;
-}
 
 function theme_elegance_initialise_reader(moodle_page $page) {
     $page->requires->yui_module('moodle-theme_elegance-reader', 'M.theme_elegance.initreader', array());
@@ -96,6 +133,10 @@ function theme_elegance_process_css($css, $theme) {
     // Set the background image for the logo.
     $logo = $theme->setting_file_url('logo', 'logo');
     $css = theme_elegance_set_logo($css, $logo);
+
+    if (!empty($theme->settings->maxwidth)) {
+        $css = str_replace('"[[setting:maxwidth]]"', $theme->settings->maxwidth . "px", $css);
+    }
 
     // Set the background image for the header.
     $setting = 'headerbg';
@@ -282,7 +323,7 @@ function theme_elegance_process_css($css, $theme) {
  */
 function theme_elegance_set_logo($css, $logo) {
     global $OUTPUT;
-    $tag = '[[setting:logo]]';
+    $tag = '"[[setting:logo]]"';
     $replacement = $logo;
     if (is_null($replacement)) {
         $replacement = $OUTPUT->pix_url('bg/logo', 'theme');
@@ -294,7 +335,7 @@ function theme_elegance_set_logo($css, $logo) {
 }
 
 function theme_elegance_set_themecolor($css, $themecolor) {
-    $tag = '[[setting:themecolor]]';
+    $tag = '"[[setting:themecolor]]"';
     $replacement = $themecolor;
     if (is_null($replacement)) {
         $replacement = '#0098e0';
@@ -304,7 +345,7 @@ function theme_elegance_set_themecolor($css, $themecolor) {
 }
 
 function theme_elegance_set_bodycolor($css, $bodycolor) {
-    $tag = '[[setting:bodycolor]]';
+    $tag = '"[[setting:bodycolor]]"';
     $replacement = $bodycolor;
     if (is_null($replacement)) {
         $replacement = '#f1f1f4';
@@ -314,7 +355,7 @@ function theme_elegance_set_bodycolor($css, $bodycolor) {
 }
 
 function theme_elegance_set_fontcolor($css, $fontcolor) {
-    $tag = '[[setting:fontcolor]]';
+    $tag = '"[[setting:fontcolor]]"';
     $replacement = $fontcolor;
     if (is_null($replacement)) {
         $replacement = '#666';
@@ -324,7 +365,7 @@ function theme_elegance_set_fontcolor($css, $fontcolor) {
 }
 
 function theme_elegance_set_headingcolor($css, $headingcolor) {
-    $tag = '[[setting:headingcolor]]';
+    $tag = '"[[setting:headingcolor]]"';
     $replacement = $headingcolor;
     if (is_null($replacement)) {
         $replacement = '#27282a';
@@ -349,32 +390,19 @@ function theme_elegance_set_headingcolor($css, $headingcolor) {
 function theme_elegance_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
     if ($context->contextlevel == CONTEXT_SYSTEM) {
         $theme = theme_config::load('elegance');
+
+        if (!array_key_exists('cacheability', $options)) {
+            $options['cacheability'] = 'public';
+        }
+
         if ($filearea === 'logo') {
             return $theme->setting_file_serve('logo', $args, $forcedownload, $options);
         } else if ($filearea === 'headerbg') {
             return $theme->setting_file_serve('headerbg', $args, $forcedownload, $options);
         } else if ($filearea === 'bodybg') {
             return $theme->setting_file_serve('bodybg', $args, $forcedownload, $options);
-        } else if ($filearea === 'bannerimage1') {
-            return $theme->setting_file_serve('bannerimage1', $args, $forcedownload, $options);
-        } else if ($filearea === 'bannerimage2') {
-            return $theme->setting_file_serve('bannerimage2', $args, $forcedownload, $options);
-        } else if ($filearea === 'bannerimage3') {
-            return $theme->setting_file_serve('bannerimage3', $args, $forcedownload, $options);
-        } else if ($filearea === 'bannerimage4') {
-            return $theme->setting_file_serve('bannerimage4', $args, $forcedownload, $options);
-        } else if ($filearea === 'bannerimage5') {
-            return $theme->setting_file_serve('bannerimage5', $args, $forcedownload, $options);
-        } else if ($filearea === 'bannerimage6') {
-            return $theme->setting_file_serve('bannerimage6', $args, $forcedownload, $options);
-        } else if ($filearea === 'bannerimage7') {
-            return $theme->setting_file_serve('bannerimage7', $args, $forcedownload, $options);
-        } else if ($filearea === 'bannerimage8') {
-            return $theme->setting_file_serve('bannerimage8', $args, $forcedownload, $options);
-        } else if ($filearea === 'bannerimage9') {
-            return $theme->setting_file_serve('bannerimage9', $args, $forcedownload, $options);
-        } else if ($filearea === 'bannerimage10') {
-            return $theme->setting_file_serve('bannerimage10', $args, $forcedownload, $options);
+        } else if (preg_match('/bannerimage\d+/', $filearea)) {
+            return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
         } else if ($filearea === 'loginimage1') {
             return $theme->setting_file_serve('loginimage1', $args, $forcedownload, $options);
         } else if ($filearea === 'loginimage2') {
@@ -401,7 +429,7 @@ function theme_elegance_pluginfile($course, $cm, $context, $filearea, $args, $fo
  * @return string The CSS which now contains our custom CSS.
  */
 function theme_elegance_set_customcss($css, $customcss) {
-    $tag = '[[setting:customcss]]';
+    $tag = '"[[setting:customcss]]"';
     $replacement = $customcss;
     if (is_null($replacement)) {
         $replacement = '';
@@ -420,7 +448,7 @@ function theme_elegance_set_customcss($css, $customcss) {
  * @return string The CSS which now contains our custom Moodle Mobile CSS.
  */
 function theme_elegance_set_moodlemobilecss($css, $moodlemobilecss) {
-    $tag = '[[setting:moodlemobilecss]]';
+    $tag = '"[[setting:moodlemobilecss]]"';
     $replacement = $moodlemobilecss;
     if (is_null($replacement)) {
         $replacement = '';
@@ -486,7 +514,7 @@ function elegance_set_customcss() {
 
 function theme_elegance_set_headerbg($css, $headerbg, $setting) {
     global $OUTPUT;
-    $tag = '[[setting:headerbg]]';
+    $tag = '"[[setting:headerbg]]"';
     $replacement = $headerbg;
     if (is_null($replacement)) {
         // Get default image from themes 'bg' folder of the name in $setting.
@@ -498,7 +526,7 @@ function theme_elegance_set_headerbg($css, $headerbg, $setting) {
 
 function theme_elegance_set_bodybg($css, $bodybg, $setting) {
     global $OUTPUT;
-    $tag = '[[setting:bodybg]]';
+    $tag = '"[[setting:bodybg]]"';
     $replacement = $bodybg;
     if (is_null($replacement)) {
         // Get default image from themes 'bg' folder of the name in $setting.
@@ -509,7 +537,7 @@ function theme_elegance_set_bodybg($css, $bodybg, $setting) {
 }
 
 function theme_elegance_set_quicklinkiconcolor($css, $quicklinkiconcolor, $quicklinksnumber) {
-    $tag = '[[setting:quicklinkiconcolor' . $quicklinksnumber . ']]';
+    $tag = '"[[setting:quicklinkiconcolor' . $quicklinksnumber . ']]"';
     $replacement = $quicklinkiconcolor;
 
     if (is_null($replacement)) {
@@ -520,7 +548,7 @@ function theme_elegance_set_quicklinkiconcolor($css, $quicklinkiconcolor, $quick
 }
 
 function theme_elegance_set_quicklinkbuttoncolor($css, $quicklinkbuttoncolor, $quicklinksnumber) {
-    $tag = '[[setting:quicklinkbuttoncolor' . $quicklinksnumber . ']]';
+    $tag = '"[[setting:quicklinkbuttoncolor' . $quicklinksnumber . ']]"';
     $replacement = $quicklinkbuttoncolor;
 
     if (is_null($replacement)) {
@@ -531,7 +559,7 @@ function theme_elegance_set_quicklinkbuttoncolor($css, $quicklinkbuttoncolor, $q
 }
 
 function theme_elegance_set_bannercolor1($css, $bannercolor1) {
-    $tag = '[[setting:slide1color]]';
+    $tag = '"[[setting:slide1color]]"';
     $replacement = $bannercolor1;
     if (is_null($replacement)) {
         $replacement = '#000000';
@@ -541,7 +569,7 @@ function theme_elegance_set_bannercolor1($css, $bannercolor1) {
 }
 
 function theme_elegance_set_bannercolor2($css, $bannercolor2) {
-    $tag = '[[setting:slide2color]]';
+    $tag = '"[[setting:slide2color]]"';
     $replacement = $bannercolor2;
     if (is_null($replacement)) {
         $replacement = '#000000';
@@ -551,7 +579,7 @@ function theme_elegance_set_bannercolor2($css, $bannercolor2) {
 }
 
 function theme_elegance_set_bannercolor3($css, $bannercolor3) {
-    $tag = '[[setting:slide3color]]';
+    $tag = '"[[setting:slide3color]]"';
     $replacement = $bannercolor3;
     if (is_null($replacement)) {
         $replacement = '#000000';
@@ -561,7 +589,7 @@ function theme_elegance_set_bannercolor3($css, $bannercolor3) {
 }
 
 function theme_elegance_set_bannercolor4($css, $bannercolor4) {
-    $tag = '[[setting:slide4color]]';
+    $tag = '"[[setting:slide4color]]"';
     $replacement = $bannercolor4;
     if (is_null($replacement)) {
         $replacement = '#000000';
@@ -571,7 +599,7 @@ function theme_elegance_set_bannercolor4($css, $bannercolor4) {
 }
 
 function theme_elegance_set_bannercolor5($css, $bannercolor5) {
-    $tag = '[[setting:slide5color]]';
+    $tag = '"[[setting:slide5color]]"';
     $replacement = $bannercolor5;
     if (is_null($replacement)) {
         $replacement = '#000000';
@@ -581,7 +609,7 @@ function theme_elegance_set_bannercolor5($css, $bannercolor5) {
 }
 
 function theme_elegance_set_bannercolor6($css, $bannercolor6) {
-    $tag = '[[setting:slide6color]]';
+    $tag = '"[[setting:slide6color]]"';
     $replacement = $bannercolor6;
     if (is_null($replacement)) {
         $replacement = '#000000';
@@ -591,7 +619,7 @@ function theme_elegance_set_bannercolor6($css, $bannercolor6) {
 }
 
 function theme_elegance_set_bannercolor7($css, $bannercolor7) {
-    $tag = '[[setting:slide7color]]';
+    $tag = '"[[setting:slide7color]]"';
     $replacement = $bannercolor7;
     if (is_null($replacement)) {
         $replacement = '#000000';
@@ -601,7 +629,7 @@ function theme_elegance_set_bannercolor7($css, $bannercolor7) {
 }
 
 function theme_elegance_set_bannercolor8($css, $bannercolor8) {
-    $tag = '[[setting:slide8color]]';
+    $tag = '"[[setting:slide8color]]"';
     $replacement = $bannercolor8;
     if (is_null($replacement)) {
         $replacement = '#000000';
@@ -611,7 +639,7 @@ function theme_elegance_set_bannercolor8($css, $bannercolor8) {
 }
 
 function theme_elegance_set_bannercolor9($css, $bannercolor9) {
-    $tag = '[[setting:slide9color]]';
+    $tag = '"[[setting:slide9color]]"';
     $replacement = $bannercolor9;
     if (is_null($replacement)) {
         $replacement = '#000000';
@@ -621,7 +649,7 @@ function theme_elegance_set_bannercolor9($css, $bannercolor9) {
 }
 
 function theme_elegance_set_bannercolor10($css, $bannercolor10) {
-    $tag = '[[setting:slide10color]]';
+    $tag = '"[[setting:slide10color]]"';
     $replacement = $bannercolor10;
     if (is_null($replacement)) {
         $replacement = '#000000';
@@ -631,7 +659,7 @@ function theme_elegance_set_bannercolor10($css, $bannercolor10) {
 }
 
 function theme_elegance_set_transparency($css, $transparency) {
-    $tag = '[[setting:transparency]]';
+    $tag = '"[[setting:transparency]]"';
     $replacement = $transparency;
     if (is_null($replacement)) {
         $replacement = '1';
@@ -641,7 +669,7 @@ function theme_elegance_set_transparency($css, $transparency) {
 }
 
 function theme_elegance_set_videowidth($css, $videowidth) {
-    $tag = '[[setting:videowidth]]';
+    $tag = '"[[setting:videowidth]]"';
     $replacement = $videowidth;
     if (is_null($replacement)) {
         $replacement = '100%';

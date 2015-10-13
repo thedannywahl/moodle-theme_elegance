@@ -32,6 +32,8 @@ $THEME->yuicssmodules = array();
 $THEME->name = 'elegance';
 
 $THEME->parents = array('bootstrap');
+$THEME->parents_exclude_sheets = array('bootstrap' => array('moodle'));
+$THEME->sheets = array('elegance', 'custom');
 
 $THEME->supportscssoptimisation = false;
 
@@ -74,10 +76,10 @@ if ((!empty($THEME->settings->enablecategoryicon)) && ($THEME->settings->enablec
 
 if ((!empty($THEME->settings->enablecustomlogin)) && ($THEME->settings->enablecustomlogin == '1')) {
 	$loginlayout='login.php';
-  $loginsheet='login1';
+    $loginsheet='login1';
 } else {
-  $loginlayout='default.php';
-  $loginsheet='login2';
+    $loginlayout='default.php';
+    $loginsheet='login2';
 }
 
 if ('ltr' === get_string('thisdirection', 'langconfig')) {
@@ -95,63 +97,71 @@ $THEME->layouts = array(
     // Standard layout with blocks, this is recommended for most pages with general information.
     'standard' => array(
         'file' => 'default.php',
-        'regions' => array('side-post'),
-        'defaultregion' => 'side-post',
+        'regions' => array('side-pre', 'side-post'),
+        'defaultregion' => 'side-pre',
     ),
     // Main course page.
     'course' => array(
         'file' => 'default.php',
-        'regions' => array('side-post'),
-        'defaultregion' => 'side-post',
-        'options' => array('langmenu'=>true),
+        'regions' => array('side-pre', 'side-post'),
+        'defaultregion' => 'side-pre',
+        'options' => array('langmenu' => true),
     ),
     'coursecategory' => array(
         'file' => 'default.php',
-        'regions' => array('side-post'),
-        'defaultregion' => 'side-post',
+        'regions' => array('side-pre', 'side-post'),
+        'defaultregion' => 'side-pre',
     ),
-    // part of course, typical for modules - default page layout if $cm specified in require_login().
+    // Part of course, typical for modules - default page layout if $cm specified in require_login().
     'incourse' => array(
         'file' => 'default.php',
-        'regions' => array('side-post'),
-        'defaultregion' => 'side-post',
+        'regions' => array('side-pre', 'side-post'),
+        'defaultregion' => 'side-pre',
     ),
     // The site home page.
     'frontpage' => array(
-        'file' => 'frontpage.php',
-        'regions' => array('side-post','side-middle','hidden-dock'),
-        'defaultregion' => 'side-post',
-        'options' => array('nonavbar'=>false),
+        'file' => 'default.php',
+        'regions' => array('side-pre', 'side-post'),
+        'defaultregion' => 'side-pre',
+        'options' => array('nonavbar' => true, 'hasbanner' => true, 'hasmarketing' => true),
     ),
     // Server administration scripts.
     'admin' => array(
         'file' => 'default.php',
-        'regions' => array('side-post'),
-        'defaultregion' => 'side-post',
+        'regions' => array('side-pre'),
+        'defaultregion' => 'side-pre',
+        'options' => array('fluid' => true),
     ),
     // My dashboard page.
     'mydashboard' => array(
-        'file' => 'my.php',
-        'regions' => array('side-post'),
-        'defaultregion' => 'side-post',
-        'options' => array('langmenu'=>true),
+        'file' => 'default.php',
+        'regions' => array('side-pre', 'side-post'),
+        'defaultregion' => 'side-pre',
+        'options' => array('langmenu' => true),
     ),
     // My public page.
     'mypublic' => array(
         'file' => 'default.php',
-        'regions' => array('side-post'),
-        'defaultregion' => 'side-post',
+        'regions' => array('side-pre', 'side-post'),
+        'defaultregion' => 'side-pre',
     ),
     'login' => array(
-    	'file' => $loginlayout,
+        'file' => 'login.php',
         'regions' => array(),
-        'options' => array('langmenu'=>true, 'nonavbar'=>false),
+        'options' => array('langmenu' => true, 'nonavbar' => true),
+    ),
+
+    // Pages that appear in pop-up windows - no navigation, no blocks, no header.
+    'popup' => array(
+        'file' => 'popup.php',
+        'regions' => array(),
+        'options' => array('nofooter' => true, 'nonavbar' => true),
     ),
     // No blocks and minimal footer - used for legacy frame layouts only!
     'frametop' => array(
         'file' => 'default.php',
         'regions' => array(),
-        'options' => array('nofooter'=>true, 'nocoursefooter'=>true),
+        'options' => array('nofooter' => true, 'nocoursefooter' => true),
     ),
     // Embeded pages, like iframe/object embeded in moodleform - it needs as much space as possible.
     'embedded' => array(
@@ -169,7 +179,7 @@ $THEME->layouts = array(
     'print' => array(
         'file' => 'default.php',
         'regions' => array(),
-        'options' => array('nofooter'=>true, 'nonavbar'=>false),
+        'options' => array('nofooter' => true, 'nonavbar' => false),
     ),
     // The pagelayout used when a redirection is occuring.
     'redirect' => array(
@@ -179,14 +189,14 @@ $THEME->layouts = array(
     // The pagelayout used for reports.
     'report' => array(
         'file' => 'default.php',
-        'regions' => array('side-post'),
-        'defaultregion' => 'side-post',
+        'regions' => array('side-pre'),
+        'defaultregion' => 'side-pre',
     ),
     // The pagelayout used for safebrowser and securewindow.
     'secure' => array(
-        'file' => 'secure.php',
-        'regions' => array('side-post'),
-        'defaultregion' => 'side-post'
+        'file' => 'default.php',
+        'regions' => array('side-pre', 'side-post'),
+        'defaultregion' => 'side-pre'
     ),
 );
 
@@ -199,9 +209,5 @@ $THEME->javascripts_footer = array(
     'fitvid', 'blocks','reader'
 );
 
-if (core_useragent::is_ie() && !core_useragent::check_ie_version('9.0')) {
-    $THEME->javascripts[] = 'html5shiv';
-    $THEME->javascripts[] = 'respond.min';
-}
 
 $THEME->hidefromselector = false;
