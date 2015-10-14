@@ -121,7 +121,7 @@ $THEME->layouts = array(
     // The site home page.
     'frontpage' => array(
         'file' => 'default.php',
-        'regions' => array('side-pre', 'side-post'),
+        'regions' => array('side-pre', 'side-post', 'side-middle'),
         'defaultregion' => 'side-pre',
         'options' => array('nonavbar' => true, 'hasbanner' => true, 'hasmarketing' => true, 'hasquicklinks' => true),
     ),
@@ -148,7 +148,7 @@ $THEME->layouts = array(
     'login' => array(
         'file' => 'default.php',
         'regions' => array(),
-        'options' => array('langmenu' => true, 'nonavbar' => true),
+        'options' => array('langmenu' => true, 'nonavbar' => true, 'transparentmain' => true, 'nomoodleheader' => true),
     ),
 
     // Pages that appear in pop-up windows - no navigation, no blocks, no header.

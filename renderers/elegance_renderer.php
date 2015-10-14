@@ -32,6 +32,10 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
         $settings = $theme->settings;
         $slidenum = $settings->slidenumber;
 
+        if (!$settings->enableslideshow) {
+            return '';
+        }
+
         $template = new Object();
         $banners = array();
         foreach (range(1, $slidenum) as $bannernumber) {
@@ -79,10 +83,13 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
         return $this->render_from_template('theme_elegance/banner', $template);
     }
 
-    public function marketing_spots($hasmarketing) {
+    public function marketing_spots($hasmarketing, $hassidemiddle) {
+        global $OUTPUT;
         if (!$hasmarketing) {
             return '';
         }
+
+        $blocksmiddle = $OUTPUT->blocks('side-middle');
 
         $theme = theme_config::load('elegance');
         $settings = $theme->settings;
@@ -92,6 +99,9 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
         $template->spots = array();
         $template->title = '';
         $template->marketingtitletitleicon = '';
+        if ($hassidemiddle) {
+            $template->blocksmiddle = $blocksmiddle;
+        }
         if (!empty($settings->marketingtitle)) {
             $template->marketingtitle = $settings->marketingtitle;
 
@@ -226,5 +236,18 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
         }
    
         return $this->render_from_template('theme_elegance/quicklinks', $template);
+    }
+
+    public function hiddenblocks() {
+        global $OUTPUT;
+
+        if (!is_siteadmin()) {
+            return '';
+        }
+
+        $template = new Object();
+        $template->blocks = $OUTPUT->blocks('hidden-dock');
+
+        return $this->render_from_template('theme_elegance/hiddenblocks', $template);
     }
 }

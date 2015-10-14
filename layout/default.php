@@ -25,19 +25,30 @@
  */
 
 $hassidepost = $PAGE->blocks->region_has_content('side-post', $OUTPUT);
+$hassidemiddle = $PAGE->blocks->region_has_content('side-middle', $OUTPUT);
+$hassidepre = $PAGE->blocks->region_has_content('side-pre', $OUTPUT);
+$hassidepost = $PAGE->blocks->region_has_content('side-post', $OUTPUT);
+
+$knownregionpre = $PAGE->blocks->is_known_region('side-pre');
+$knownregionpost = $PAGE->blocks->is_known_region('side-post');
+
+$regions = elegance_grid($hassidepre, $hassidepost);
+
+if ($PAGE->user_is_editing()) {
+    $hassidemiddle = true;
+}
 
 $widgets = $PAGE->get_renderer('theme_elegance', 'widgets');
 
-$hascopyright = (empty($PAGE->theme->settings->copyright)) ? false : $PAGE->theme->settings->copyright;
-$hasfootnote = (empty($PAGE->theme->settings->footnote)) ? false : $PAGE->theme->settings->footnote;
-$hastiles = (!empty($PAGE->theme->settings->tiles));
-$haslogo = (empty($PAGE->theme->settings->logo)) ? false : $PAGE->theme->settings->logo;
-$invert = (!empty($PAGE->theme->settings->invert)) ? true : $PAGE->theme->settings->invert;
-$fluid = (!empty($PAGE->layout_options['fluid']));
+$haslogo = (!empty($PAGE->theme->settings->logo));
+$invert = (!empty($PAGE->theme->settings->invert));
+
 $hasbanner = (!empty($PAGE->layout_options['hasbanner']));
 $hasmarketing = (!empty($PAGE->layout_options['hasmarketing']));
 $hasfooter = (empty($PAGE->layout_options['nofooter']));
 $hasquicklinks = (!empty($PAGE->layout_options['hasquicklinks']));
+$transparentmain = (!empty($PAGE->layout_options['transparentmain']));
+$hasmoodleheader = (empty($PAGE->layout_options['nomoodleheader']));
 
 if ($haslogo) {
     $logo = '<div id="logo"></div>';
@@ -51,25 +62,17 @@ if ($invert) {
   $navbartype = 'navbar-default';
 }
 
-
-$container = 'container-fluid';
-
-//CLEANUP!
-
-$hassidepre = $PAGE->blocks->region_has_content('side-pre', $OUTPUT);
-$hassidepost = $PAGE->blocks->region_has_content('side-post', $OUTPUT);
-
-$knownregionpre = $PAGE->blocks->is_known_region('side-pre');
-$knownregionpost = $PAGE->blocks->is_known_region('side-post');
-
-$regions = elegance_grid($hassidepre, $hassidepost);
+if ($transparentmain) {
+    $mainclass = '';
+} else {
+    $mainclass = 'eboxshadow bg-white p-20';
+}
 
 $knownregionpost = $PAGE->blocks->is_known_region('side-post');
 
 $PAGE->set_popup_notification_allowed(false);
+
 $PAGE->requires->jquery();
-
-
 $PAGE->requires->jquery_plugin('fitvids', 'theme_elegance');
 $PAGE->requires->jquery_plugin('unslider', 'theme_elegance');
 $PAGE->requires->jquery_plugin('eventswipe', 'theme_elegance');
@@ -121,30 +124,40 @@ echo $OUTPUT->doctype() ?>
 
     <?php echo $widgets->banner($hasbanner); ?>
 
-    <?php echo $widgets->marketing_spots($hasmarketing); ?>
+    <?php echo $widgets->marketing_spots($hasmarketing, $hassidemiddle); ?>
+    <div class="container-fluid">
+        <?php if ($hasmoodleheader) { ?>
+        <header id="moodleheader" class="clearfix elegancewidth">
+            
+            <div id="course-header" class="p-l-15 p-r-15 p-b-10 p-t-10">
+                <?php echo $OUTPUT->page_heading(); ?>
+                <?php echo $OUTPUT->course_header(); ?>
+                <?php echo $OUTPUT->course_content_header(); ?>
+            </div>
 
-    <header id="moodleheader" class="clearfix elegancewidth">
-        <div id="course-header" class="p-l-15 p-r-15 p-b-10 p-t-10">
-            <?php echo $OUTPUT->page_heading(); ?>
-            <?php echo $OUTPUT->course_header(); ?>
-            <?php echo $OUTPUT->course_content_header(); ?>
-        </div>
-    </header>
-    <div id="page-navbar" class="elegancewidth">
-        <nav class="breadcrumb-nav elegancewidth" role="navigation" aria-label="breadcrumb"><?php echo $OUTPUT->navbar(); ?></nav>
-        <div class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></div>
-        <div class="clearfix"></div>
+        </header>
+        <?php } ?>
     </div>
+    <div id="page-navbar" class="elegancewidth">
+        <div class="container-fluid">
+            <nav class="breadcrumb-nav elegancewidth" role="navigation" aria-label="breadcrumb"><?php echo $OUTPUT->navbar(); ?></nav>
+            <div class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="container-fluid">
     <section id="page" class="elegancewidth">
-    
         <div id="page-content" class="row">
-            <div id="region-main" class="eboxshadow <?php echo $regions['content']; ?>">
+            <div id="region-main" class="<?php echo $regions['content']; ?>">
+                <div class="<?php echo $mainclass; ?>">
                 <?php
                 echo $widgets->quicklinks($hasquicklinks);
                 echo $OUTPUT->course_content_header();
                 echo $OUTPUT->main_content();
                 echo $OUTPUT->course_content_footer();
+                echo $widgets->hiddenblocks();
                 ?>
+                </div>
             </div>
 
             <?php
@@ -155,19 +168,24 @@ echo $OUTPUT->doctype() ?>
             if ($knownregionpost) {
                 echo $OUTPUT->blocks('side-post', $regions['post']);
             }?>
+
+
         </div>
     </section>
+    </div>
 </div>
 
 <footer id="page-footer" class="elegancewidth">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6">
-                <?php echo $widgets->footerleft($hasfooter); ?>
-            </div>
-            <div class="col-md-6">
-                <?php echo $OUTPUT->login_info(); ?>
-                <?php echo $widgets->footerright($hasfooter); ?>
+    <div class="page-footer-inner">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <?php echo $widgets->footerleft($hasfooter); ?>
+                </div>
+                <div class="col-md-6">
+                    <?php echo $OUTPUT->login_info(); ?>
+                    <?php echo $widgets->footerright($hasfooter); ?>
+                </div>
             </div>
         </div>
     </div>

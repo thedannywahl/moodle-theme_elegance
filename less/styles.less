@@ -48,11 +48,15 @@ body, html {
     position: relative;
 }
 
-body.path-login {
-    background-color: transparent;
-    #region-main {
+body,
+html {
+    &.path-login {
         background-color: transparent;
-        box-shadow: none;
+        background-image: none;
+        #region-main {
+            background-color: transparent;
+            box-shadow: none;
+        }
     }
 }
 
@@ -71,6 +75,10 @@ body.pagelayout-maintenance {
 #page-content-wrapper {
     position: relative;
     min-height: 100%;
+    background-image: url("[[setting:bodybg]]");
+    background-repeat: no-repeat;
+    background-position: fixed center center;
+    background-size: cover;
 
 }
 
@@ -122,10 +130,8 @@ a {
     outline: none;
 }
 
-.elegancewidth {
+.container-fluid {
     max-width: "[[setting:maxwidth]]";
-    margin-left: auto;
-    margin-right: auto;
 }
 
 a:hover, a:focus{
@@ -138,17 +144,17 @@ a:hover, a:focus{
 //     margin-top: 20px;
 // }
 
-#region-main{
-    padding-right: 0px;
-}
+// #region-main{
+//     padding-right: 0px;
+// }
 
-#block-region-side-pre {
-    padding-left: 0px !important;
-}
+// #block-region-side-pre {
+//     padding-left: 0px !important;
+// }
 
-#block-region-side-post {
-    padding-right: 0px !important;
-}
+// #block-region-side-post {
+//     padding-right: 0px !important;
+// }
 
 .fa-muted {
     color: #ddd;
@@ -396,10 +402,6 @@ text-shadow: 0 1px 1px rgba(255,255,255,0.75);
     font-size: 1.4em;
     margin-bottom: 5px;
     font-weight: 400;
-}
-
-#quicklinks.row {
-    margin-bottom: 10px;
 }
 
 h2.marketingheader,
@@ -836,7 +838,8 @@ h2.quicklinksheader .fa {
 
 /* @group Footer */
 
-#page-footer {
+.page-footer-inner {
+    position: relative;
     border-top: 10px solid #acacae !important;
     background: #d8d8db;
     font-size: .8em;
@@ -1447,37 +1450,15 @@ content: "\e079";
 /* @group Frontpage */
 
 #block-region-side-middle .block {
-    border: 0px none;
-    margin-top: 0px;
-    padding: 0px;
-    background: transparent;
+    .eboxshadow;
 }
 
-#block-region-side-middle .block .header {
-    padding: 0px 0px;
-}
 
 #block-region-side-middle .block .block-hider-show, 
 #block-region-side-middle .block .block-hider-hide {
     display: none;
 }
 
-#block-region-side-middle .block .header .title h2 {
-    padding: 0px;
-    padding-bottom: 10px;
-}
-
-#block-region-side-middle .block .header .title h2::after {
-    top: 13px;
-    width: 150px;
-}
-
-#block-region-side-middle .block .content {
-    height: 220px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    padding: 5px 0px;
-}
 
 #block-region-side-middle .block_rss_client .list li {
     clear: both;
@@ -1515,9 +1496,7 @@ content: "\e079";
 /* @group Bootstrap */
 
 /* override from theme_bootstrap- not sure where it's coming from */
-.row {
-    margin: 0;
-}
+
 
 /* @group Buttons */
 
@@ -1731,7 +1710,6 @@ blockquote>.icon-quote-left{
 
 #region-main,
 #page-marketing {
-    .p-20;
     // padding: 18px 20px;
     // -webkit-box-shadow: none;
     // -moz-box-shadow: none;
@@ -2881,7 +2859,6 @@ table.flexible, .generaltable {
 
 
 .block,
-#region-main,
 #page-marketing,
 .view h2,
 .view a.info {

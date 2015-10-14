@@ -1395,39 +1395,39 @@ pre code {
 .container {
   margin-right: auto;
   margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 @media (min-width: 768px) {
   .container {
-    width: 750px;
+    width: 740px;
   }
 }
 @media (min-width: 992px) {
   .container {
-    width: 970px;
+    width: 960px;
   }
 }
 @media (min-width: 1200px) {
   .container {
-    width: 1170px;
+    width: 1160px;
   }
 }
 .container-fluid {
   margin-right: auto;
   margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .row {
-  margin-left: -15px;
-  margin-right: -15px;
+  margin-left: -10px;
+  margin-right: -10px;
 }
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   float: left;
@@ -2743,8 +2743,8 @@ select[multiple].form-group-lg .form-control {
 .form-horizontal .form-group,
 .mform .fitem,
 .form-item {
-  margin-left: -15px;
-  margin-right: -15px;
+  margin-left: -10px;
+  margin-right: -10px;
 }
 @media (min-width: 768px) {
   .form-horizontal .control-label {
@@ -2754,7 +2754,7 @@ select[multiple].form-group-lg .form-control {
   }
 }
 .form-horizontal .has-feedback .form-control-feedback {
-  right: 15px;
+  right: 10px;
 }
 @media (min-width: 768px) {
   .form-horizontal .form-group-lg .control-label {
@@ -3921,8 +3921,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-collapse {
   overflow-x: visible;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 10px;
+  padding-left: 10px;
   border-top: 1px solid transparent;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
   -webkit-overflow-scrolling: touch;
@@ -3967,8 +3967,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .container-fluid > .navbar-header,
 .container > .navbar-collapse,
 .container-fluid > .navbar-collapse {
-  margin-right: -15px;
-  margin-left: -15px;
+  margin-right: -10px;
+  margin-left: -10px;
 }
 @media (min-width: 768px) {
   .container > .navbar-header,
@@ -4012,7 +4012,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-brand {
   float: left;
-  padding: 15px 15px;
+  padding: 15px 10px;
   font-size: 18px;
   line-height: 20px;
   height: 50px;
@@ -4027,13 +4027,13 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 @media (min-width: 768px) {
   .navbar > .container .navbar-brand,
   .navbar > .container-fluid .navbar-brand {
-    margin-left: -15px;
+    margin-left: -10px;
   }
 }
 .navbar-toggle {
   position: relative;
   float: right;
-  margin-right: 15px;
+  margin-right: 10px;
   padding: 9px 10px;
   margin-top: 8px;
   margin-bottom: 8px;
@@ -4060,7 +4060,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-nav {
-  margin: 7.5px -15px;
+  margin: 7.5px -10px;
 }
 .navbar-nav > li > a {
   padding-top: 10px;
@@ -4103,9 +4103,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-form {
-  margin-left: -15px;
-  margin-right: -15px;
-  padding: 10px 15px;
+  margin-left: -10px;
+  margin-right: -10px;
+  padding: 10px 10px;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -4213,8 +4213,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 @media (min-width: 768px) {
   .navbar-text {
     float: left;
-    margin-left: 15px;
-    margin-right: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }
 @media (min-width: 768px) {
@@ -4225,7 +4225,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .navbar-right {
     float: right !important;
     float: right;
-    margin-right: -15px;
+    margin-right: -10px;
   }
   .navbar-right ~ .navbar-right {
     margin-right: 0;
@@ -6636,8 +6636,8 @@ img.icon.hide {
 .dir-ltr.editing.used-region-side-post.used-region-side-pre #region-main {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 @media (min-width: 768px) {
   .dir-ltr.editing.used-region-side-post.used-region-side-pre #region-main {
@@ -6664,8 +6664,8 @@ img.icon.hide {
 .dir-ltr.editing.used-region-side-post.used-region-side-pre #block-region-side-post {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
   min-height: 100px;
 }
 @media (min-width: 768px) {
@@ -6683,8 +6683,8 @@ img.icon.hide {
 .dir-ltr.editing.used-region-side-post.used-region-side-pre #block-region-side-pre {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
   min-height: 100px;
 }
 @media (min-width: 768px) {
@@ -6712,8 +6712,8 @@ img.icon.hide {
 .dir-rtl.editing.used-region-side-post.used-region-side-pre #region-main {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 @media (min-width: 768px) {
   .dir-rtl.editing.used-region-side-post.used-region-side-pre #region-main {
@@ -6740,8 +6740,8 @@ img.icon.hide {
 .dir-rtl.editing.used-region-side-post.used-region-side-pre #block-region-side-pre {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
   min-height: 100px;
 }
 @media (min-width: 768px) {
@@ -6769,8 +6769,8 @@ img.icon.hide {
 .dir-rtl.editing.used-region-side-post.used-region-side-pre #block-region-side-post {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
   min-height: 100px;
 }
 @media (min-width: 768px) {
@@ -6799,8 +6799,8 @@ img.icon.hide {
 .has_dock.empty-region-side-post #region-main {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 @media (min-width: 768px) {
   .has_dock.empty-region-side-pre #region-main,
@@ -6832,8 +6832,8 @@ img.icon.hide {
 .has_dock.empty-region-side-post.used-region-side-pre #region-main {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 @media (min-width: 768px) {
   .has_dock.empty-region-side-pre.used-region-side-post #region-main,
@@ -11163,8 +11163,8 @@ a.ygtvspacer:hover {
   padding-left: 5px;
 }
 .box.message {
-  margin-left: -15px;
-  margin-right: -15px;
+  margin-left: -10px;
+  margin-right: -10px;
 }
 .box.message .mdl-align {
   text-align: left;
@@ -11247,8 +11247,8 @@ textarea.box.message .message_form input[type="text"] {
 .box.message .contactselector {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .box.message .contactselector .singleselect select {
   width: 100%;
@@ -11263,8 +11263,8 @@ textarea.box.message .message_form input[type="text"] {
   padding: 5px 10px;
 }
 .box.message .contactselector form#usergroupform fieldset {
-  margin-left: -15px;
-  margin-right: -15px;
+  margin-left: -10px;
+  margin-right: -10px;
   margin-left: 0;
   margin-right: 0;
 }
@@ -11275,8 +11275,8 @@ textarea.box.message .message_form input[type="text"] {
 .box.message .contactselector form#usergroupform fieldset label {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
   display: block !important;
 }
 @media (min-width: 992px) {
@@ -11288,8 +11288,8 @@ textarea.box.message .message_form input[type="text"] {
 .box.message .contactselector form#usergroupform fieldset select {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
   float: left;
   display: block;
   width: 100%;
@@ -11395,8 +11395,8 @@ textarea.box.message .contactselector form#usergroupform fieldset select {
 .box.message .messagearea {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 @media (min-width: 992px) {
   .box.message .messagearea {
@@ -11651,14 +11651,14 @@ textarea.box.message .contactselector form#usergroupform fieldset select {
   clear: both;
 }
 .box.message .messagearea .messagehistory .messagehistory .mdl-left {
-  margin-left: -15px;
-  margin-right: -15px;
+  margin-left: -10px;
+  margin-right: -10px;
 }
 .box.message .messagearea .messagehistory .messagehistory .mdl-left.left .message {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 @media (min-width: 992px) {
   .box.message .messagearea .messagehistory .messagehistory .mdl-left.left .message {
@@ -11672,8 +11672,8 @@ textarea.box.message .contactselector form#usergroupform fieldset select {
 .box.message .messagearea .messagehistory .messagehistory .mdl-left.right .message {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 @media (min-width: 992px) {
   .box.message .messagearea .messagehistory .messagehistory .mdl-left.right .message {
@@ -11698,16 +11698,16 @@ textarea.box.message .contactselector form#usergroupform fieldset select {
   display: block;
 }
 .box.message .messagearea .messagehistory #message_user_pictures {
-  margin-left: -15px;
-  margin-right: -15px;
+  margin-left: -10px;
+  margin-right: -10px;
 }
 .box.message .messagearea .messagehistory #message_user_pictures .box.user {
   position: relative;
   float: left;
   width: 41.66666667%;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
   text-align: center;
 }
 .box.message .messagearea .messagehistory #message_user_pictures .box.between {
@@ -11715,8 +11715,8 @@ textarea.box.message .contactselector form#usergroupform fieldset select {
   float: left;
   width: 16.66666667%;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
   text-align: center;
 }
 .box.message .messagearea .messagehistory .messagehistorytype {
@@ -12830,9 +12830,9 @@ body.path-question-type .mform fieldset.hidden {
   -webkit-column-count: 2;
   -moz-column-count: 2;
   column-count: 2;
-  -webkit-column-gap: 30px;
-  -moz-column-gap: 30px;
-  column-gap: 30px;
+  -webkit-column-gap: 20px;
+  -moz-column-gap: 20px;
+  column-gap: 20px;
 }
 .userprofile .profile_tree section {
   display: inline-block;
@@ -12954,8 +12954,8 @@ fieldset[disabled] .userprofile .header-button-group .btn.active {
 .loginbox.onecolumn {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
@@ -12994,8 +12994,8 @@ fieldset[disabled] .userprofile .header-button-group .btn.active {
 .loginbox.twocolumns .loginpanel {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
@@ -13024,8 +13024,8 @@ fieldset[disabled] .userprofile .header-button-group .btn.active {
 .loginbox.twocolumns .signuppanel {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 @media (min-width: 768px) {
   .loginbox.twocolumns .signuppanel {
@@ -13836,8 +13836,8 @@ textarea.searchform input[type="text"] {
 .mform .fitem .fitemtitle {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 @media (min-width: 992px) {
   .mform .fitem .fitemtitle {
@@ -13859,8 +13859,8 @@ textarea.searchform input[type="text"] {
 .mform .fitem .felement {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 @media (min-width: 992px) {
   .mform .fitem .felement {
@@ -13975,14 +13975,14 @@ textarea.mform .fitem .felement input[type="password"] {
 }
 .mform .fitem_actionbuttons {
   margin-bottom: 15px;
-  margin-left: -15px;
-  margin-right: -15px;
+  margin-left: -10px;
+  margin-right: -10px;
 }
 .mform .fitem_actionbuttons > div.felement {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 @media (min-width: 992px) {
   .mform .fitem_actionbuttons > div.felement {
@@ -14053,8 +14053,8 @@ textarea.mform .fitem .felement input[type="password"] {
 .form-item .form-label {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 @media (min-width: 992px) {
   .form-item .form-label {
@@ -14070,8 +14070,8 @@ textarea.mform .fitem .felement input[type="password"] {
 .form-item .form-setting {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 @media (min-width: 992px) {
   .form-item .form-setting {
@@ -14151,8 +14151,8 @@ textarea.form-item .form-setting input[type="password"] {
 .form-item .form-description {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
   clear: left;
   margin-bottom: 0;
 }
@@ -14255,8 +14255,8 @@ textareaselect.singleselect {
 .form-buttons {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
   margin-left: -15px;
   margin-bottom: 15px;
 }
@@ -14827,8 +14827,8 @@ div#dock {
   margin: 0 5px 0 0;
 }
 .path-backup .mform .grouped_settings {
-  margin-left: -15px;
-  margin-right: -15px;
+  margin-left: -10px;
+  margin-right: -10px;
 }
 .path-backup .mform .grouped_settings.section_level {
   min-height: 20px;
@@ -14853,8 +14853,8 @@ div#dock {
 .path-backup .mform .grouped_settings .include_setting {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 @media (min-width: 992px) {
   .path-backup .mform .grouped_settings .include_setting {
@@ -14865,8 +14865,8 @@ div#dock {
 .path-backup .mform .grouped_settings .normal_setting {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 @media (min-width: 992px) {
   .path-backup .mform .grouped_settings .normal_setting {
@@ -14875,15 +14875,15 @@ div#dock {
   }
 }
 .path-backup .mform .grouped_settings .fitem {
-  margin-left: -15px;
-  margin-right: -15px;
+  margin-left: -10px;
+  margin-right: -10px;
   margin-bottom: 15px;
 }
 .path-backup .mform .grouped_settings .fitem .fitemtitle {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 @media (min-width: 768px) {
   .path-backup .mform .grouped_settings .fitem .fitemtitle {
@@ -14900,8 +14900,8 @@ div#dock {
 .path-backup .mform .grouped_settings .fitem .felement {
   position: relative;
   min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 @media (min-width: 768px) {
   .path-backup .mform .grouped_settings .fitem .felement {
@@ -16754,7 +16754,7 @@ fieldset[disabled] #dock .dockedtitle.active {
 }
 .dir-rtl.has_dock #page,
 .dir-rtl.has_dock .moodleheader {
-  padding-left: 15px;
+  padding-left: 10px;
   padding-right: 45px;
 }
 .dir-rtl #dock {
@@ -18813,10 +18813,13 @@ html {
   min-height: 100%;
   position: relative;
 }
-body.path-login {
+body.path-login,
+html.path-login {
   background-color: transparent;
+  background-image: none;
 }
-body.path-login #region-main {
+body.path-login #region-main,
+html.path-login #region-main {
   background-color: transparent;
   box-shadow: none;
 }
@@ -18832,6 +18835,10 @@ body.pagelayout-maintenance {
 #page-content-wrapper {
   position: relative;
   min-height: 100%;
+  background-image: url("[[setting:bodybg]]");
+  background-repeat: no-repeat;
+  background-position: fixed center center;
+  background-size: cover;
 }
 #page-footer {
   margin-top: -155px;
@@ -18873,25 +18880,14 @@ a {
   color: "[[setting:themecolor]]";
   outline: none;
 }
-.elegancewidth {
+.container-fluid {
   max-width: "[[setting:maxwidth]]";
-  margin-left: auto;
-  margin-right: auto;
 }
 a:hover,
 a:focus {
   outline: none;
   color: "[[setting:fontcolor]]";
   text-decoration: none;
-}
-#region-main {
-  padding-right: 0px;
-}
-#block-region-side-pre {
-  padding-left: 0px !important;
-}
-#block-region-side-post {
-  padding-right: 0px !important;
 }
 .fa-muted {
   color: #ddd;
@@ -19101,9 +19097,6 @@ a:focus {
   margin-bottom: 5px;
   font-weight: 400;
 }
-#quicklinks.row {
-  margin-bottom: 10px;
-}
 h2.marketingheader,
 h2.quicklinksheader {
   position: relative;
@@ -19268,7 +19261,8 @@ h2.quicklinksheader .fa {
 /* @end */
 /* @end */
 /* @group Footer */
-#page-footer {
+.page-footer-inner {
+  position: relative;
   border-top: 10px solid #acacae !important;
   background: #d8d8db;
   font-size: .8em;
@@ -19807,31 +19801,15 @@ ol {
 /* @end */
 /* @group Frontpage */
 #block-region-side-middle .block {
-  border: 0px none;
-  margin-top: 0px;
-  padding: 0px;
-  background: transparent;
-}
-#block-region-side-middle .block .header {
-  padding: 0px 0px;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  border: 0;
+  border-radius: 0;
 }
 #block-region-side-middle .block .block-hider-show,
 #block-region-side-middle .block .block-hider-hide {
   display: none;
-}
-#block-region-side-middle .block .header .title h2 {
-  padding: 0px;
-  padding-bottom: 10px;
-}
-#block-region-side-middle .block .header .title h2::after {
-  top: 13px;
-  width: 150px;
-}
-#block-region-side-middle .block .content {
-  height: 220px;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  padding: 5px 0px;
 }
 #block-region-side-middle .block_rss_client .list li {
   clear: both;
@@ -19861,9 +19839,6 @@ ol {
 /* @end */
 /* @group Bootstrap */
 /* override from theme_bootstrap- not sure where it's coming from */
-.row {
-  margin: 0;
-}
 /* @group Buttons */
 .btn a:hover {
   text-decoration: none;
@@ -20035,7 +20010,6 @@ blockquote > .icon-quote-left {
 }
 #region-main,
 #page-marketing {
-  padding: 20px !important;
   font-family: "Roboto";
 }
 #page-marketing {
@@ -20968,7 +20942,6 @@ table.flexible,
   font-size: .8em;
 }
 .block,
-#region-main,
 #page-marketing,
 .view h2,
 .view a.info {
@@ -21036,6 +21009,168 @@ table.flexible > tbody > tr:nth-child(odd) > th,
 #player {
   width: 100%;
   max-width: "[[setting:videowidth]]";
+}
+.dir-ltr.editing.used-region-side-post.used-region-side-pre #region-main {
+  position: relative;
+  min-height: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+@media (min-width: 768px) {
+  .dir-ltr.editing.used-region-side-post.used-region-side-pre #region-main {
+    float: left;
+    width: 50%;
+  }
+}
+@media (min-width: 1200px) {
+  .dir-ltr.editing.used-region-side-post.used-region-side-pre #region-main {
+    float: left;
+    width: 50%;
+  }
+}
+@media (min-width: 768px) {
+  .dir-ltr.editing.used-region-side-post.used-region-side-pre #region-main {
+    left: 25%;
+  }
+}
+@media (min-width: 1200px) {
+  .dir-ltr.editing.used-region-side-post.used-region-side-pre #region-main {
+    left: 25%;
+  }
+}
+.dir-ltr.editing.used-region-side-post.used-region-side-pre #block-region-side-post {
+  position: relative;
+  min-height: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  min-height: 100px;
+}
+@media (min-width: 768px) {
+  .dir-ltr.editing.used-region-side-post.used-region-side-pre #block-region-side-post {
+    float: left;
+    width: 25%;
+  }
+}
+@media (min-width: 1200px) {
+  .dir-ltr.editing.used-region-side-post.used-region-side-pre #block-region-side-post {
+    float: left;
+    width: 25%;
+  }
+}
+.dir-ltr.editing.used-region-side-post.used-region-side-pre #block-region-side-pre {
+  position: relative;
+  min-height: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  min-height: 100px;
+}
+@media (min-width: 768px) {
+  .dir-ltr.editing.used-region-side-post.used-region-side-pre #block-region-side-pre {
+    float: left;
+    width: 25%;
+  }
+}
+@media (min-width: 1200px) {
+  .dir-ltr.editing.used-region-side-post.used-region-side-pre #block-region-side-pre {
+    float: left;
+    width: 25%;
+  }
+}
+@media (min-width: 768px) {
+  .dir-ltr.editing.used-region-side-post.used-region-side-pre #block-region-side-pre {
+    right: 50%;
+  }
+}
+@media (min-width: 1200px) {
+  .dir-ltr.editing.used-region-side-post.used-region-side-pre #block-region-side-pre {
+    right: 50%;
+  }
+}
+.dir-rtl.editing.used-region-side-post.used-region-side-pre #region-main {
+  position: relative;
+  min-height: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+@media (min-width: 768px) {
+  .dir-rtl.editing.used-region-side-post.used-region-side-pre #region-main {
+    float: left;
+    width: 50%;
+  }
+}
+@media (min-width: 1200px) {
+  .dir-rtl.editing.used-region-side-post.used-region-side-pre #region-main {
+    float: left;
+    width: 50%;
+  }
+}
+@media (min-width: 768px) {
+  .dir-rtl.editing.used-region-side-post.used-region-side-pre #region-main {
+    left: 25%;
+  }
+}
+@media (min-width: 1200px) {
+  .dir-rtl.editing.used-region-side-post.used-region-side-pre #region-main {
+    left: 25%;
+  }
+}
+.dir-rtl.editing.used-region-side-post.used-region-side-pre #block-region-side-pre {
+  position: relative;
+  min-height: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  min-height: 100px;
+}
+@media (min-width: 768px) {
+  .dir-rtl.editing.used-region-side-post.used-region-side-pre #block-region-side-pre {
+    float: left;
+    width: 25%;
+  }
+}
+@media (min-width: 1200px) {
+  .dir-rtl.editing.used-region-side-post.used-region-side-pre #block-region-side-pre {
+    float: left;
+    width: 25%;
+  }
+}
+@media (min-width: 768px) {
+  .dir-rtl.editing.used-region-side-post.used-region-side-pre #block-region-side-pre {
+    left: 25%;
+  }
+}
+@media (min-width: 1200px) {
+  .dir-rtl.editing.used-region-side-post.used-region-side-pre #block-region-side-pre {
+    left: 25%;
+  }
+}
+.dir-rtl.editing.used-region-side-post.used-region-side-pre #block-region-side-post {
+  position: relative;
+  min-height: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  min-height: 100px;
+}
+@media (min-width: 768px) {
+  .dir-rtl.editing.used-region-side-post.used-region-side-pre #block-region-side-post {
+    float: left;
+    width: 25%;
+  }
+}
+@media (min-width: 1200px) {
+  .dir-rtl.editing.used-region-side-post.used-region-side-pre #block-region-side-post {
+    float: left;
+    width: 25%;
+  }
+}
+@media (min-width: 768px) {
+  .dir-rtl.editing.used-region-side-post.used-region-side-pre #block-region-side-post {
+    right: 75%;
+  }
+}
+@media (min-width: 1200px) {
+  .dir-rtl.editing.used-region-side-post.used-region-side-pre #block-region-side-post {
+    right: 75%;
+  }
 }
 #page-navbar {
   margin-bottom: 0;
@@ -21389,6 +21524,9 @@ table.flexible > tbody > tr:nth-child(odd) > th,
   border: 0;
   border-radius: 0;
 }
+.bg-white {
+  background-color: #FFF;
+}
 img.media-object {
   max-width: 75px;
 }
@@ -21409,6 +21547,8 @@ body {
   -webkit-flex-flow: row wrap;
   align-content: flex-start;
   flex: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 .row-flex > div[class*='col-'],
 .container-flex > div[class*='col-'] {

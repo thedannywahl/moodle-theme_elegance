@@ -304,71 +304,71 @@ defined('MOODLE_INTERNAL') || die;
 
     $ADMIN->add('theme_elegance', $temp);
 
-    /* Category Settings */
-    $temp = new admin_settingpage('theme_elegance_categoryicon', get_string('categoryiconheading', 'theme_elegance'));
+    // /* Category Settings */
+    // $temp = new admin_settingpage('theme_elegance_categoryicon', get_string('categoryiconheading', 'theme_elegance'));
 
-    $name = 'theme_elegance_categoryicon';
-    $heading = get_string('categoryiconheadingsub', 'theme_elegance');
-    $information = format_text(get_string('categoryiconheadingdesc' , 'theme_elegance'), FORMAT_MARKDOWN);
-    $setting = new admin_setting_heading($name, $heading, $information);
-    $temp->add($setting);
+    // $name = 'theme_elegance_categoryicon';
+    // $heading = get_string('categoryiconheadingsub', 'theme_elegance');
+    // $information = format_text(get_string('categoryiconheadingdesc' , 'theme_elegance'), FORMAT_MARKDOWN);
+    // $setting = new admin_setting_heading($name, $heading, $information);
+    // $temp->add($setting);
 
-    // Category Icons.
-    $name = 'theme_elegance/enablecategoryicon';
-    $title = get_string('enablecategoryicon', 'theme_elegance');
-    $description = get_string('enablecategoryicondesc', 'theme_elegance');
-    $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $temp->add($setting);
+    // // Category Icons.
+    // $name = 'theme_elegance/enablecategoryicon';
+    // $title = get_string('enablecategoryicon', 'theme_elegance');
+    // $description = get_string('enablecategoryicondesc', 'theme_elegance');
+    // $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
+    // $setting->set_updatedcallback('theme_reset_all_caches');
+    // $temp->add($setting);
 
-    $temp->add($ss->add_checkbox($enablecategoryicon));
+    // $temp->add($ss->add_checkbox($enablecategoryicon));
 
-    // We only want to output category icon options if the parent setting is enabled
-    $enablecategoryicon = (!empty($PAGE->theme->settings->enablecategoryicon));
-    if($enablecategoryicon) {
+    // // We only want to output category icon options if the parent setting is enabled
+    // $enablecategoryicon = (!empty($PAGE->theme->settings->enablecategoryicon));
+    // if($enablecategoryicon) {
     
-        // Default Icon Selector.
-        $name = 'theme_elegance/defaultcategoryicon';
-        $title = get_string('defaultcategoryicon', 'theme_elegance');
-        $description = get_string('defaultcategoryicondesc', 'theme_elegance');
-        $default = 'folder-open';
-        $setting = new admin_setting_configtext($name, $title, $description, $default);
-        $setting->set_updatedcallback('theme_reset_all_caches');
-        $temp->add($setting);
+    //     // Default Icon Selector.
+    //     $name = 'theme_elegance/defaultcategoryicon';
+    //     $title = get_string('defaultcategoryicon', 'theme_elegance');
+    //     $description = get_string('defaultcategoryicondesc', 'theme_elegance');
+    //     $default = 'folder-open';
+    //     $setting = new admin_setting_configtext($name, $title, $description, $default);
+    //     $setting->set_updatedcallback('theme_reset_all_caches');
+    //     $temp->add($setting);
     
-        // This is the descriptor for Category Icons
-        $name = 'theme_elegance/categoryiconinfo';
-        $heading = get_string('categoryiconinfo', 'theme_elegance');
-        $information = get_string('categoryiconinfodesc', 'theme_elegance');
-        $setting = new admin_setting_heading($name, $heading, $information);
-        $temp->add($setting);
+    //     // This is the descriptor for Category Icons
+    //     $name = 'theme_elegance/categoryiconinfo';
+    //     $heading = get_string('categoryiconinfo', 'theme_elegance');
+    //     $information = get_string('categoryiconinfodesc', 'theme_elegance');
+    //     $setting = new admin_setting_heading($name, $heading, $information);
+    //     $temp->add($setting);
         
-        // Get the default category icon
-        $defaultcategoryicon = (!empty($PAGE->theme->settings->defaultcategoryicon));
-        if($defaultcategoryicon) {
-            // Same as theme_elegance/defaultcategoryicon
-            $defaultcategoryicon = $PAGE->theme->settings->defaultcategoryicon;
-        } else {
-            $defaultcategoryicon = 'folder-open';
-        }
+    //     // Get the default category icon
+    //     $defaultcategoryicon = (!empty($PAGE->theme->settings->defaultcategoryicon));
+    //     if($defaultcategoryicon) {
+    //         // Same as theme_elegance/defaultcategoryicon
+    //         $defaultcategoryicon = $PAGE->theme->settings->defaultcategoryicon;
+    //     } else {
+    //         $defaultcategoryicon = 'folder-open';
+    //     }
         
-        // Get all category IDs and their pretty names
-        require_once($CFG->libdir. '/coursecatlib.php');
-        $coursecats = coursecat::make_categories_list();
+    //     // Get all category IDs and their pretty names
+    //     require_once($CFG->libdir. '/coursecatlib.php');
+    //     $coursecats = coursecat::make_categories_list();
         
-        // Go through all categories and create the necessary settings
-        foreach($coursecats as $key => $value) {
+    //     // Go through all categories and create the necessary settings
+    //     foreach($coursecats as $key => $value) {
         
-            // Category Icons for each category.
-            $name = 'theme_elegance/categoryicon';
-            $title = $value;
-            $description = get_string('categoryicondesc', 'theme_elegance') . $value;
-            $default = $defaultcategoryicon;
-            $setting = new admin_setting_configtext($name.$key, $title, $description, $default);
-            $setting->set_updatedcallback('theme_reset_all_caches');
-            $temp->add($setting);
-        }
-        unset($coursecats);
-    }
+    //         // Category Icons for each category.
+    //         $name = 'theme_elegance/categoryicon';
+    //         $title = $value;
+    //         $description = get_string('categoryicondesc', 'theme_elegance') . $value;
+    //         $default = $defaultcategoryicon;
+    //         $setting = new admin_setting_configtext($name.$key, $title, $description, $default);
+    //         $setting->set_updatedcallback('theme_reset_all_caches');
+    //         $temp->add($setting);
+    //     }
+    //     unset($coursecats);
+    // }
 
-    $ADMIN->add('theme_elegance', $temp);
+    // $ADMIN->add('theme_elegance', $temp);

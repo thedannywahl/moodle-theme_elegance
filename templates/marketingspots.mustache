@@ -1,37 +1,53 @@
 
-<div class="elegancewidth eboxshadow">
-    <div id="page-marketing" class="row row-flex row-flex-wrap ">
-        <h2 class="marketingheader col-xs-12 m-r-15 m-l-15 m-b-20">
-            <i class="fa fa-{{marketingtitleicon}}"></i>
-            {{marketingtitle}}
-        </h2>
-        <div class="clearfix"></div>
-        {{#spots}}
-            {{#title}}
-
-            <div class="{{spotclass}} m-b-20 p-l-10 p-r-10">
-                {{#url}}
-                <a href="{{{url}}}" target="new" title="{{title}}" class="marketing-block flex-col"> 
-                {{/url}}
-                {{^url}}
-                <div class="marketing-block flex-col">
-                {{/url}}
-                    <h3>
-                        {{#icon}}
-                        <i class="fa fa-{{icon}}"></i>
-                        {{/icon}}
-                        {{title}}
-                    </h3>
-                    {{{content}}}
-                {{^url}}
-                </div>
-                {{/url}}
-                {{#url}}
-                    </a>
-                {{/url}}
+<div class="container-fluid">
+    <div class="elegancewidth m-b-15">
+        <div class="row">
+            {{#blocksmiddle}}
+            <div class="col-md-5 m-t-20">
+                {{{blocksmiddle}}}
             </div>
+            <div class="col-md-7">
+            {{/blocksmiddle}}
+            {{^blocksmiddle}}
+            <div class="col-md-12">
+            {{/blocksmiddle}}
+                <div id="page-marketing" class="row row-flex row-flex-wrap eboxshadow p-20">
+                    
+                        <h2 class="marketingheader col-xs-12 m-r-15 m-l-15 m-b-20">
+                            <i class="fa fa-{{marketingtitleicon}}"></i>
+                            {{marketingtitle}}
+                        </h2>
+                        <div class="clearfix"></div>
+                        {{#spots}}
+                            {{#title}}
 
-            {{/title}}
-        {{/spots}}
+                            <div class="{{spotclass}} m-b-20 p-l-10 p-r-10">
+                                {{#url}}
+                                <a href="{{{url}}}" target="new" title="{{title}}" class="marketing-block flex-col"> 
+                                {{/url}}
+                                {{^url}}
+                                <div class="marketing-block flex-col">
+                                {{/url}}
+                                    <h3>
+                                        {{#icon}}
+                                        <i class="fa fa-{{icon}}"></i>
+                                        {{/icon}}
+                                        {{title}}
+                                    </h3>
+                                    {{{content}}}
+                                {{^url}}
+                                </div>
+                                {{/url}}
+                                {{#url}}
+                                    </a>
+                                {{/url}}
+                            </div>
+
+                            {{/title}}
+                        {{/spots}}
+                   
+                </div>
+            </div>
+        </div>
     </div>
 </div>
