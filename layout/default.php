@@ -95,31 +95,31 @@ echo $OUTPUT->doctype() ?>
 
 <div id="page-content-wrapper">
     <nav role="navigation" class="navbar <?php echo $navbartype; ?> eboxshadow">
-        <div class="elegancewidth">
-            <div class="container-fluid">
-                <div class="navbar-header pull-left">
 
-                    <a class="navbar-brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $logo; ?></a>
-                </div>
+        <div class="container-fluid">
+            <div class="navbar-header pull-left">
 
-                <div class="navbar-header pull-right">
-                    <?php echo $OUTPUT->user_menu(); ?>
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#moodle-navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
+                <a class="navbar-brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $logo; ?></a>
+            </div>
 
-                <div id="moodle-navbar" class="navbar-collapse collapse navbar-right">
-                    <?php echo $OUTPUT->custom_menu(); ?>
-                    <ul class="nav pull-right">
-                        <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
-                    </ul>
-                </div>
+            <div class="navbar-header pull-right">
+                <?php echo $OUTPUT->user_menu(); ?>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#moodle-navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <div id="moodle-navbar" class="navbar-collapse collapse navbar-right">
+                <?php echo $OUTPUT->custom_menu(); ?>
+                <ul class="nav pull-right">
+                    <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
+                </ul>
             </div>
         </div>
+
     </nav>
 
     <?php echo $widgets->banner($hasbanner); ?>
@@ -127,7 +127,7 @@ echo $OUTPUT->doctype() ?>
     <?php echo $widgets->marketing_spots($hasmarketing, $hassidemiddle); ?>
     <div class="container-fluid">
         <?php if ($hasmoodleheader) { ?>
-        <header id="moodleheader" class="clearfix elegancewidth">
+        <header id="moodleheader" class="clearfix">
             
             <div id="course-header" class="p-l-15 p-r-15 p-b-10 p-t-10">
                 <?php echo $OUTPUT->page_heading(); ?>
@@ -138,7 +138,7 @@ echo $OUTPUT->doctype() ?>
         </header>
         <?php } ?>
     </div>
-    <div id="page-navbar" class="elegancewidth">
+    <div id="page-navbar" >
         <div class="container-fluid">
             <nav class="breadcrumb-nav elegancewidth" role="navigation" aria-label="breadcrumb"><?php echo $OUTPUT->navbar(); ?></nav>
             <div class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></div>
@@ -146,7 +146,7 @@ echo $OUTPUT->doctype() ?>
         </div>
     </div>
     <div class="container-fluid">
-    <section id="page" class="elegancewidth">
+    <section id="page" >
         <div id="page-content" class="row">
             <div id="region-main" class="<?php echo $regions['content']; ?>">
                 <div class="<?php echo $mainclass; ?>">
@@ -168,14 +168,12 @@ echo $OUTPUT->doctype() ?>
             if ($knownregionpost) {
                 echo $OUTPUT->blocks('side-post', $regions['post']);
             }?>
-
-
         </div>
     </section>
     </div>
 </div>
 
-<footer id="page-footer" class="elegancewidth">
+<footer id="page-footer" >
     <div class="page-footer-inner">
         <div class="container-fluid">
             <div class="row">
