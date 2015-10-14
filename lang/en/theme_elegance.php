@@ -124,7 +124,7 @@ $string['customlinkindicator'] = 'Custom Link Number ';
 $string['customlinkindicatordesc'] = 'Set up this custom link.';
 
 $string['customlinkicon'] = 'Link Icon';
-$string['customlinkicondesc'] = 'Name of the icon you wish to use next to your link.<br> List is <a href="http://fontawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after the "fa-".';
+$string['customlinkicondesc'] = 'Name of the icon you wish to use next to your link.<br> List is <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_new">here</a>.  Just enter what is after the "fa-".';
 
 $string['customlinkname'] = 'Link Name';
 $string['customlinknamedesc'] = 'Name shown to users for your link.';
@@ -213,10 +213,10 @@ $string['loginsettingsdesc'] = 'The custom version has a background slideshow yo
 $string['enablecustomlogin'] = 'Use Custom Login';
 $string['enablecustomlogindesc'] = 'When enabled this will use the theme augmented version of the login screen. Removing the tick will revert to the Moodle default version.<br>The augmented version allows you to upload background images to really add pizzaz to your page design.';
 
-$string['loginbgumber'] = 'Background Number';
-$string['loginbgumberdesc'] = 'How many backgrounds should revolve when the login page loads?';
+$string['loginbgnumber'] = 'Background Number';
+$string['loginbgnumberdesc'] = 'How many backgrounds should revolve when the login page loads?';
 
-$string['loginimage'] = 'Background Image';
+$string['loginimage'] = 'Background Image {$a}';
 $string['loginimagedesc'] = 'The ideal size for background images is 1200x800 pixels.';
 
 /* Marketing Spots */
@@ -231,7 +231,7 @@ $string['togglemarketing'] = 'Marketing Spot display';
 $string['togglemarketingdesc'] = 'Choose if you wish to hide or show the three Marketing Spots.';
 
 $string['marketingtitleicon'] = 'Heading Icon';
-$string['marketingtitleicondesc'] = 'Name of the icon you wish to use in the heading for the marketing spots. List is <a href="http://fontawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after the "fa-".';
+$string['marketingtitleicondesc'] = 'Name of the icon you wish to use in the heading for the marketing spots. List is <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_new">here</a>.  Just enter what is after the "fa-".';
 
 $string['marketingspots'] = 'Marketing Spots';
 
@@ -245,7 +245,7 @@ $string['marketingurldesc'] = 'If set this Marketing Spot will link to an (exter
 $string['marketingtitle'] = 'Title';
 $string['marketingtitledesc'] = 'Title to show in this marketing spot.';
 $string['marketingicon'] = 'Icon';
-$string['marketingicondesc'] = 'Name of the icon you wish to use. List is <a href="http://fontawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after the "fa-".';
+$string['marketingicondesc'] = 'Name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_new">here</a>.  Just enter what is after the "fa-".';
 $string['marketingimage'] = 'Image';
 $string['marketingimagedesc'] = 'This provides the option of displaying an image above the text in the marketing spot.';
 $string['marketingcontent'] = 'Content';
@@ -270,9 +270,9 @@ $string['togglequicklinks'] = 'Quick Links Display';
 $string['togglequicklinksdesc'] = 'Choose if you wish to hide or show the Quick Links area.';
 
 $string['quicklinksicon'] = 'Heading Icon';
-$string['quicklinksicondesc'] = 'Name of the icon you wish to use in the heading for the Quick Links spots. List is <a href="http://fontawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after the "fa-".';
+$string['quicklinksicondesc'] = 'Name of the icon you wish to use in the heading for the Quick Links spots. List is <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_new">here</a>.  Just enter what is after the "fa-".';
 
-$string['quicklinks'] = 'Quick Link Number ';
+$string['quicklinks'] = 'Quick Link Number {$a}';
 
 $string['quicklinksnumber'] = 'Number of Links';
 $string['quicklinksnumberdesc'] = 'How many quick links to you want to display on the Frontpage.';
@@ -281,7 +281,7 @@ $string['quicklinkstitle'] = 'Area heading';
 $string['quicklinkstitledesc'] = 'The name associated with the Quick Links area on the Frontpage.';
 
 $string['quicklinkicon'] = 'Icon';
-$string['quicklinkicondesc'] = 'Name of the icon you wish to use. List is <a href="http://fontawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after the "fa-".';
+$string['quicklinkicondesc'] = 'Name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_new">here</a>.  Just enter what is after the "fa-".';
 $string['quicklinkiconcolor'] = 'Quick Link Colour';
 $string['quicklinkiconcolordesc'] = 'Background colour behind the Quick Link icon.';
 $string['quicklinkbuttontext'] = 'Link Text';
@@ -350,7 +350,7 @@ $string['defaultcategoryicon'] = 'Default Category Icons';
 $string['defaultcategoryicondesc'] = 'If you do not enter a value in any of your categories below then this default value will be used.  This is an easy way to quickly change many category icons.';
 
 $string['categoryiconinfo'] = 'Set Custom Category Icons';
-$string['categoryiconinfodesc'] = 'Each icon is set by "category ID". You get these by looking at the URL or each category. List is <a href="http://fontawesome.github.io/Font-Awesome/cheatsheet/">here</a>.  Just enter what is after the "fa-".';
+$string['categoryiconinfodesc'] = 'Each icon is set by "category ID". You get these by looking at the URL or each category. List is <a href="http://fortawesome.github.io/Font-Awesome/icons/">here</a>.  Just enter what is after the "fa-".';
 
 $string['enablecategoryicon'] = 'Enable Category Icons';
 $string['enablecategoryicondesc'] = 'If enabled you will be able to select category icons after clicking "Save changes".';

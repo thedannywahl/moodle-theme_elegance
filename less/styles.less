@@ -41,23 +41,21 @@ body, html {
     font: 100%/1.5em 'Roboto', sans-serif;
     margin: 0px;
     padding: 0px;
-    background: #d8d8db;
-    -moz-background-size: cover;
-    -webkit-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
     color: "[[setting:fontcolor]]";
     background-color: "[[setting:bodycolor]]";
     height: 100%;
     min-height: 100%;
+    position: relative;
 }
 
-html,body {
-    height: 100%;
-    min-height: 100%;
-    position: relative;
-    background-color: @body-bg;
+body.path-login {
+    background-color: transparent;
+    #region-main {
+        background-color: transparent;
+        box-shadow: none;
+    }
 }
+
 
 body.pagelayout-maintenance {
     background-color: #FFF;
@@ -101,7 +99,6 @@ p {
     letter-spacing: 0px;
     color: "[[setting:fontcolor]]";
     font-style: normal;
-    font-weight: 400;
 }
 
 li{
@@ -117,35 +114,7 @@ ul ul, ul ol, ol ol, ol ul {
 }
 
 h1, h2, h3, h4, h5, h6{
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
     color: "[[setting:fontcolor]]";
-}
-
-h1 {
-    letter-spacing: 0px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 28px;
-    margin-top: 0px;
-    margin-bottom: 21px;
-    text-transform: none;
-}
-
-h2 {
-    letter-spacing: 0px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 21px;
-    margin-top: 0px;
-    margin-bottom: 21px;
-}
-
-h3 {
-    font-style: normal;
-    font-weight: 700;
-    line-height: 21px;
-    margin-bottom: 21px;
 }
 
 a {
@@ -165,9 +134,9 @@ a:hover, a:focus{
     text-decoration: none;
 }
 
-#page-content {
-    margin-top: 20px;
-}
+// #page-content {
+//     margin-top: 20px;
+// }
 
 #region-main{
     padding-right: 0px;
@@ -362,11 +331,14 @@ a:hover, a:focus{
 
 /* @end */
 
+#moodleheader {
+    .eboxshadow;
+    background-image: url('"[[setting:headerbg]]"');
+    background-color: "[[setting:themecolor]]";
+}
 #page-site-index #moodleheader {
-    background: "[[setting:themecolor]]";
-    -webkit-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.5);
-        -moz-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.5);
-        box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.5);
+    display: none;
+    
 }
 
 #fontpagecontent {
@@ -413,10 +385,10 @@ text-shadow: 0 1px 1px rgba(255,255,255,0.75);
 
 .marketing-block {
     text-align: center;
-    margin-bottom: 10px;
     color:#666;
     padding: 0px 10px;
     border:1px solid #ddd;
+    border-radius: 6px;
 }
 
 .marketing-block h3 {
@@ -432,33 +404,25 @@ text-shadow: 0 1px 1px rgba(255,255,255,0.75);
 
 h2.marketingheader,
 h2.quicklinksheader {
-    color: "[[setting:headingcolor]]";
-    letter-spacing: 0px;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 24px;
-    text-transform: none;
-    padding-bottom: 10px;
-    border-bottom: 3px solid #ddd;
-    margin: 0 0 10px 0;
-    line-height: normal;
+    .styled-heading(24px, 38px);
 }
+
 
 h2.marketingheader .fa,
 h2.quicklinksheader .fa {
     color: #999;
 }
 
-h2.marketingheader::after,
-h2.quicklinksheader::after {
-    background-color: "[[setting:themecolor]]";
-    content: "";
-    display: block;
-    height: 3px;
-    width: 150px;
-    position: relative;
-    top: 13px;
-}
+// h2.marketingheader::after,
+// h2.quicklinksheader::after {
+//     background-color: "[[setting:themecolor]]";
+//     content: "";
+//     display: block;
+//     height: 3px;
+//     width: 150px;
+//     position: relative;
+//     top: 13px;
+// }
 
 /* @group Quick Links */
 
@@ -615,18 +579,7 @@ h2.quicklinksheader::after {
 
 /* @group Header */
 
-#moodleheader {
-    padding-top: 0px;
-    margin-top: 0px;
-    -webkit-box-shadow:0 5px 10px rgba(0,0,0,0.2);
-    -moz-box-shadow:0 5px 10px rgba(0,0,0,0.2);
-    box-shadow:0 5px 10px rgba(0,0,0,0.2);
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-    position: relative;
-    background-image: url('"[[setting:headerbg]]"');
-    background-color: "[[setting:themecolor]]";
-}
+
 
 #logo {
     background: url("[[setting:logo]]") no-repeat;
@@ -801,79 +754,79 @@ h2.quicklinksheader::after {
 
 /* @group Breadcrumb */
 
-.breadcrumb {
-    padding: 0px 10px;
-    margin: 31px 0 14px;
-    list-style: none;
-    background: rgba(255, 255, 255, 0.65);
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    color: #b4b4b7;
-}
+// .breadcrumb {
+//     padding: 0px 10px;
+//     margin: 31px 0 14px;
+//     list-style: none;
+//     background: rgba(255, 255, 255, 0.65);
+//     -webkit-border-radius: 4px;
+//     -moz-border-radius: 4px;
+//     border-radius: 4px;
+//     color: #b4b4b7;
+// }
 
-.breadcrumb>li>a,
-.breadcrumb>li+li:before {
-    color: "[[setting:fontcolor]]";
-}
+// .breadcrumb>li>a,
+// .breadcrumb>li+li:before {
+//     color: "[[setting:fontcolor]]";
+// }
 
-.breadcrumb > li {
-    display: inline;
-    font-size: 14px;
-    font-family: "Roboto";
-    line-height: 29px;
-    text-shadow: none;
-}
+// .breadcrumb > li {
+//     display: inline;
+//     font-size: 14px;
+//     font-family: "Roboto";
+//     line-height: 29px;
+//     text-shadow: none;
+// }
 
-.breadcrumb .breadcrumb-current-location {
-    font-size: 16px;
-    clear: both;
-    position: absolute;
-    display: block;
-}
+// .breadcrumb .breadcrumb-current-location {
+//     font-size: 16px;
+//     clear: both;
+//     position: absolute;
+//     display: block;
+// }
 
-.breadcrumb > .breadcrumb-current-location .icon-chevron-down{
-    position: relative;
-    display: inline-block;
-    padding-left: 10px;
-    text-decoration: none;
-}
+// .breadcrumb > .breadcrumb-current-location .icon-chevron-down{
+//     position: relative;
+//     display: inline-block;
+//     padding-left: 10px;
+//     text-decoration: none;
+// }
 
-.breadcrumb-nav {
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
+// .breadcrumb-nav {
+//     margin-top: 30px;
+//     margin-bottom: 30px;
+// }
 
-.breadcrumb-current-location {
-    font-size: 24px;
-    clear: both;
-    position: absolute;
-    display: block;
-}
+// .breadcrumb-current-location {
+//     font-size: 24px;
+//     clear: both;
+//     position: absolute;
+//     display: block;
+// }
 
-.breadcrumb>li>a:hover,
-.breadcrumb>li>a:active,
-.breadcrumb>li>a:focus{
-    color: "[[setting:themecolor]]";
-    text-decoration: none;
-}
+// .breadcrumb>li>a:hover,
+// .breadcrumb>li>a:active,
+// .breadcrumb>li>a:focus{
+//     color: "[[setting:themecolor]]";
+//     text-decoration: none;
+// }
 
-.breadcrumb-button { 
-    float: right;
-    margin-top: 21px;
-}
+// .breadcrumb-button { 
+//     float: right;
+//     margin-top: 21px;
+// }
 
-.breadcrumb-current-location{
-    position: relative;
-}
+// .breadcrumb-current-location{
+//     position: relative;
+// }
 
-.breadcrumb-current-location.open .dropdown-menu {
-    display: block;
-    float: right;
-    position: absolute;
-    right: 0;
-    left: auto;
-    }
+// .breadcrumb-current-location.open .dropdown-menu {
+//     display: block;
+//     float: right;
+//     position: absolute;
+//     right: 0;
+//     left: auto;
+//     }
 
 /* @end */
 
@@ -1174,27 +1127,9 @@ ul.socials {
 }
 
 .block .header .title h2 {
-    color: "[[setting:headingcolor]]";
-    letter-spacing: 0px;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 24px;
-    text-transform: none;
-    padding-left: 0px;
-    border-bottom: 3px solid #ddd;
-    margin: 0 0 10px 0;
-    line-height: normal;
+    .styled-heading(16px, 28px);
 }
 
-.block .header .title h2::after {
-    background-color: "[[setting:themecolor]]";
-    content: "";
-    display: block;
-    height: 3px;
-    width: 100px;
-    position: relative;
-    top: 3px;
-}
 
 .block_section .header .block_action {
     float: left;
@@ -1829,12 +1764,8 @@ blockquote>.icon-quote-left{
     -moz-border-radius: 5px;
 }
 
-
-
-.coursebox .content .courseimage img {
+.coursebox .content .courseimage {
     max-width: 162px;
-    max-height: 100px;
-    min-height: 100px;
 }
 
 
@@ -2680,10 +2611,6 @@ table#user-grades th.userreport.c1 {
     margin-bottom: 10px;
 }
 
-.coursebox .content {
-    display: table;
-}
-
 .coursebox .content .summary {
     padding: 10px;
     border-right: 1px solid #f5f5f5;
@@ -2703,39 +2630,43 @@ table#user-grades th.userreport.c1 {
   }
 }
 
-.coursebox .content .teachers,
-.coursebox .content .courseimage,
-.coursebox .content .coursefile {
-    display: table-cell;
+
+.coursebox .content .imagebox {
     float: right;
-    width: 240px;
-    padding: 10px;
+    img.courseimage {
+        width: 240px;
+        padding-left: 10px;
+        border-radius: 0;
+    }
 }
+
+
+
 
 .coursebox .content .coursecat {
     font-size: .85em;
     padding-right: 10px;
 }
 
-.coursebox .info {
-    white-space: nowrap;
-    color: #555;
-    background-color: #f5f5f5;
-    border-color: #ddd;
-    padding: 10px 15px;
-    border-bottom: 1px solid #ddd;
-}
+// .coursebox .info {
+//     white-space: nowrap;
+//     color: #555;
+//     background-color: #f5f5f5;
+//     border-color: #ddd;
+//     padding: 10px 15px;
+//     border-bottom: 1px solid #ddd;
+// }
 
-.coursebox .info .enrolmenticons {
-    margin-top: -20px;
-}
+// .coursebox .info .enrolmenticons {
+//     margin-top: -20px;
+// }
 
-.coursebox .info h3 {
-    padding: 0px;
-    margin: 0px;
-    -webkit-font-smoothing: antialiased;
-    font: 100%/1.5em 'Roboto', sans-serif;
-}
+// .coursebox .info h3 {
+//     padding: 0px;
+//     margin: 0px;
+//     -webkit-font-smoothing: antialiased;
+//     font: 100%/1.5em 'Roboto', sans-serif;
+// }
 
 .coursebox .content .teachers {
     padding-top: 0px;
@@ -2744,13 +2675,6 @@ table#user-grades th.userreport.c1 {
 .coursebox .content .teachers li {
     padding-top: 0px;
     font-size: .8em;
-}
-
-.category-browse .coursebox .content .courseimage img {
-    min-height: 145px !important;
-    min-width: 220px !important;
-    max-height: 145px !important;
-    max-width: 220px !important;
 }
 
 /* @end */
@@ -2883,17 +2807,7 @@ radio input[type="radio"],
 #frontpage-category-names h2, 
 #frontpage-category-combo h2,
 #heading h1 {
-    color: "[[setting:headingcolor]]";
-    letter-spacing: 0px;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 24px;
-    line-height: 28px;
-    margin-top: 0px;
-    margin-bottom: 21px;
-    text-transform: none;
-    border-bottom: 4px solid rgb(223, 223, 223);
-    padding-bottom: 0px;
+    .styled-heading(24px, 38px);
 }
 
 #site-news-forum h2::before {
@@ -2901,21 +2815,6 @@ radio input[type="radio"],
     content:"\f0a1";
     margin-right: 5px;
     color: #999;
-}
-
-#page-login-index h2::after,
-#site-news-forum h2::after, 
-#frontpage-course-list h2::after, 
-#frontpage-category-names h2::after, 
-#frontpage-category-combo h2::after,
-#heading h1::after {
-    background-color: "[[setting:themecolor]]";
-    content: "";
-    display: block;
-    height: 4px;
-    width: 150px;
-    position: relative;
-    top: 4px;
 }
 
 .frontpage-course-list-enrolled .paging-morelink a {
@@ -2939,7 +2838,6 @@ radio input[type="radio"],
     -o-transition: 0.25s;
     transition: 0.25s;
     -webkit-backface-visibility: hidden;
-    font-weight: 500;
     font-family: "Roboto";
 }
 

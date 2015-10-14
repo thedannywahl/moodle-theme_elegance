@@ -136,8 +136,9 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
 
         return $this->render_from_template('theme_elegance/marketingspots', $template);
     }
+
     public function footerleft($hasfooter) {
-                if (!$hasfooter) {
+        if (!$hasfooter) {
             return '';
         }
         $theme = theme_config::load('elegance');
@@ -168,5 +169,62 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
             }
         }
         return $this->render_from_template('theme_elegance/footerright', $template);
+    }
+
+    public function quicklinks($hasquicklinks) {
+        if (!$hasquicklinks) {
+            return '';
+        }
+
+        $theme = theme_config::load('elegance');
+        $settings = $theme->settings;
+
+        $template = new Object();
+
+        $template->quicklinksicon = $settings->quicklinksicon;
+        $template->quicklinkstitle = $settings->quicklinkstitle;
+        $quicklinksnumber = $settings->quicklinksnumber;
+        $template->quicklinks = array();
+        foreach (range(1, $quicklinksnumber) as $i) {
+            $icon = 'quicklinkicon' . $i;
+            $buttontext = 'quicklinkbuttontext' . $i;
+            $url = 'quicklinkbuttonurl' . $i;
+            $iconclass = 'quicklinkiconcolor' . $i;
+            $buttonclass = 'quicklinkbuttoncolor' . $i;
+
+            $quicklink = new Object();
+
+            if (!empty($settings->$icon)) {
+                $quicklink->icon = $settings->$icon;
+            } else {
+                $quicklink->icon = 'check';
+            }
+            if (!empty($settings->$buttontext)) {
+                $quicklink->buttontext = $settings->$buttontext;
+            } else {
+                $quicklink->buttontext = 'Click here';
+            }
+            if (!empty($settings->$url)) {
+                $quicklink->url = $settings->$url;
+            }
+            $quicklink->iconclass = $iconclass;
+            $quicklink->buttonclass = $buttonclass;
+            $template->quicklinks[] = $quicklink;
+        }
+        
+        $count = count($template->quicklinks);
+
+        if ($count < 4) {
+            $template->classlarge = 'col-lg-' . (12 / $count);
+        } else {
+            $template->classlarge = 'col-lg-3';
+        }
+        if ($count < 3) {
+            $template->classmedium = 'col-md-' . (12 / $count);
+        } else {
+            $template->classmedium = 'col-md-4';
+        }
+   
+        return $this->render_from_template('theme_elegance/quicklinks', $template);
     }
 }

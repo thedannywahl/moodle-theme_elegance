@@ -37,6 +37,7 @@ $fluid = (!empty($PAGE->layout_options['fluid']));
 $hasbanner = (!empty($PAGE->layout_options['hasbanner']));
 $hasmarketing = (!empty($PAGE->layout_options['hasmarketing']));
 $hasfooter = (empty($PAGE->layout_options['nofooter']));
+$hasquicklinks = (!empty($PAGE->layout_options['hasquicklinks']));
 
 if ($haslogo) {
     $logo = '<div id="logo"></div>';
@@ -123,27 +124,23 @@ echo $OUTPUT->doctype() ?>
     <?php echo $widgets->marketing_spots($hasmarketing); ?>
 
     <header id="moodleheader" class="clearfix elegancewidth">
-        <div id="page-navbar" class="container">
-            <nav class="breadcrumb-nav" role="navigation" aria-label="breadcrumb"><?php echo $OUTPUT->navbar(); ?></nav>
-            <div class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></div>
-        </div>
-
-        <div id="course-header">
+        <div id="course-header" class="p-l-15 p-r-15 p-b-10 p-t-10">
+            <?php echo $OUTPUT->page_heading(); ?>
             <?php echo $OUTPUT->course_header(); ?>
+            <?php echo $OUTPUT->course_content_header(); ?>
         </div>
     </header>
-
+    <div id="page-navbar" class="elegancewidth">
+        <nav class="breadcrumb-nav elegancewidth" role="navigation" aria-label="breadcrumb"><?php echo $OUTPUT->navbar(); ?></nav>
+        <div class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></div>
+        <div class="clearfix"></div>
+    </div>
     <section id="page" class="elegancewidth">
-
-        <header id="page-header" class="clearfix">
-            <div id="course-header">
-                <?php echo $OUTPUT->course_header(); ?>
-            </div>
-        </header>
     
         <div id="page-content" class="row">
             <div id="region-main" class="eboxshadow <?php echo $regions['content']; ?>">
                 <?php
+                echo $widgets->quicklinks($hasquicklinks);
                 echo $OUTPUT->course_content_header();
                 echo $OUTPUT->main_content();
                 echo $OUTPUT->course_content_footer();

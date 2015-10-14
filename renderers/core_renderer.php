@@ -27,12 +27,26 @@ defined('MOODLE_INTERNAL') || die();
 
 class theme_elegance_core_renderer extends theme_bootstrap_core_renderer {
 
+
     public function navbar() {
-        $breadcrumbs = '';
-        foreach ($this->page->navbar->get_items() as $item) {
-            $item->hideicon = true;
-            $breadcrumbs .= '<li>'.$this->render($item).'</li>';
+        $items = $this->page->navbar->get_items();
+        if (empty($items)) { // MDL-46107.
+            return '';
         }
+        $breadcrumbs = '';
+        $numitems = count($items);
+        $cnt = 0;
+        foreach ($items as $item) {
+            $cnt++;
+            $addclass = array();
+            if ($cnt == $numitems) {
+                $addclass = array('class' => 'active');
+            }
+            
+            $item->hideicon = true;
+            $breadcrumbs .= html_writer::tag('li', $this->render($item), $addclass);
+        }
+
         return "<ol class=breadcrumb>$breadcrumbs</ol>";
     }
 

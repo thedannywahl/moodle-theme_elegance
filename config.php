@@ -123,7 +123,7 @@ $THEME->layouts = array(
         'file' => 'default.php',
         'regions' => array('side-pre', 'side-post'),
         'defaultregion' => 'side-pre',
-        'options' => array('nonavbar' => true, 'hasbanner' => true, 'hasmarketing' => true),
+        'options' => array('nonavbar' => true, 'hasbanner' => true, 'hasmarketing' => true, 'hasquicklinks' => true),
     ),
     // Server administration scripts.
     'admin' => array(
@@ -146,7 +146,7 @@ $THEME->layouts = array(
         'defaultregion' => 'side-pre',
     ),
     'login' => array(
-        'file' => 'login.php',
+        'file' => 'default.php',
         'regions' => array(),
         'options' => array('langmenu' => true, 'nonavbar' => true),
     ),

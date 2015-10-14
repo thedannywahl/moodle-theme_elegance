@@ -1,0 +1,26 @@
+<div id="heading">
+    <h2 class="quicklinksheader">
+        <i class="fa fa-{{quicklinksicon}}"></i>
+        {{quicklinkstitle}}
+    </h2>
+</div>
+
+<div class="row" id="quicklinks">
+    {{#quicklinks}}
+
+        <div class="{{classlarge}} {{classmedium}} col-sm-4 col-xs-6" id="quicklink">
+            {{#url}}
+            <a href="{{{url}}}">
+            {{/url}}
+                <div id="circle-highlight" class="{{iconclass}}">
+                    <i class="fa fa-{{icon}}"></i>
+                </div>
+                <p class="btn {{buttonclass}}">
+                    {{buttontext}}
+                </p>
+            {{#url}}
+            </a>
+            {{/url}}
+        </div>
+    {{/quicklinks}}
+</div>

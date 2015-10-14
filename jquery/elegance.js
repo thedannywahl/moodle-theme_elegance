@@ -26,14 +26,50 @@ $( document ).ready(function(){
     $("#b-inc").click(function() { NProgress.inc(); });
     $("#b-100").click(function() { NProgress.done(); });
 
-    $('.banner').unslider({
-        fluid: false,
-        dots: true,
-        speed: 600,
-        keys: true,
-        arrows: true,
-        prev: '<',
-        next: '>'
-    });
+    if ($('.banner').length > 0 ) {
+        var ajaxurl = M.cfg.wwwroot+'/theme/elegance/ajax/themesettings.php';
+        $.ajax({
+          url: ajaxurl,
+          cache: false,
+          data: { setting: "slidespeed", sesskey: M.cfg.sesskey}
+        }).done(function( msg) {
+            if (msg.result == 'success') {
+                slidespeed = msg.slidespeed;
+                $('.banner').unslider({
+                    fluid: false,
+                    dots: true,
+                    speed: slidespeed,
+                    keys: true,
+                    arrows: true,
+                    prev: '<',
+                    next: '>'
+                });
+            } else {
+                $('.banner').unslider({
+                    fluid: false,
+                    dots: true,
+                    speed: 600,
+                    keys: true,
+                    arrows: true,
+                    prev: '<',
+                    next: '>'
+                });
+            }
+        });
+
+    }
+
+    if ($('#page-login-index').length > 0 ) {
+        var ajaxurl = M.cfg.wwwroot+'/theme/elegance/ajax/themesettings.php';
+        $.ajax({
+          url: ajaxurl,
+          cache: false,
+          data: { setting: "loginbackgrounds", sesskey: M.cfg.sesskey}
+        }).done(function( msg) {
+            if (msg.result == 'success') {
+                $.backstretch(msg.loginimages, {'duration': 10000, 'fade': 750});
+            }
+        });
+    }
     
 });

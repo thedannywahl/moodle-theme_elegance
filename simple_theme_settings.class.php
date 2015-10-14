@@ -217,7 +217,7 @@ class elegance_simple_theme_settings {
             $this->name_for($setting . $instance),
             $this->title_for($setting, $instance),
             $this->description_for($setting),
-            $setting // TODO find out what this does,
+            $setting . $instance// TODO find out what this does,
                      // for now assume it just needs to be unique.
         );
         $file->set_updatedcallback('theme_reset_all_caches');
