@@ -4,7 +4,7 @@
 
 ### Features
 
-[Elegance](https://moodle.org/plugins/view.php?plugin=theme_elegance) is a beautiful two column Moodle theme with robust functionality and lots of custom settings.
+[Elegance](https://moodle.org/plugins/view.php?plugin=theme_elegance) is a beautiful three column Moodle theme with robust functionality and lots of custom settings.
 
 * [Font Awesome](http://fortawesome.github.io/Font-Awesome/) icons
 * [Google Web Fonts](http://www.google.com/fonts/)
@@ -34,6 +34,22 @@ If you would like to see it in action, head to the [2014 iMoot](http://2014.imoo
 * Please do not use the github version of this theme in a production environment.  The current plugin repository version will always be the most stable.
 
 ### Changelog
+
+[v2.9]
+rewrote most renderers to use mustache templates
+Migrate from css to less
+Using one layout file only
+Removed category icon logic
+Removed custom login page
+Rewrote all settings options
+Using upstream bootstrap course renderer
+Cleanup navbar
+Using upstream user dropdown
+Using flexbox for marketing spots
+Removed most border-radius css
+Changed block headings
+Reset all font sizes / weight
+Many CSS cleanups
 
 [v2.7.1](https://github.com/thedannywahl/moodle-theme_elegance/issues?q=milestone%3Av2.7.1+is%3Aclosed)
 fixed: show/hide resources broken

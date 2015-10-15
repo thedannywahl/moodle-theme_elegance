@@ -63,7 +63,7 @@ if ($invert) {
 }
 
 if ($transparentmain) {
-    $mainclass = '';
+    $mainclass = 'm-t-30';
 } else {
     $mainclass = 'eboxshadow bg-white p-20';
 }

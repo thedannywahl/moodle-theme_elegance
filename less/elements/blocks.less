@@ -1,0 +1,372 @@
+
+
+.block {
+    background: none;
+    padding: 12px 0 8px;
+    background-color: #FFF;
+    // NEED TO FIX FOR LESS
+    // border: 2px solid rgba(236, 237, 240, "[[setting:transparency]]");
+    .eboxshadow;
+    font-family: "Roboto";
+
+    #icon {
+        margin-right: 5px;
+        color: #999;
+    }
+
+    .header {
+        padding: 0px 10px;
+        background: transparent;
+    }
+
+    .header .title h2 {
+        .styled-heading(16px, 28px);
+    }
+    .header .title h2:before {
+        font-family: FontAwesome;
+        font-size: 1em;
+        margin-right: .3em;
+        color: #999;
+        content: "\f0c9";
+    }
+
+
+    .block_section .header .block_action {
+        float: left;
+    }
+
+    .block-hider-hide, .block-hider-show{
+        position: absolute;
+        width: 100%;
+        height: 42px;
+        margin-top: -8px;
+        margin-left: -5px;
+        opacity: 0;
+    }
+
+    .block_tree > li.type_custom{
+        margin-right: 0px;
+    }
+
+    .icon-right {
+        position: absolute;
+        right: 10px;
+        top: 13px;
+    }
+
+    .btn {
+        width: auto;
+        margin-bottom: 10px;
+    }
+}
+
+
+.block_login {
+    label {
+        font-size: 14px;
+        -webkit-font-smoothing: antialiased;
+        color: "[[setting:themecolor]]";
+        margin-bottom: 5px;
+        margin-top: 5px;
+        font-weight: 400;
+    }
+
+    .username label:before {
+        content:"\f007";
+        font-family: FontAwesome;
+        margin-right: 5px;
+        color: #999;
+    }
+
+    .password label:before {
+        content:"\f084";
+        font-family: FontAwesome;
+        margin-right: 5px;
+        color: #999;
+    }
+
+    .btn {
+        width: 100%;
+    }
+    .btn input[type="submit"],
+    .content .footer a {
+        background-color: #5cb85c;
+        background-image: none;
+        border-color: #30ADD1;
+        border-image: none;
+        border-radius: 4px;
+        border-style: solid;
+        border-width: 1px;
+        box-shadow: none;
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 14px;
+        padding: 4px 12px;
+        text-align: center;
+        text-shadow: none;
+        vertical-align: middle;
+        margin: 10px 0;
+        -webkit-transition: 0.25s;
+        -moz-transition: 0.25s;
+        -o-transition: 0.25s;
+        transition: 0.25s;
+        width: 100%;
+    }
+
+    .btn:hover {
+        background: #388f9d !important;
+    }
+
+    .content input[type="submit"] {
+        background: transparent;
+        border: 0px none;
+        padding: 0px;
+        padding-left: 10px;
+        margin: 0px;
+        color: #fff;
+        font-size: 14px;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .content .footer a {
+        margin-top: 0px;
+        padding: 4px 5px;
+        line-height: 23px;
+    }
+    input#login_username,
+    input#login_password {
+        width: 100%;
+        border-radius: 3px;
+        height: 35px;
+        -webkit-font-smoothing: antialiased;
+        outline: none;
+        margin-bottom: 5px;
+        font-size: .85em;
+    }
+
+    input:focus {
+        background: #fff;
+        outline: none;
+    }
+
+    input:-webkit-autofill {
+        background: #fff !important;
+    }
+
+    .content .footer div:nth-child(1) a {
+        color: #fff;
+        background-color: #f0ad4e;
+        border-color: #eea236;
+    }
+
+    .content .footer div:nth-child(1) a:hover {
+        background-color: #1b77a2;
+        border-color: #eea236;
+    }
+
+    .content .footer div:nth-child(2) a {
+        border: 1px solid #ac543d;
+        background: #d9534f;
+        color: #fff;
+    }
+
+    .content .footer div:nth-child(2) a:hover {
+        border: 1px solid #ac543d;
+        background: #1b77a2;
+    }
+}
+
+.block 
+
+.dir-rtl .collapsed .tree_item.branch:before { 
+    content: " \f053";
+}
+
+.dir-rtl .glyphicon-chevron-right:before {
+content: "\e079";
+}
+
+.block_news_items .header .title h2:before {
+    content:"\f0a1";
+}
+
+.block_navigation .header .title h2:before {
+    content:"\f0e8";
+}
+
+.block_calendar_upcoming .header .title h2:before,
+.block_calendar_month .header .title h2:before {
+    content:"\f073";
+}
+
+.block_course_overview .coursebox {
+    border: 0px none;
+}
+
+.block_course_list .header .title h2:before {
+    content:"\f108";
+}
+
+.block_completionstatus .header .title h2:before,
+.block_selfcompletion .header .title h2:before {
+    content:"\f0e4";
+}
+
+.block_rss_client .header .title h2:before {
+    content:"\f09e";
+}
+
+.block_blog_menu .header .title h2:before {
+    content:"\f02d";
+}
+
+.block_quiz_results .header .title h2:before {
+    content:"\f080";
+}
+
+.block_quiz_navblock .header .title h2:before {
+    content:"\f126";
+}
+
+.block_glossary_random .header .title h2:before {
+    content:"\f0eb";
+}
+
+.block_book_toc .header .title h2:before {
+    content:"\f02d";
+}
+
+
+.block_participants .header .title h2:before,
+.block_online_users .header .title h2:before {
+    content:"\f0c0";
+}
+
+.block_html .header .title h2:before {
+    content:"\f022";
+}
+
+.block_section_links .header .title h2:before {
+    content:"\f02e";
+}
+
+.block_activity_modules .header .title h2:before {
+    content:"\f12e";
+}
+
+.block_comments .header .title h2:before {
+    content:"\f075";
+}
+
+.block_settings .header .title h2:before {
+    content:"\f085";
+}
+
+.block_admin_bookmarks .header .title h2:before{
+    content:"\f02e";
+}
+
+.block_blog_tags .header .title h2:before,
+.block_tags .header .title h2:before {
+    content:"\f02c";
+}
+
+.block_private_files .header .title h2:before {
+    content:"\f114";
+}
+
+.block_block_mentees .header .title h2:before {
+    content:"\f0c0";
+}
+
+.block_messages .header .title h2:before {
+    content:"\f0e0";
+}
+
+.block_community .header .title h2:before {
+    content:"\f0ac";
+}
+
+.block_login .header .title h2:before {
+    content:"\f007";
+}
+
+.block_recent_activity .header .title h2:before {
+    content:"\f017";
+}
+
+.block_search_forums .header .title h2:before {
+    content:"\f0e6";
+}
+
+.block_myprofile .header .title h2:before {
+    content:"\f007";
+}
+
+.block_adminblock .header .title h2:before {
+    content:"\f009";
+}
+
+.block_feedback .header .title h2:before {
+    content:"\f087";
+}
+
+.block_flickr .header .title h2:before {
+    content:"\f03e";
+}
+
+.block_youtube .header .title h2:before {
+    content:"\f145";
+}
+
+.block_course_badges .header .title h2:before {
+    content:"\f091";
+}
+
+.block_twitter_search .header .title h2:before {
+    content:"\f099";
+}
+
+/* @end */
+
+/* @group Frontpage */
+
+#block-region-side-middle .block {
+    .eboxshadow;
+}
+
+
+#block-region-side-middle .block .block-hider-show, 
+#block-region-side-middle .block .block-hider-hide {
+    display: none;
+}
+
+
+#block-region-side-middle .block_rss_client .list li {
+    clear: both;
+    border: 0px none;
+    margin-bottom: 0px;
+    border-bottom: 1px dashed #ddd;
+    height: 52px;
+    overflow: hidden;
+}
+
+#block-region-side-middle .block_rss_client .content li .link {
+    float: left;
+    margin-right: 5px;
+}
+
+#block-region-side-middle .block_rss_client .content li .description p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: .8em;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+#block-region-side-middle .block_rss_client .header .title h2:before {
+    content:"\f086";
+}

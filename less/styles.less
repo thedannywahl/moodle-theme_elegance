@@ -2,31 +2,31 @@
 
 /* @group RESET CSS */
 
-.course-content ul.topics li.section .left, 
-.course-content ul.topics li.section .right,
-.section.img-text,
-.boxwidthwide,
-.course-content ul.topics li.section .content,
-.course-content ul.topics li.section .summary,
-.site-topic ul.section,
-.course-content ul.section,
-.path-mod-choice .horizontal,
-.path-mod-choice .vertical,
-.path-mod-choice .anonymous,
-.path-mod-choice .names,
-.path-mod-choice .results.anonymous .graph.horizontal,
-.block_course_overview .content,
-.coursebox .content .coursecat, 
-.coursebox .content .summary, 
-.coursebox .content .courseimage, 
-.coursebox .content .coursefile, 
-.coursebox .content .teachers, 
-.coursebox.remotecoursebox .remotecourseinfo {
-    max-width:100%;
-    width:auto;
-    padding:0;
-    margin:0 auto;
-}
+// .course-content ul.topics li.section .left, 
+// .course-content ul.topics li.section .right,
+// .section.img-text,
+// .boxwidthwide,
+// .course-content ul.topics li.section .content,
+// .course-content ul.topics li.section .summary,
+// .site-topic ul.section,
+// .course-content ul.section,
+// .path-mod-choice .horizontal,
+// .path-mod-choice .vertical,
+// .path-mod-choice .anonymous,
+// .path-mod-choice .names,
+// .path-mod-choice .results.anonymous .graph.horizontal,
+// .block_course_overview .content,
+// .coursebox .content .coursecat, 
+// .coursebox .content .summary, 
+// .coursebox .content .courseimage, 
+// .coursebox .content .coursefile, 
+// .coursebox .content .teachers, 
+// .coursebox.remotecoursebox .remotecourseinfo {
+//     max-width:100%;
+//     width:auto;
+//     padding:0;
+//     margin:0 auto;
+// }
 
 /* @end */
 
@@ -88,14 +88,6 @@ body.pagelayout-maintenance {
     padding: 0;
 }
 
-#main {
-    // background-image: url("[[setting:bodybg]]");
-    // background-repeat: no-repeat;
-    // background-position: fixed center center;
-    
-    //background-size: cover;
-}
-
 #theme_switch_link {
     display: none;
 }
@@ -109,7 +101,7 @@ p {
     font-style: normal;
 }
 
-li{
+li {
     font-size: 14px;
     line-height: 21px;
     letter-spacing: 0px;
@@ -182,158 +174,7 @@ a:hover, a:focus{
 
 /* @group Banner */
 
-.banner {
-    position: relative;
-    width: 100%;
-    overflow: auto;
-    font-size: 18px;
-    line-height: 24px;
-    text-align: center;
-    color: rgba(255,255,255,.6);
-    text-shadow: 0 0 1px rgba(0,0,0,.05), 0 1px 2px rgba(0,0,0,.3);
-    background: #000;
-    .eboxshadow;
-}
 
-.banner ul {
-    list-style: none;
-    width: 300%;
-    margin-left: 0px;
-}
-
-.banner ul li {
-    display: block;
-    float: left;
-    width: 33%;
-    min-height: 250px;
-    padding-top: 20px;
-        
-/*  -webkit-background-size: 100% 100%;*/
-    -moz-background-size: 100% 100%;
-    -o-background-size: 100% 100%;
-    -ms-background-size: 100% 100%;
-/*  background-size: 100% 100%;*/
-        
-    box-shadow: inset 0 -3px 6px rgba(0,0,0,.1);
-}
-    
-.banner h1, .banner h2 {
-    font-size: 40px;
-    line-height: 52px;
-    color: #fff;
-    font-family: 'Bree Serif', serif;
-    font-weight: 300;
-}
-
-.banner p {
-    color: #fff;
-}
-    
-.banner .btn {
-    display: inline-block;
-    margin: 25px 0 0;
-    padding: 9px 22px 7px;
-    clear: both;
-    color: #fff;
-    font-size: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 2px solid rgba(255,255,255,.4);
-    border-radius: 5px;
-    background: transparent;
-}
-
-.banner .btn:hover {
-    background: "[[setting:themecolor]]";
-}
-
-.banner .btn:active {
-    -webkit-filter: drop-shadow(0 -1px 2px rgba(0,0,0,.5));
-    -moz-filter: drop-shadow(0 -1px 2px rgba(0,0,0,.5));
-    -ms-filter: drop-shadow(0 -1px 2px rgba(0,0,0,.5));
-    -o-filter: drop-shadow(0 -1px 2px rgba(0,0,0,.5));
-    filter: drop-shadow(0 -1px 2px rgba(0,0,0,.5));
-}
-        
-.banner .btn, .banner .dot {
-    -webkit-filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
-    -moz-filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
-    -ms-filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
-    -o-filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
-    filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
-}
-    
-.banner .dots {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0px;
-}
-
-.banner .dots li {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    margin: 0 4px;
-            
-    text-indent: -999em;
-            
-    border: 2px solid #fff;
-    border-radius: 6px;
-            
-    cursor: pointer;
-    opacity: .4;
-            
-    -webkit-transition: background .5s, opacity .5s;
-    -moz-transition: background .5s, opacity .5s;
-    transition: background .5s, opacity .5s;
-}
-
-.banner .dots li.active {
-    background: #fff;
-    opacity: 1;
-}
-
-.banner #slide1 {
-    background: "[[setting:slide1color]]";
-}
-
-.banner #slide2 {
-    background: "[[setting:slide2color]]";
-}
-
-.banner #slide3 {
-    background: "[[setting:slide3color]]";
-}
-
-.banner #slide4 {
-    background: "[[setting:slide4color]]";
-}
-
-.banner #slide5 {
-    background: "[[setting:slide5color]]";
-}
-
-.banner #slide6 {
-    background: "[[setting:slide6color]]";
-}
-
-.banner #slide7 {
-    background: "[[setting:slide7color]]";
-}
-
-.banner #slide8 {
-    background: "[[setting:slide8color]]";
-}
-
-.banner #slide9 {
-    background: "[[setting:slide9color]]";
-}
-
-.banner #slide10 {
-    background: "[[setting:slide10color]]";
-}
 
 /* @end */
 
@@ -394,7 +235,6 @@ text-shadow: 0 1px 1px rgba(255,255,255,0.75);
     color:#666;
     padding: 0px 10px;
     border:1px solid #ddd;
-    border-radius: 6px;
 }
 
 .marketing-block h3 {
@@ -593,8 +433,9 @@ h2.quicklinksheader .fa {
 
 /* @group Navbar */
 
-// .navbar {
-//  margin-bottom: 0px;
+.navbar {
+    margin-bottom: 0px;
+}
 //  border: 0px none;
 //  border-radius: 0px;
 // }
