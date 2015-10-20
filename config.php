@@ -30,7 +30,7 @@ $THEME->doctype = 'html5';
 $THEME->yuicssmodules = array();
 
 $THEME->name = 'elegance';
-
+$THEME->enable_dock = true;
 $THEME->parents = array('bootstrap');
 $THEME->lessfile = 'elegance';
 $THEME->parents_exclude_sheets = array('bootstrap' => array('moodle'));

@@ -125,6 +125,15 @@ a {
     max-width: @maxwidth;
 }
 
+body.has_dock {
+    .container-fluid {
+        padding-left: 50px;
+    }
+    #page {
+        padding-left: 0;
+    }
+}
+
 a:hover, a:focus{
     outline: none;
     color: @text-color;
