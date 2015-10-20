@@ -35,18 +35,16 @@ $( document ).ready(function(){
         }).done(function( msg) {
             if (msg.result == 'success') {
                 slidespeed = msg.slidespeed;
-                $('.carousel').carousel({
-                    interval: slidespeed
-                });
+                // $('.carousel').carousel({
+                //     interval: slidespeed
+                // });
             } else {
                 $('.carousel').carousel({
                     interval: 600
                 });
             }
         });
-
     }
-    $('.carousel').carousel();
 
     if ($('#page-login-index').length > 0 ) {
         var ajaxurl = M.cfg.wwwroot+'/theme/elegance/ajax/themesettings.php';

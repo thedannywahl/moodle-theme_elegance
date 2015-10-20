@@ -74,7 +74,6 @@ $PAGE->set_popup_notification_allowed(false);
 
 $PAGE->requires->jquery();
 $PAGE->requires->jquery_plugin('fitvids', 'theme_elegance');
-$PAGE->requires->jquery_plugin('unslider', 'theme_elegance');
 $PAGE->requires->jquery_plugin('eventswipe', 'theme_elegance');
 $PAGE->requires->jquery_plugin('nprogress', 'theme_elegance');
 $PAGE->requires->jquery_plugin('backstretch', 'theme_elegance');
