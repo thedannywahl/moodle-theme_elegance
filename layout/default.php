@@ -42,6 +42,7 @@ $widgets = $PAGE->get_renderer('theme_elegance', 'widgets');
 
 $haslogo = (!empty($PAGE->theme->settings->logo));
 $invert = (!empty($PAGE->theme->settings->invert));
+$fixednavbar = (!empty($PAGE->theme->settings->fixednavbar));
 
 $hasbanner = (!empty($PAGE->layout_options['hasbanner']));
 $hasmarketing = (!empty($PAGE->layout_options['hasmarketing']));
@@ -60,6 +61,10 @@ if ($invert) {
   $navbartype = 'navbar-inverse';
 } else {
   $navbartype = 'navbar-default';
+}
+
+if ($fixednavbar) {
+    $navbartype .= ' navbar-fixed-top';
 }
 
 if ($transparentmain) {

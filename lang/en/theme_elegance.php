@@ -54,6 +54,9 @@ $string['frontpagecontentdesc'] = 'This location appears as a highlight under th
 $string['footnote'] = 'Footnote';
 $string['footnotedesc'] = 'Whatever you add to this textarea will be displayed in the footer throughout your Moodle site.';
 
+$string['fixednavbar'] = 'Fixed Navbar';
+$string['fixednavbardesc'] = 'Enable sticky navbar at top of the page';
+
 $string['invert'] = 'Invert Navbar';
 $string['invertdesc'] = 'Swaps text and background for the navbar at the top of the page between black and white.';
 

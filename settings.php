@@ -42,6 +42,8 @@ defined('MOODLE_INTERNAL') || die;
 
     $temp->add($ss->add_checkbox('invert'));
 
+    $temp->add($ss->add_checkbox('fixednavbar'));
+
     $temp->add($ss->add_text('maxwidth', '1100'));
 
     $temp->add($ss->add_checkbox('fonticons'));

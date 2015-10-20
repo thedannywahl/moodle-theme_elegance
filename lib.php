@@ -100,6 +100,10 @@ function theme_elegance_less_variables($theme) {
         $variables['maxwidth'] = $settings->maxwidth . 'px';
     }
 
+    if (!empty($settings->fixednavbar)) {
+        $variables['navbarpadding'] = '50px';
+    }
+
     foreach (range(1, 12) as $i) {
         $textvar = "quicklinkiconcolor" . $i;
         if (!empty($settings->$textvar)) {
