@@ -113,7 +113,12 @@ defined('MOODLE_INTERNAL') || die;
             format_text(get_string('bannersettingsdesc' , 'theme_elegance'), FORMAT_MARKDOWN)));
 
 
-    $temp->add($ss->add_checkbox('enableslideshow'));
+    $choices = array();
+    $choices[1] = get_string('alwaysdisplay', 'theme_elegance');
+    $choices[2] = get_string('displaybeforelogin', 'theme_elegance');
+    $choices[3] = get_string('displayafterlogin', 'theme_elegance');
+    $choices[4] = get_string('dontdisplay', 'theme_elegance');
+    $temp->add($ss->add_select('togglebanner', '1', $choices));
 
     $choices = range(0, 10);
 
@@ -229,7 +234,7 @@ defined('MOODLE_INTERNAL') || die;
     }
 
 
-    foreach (range(1, $quicklinksnum) as $qln) {
+    foreach (range(1, $quicklinksnum + 1) as $qln) {
 
         $temp->add($ss->add_headings('quicklinks', $qln));
 

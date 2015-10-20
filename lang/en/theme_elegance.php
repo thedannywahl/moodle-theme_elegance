@@ -166,6 +166,8 @@ $string['headingcolordesc'] = 'Set the colour used for the majority of Headings 
 
 /* Banners */
 
+$string['togglebanner'] = 'Banner display';
+$string['togglebannerdesc'] = 'Choose if you wish to hide or show the Slideshow.';
 $string['enableslideshow'] = 'Enable Slideshow';
 $string['enableslideshowdesc'] = 'Use to turn off slideshow entirely';
 
@@ -225,10 +227,10 @@ $string['marketinginfodesc'] = 'Enter the settings for your marketing spot.';
 $string['marketingheadingsub'] = 'Three locations on the front page to add information and links.';
 $string['marketingheight'] = 'Height of Marketing Images';
 $string['marketingheightdesc'] = 'If you want to display images in the Marketing boxes you can specify their height here.';
-$string['marketingdesc'] = 'This theme provides the option of enabling three "marketing" or "ad" spots just under the slideshow.  These allow you to easily identify core information to your users and provide direct links.';
+$string['marketingdesc'] = 'This theme provides the option of enabling "marketing" or "ad" spots just under the slideshow.  These allow you to easily identify core information to your users and provide direct links.';
 
 $string['togglemarketing'] = 'Marketing Spot display';
-$string['togglemarketingdesc'] = 'Choose if you wish to hide or show the three Marketing Spots.';
+$string['togglemarketingdesc'] = 'Choose if you wish to hide or show the Marketing Spots.';
 
 $string['marketingtitleicon'] = 'Heading Icon';
 $string['marketingtitleicondesc'] = 'Name of the icon you wish to use in the heading for the marketing spots. List is <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_new">here</a>.  Just enter what is after the "fa-".';

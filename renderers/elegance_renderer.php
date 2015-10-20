@@ -32,8 +32,22 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
         $settings = $theme->settings;
         $slidenum = $settings->slidenumber;
 
-        if (!$settings->enableslideshow) {
-            return '';
+        switch ($settings->togglebanner) {
+            case 1:
+                break;
+            case 2:
+                if (isloggedin()) {
+                    return '';
+                }
+                break;
+            case 3:
+                if (!isloggedin()) {
+                    return '';
+                }
+                break;
+            case 4:
+                return '';
+                break;
         }
 
         $template = new Object();
@@ -99,11 +113,32 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
         if (!$hasmarketing) {
             return '';
         }
+        
+
+
 
         $blocksmiddle = $OUTPUT->blocks('side-middle');
 
         $theme = theme_config::load('elegance');
         $settings = $theme->settings;
+
+        switch ($settings->togglemarketing) {
+            case 1:
+                break;
+            case 2:
+                if (isloggedin()) {
+                    return '';
+                }
+                break;
+            case 3:
+                if (!isloggedin()) {
+                    return '';
+                }
+                break;
+            case 4:
+                return '';
+                break;
+        }
 
         $spotsnr = $settings->marketingspotsnr;
         $template = new Object();
@@ -197,8 +232,27 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
             return '';
         }
 
+
         $theme = theme_config::load('elegance');
         $settings = $theme->settings;
+
+        switch ($settings->togglequicklinks) {
+            case 1:
+                break;
+            case 2:
+                if (isloggedin()) {
+                    return '';
+                }
+                break;
+            case 3:
+                if (!isloggedin()) {
+                    return '';
+                }
+                break;
+            case 4:
+                return '';
+                break;
+        }
 
         $template = new Object();
 
@@ -206,7 +260,7 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
         $template->quicklinkstitle = $settings->quicklinkstitle;
         $quicklinksnumber = $settings->quicklinksnumber;
         $template->quicklinks = array();
-        foreach (range(1, $quicklinksnumber) as $i) {
+        foreach (range(1, $quicklinksnumber +1) as $i) {
             $icon = 'quicklinkicon' . $i;
             $buttontext = 'quicklinkbuttontext' . $i;
             $url = 'quicklinkbuttonurl' . $i;
