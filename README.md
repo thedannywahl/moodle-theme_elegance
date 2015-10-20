@@ -50,6 +50,7 @@ Removed most border-radius css
 Changed block headings
 Reset all font sizes / weight
 Many CSS cleanups
+New favicon
 
 [v2.7.1](https://github.com/thedannywahl/moodle-theme_elegance/issues?q=milestone%3Av2.7.1+is%3Aclosed)
 fixed: show/hide resources broken

@@ -192,4 +192,35 @@ class theme_elegance_core_renderer extends theme_bootstrap_core_renderer {
             return false;
         }
     }
+
+        /**
+     * Produces a header for a block
+     *
+     * @param block_contents $bc
+     * @return string
+     */
+    protected function block_header(block_contents $bc) {
+
+        $title = '';
+        if ($bc->title) {
+            $attributes = array();
+            if ($bc->blockinstanceid) {
+                $attributes['id'] = 'instance-'.$bc->blockinstanceid.'-header';
+            }
+            $title = html_writer::tag('h2', $bc->title, $attributes);
+            $title .= html_writer::empty_tag('hr', array('class' => 'star-primary'));
+        }
+
+        $blockid = null;
+        if (isset($bc->attributes['id'])) {
+            $blockid = $bc->attributes['id'];
+        }
+        $controlshtml = $this->block_controls($bc->controls, $blockid);
+
+        $output = '';
+        if ($title || $controlshtml) {
+            $output .= html_writer::tag('div', html_writer::tag('div', html_writer::tag('div', '', array('class'=>'block_action')). $title . $controlshtml, array('class' => 'title')), array('class' => 'header'));
+        }
+        return $output;
+    }
 }

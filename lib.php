@@ -61,13 +61,59 @@ function elegance_grid($hassidepre, $hassidepost) {
     return $regions;
 }
 
-function elegance_settings() {
-    $theme = theme_config::load('elegance');
-    foreach ($theme->settings as $setting) {
 
-    }
+function theme_elegance_extra_less($theme) {
+
 }
 
+/**
+ * Returns variables for LESS.
+ *
+ * We will inject some LESS variables from the settings that the user has defined
+ * for the theme. No need to write some custom LESS for this.
+ *
+ * @param theme_config $theme The theme config object.
+ * @return array of LESS variables without the @.
+ */
+function theme_elegance_less_variables($theme) {
+    $variables = array();
+    $settings = $theme->settings;
+
+    $images = array('headerbg', 'bodybg', 'logo');
+
+    foreach ($images as $image) {
+        if (!empty($settings->$image)) {
+            $imagefile = $theme->setting_file_url($image, $image);
+            $variables[$image] = "'" . $imagefile . "'";
+        }
+    }
+
+    $textvars = array('themecolor', 'fontcolor', 'headingcolor', 'videowidth', 'transparency');
+
+    foreach ($textvars as $textvar) {
+        if (!empty($settings->$textvar)) {
+            $variables[$textvar] = $settings->$textvar;
+        }
+    }
+
+    if (!empty($settings->maxwidth)) {
+        $variables['maxwidth'] = $settings->maxwidth . 'px';
+    }
+
+    foreach (range(1, 12) as $i) {
+        $textvar = "quicklinkiconcolor" . $i;
+        if (!empty($settings->$textvar)) {
+            $variables[$textvar] = $settings->$textvar;
+        }
+
+        $textvar = "quicklinkbuttoncolor" . $i;
+        if (!empty($settings->$textvar)) {
+            $variables[$textvar] = $settings->$textvar;
+        }
+    }
+
+    return $variables;
+}
 
 function theme_elegance_get_nav_links($course, $sections, $sectionno) {
   // FIXME: This is really evil and should by using the navigation API.
@@ -122,8 +168,6 @@ function theme_elegance_get_nav_links($course, $sections, $sectionno) {
   return $links;
 }
 
-
-
 function theme_elegance_initialise_reader(moodle_page $page) {
     $page->requires->yui_module('moodle-theme_elegance-reader', 'M.theme_elegance.initreader', array());
 }
@@ -131,22 +175,6 @@ function theme_elegance_initialise_reader(moodle_page $page) {
 function theme_elegance_process_css($css, $theme) {
 
     // Set the background image for the logo.
-    $logo = $theme->setting_file_url('logo', 'logo');
-    $css = theme_elegance_set_logo($css, $logo);
-
-    if (!empty($theme->settings->maxwidth)) {
-        $css = str_replace('"[[setting:maxwidth]]"', $theme->settings->maxwidth . "px", $css);
-    }
-
-    // Set the background image for the header.
-    $setting = 'headerbg';
-    $headerbg = $theme->setting_file_url($setting, $setting);
-    $css = theme_elegance_set_headerbg($css, $headerbg, $setting);
-
-    // Set the background image for the Page.
-    $setting = 'bodybg';
-    $bodybg = $theme->setting_file_url($setting, $setting);
-    $css = theme_elegance_set_bodybg($css, $bodybg, $setting);
 
     // Set custom CSS.
     if (!empty($theme->settings->customcss)) {
@@ -164,215 +192,9 @@ function theme_elegance_process_css($css, $theme) {
     }
     $css = theme_elegance_set_moodlemobilecss($css, $moodlemobilecss);
 
-    // Set the theme main color.
-    if (!empty($theme->settings->themecolor)) {
-        $themecolor = $theme->settings->themecolor;
-    } else {
-        $themecolor = null;
-    }
-    $css = theme_elegance_set_themecolor($css, $themecolor);
-
-    // Set the theme backgroundcolor.
-    if (!empty($theme->settings->bodycolor)) {
-        $bodycolor = $theme->settings->bodycolor;
-    } else {
-        $bodycolor = null;
-    }
-    $css = theme_elegance_set_bodycolor($css, $bodycolor);
-
-    // Set the font color.
-    if (!empty($theme->settings->fontcolor)) {
-        $fontcolor = $theme->settings->fontcolor;
-    } else {
-        $fontcolor = null;
-    }
-    $css = theme_elegance_set_fontcolor($css, $fontcolor);
-
-    // Set the heading color.
-    if (!empty($theme->settings->headingcolor)) {
-        $headingcolor = $theme->settings->headingcolor;
-    } else {
-        $headingcolor = null;
-    }
-    $css = theme_elegance_set_headingcolor($css, $headingcolor);
-
-    // Set the Video Max width.
-    if (!empty($theme->settings->videowidth)) {
-        $videowidth = $theme->settings->videowidth;
-    } else {
-        $videowidth = null;
-    }
-    $css = theme_elegance_set_videowidth($css, $videowidth);
-
-    // Set Quicklink Icon Color.
-    foreach (range(1, 12) as $quicklinksnumber) {
-        $quicklinkiconcolor = $theme->settings->themecolor;
-            if (!empty($theme->settings->{'quicklinkiconcolor' . $quicklinksnumber})) {
-                $quicklinkiconcolor = $theme->settings->{'quicklinkiconcolor' . $quicklinksnumber};
-            }
-        $css = theme_elegance_set_quicklinkiconcolor($css, $quicklinkiconcolor, $quicklinksnumber);
-    }
-
-    // Set Quicklink Button Color.
-    foreach (range(1, 12) as $quicklinksnumber) {
-        $quicklinkbuttoncolor = '#ecedf0';
-            if (!empty($theme->settings->{'quicklinkbuttoncolor' . $quicklinksnumber})) {
-                $quicklinkbuttoncolor = $theme->settings->{'quicklinkbuttoncolor' . $quicklinksnumber};
-            }
-        $css = theme_elegance_set_quicklinkbuttoncolor($css, $quicklinkbuttoncolor, $quicklinksnumber);
-    }
-
-
-    // Set the Slide 1 color.
-    if (!empty($theme->settings->bannercolor1)) {
-        $bannercolor1 = $theme->settings->bannercolor1;
-    } else {
-        $bannercolor1 = null;
-    }
-    $css = theme_elegance_set_bannercolor1($css, $bannercolor1);
-
-    // Set the Slide 2 color.
-    if (!empty($theme->settings->bannercolor2)) {
-        $bannercolor2 = $theme->settings->bannercolor2;
-    } else {
-        $bannercolor2 = null;
-    }
-    $css = theme_elegance_set_bannercolor2($css, $bannercolor2);
-
-    // Set the Slide 3 color.
-    if (!empty($theme->settings->bannercolor3)) {
-        $bannercolor3 = $theme->settings->bannercolor3;
-    } else {
-        $bannercolor3 = null;
-    }
-    $css = theme_elegance_set_bannercolor3($css, $bannercolor3);
-
-    // Set the Slide 4 color.
-    if (!empty($theme->settings->bannercolor4)) {
-        $bannercolor4 = $theme->settings->bannercolor4;
-    } else {
-        $bannercolor4 = null;
-    }
-    $css = theme_elegance_set_bannercolor4($css, $bannercolor4);
-
-    // Set the Slide 5 color.
-    if (!empty($theme->settings->bannercolor5)) {
-        $bannercolor5 = $theme->settings->bannercolor5;
-    } else {
-        $bannercolor5 = null;
-    }
-    $css = theme_elegance_set_bannercolor5($css, $bannercolor5);
-
-    // Set the Slide 6 color.
-    if (!empty($theme->settings->bannercolor6)) {
-        $bannercolor6 = $theme->settings->bannercolor6;
-    } else {
-        $bannercolor6 = null;
-    }
-    $css = theme_elegance_set_bannercolor6($css, $bannercolor6);
-
-    // Set the Slide 7 color.
-    if (!empty($theme->settings->bannercolor7)) {
-        $bannercolor7 = $theme->settings->bannercolor7;
-    } else {
-        $bannercolor7 = null;
-    }
-    $css = theme_elegance_set_bannercolor7($css, $bannercolor7);
-
-    // Set the Slide 8 color.
-    if (!empty($theme->settings->bannercolor8)) {
-        $bannercolor8 = $theme->settings->bannercolor8;
-    } else {
-        $bannercolor8 = null;
-    }
-    $css = theme_elegance_set_bannercolor8($css, $bannercolor8);
-
-    // Set the Slide 9 color.
-    if (!empty($theme->settings->bannercolor9)) {
-        $bannercolor9 = $theme->settings->bannercolor9;
-    } else {
-        $bannercolor9 = null;
-    }
-    $css = theme_elegance_set_bannercolor9($css, $bannercolor9);
-
-    // Set the Slide 10 color.
-    if (!empty($theme->settings->bannercolor10)) {
-        $bannercolor10 = $theme->settings->bannercolor10;
-    } else {
-        $bannercolor10 = null;
-    }
-    $css = theme_elegance_set_bannercolor10($css, $bannercolor10);
-
-    // Set the Transparency.
-    if (!empty($theme->settings->transparency)) {
-        $transparency = $theme->settings->transparency;
-    } else {
-        $transparency = null;
-    }
-    $css = theme_elegance_set_transparency($css, $transparency);
-
     return $css;
 }
 
-/**
- * Adds the logo to CSS.
- *
- * @param string $css The CSS.
- * @param string $logo The URL of the logo.
- * @return string The parsed CSS
- */
-function theme_elegance_set_logo($css, $logo) {
-    global $OUTPUT;
-    $tag = '"[[setting:logo]]"';
-    $replacement = $logo;
-    if (is_null($replacement)) {
-        $replacement = $OUTPUT->pix_url('bg/logo', 'theme');
-    }
-
-    $css = str_replace($tag, $replacement, $css);
-
-    return $css;
-}
-
-function theme_elegance_set_themecolor($css, $themecolor) {
-    $tag = '"[[setting:themecolor]]"';
-    $replacement = $themecolor;
-    if (is_null($replacement)) {
-        $replacement = '#0098e0';
-    }
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
-}
-
-function theme_elegance_set_bodycolor($css, $bodycolor) {
-    $tag = '"[[setting:bodycolor]]"';
-    $replacement = $bodycolor;
-    if (is_null($replacement)) {
-        $replacement = '#edecec';
-    }
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
-}
-
-function theme_elegance_set_fontcolor($css, $fontcolor) {
-    $tag = '"[[setting:fontcolor]]"';
-    $replacement = $fontcolor;
-    if (is_null($replacement)) {
-        $replacement = '#666';
-    }
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
-}
-
-function theme_elegance_set_headingcolor($css, $headingcolor) {
-    $tag = '"[[setting:headingcolor]]"';
-    $replacement = $headingcolor;
-    if (is_null($replacement)) {
-        $replacement = '#27282a';
-    }
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
-}
 
 /**
  * Serves any files associated with the theme settings.
@@ -451,204 +273,6 @@ function theme_elegance_set_moodlemobilecss($css, $moodlemobilecss) {
     return $css;
 }
 
-/**
- * Returns an object containing HTML for the areas affected by settings.
- *
- * @param renderer_base $output Pass in $OUTPUT.
- * @param moodle_page $page Pass in $PAGE.
- * @return stdClass An object with the following properties:
- *      - navbarclass A CSS class to use on the navbar. By default ''.
- *      - heading HTML to use for the heading. A logo if one is selected or the default heading.
- *      - footnote HTML to use as a footnote. By default ''.
- */
-function theme_elegance_get_html_for_settings(renderer_base $output, moodle_page $page) {
-    global $CFG;
-    $return = new stdClass;
-
-    $return->navbarclass = ' ';
-    if (!empty($page->theme->settings->invert)) {
-        $return->navbarclass .= 'navbar-inverse';
-    } else {
-    	$return->navbarclass .= 'navbar-default';
-    }
-
-    $return->footnote = '';
-    if (!empty($page->theme->settings->footnote)) {
-        $return->footnote = '<div class="footnote text-center">'.$page->theme->settings->footnote.'</div>';
-    }
-
-    return $return;
-}
-
-/**
- * All theme functions should start with theme_elegance_
- * @deprecated since 2.5.1
- */
-function elegance_process_css() {
-    throw new coding_exception('Please call theme_'.__FUNCTION__.' instead of '.__FUNCTION__);
-}
-
-/**
- * All theme functions should start with theme_elegance_
- * @deprecated since 2.5.1
- */
-function elegance_set_logo() {
-    throw new coding_exception('Please call theme_'.__FUNCTION__.' instead of '.__FUNCTION__);
-}
-
-/**
- * All theme functions should start with theme_elegance_
- * @deprecated since 2.5.1
- */
-function elegance_set_customcss() {
-    throw new coding_exception('Please call theme_'.__FUNCTION__.' instead of '.__FUNCTION__);
-}
-
-function theme_elegance_set_headerbg($css, $headerbg, $setting) {
-    global $OUTPUT;
-    $tag = '"[[setting:headerbg]]"';
-    $replacement = $headerbg;
-    if (is_null($replacement)) {
-        // Get default image from themes 'bg' folder of the name in $setting.
-        $replacement = $OUTPUT->pix_url('bg/header', 'theme');
-    }
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
-}
-
-function theme_elegance_set_bodybg($css, $bodybg, $setting) {
-    global $OUTPUT;
-    $tag = '"[[setting:bodybg]]"';
-    $replacement = $bodybg;
-    if (is_null($replacement)) {
-        // Get default image from themes 'bg' folder of the name in $setting.
-        return $css;
-    }
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
-}
-
-function theme_elegance_set_quicklinkiconcolor($css, $quicklinkiconcolor, $quicklinksnumber) {
-    $tag = '"[[setting:quicklinkiconcolor' . $quicklinksnumber . ']]"';
-    $replacement = $quicklinkiconcolor;
-
-    if (is_null($replacement)) {
-        $replacement = $theme->settings->themecolor;
-    }
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
-}
-
-function theme_elegance_set_quicklinkbuttoncolor($css, $quicklinkbuttoncolor, $quicklinksnumber) {
-    $tag = '"[[setting:quicklinkbuttoncolor' . $quicklinksnumber . ']]"';
-    $replacement = $quicklinkbuttoncolor;
-
-    if (is_null($replacement)) {
-        $replacement = '#ecedf0';
-    }
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
-}
-
-function theme_elegance_set_bannercolor1($css, $bannercolor1) {
-    $tag = '"[[setting:slide1color]]"';
-    $replacement = $bannercolor1;
-    if (is_null($replacement)) {
-        $replacement = '#000000';
-    }
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
-}
-
-function theme_elegance_set_bannercolor2($css, $bannercolor2) {
-    $tag = '"[[setting:slide2color]]"';
-    $replacement = $bannercolor2;
-    if (is_null($replacement)) {
-        $replacement = '#000000';
-    }
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
-}
-
-function theme_elegance_set_bannercolor3($css, $bannercolor3) {
-    $tag = '"[[setting:slide3color]]"';
-    $replacement = $bannercolor3;
-    if (is_null($replacement)) {
-        $replacement = '#000000';
-    }
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
-}
-
-function theme_elegance_set_bannercolor4($css, $bannercolor4) {
-    $tag = '"[[setting:slide4color]]"';
-    $replacement = $bannercolor4;
-    if (is_null($replacement)) {
-        $replacement = '#000000';
-    }
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
-}
-
-function theme_elegance_set_bannercolor5($css, $bannercolor5) {
-    $tag = '"[[setting:slide5color]]"';
-    $replacement = $bannercolor5;
-    if (is_null($replacement)) {
-        $replacement = '#000000';
-    }
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
-}
-
-function theme_elegance_set_bannercolor6($css, $bannercolor6) {
-    $tag = '"[[setting:slide6color]]"';
-    $replacement = $bannercolor6;
-    if (is_null($replacement)) {
-        $replacement = '#000000';
-    }
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
-}
-
-function theme_elegance_set_bannercolor7($css, $bannercolor7) {
-    $tag = '"[[setting:slide7color]]"';
-    $replacement = $bannercolor7;
-    if (is_null($replacement)) {
-        $replacement = '#000000';
-    }
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
-}
-
-function theme_elegance_set_bannercolor8($css, $bannercolor8) {
-    $tag = '"[[setting:slide8color]]"';
-    $replacement = $bannercolor8;
-    if (is_null($replacement)) {
-        $replacement = '#000000';
-    }
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
-}
-
-function theme_elegance_set_bannercolor9($css, $bannercolor9) {
-    $tag = '"[[setting:slide9color]]"';
-    $replacement = $bannercolor9;
-    if (is_null($replacement)) {
-        $replacement = '#000000';
-    }
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
-}
-
-function theme_elegance_set_bannercolor10($css, $bannercolor10) {
-    $tag = '"[[setting:slide10color]]"';
-    $replacement = $bannercolor10;
-    if (is_null($replacement)) {
-        $replacement = '#000000';
-    }
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
-}
 
 function theme_elegance_set_transparency($css, $transparency) {
     $tag = '"[[setting:transparency]]"';
@@ -660,23 +284,3 @@ function theme_elegance_set_transparency($css, $transparency) {
     return $css;
 }
 
-function theme_elegance_set_videowidth($css, $videowidth) {
-    $tag = '"[[setting:videowidth]]"';
-    $replacement = $videowidth;
-    if (is_null($replacement)) {
-        $replacement = '100%';
-    }
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
-}
-
-
-function theme_elegance_page_init(moodle_page $page) {
-    $page->requires->jquery();
-    $page->requires->jquery_plugin('fitvids', 'theme_elegance');
-    $page->requires->jquery_plugin('nprogress', 'theme_elegance');
-    $page->requires->jquery_plugin('unslider', 'theme_elegance');
-    $page->requires->jquery_plugin('eventswipe', 'theme_elegance');
-    $page->requires->jquery_plugin('backstretch', 'theme_elegance');
-    $page->requires->jquery_plugin('modernizr', 'theme_elegance');
-}

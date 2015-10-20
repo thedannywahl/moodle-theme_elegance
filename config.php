@@ -32,61 +32,15 @@ $THEME->yuicssmodules = array();
 $THEME->name = 'elegance';
 
 $THEME->parents = array('bootstrap');
+$THEME->lessfile = 'elegance';
 $THEME->parents_exclude_sheets = array('bootstrap' => array('moodle'));
-$THEME->sheets = array('elegance', 'custom');
+$THEME->lessvariablescallback = 'theme_elegance_less_variables';
+$THEME->extralesscallback = 'theme_elegance_extra_less';
+$THEME->sheets = array('custom');
 
 $THEME->supportscssoptimisation = false;
 
-$THEME->editor_sheets = array('editor');
-
-$THEME->plugins_exclude_sheets = array(
-    'block' => array(
-        'html',
-        'search_forums'
-    ),
-    'tool' => array(
-        'customlang'
-    ),
-);
-if ('ltr' === get_string('thisdirection', 'langconfig')) {
-    $THEME->parents_exclude_sheets = array(
-        'bootstrap'=>array( 
-            'custom',
-            'moodle-rtl',
-            'forms-rtl',
-            'yui2-rtl'
-        )
-    );
-} else {
-    $THEME->parents_exclude_sheets = array(
-        'bootstrap'=>array( 
-            'custom',
-            'moodle'
-        )
-    );
-}
-
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
-
-if ((!empty($THEME->settings->enablecategoryicon)) && ($THEME->settings->enablecategoryicon == '1')) {
-	$categorysheet='categories';
-} else {
-	$categorysheet='';
-}
-
-if ((!empty($THEME->settings->enablecustomlogin)) && ($THEME->settings->enablecustomlogin == '1')) {
-	$loginlayout='login.php';
-    $loginsheet='login1';
-} else {
-    $loginlayout='default.php';
-    $loginsheet='login2';
-}
-
-if ('ltr' === get_string('thisdirection', 'langconfig')) {
-    $THEME->sheets = array('font-awesome', 'google-fonts', $categorysheet, $loginsheet, 'nprogress', 'elegance', 'mobile');
-} else {
-    $THEME->sheets = array('tinymce-rtl', 'font-awesome', 'google-fonts', $categorysheet, $loginsheet, 'nprogress', 'elegance', 'mobile');
-}
 
 $THEME->layouts = array(
     // Most backwards compatible layout without the blocks - this is the layout used by default.
@@ -208,6 +162,5 @@ $THEME->javascripts = array(
 $THEME->javascripts_footer = array(
     'fitvid', 'blocks','reader'
 );
-
 
 $THEME->hidefromselector = false;

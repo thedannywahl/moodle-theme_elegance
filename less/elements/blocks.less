@@ -18,10 +18,10 @@
         padding: 0px 10px;
         background: transparent;
     }
-
     .header .title h2 {
-        .styled-heading(16px, 28px);
+        margin-bottom: 5px;
     }
+
     .header .title h2:before {
         font-family: FontAwesome;
         font-size: 1em;
@@ -60,12 +60,35 @@
     }
 }
 
+#hidden-blocks {
+    background: #ffe1e1;
+    padding: 20px;
+    border: 1px solid #EEE;
+    border-radius: 5px;
+    margin: 0px;
+}
+
+#hidden-blocks h4 {
+    text-align: left;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #ccc;
+    margin-top: 0px;
+    color: #ff6666;
+}
+
+#hidden-blocks .block {
+    float: right;
+    width: 250px;
+    margin-left: 10px;
+}
+
 
 .block_login {
     label {
         font-size: 14px;
         -webkit-font-smoothing: antialiased;
-        color: "[[setting:themecolor]]";
+        color: @themecolor;
         margin-bottom: 5px;
         margin-top: 5px;
         font-weight: 400;

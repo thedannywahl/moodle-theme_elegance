@@ -38,8 +38,11 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
 
         $template = new Object();
         $banners = array();
+        $count = 0;
         foreach (range(1, $slidenum) as $bannernumber) {
             $banner = new Object();
+            $banner->active = '';
+            $banner->count = $count++;
             $enablebanner = 'enablebanner' . $bannernumber;
             $banner->enablebanner = (!empty($settings->$enablebanner));
 
@@ -70,6 +73,13 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
                 $banner->bannerurl = false;
             }
 
+            $bannercolor = 'bannercolor' . $bannernumber;
+            if (!empty($settings->$bannercolor)) {
+                $banner->bannercolor = $settings->$bannercolor;
+            } else {
+                $banner->bannercolor = "transparent";
+            }
+
             $bannerlinktext = 'bannerlinktext' . $bannernumber;
             if (!empty($settings->$bannerlinktext)) {
                 $banner->bannerlinktext = $settings->$bannerlinktext;
@@ -78,6 +88,7 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
             }
             $banners[] = $banner;
         }
+        $banners[0]->active = 'active';
         $template->banners = $banners;
 
         return $this->render_from_template('theme_elegance/banner', $template);

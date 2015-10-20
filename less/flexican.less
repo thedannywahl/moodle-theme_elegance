@@ -2,7 +2,8 @@ html,body {
 	height:100%;
 }
       
-.row-flex, .row-flex > div[class*='col-'] {  
+.row-flex, 
+.row-flex > div[class*='col-'] {  
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -13,6 +14,7 @@ html,body {
 
 .row-flex-wrap {
 	-webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
     align-content: flex-start;
     flex:0;
     margin-left: 0;
@@ -26,7 +28,6 @@ html,body {
 .container-flex > div[class*='col-'] div,.row-flex > div[class*='col-'] div {
 	width:100%;
 }
-
 
 .flex-col {
     display: flex;

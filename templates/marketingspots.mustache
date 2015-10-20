@@ -1,7 +1,7 @@
 
 <div class="container-fluid">
     <div class="elegancewidth m-b-15">
-        <div class="row">
+        <div class="">
             {{#blocksmiddle}}
             <div class="col-md-5 m-t-20">
                 {{{blocksmiddle}}}
@@ -11,13 +11,15 @@
             {{^blocksmiddle}}
             <div class="col-md-12">
             {{/blocksmiddle}}
-                <div id="page-marketing" class="row row-flex row-flex-wrap eboxshadow p-20">
+                <div id="page-marketing" class="row eboxshadow p-20 m-b-20">
                     
-                        <h2 class="marketingheader col-xs-12 m-r-15 m-l-15 m-b-20">
+                        <h2 class="marketingheader col-xs-12 m-r-15 m-l-15 m-b-20 m-t-0">
                             <i class="fa fa-{{marketingtitleicon}}"></i>
                             {{marketingtitle}}
                         </h2>
                         <div class="clearfix"></div>
+                        <div class="row-flex row-flex-wrap">
+                        
                         {{#spots}}
                             {{#title}}
 
@@ -34,7 +36,9 @@
                                         {{/icon}}
                                         {{title}}
                                     </h3>
+                                    <div class="p-l-5 p-r-5">
                                     {{{content}}}
+                                    </div>
                                 {{^url}}
                                 </div>
                                 {{/url}}
@@ -45,6 +49,7 @@
 
                             {{/title}}
                         {{/spots}}
+                        </div>
                    
                 </div>
             </div>
