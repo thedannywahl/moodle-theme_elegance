@@ -60,6 +60,12 @@ $string['fixednavbardesc'] = 'Enable sticky navbar at top of the page';
 $string['invert'] = 'Invert Navbar';
 $string['invertdesc'] = 'Swaps text and background for the navbar at the top of the page between black and white.';
 
+$string['blocksleft'] = 'Use blocks left only';
+$string['blocksright'] = 'Use blocks right only';
+$string['blocksleftandright'] = 'Use blocks left and right';
+$string['blocksconfig'] = 'Blocks configuration';
+$string['blocksconfigdesc'] = 'Choose your preferred block setup';
+
 $string['maxwidth'] = 'Max page width';
 $string['maxwidthdesc'] = 'Please set this to a reasonable number between 850 - 1400 px';
 

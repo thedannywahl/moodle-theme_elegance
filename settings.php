@@ -46,6 +46,13 @@ defined('MOODLE_INTERNAL') || die;
 
     $temp->add($ss->add_text('maxwidth', '1100'));
 
+    $choices = array();
+    $choices[1] = get_string('blocksleftandright', 'theme_elegance');
+    $choices[2] = get_string('blocksleft', 'theme_elegance');
+    $choices[3] = get_string('blocksright', 'theme_elegance');
+    
+    $temp->add($ss->add_select('blocksconfig', '3', $choices));
+
     $temp->add($ss->add_checkbox('fonticons'));
 
     $temp->add($ss->add_htmleditor('frontpagecontent'));
