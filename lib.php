@@ -190,7 +190,7 @@ function theme_elegance_pluginfile($course, $cm, $context, $filearea, $args, $fo
  * @return string The CSS which now contains our custom CSS.
  */
 function theme_elegance_set_customcss($css, $customcss) {
-    $tag = '"[[setting:customcss]]"';
+    $tag = "[[setting:customcss]]";
     $replacement = $customcss;
     if (is_null($replacement)) {
         $replacement = '';
@@ -209,7 +209,7 @@ function theme_elegance_set_customcss($css, $customcss) {
  * @return string The CSS which now contains our custom Moodle Mobile CSS.
  */
 function theme_elegance_set_moodlemobilecss($css, $moodlemobilecss) {
-    $tag = '"[[setting:moodlemobilecss]]"';
+    $tag = "[[setting:moodlemobilecss]]";
     $replacement = $moodlemobilecss;
     if (is_null($replacement)) {
         $replacement = '';
