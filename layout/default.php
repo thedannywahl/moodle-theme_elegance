@@ -40,32 +40,18 @@ if ($PAGE->user_is_editing()) {
 
 $widgets = $PAGE->get_renderer('theme_elegance', 'widgets');
 
-$haslogo = (!empty($PAGE->theme->settings->logo));
-$invert = (!empty($PAGE->theme->settings->invert));
 $fixednavbar = (!empty($PAGE->theme->settings->fixednavbar));
 
 $hasbanner = (!empty($PAGE->layout_options['hasbanner']));
 $hasmarketing = (!empty($PAGE->layout_options['hasmarketing']));
+$hasnavbar = (empty($PAGE->layout_options['nonavbar']));
+$hasbreadcrumb = (empty($PAGE->layout_options['nobreadcrumb']));
 $hasfooter = (empty($PAGE->layout_options['nofooter']));
 $hasquicklinks = (!empty($PAGE->layout_options['hasquicklinks']));
 $transparentmain = (!empty($PAGE->layout_options['transparentmain']));
 $hasmoodleheader = (empty($PAGE->layout_options['nomoodleheader']));
+$hassidemiddle = (!empty($PAGE->layout_options['hassidemiddle']));
 
-if ($haslogo) {
-    $logo = '<div id="logo"></div>';
-} else {
-    $logo = $SITE->shortname;
-}
-
-if ($invert) {
-  $navbartype = 'navbar-inverse';
-} else {
-  $navbartype = 'navbar-default';
-}
-
-if ($fixednavbar) {
-    $navbartype .= ' navbar-fixed-top';
-}
 
 if ($transparentmain) {
     $mainclass = 'm-t-30';
@@ -98,33 +84,7 @@ echo $OUTPUT->doctype() ?>
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
 <div id="page-content-wrapper">
-    <nav role="navigation" class="navbar <?php echo $navbartype; ?> eboxshadow">
-
-        <div class="container-fluid">
-            <div class="navbar-header pull-left">
-
-                <a class="navbar-brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $logo; ?></a>
-            </div>
-
-            <div class="navbar-header pull-right">
-                <?php echo $OUTPUT->user_menu(); ?>
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#moodle-navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-
-            <div id="moodle-navbar" class="navbar-collapse collapse navbar-right">
-                <?php echo $OUTPUT->custom_menu(); ?>
-                <ul class="nav pull-right">
-                    <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
-                </ul>
-            </div>
-        </div>
-
-    </nav>
+    <?php echo $widgets->navbar($hasnavbar); ?>
 
     <?php echo $widgets->banner($hasbanner); ?>
 
@@ -142,13 +102,9 @@ echo $OUTPUT->doctype() ?>
         </header>
         <?php } ?>
     </div>
-    <div id="page-navbar" >
-        <div class="container-fluid">
-            <nav class="breadcrumb-nav elegancewidth" role="navigation" aria-label="breadcrumb"><?php echo $OUTPUT->navbar(); ?></nav>
-            <div class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></div>
-            <div class="clearfix"></div>
-        </div>
-    </div>
+
+    <?php echo $widgets->breadcrumb($hasbreadcrumb); ?>
+
     <div class="container-fluid">
     <section id="page" >
         <div id="page-content" class="row">
@@ -159,7 +115,6 @@ echo $OUTPUT->doctype() ?>
                 echo $OUTPUT->course_content_header();
                 echo $OUTPUT->main_content();
                 echo $OUTPUT->course_content_footer();
-                echo $widgets->hiddenblocks();
                 ?>
                 </div>
             </div>

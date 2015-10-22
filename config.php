@@ -96,7 +96,7 @@ $THEME->layouts = array(
         'file' => 'default.php',
         'regions' => array_merge($regions, $sidemiddle),
         'defaultregion' => $defaultregion,
-        'options' => array('nonavbar' => true, 'hasbanner' => true, 'hasmarketing' => true, 'hasquicklinks' => true),
+        'options' => array('nobreadcrumb' => true, 'hasbanner' => true, 'hasmarketing' => true, 'hasquicklinks' => true),
     ),
     // Server administration scripts.
     'admin' => array(
@@ -121,14 +121,14 @@ $THEME->layouts = array(
     'login' => array(
         'file' => 'default.php',
         'regions' => array(),
-        'options' => array('langmenu' => true, 'nonavbar' => true, 'transparentmain' => true, 'nomoodleheader' => true),
+        'options' => array('langmenu' => true, 'nobreadcrumb' => true, 'transparentmain' => true, 'nomoodleheader' => true),
     ),
 
     // Pages that appear in pop-up windows - no navigation, no blocks, no header.
     'popup' => array(
         'file' => 'popup.php',
         'regions' => array(),
-        'options' => array('nofooter' => true, 'nonavbar' => true),
+        'options' => array('nofooter' => true, 'nobreadcrumb' => true),
     ),
     // No blocks and minimal footer - used for legacy frame layouts only!
     'frametop' => array(
@@ -145,14 +145,15 @@ $THEME->layouts = array(
     // This must not have any blocks, links, or API calls that would lead to database or cache interaction.
     // Please be extremely careful if you are modifying this layout.
     'maintenance' => array(
-        'file' => 'maintenance.php',
+        'file' => 'default.php',
         'regions' => array(),
+        'options' => array('langmenu' => true, 'nonavbar' => true, 'nobreadcrumb' => true, 'transparentmain' => true, 'nomoodleheader' => true, 'nofooter' => true),
     ),
     // Should display the content and basic headers only.
     'print' => array(
         'file' => 'default.php',
         'regions' => array(),
-        'options' => array('nofooter' => true, 'nonavbar' => false),
+        'options' => array('nofooter' => true, 'nobreadcrumb' => false),
     ),
     // The pagelayout used when a redirection is occuring.
     'redirect' => array(

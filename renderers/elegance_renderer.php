@@ -22,14 +22,23 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class theme_elegance_widgets_renderer extends plugin_renderer_base {
+
+    private $theme;
+    private $settings;
+
+    public function __construct(moodle_page $page, $target) {
+        $this->theme = theme_config::load('elegance');
+        $this->settings = $this->theme->settings;
+        parent::__construct($page, $target);
+    }
     
     public function banner($hasbanner) {
         if (!$hasbanner) {
             return '';
         }
 
-        $theme = theme_config::load('elegance');
-        $settings = $theme->settings;
+        $theme = $this->theme;
+        $settings = $this->settings;
         $slidenum = $settings->slidenumber;
 
         switch ($settings->togglebanner) {
@@ -113,14 +122,11 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
         if (!$hasmarketing) {
             return '';
         }
-        
-
-
 
         $blocksmiddle = $OUTPUT->blocks('side-middle');
 
-        $theme = theme_config::load('elegance');
-        $settings = $theme->settings;
+        $theme = $this->theme;
+        $settings = $this->settings;
 
         switch ($settings->togglemarketing) {
             case 1:
@@ -197,8 +203,8 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
         if (!$hasfooter) {
             return '';
         }
-        $theme = theme_config::load('elegance');
-        $settings = $theme->settings;
+        $theme = $this->theme;
+        $settings = $this->settings;
 
         $template = new Object();
         $template->footnote = $settings->footnote;
@@ -210,8 +216,8 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
         if (!$hasfooter) {
             return '';
         }
-        $theme = theme_config::load('elegance');
-        $settings = $theme->settings;
+        $theme = $this->theme;
+        $settings = $this->settings;
 
         $template = new Object();
 
@@ -232,9 +238,7 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
             return '';
         }
 
-
-        $theme = theme_config::load('elegance');
-        $settings = $theme->settings;
+        $settings = $this->settings;
 
         switch ($settings->togglequicklinks) {
             case 1:
@@ -314,5 +318,213 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
         $template->blocks = $OUTPUT->blocks('hidden-dock');
 
         return $this->render_from_template('theme_elegance/hiddenblocks', $template);
+    }
+
+    public function navbar($hasnavbar) {
+
+        if (!$hasnavbar) {
+            return '';
+        }
+
+        global $OUTPUT, $CFG, $SITE;
+        $template = new Object();
+        
+        $settings = $this->settings;
+
+        $template->homeurl = $CFG->wwwroot;
+
+        if ($settings->invert) {
+            $template->navbartype = 'navbar-inverse';
+        } else {
+            $template->navbartype = 'navbar-default';
+        }
+
+        if ($settings->logo) {
+            $template->logo = '<div id="logo"></div>';
+        } else {
+            $template->logo = $SITE->shortname;
+        }
+
+        if (!empty($settings->fixednavbar)) {
+            $template->navbartype .= ' navbar-fixed-top';
+        }
+
+        $usermenu = $OUTPUT->user_menu();
+
+        if (!empty($usermenu)) {
+            $template->usermenu = $usermenu;
+        }
+
+        $custommenu = $OUTPUT->custom_menu();
+
+        $template->hascustom = false;
+        if (!empty($custommenu)) {
+            $template->custommenu = $custommenu;
+            $template->hascustom = true;
+        }
+
+        $headingmenu = $OUTPUT->page_heading_menu();
+
+        if (!empty($headingmenu)) {
+            $template->headingmenu = $headingmenu;
+            $template->hascustom = true;
+        }
+
+        $messagemenu = $this->message_menu();
+
+        if (!empty($messagemenu)) {
+            $template->messagemenu = $messagemenu;
+        }
+
+        return $this->render_from_template('theme_elegance/navbar', $template);
+    }
+
+    public function breadcrumb($hasbreadcrumb) {
+        global $OUTPUT;
+
+        if (!$hasbreadcrumb) {
+            return '';
+        }
+
+        $template = new Object();
+
+        $items = $this->page->navbar->get_items();
+
+        $template->hascrumbs = false;
+        $template->breadcrumbs = array();
+        $numitems = count($items);
+        $cnt = 0;
+        foreach ($items as $item) {
+            $crumb = new Object();
+            $cnt++;
+            $addclass = '';
+            if ($cnt == $numitems) {
+                $addclass = 'active';
+            }
+            
+            $item->hideicon = true;
+            $crumb->item = $OUTPUT->render($item);
+            $crumb->class = $addclass;
+            $template->breadcrumbs[] = $crumb;
+            $template->hascrumbs = true;
+        }
+        if ($template->button = $this->page_heading_button()) {
+            $template->hascrumbs = true;
+        }
+
+        return $this->render_from_template('theme_elegance/breadcrumb', $template);
+    }
+
+    private function message_menu() {
+        global $OUTPUT, $USER;
+        $menu = new custom_menu();
+
+        $messages = $this->get_user_messages();
+        $messagecount = 0;
+        foreach ($messages as $message) {
+            if (!$message->from) { // Workaround for issue #103.
+                continue;
+            }
+            $messagecount++;
+        }
+        $messagemenutext = $messagecount . ' ';
+        if ($messagecount == 1) {
+             $messagemenutext .= get_string('message', 'message');
+        } else {
+             $messagemenutext .= get_string('messages', 'message');
+        }
+        $messagemenu = $menu->add(
+            $messagemenutext,
+            new moodle_url('/message/index.php', array('viewing' => 'recentconversations')),
+            get_string('messages', 'message'),
+            9999
+        );
+        foreach ($messages as $message) {
+            if (!$message->from) { // Workaround for issue #103.
+                continue;
+            }
+            $senderpicture = new user_picture($message->from);
+            $senderpicture->link = false;
+            $senderpicture = $OUTPUT->render($senderpicture);
+
+            $messagecontent = $senderpicture;
+            $messagecontent .= html_writer::start_span('msg-body');
+            $messagecontent .= html_writer::start_span('msg-title');
+            $messagecontent .= html_writer::span($message->from->firstname . ': ', 'msg-sender');
+            $messagecontent .= $message->text;
+            $messagecontent .= html_writer::end_span();
+            $messagecontent .= html_writer::start_span('msg-time');
+            $messagecontent .= html_writer::tag('i', '', array('class' => 'icon-time'));
+            $messagecontent .= html_writer::span($message->date);
+            $messagecontent .= html_writer::end_span();
+
+            $messageurl = new moodle_url('/message/index.php', array('user1' => $USER->id, 'user2' => $message->from->id));
+            $messagemenu->add($messagecontent, $messageurl, $message->text);
+        }
+        $content = '';
+        foreach ($menu->get_children() as $item) {
+            $content .= $OUTPUT->render_custom_menu_item($item, 1);
+        }
+        return $content;
+    }
+
+    protected function get_user_messages() {
+        global $USER, $DB;
+        $messagelist = array();
+
+        $newmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated, fullmessageformat, notification
+                            FROM {message}
+                           WHERE useridto = :userid";
+
+        $newmessages = $DB->get_records_sql($newmessagesql, array('userid' => $USER->id));
+
+        foreach ($newmessages as $message) {
+            $messagelist[] = $this->process_message($message);
+        }
+
+        $showoldmessages = (empty($this->page->theme->settings->showoldmessages)) ? 0 : $this->page->theme->settings->showoldmessages;
+        if ($showoldmessages) {
+            $maxmessages = 5;
+            $readmessagesql = "SELECT id, smallmessage, useridfrom, useridto, timecreated, fullmessageformat, notification
+                                 FROM {message_read}
+                                WHERE useridto = :userid
+                             ORDER BY timecreated DESC
+                                LIMIT $maxmessages";
+
+            $readmessages = $DB->get_records_sql($readmessagesql, array('userid' => $USER->id));
+
+            foreach ($readmessages as $message) {
+                $messagelist[] = $this->process_message($message);
+            }
+        }
+
+        return $messagelist;
+    }
+
+    protected function process_message($message) {
+        global $DB;
+        $messagecontent = new stdClass();
+
+        if ($message->notification) {
+            $messagecontent->text = get_string('unreadnewnotification', 'message');
+        } else {
+            if ($message->fullmessageformat == FORMAT_HTML) {
+                $message->smallmessage = html_to_text($message->smallmessage);
+            }
+            if (core_text::strlen($message->smallmessage) > 15) {
+                $messagecontent->text = core_text::substr($message->smallmessage, 0, 15).'...';
+            } else {
+                $messagecontent->text = $message->smallmessage;
+            }
+        }
+
+        if ((time() - $message->timecreated ) <= (3600 * 3)) {
+            $messagecontent->date = format_time(time() - $message->timecreated);
+        } else {
+            $messagecontent->date = userdate($message->timecreated, get_string('strftimedate', 'langconfig'));
+        }
+
+        $messagecontent->from = $DB->get_record('user', array('id' => $message->useridfrom));
+        return $messagecontent;
     }
 }
