@@ -89,6 +89,7 @@
     }
 
     .btn {
+        .btn-success;
         width: 100%;
     }
     .btn input[type="submit"],
@@ -180,7 +181,19 @@
     }
 }
 
-.block 
+.block_myprofile .content {
+    text-align: center;
+}
+
+.block_myprofile .profilepicture {
+    border-radius: 100%;
+    box-shadow: 0 0 3px 0 #aaa;
+    border: 5px solid #fff; 
+}
+
+.block_myprofile .profilepicture:hover {
+    border-color: @themecolor;
+}
 
 .dir-rtl .collapsed .tree_item.branch:before { 
     content: " \f053";

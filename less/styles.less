@@ -1,36 +1,3 @@
-/* @group Core */
-
-/* @group RESET CSS */
-
-// .course-content ul.topics li.section .left, 
-// .course-content ul.topics li.section .right,
-// .section.img-text,
-// .boxwidthwide,
-// .course-content ul.topics li.section .content,
-// .course-content ul.topics li.section .summary,
-// .site-topic ul.section,
-// .course-content ul.section,
-// .path-mod-choice .horizontal,
-// .path-mod-choice .vertical,
-// .path-mod-choice .anonymous,
-// .path-mod-choice .names,
-// .path-mod-choice .results.anonymous .graph.horizontal,
-// .block_course_overview .content,
-// .coursebox .content .coursecat, 
-// .coursebox .content .summary, 
-// .coursebox .content .courseimage, 
-// .coursebox .content .coursefile, 
-// .coursebox .content .teachers, 
-// .coursebox.remotecoursebox .remotecourseinfo {
-//     max-width:100%;
-//     width:auto;
-//     padding:0;
-//     margin:0 auto;
-// }
-
-/* @end */
-
-
 body, html {
     -webkit-font-smoothing: antialiased; /* webkit prefix - edit font-smoothing property */
     -moz-font-smoothing: antialiased; /* moz prefix - edit font-smoothing property */
@@ -38,7 +5,6 @@ body, html {
     -o-font-smoothing: antialiased; /* o prefix - edit font-smoothing property */
     font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    font: 100%/1.5em 'Roboto', sans-serif;
     margin: 0px;
     padding: 0px;
     color: @text-color;
@@ -92,21 +58,6 @@ body.pagelayout-maintenance {
     display: none;
 }
 
-p {
-    margin-bottom: 21px;
-    font-family: "Roboto";
-    line-height: 21px;
-    letter-spacing: 0px;
-    color: @text-color;
-    font-style: normal;
-}
-
-li {
-    font-size: 14px;
-    line-height: 21px;
-    letter-spacing: 0px;
-    color: @text-color;
-}
 
 ul ul, ul ol, ol ol, ol ul {
     margin-bottom: 21px;
@@ -144,22 +95,6 @@ body#page-site-index #page-content {
     margin-top: 20px;
 }
 
-// #page-content {
-//     margin-top: 20px;
-// }
-
-// #region-main{
-//     padding-right: 0px;
-// }
-
-// #block-region-side-pre {
-//     padding-left: 0px !important;
-// }
-
-// #block-region-side-post {
-//     padding-right: 0px !important;
-// }
-
 .fa-muted {
     color: #ddd;
 }
@@ -177,18 +112,6 @@ body#page-site-index #page-content {
 }
 
 
-/* @end */
-
-/* @end */
-
-/* @group Frontpage */
-
-/* @group Banner */
-
-
-
-/* @end */
-
 #moodleheader {
     .eboxshadow;
     background-image: url(@headerbg);
@@ -198,69 +121,6 @@ body#page-site-index #page-content {
     display: none;
     
 }
-
-#fontpagecontent {
-    padding: 20px 0px;
-}
-
-#fontpagecontent,
-#fontpagecontent h4,
-#fontpagecontent h3,
-#fontpagecontent h2,
-#fontpagecontent h1 {
-    color: #fff;
-    font-family: 'Bree Serif', serif;
-}
-
-#fontpagecontent p {
-    color: #fff;
-}
-
-#fontpagecontent h2 {
-    font-size: 1.8em;
-    margin-bottom: 15px;
-    font-weight: 300;
-}
-
-#fontpagecontent h3 {
-    font-size: 1.6em;
-    margin-bottom: 5px;
-    font-weight: 300;
-}
-
-#fontpagecontent p {
-    margin-bottom: 5px;
-}
-
-#fontpagecontent .btn-default {
-background: #e6e6e6;
--webkit-box-shadow: inset 0 -2px 0px 0px rgba(0,0,0,0.2);
--moz-box-shadow: inset 0 -2px 0px 0px rgba(0,0,0,0.2);
-box-shadow: inset 0 -2px 0px 0px rgba(0,0,0,0.2);
-border-color: rgba(0,0,0,0.15) rgba(0,0,0,0.15) rgba(0,0,0,0.25);
-text-shadow: 0 1px 1px rgba(255,255,255,0.75);
-}
-
-/* @group Quick Links */
-
-
-
-
-
-
-/* @end */
-
-/* @group Hidden Blocks */
-
-
-
-/* @end */
-
-/* @end */
-
-/* @group Header */
-
-
 
 #logo {
     background: url(@logo) no-repeat;
@@ -546,248 +406,6 @@ text-shadow: 0 1px 1px rgba(255,255,255,0.75);
     color: transparent;
 }
 
-#page-footer .copy {
-    float: left;
-}
-
-#page-footer .footnote {
-    float: left;
-    margin-top: -13px;
-    margin-left: 5px;
-    padding-top: 5px;
-    border-top: 1px solid #ccc;
-    width: 100%;
-    text-align: left;
-}
-
-#page-footer .logininfo {
-    text-align: right;
-    font-family: "Roboto";
-    font-size: 14px;
-    line-height: 21px;
-    letter-spacing: 0px;
-    color: @text-color;
-    font-style: normal;
-    font-weight: 400;
-    margin-bottom: 10px;
-}
-
-#page-footer .helplink a {
-    float: left;
-    position: relative;
-    top: -20px;
-    display: inline-block;
-    border: 1px solid #f0ad4e;
-    background-color: #f0ad4e;
-    color: #fff;
-    padding: 5px 10px;
-    text-decoration: none;
-    font-size: 14px;
-    text-shadow: none;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-    -webkit-transition: 0.25s;
-    -moz-transition: 0.25s;
-    -o-transition: 0.25s;
-    transition: 0.25s;
-    -webkit-backface-visibility: hidden;
-    font-weight: 500;
-    font-family: "Roboto";
-}
-
-#page-footer .helplink a:hover {
-    background: #000;
-}
-
-#page-footer .purgecaches a {
-    padding: 11px 12px 11px;
-    margin-left: 10px;
-    line-height: 22px;
-}
-
-#page-footer .purgecaches a:hover  {
-    color: white;
-    background: red;
-    font-weight: bold;
-}
-
-#page-footer .helplink img {
-    display: none;
-}
-
-.footnote a {
-    color: #666;
-}
-
-.footnote a:hover {
-    color: #999;
-}
-
-.purgecaches a {
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px solid #b4b4b7;
-    background: #ecedf0;
-    color: #333537;
-    padding: 9px 12px 9px;
-    line-height: 22px;
-    text-decoration: none;
-    position: relative;
-    font-size: 14px;
-    text-shadow: none;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-    -webkit-transition: 0.25s;
-    -moz-transition: 0.25s;
-    -o-transition: 0.25s;
-    transition: 0.25s;
-    -webkit-backface-visibility: hidden;
-    font-weight: 500;
-    align-content: center;
-}
-
-/* @group Social Buttons */
-
-
-.socials p {
-    font-weight: normal;
-    color: #666;
-    font-size: 1.1em;
-}
-
-.socialicon,
-.socialicon:visited {
-    display: inline-block;
-    font-family: FontAwesome;
-    color: #bbb;
-    line-height: 25px;
-    text-decoration: none;
-    background-color: rgba(0,0,0,.2);
-    border-radius: 270px;
-    border: 0px none;
-    font-size: 1.6em;
-    padding: 8px;
-    margin-left: 8px;
-    text-align: center;
-    background-image: none;
-    width: 39px;
-    height: 39px;
-}
-
-.facebook:hover, button.facebook:focus {
-    background: #4a6ea9;
-}
-
-.skype:hover, button.skype:focus {
-    background: #00adf7;
-}
-
-.instagram:hover, button.instagram:focus {
-    background: #a5674a;
-}
-
-.ios:hover, button.ios:focus {
-    background: #000;
-}
-
-.android:hover, button.android:focus {
-    background: #98cd32;
-}
-
-.vk:hover, button.vk:focus {
-    background: #4a6ea9;
-}
-
-.twitter:hover, button.twitter:focus {
-    background: #00aced;
-}
-
-.googleplus:hover, button.googleplus:focus {
-    background: #f42941;
-}
-
-.flickr:hover, button.flickr:focus {
-    background: #ff3096;
-}
-
-.instagram:hover, a.instagram:focus {
-    background: #b99c6b;
-}
-
-.youtube:hover, button.youtube:focus {
-    background: #f42941;
-}
-
-.pinterest:hover, button.pinterest:focus {
-    background: #f42941;
-}
-
-.linkedin:hover, button.linkedin:focus {
-    background: #4A9CC9;
-}
-
-.website:hover, button.website:focus {
-    background: @themecolor;
-}
-
-.vimeo:hover, button.vimeo:focus {
-    background: #38b7eb;
-}
-
-.tumblr:hover, button.tumblr:focus {
-    background: #405a71;
-}
-
-.blog:hover, button.blog:focus {
-    background: #ff9900;
-}
-
-.socials li {
-    text-align: right;
-    display: inline-block;
-}
-
-ul.socials {
-    text-align: right;
-}
-
-#socialheading {
-    text-align: right;
-    color: #666;
-    letter-spacing: .2em;
-    padding: 0px;
-    margin: 0px;
-    margin-top: 8px;
-}
-
-/* @end */
-
-/* @end */
-
-/* @group Blocks */
-
-
-
-
-/* @end */
-
-/* @end */
-
-
-
-/* @group Bootstrap */
-
-/* override from theme_bootstrap- not sure where it's coming from */
-
-
 /* @group Buttons */
 
 .btn a:hover{
@@ -892,17 +510,17 @@ aside .btn-group {
 /* @group Alerts */
 
 .alert {
-padding: 8px 35px 8px 18px;
-margin-bottom: 20px;
-text-shadow: none;
-background-color: #fcf8e3;
-border: none;
--webkit-border-radius: 5px;
--moz-border-radius: 5px;
-border-radius: 5px;
-font-size: 18px;
-font-weight: 400;
-font-family: 'Roboto', sans-serif;
+    padding: 8px 35px 8px 18px;
+    margin-bottom: 20px;
+    text-shadow: none;
+    background-color: #fcf8e3;
+    border: none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
 }
 
 .alert>.icon-calendar,
@@ -1000,21 +618,8 @@ blockquote>.icon-quote-left{
 
 #region-main,
 #page-marketing {
-    // padding: 18px 20px;
-    // -webkit-box-shadow: none;
-    // -moz-box-shadow: none;
-    // margin-bottom: 20px;
-    // // NEED LESS FIX FOR THIS
-    // // border: 2px solid rgba(236, 237, 240, @transparency);
-    // border: 2px solid rgba(236, 237, 240, 1);
-    // -webkit-border-radius: 5px;
-    // -moz-border-radius: 5px;
-    // border-radius: 5px;
-    // -webkit-box-shadow: none;
-    // -moz-box-shadow: none;
     font-family: "Roboto";
 }
-
 
 
 .path-course.pagelayout-coursecategory #region-main .courseboxes>ul>li:nth-of-type(odd){
@@ -1224,82 +829,7 @@ letter-spacing:0.1em;
 
 /* @group Nprogress */
 
-#nprogress {
-  pointer-events: none;
-  -webkit-pointer-events: none;
-}
 
-#nprogress .bar {
-    background: #29d;
-    z-index: 4000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-}
-
-/* Fancy blur effect */
-#nprogress .peg {
-    display: block;
-    position: absolute;
-    z-index: 400;
-    width: 100px;
-    height: 100%;
-    box-shadow: 0 0 10px #29d, 0 0 5px #29d;
-    opacity: 1.0;
-    -webkit-transform: rotate(3deg) translate(0px, -4px);
-    -moz-transform: rotate(3deg) translate(0px, -4px);
-    -ms-transform: rotate(3deg) translate(0px, -4px);
-    -o-transform: rotate(3deg) translate(0px, -4px);
-    transform: rotate(3deg) translate(0px, -4px);
-}
-
-/* Remove these to get rid of the spinner */
-#nprogress .spinner {
-    display: block;
-    position: fixed;
-    z-index: 100;
-    z-index: 4000;
-    top: 15px;
-    right: 15px;
-}
-
-#nprogress .spinner-icon {
-    width: 14px;
-    height: 14px;
-    z-index: 4000;
-    border:  solid 2px transparent;
-    border-top-color:  #29d;
-    border-left-color: #29d;
-    border-radius: 10px;
-    -webkit-animation: nprogress-spinner 400ms linear infinite;
-    -moz-animation:    nprogress-spinner 400ms linear infinite;
-    -ms-animation:     nprogress-spinner 400ms linear infinite;
-    -o-animation:      nprogress-spinner 400ms linear infinite;
-    animation:         nprogress-spinner 400ms linear infinite;
-}
-
-@-webkit-keyframes nprogress-spinner {
-  0%   { -webkit-transform: rotate(0deg);   transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
-}
-@-moz-keyframes nprogress-spinner {
-  0%   { -moz-transform: rotate(0deg);   transform: rotate(0deg); }
-  100% { -moz-transform: rotate(360deg); transform: rotate(360deg); }
-}
-@-o-keyframes nprogress-spinner {
-  0%   { -o-transform: rotate(0deg);   transform: rotate(0deg); }
-  100% { -o-transform: rotate(360deg); transform: rotate(360deg); }
-}
-@-ms-keyframes nprogress-spinner {
-  0%   { -ms-transform: rotate(0deg);   transform: rotate(0deg); }
-  100% { -ms-transform: rotate(360deg); transform: rotate(360deg); }
-}
-@keyframes nprogress-spinner {
-  0%   { transform: rotate(0deg);   transform: rotate(0deg); }
-  100% { transform: rotate(360deg); transform: rotate(360deg); }
-}
 
 
 /* @end */
@@ -1380,34 +910,12 @@ input#id_submitbutton{
 /* @end */
 
 /* @group Profile Image */
-.block_myprofile .content {
-    text-align: center;
-}
 
-.block_myprofile .profilepicture {
-    border-radius: 100%;
-    box-shadow: 0 0 3px 0 #aaa;
-    border: 5px solid #fff; 
-}
-
-.block_myprofile .profilepicture:hover {
-    border-color: @themecolor;
-}
 
 /* @end */
 
 /* @group social links */
-.socials img {
-    border-radius:5px;
-    width: 28px;
-    height: 28px;
-    margin-top: 2px;
-}
 
-.socials img:hover{
-    -webkit-transition: all .5s ease; /* Safari */
-    transition: all .5s ease;
-}
 
 /* @end */
 
@@ -1601,251 +1109,7 @@ table#user-grades th.userreport.c1 {
 
 /* @group Forums */
 
-#page-mod-forum-view .forumheaderlist tr th {
-    padding:10px 5px;
-}
 
-#page-mod-forum-view .forumheaderlist tr td {
-    padding:10px 5px;
-}
-
-#page-mod-forum-view .forumheaderlist .replies {
-    text-align:left;
-}
-
-#page-mod-forum-view .forumheaderlist .lastpost {
-    text-align:left;
-}
-
-#page-mod-forum-view .forumheaderlist .lastpost a:last-child {
-    font-size:11.9px;
-}
-
-#page-mod-forum-view.dir-rtl .forumheaderlist .replies {
-    text-align:right;
-}
-
-#page-mod-forum-view.dir-rtl .forumheaderlist .lastpost {
-    text-align:right;
-}
-
-#page-mod-forum-discuss .discussioncontrols {
-    margin:0;
-}
-
-#page-mod-forum-discuss .discussioncontrols .discussioncontrol {
-    float:right;
-    width:auto;
-}
-
-#page-mod-forum-discuss .indent {
-    margin-left:40px;
-}
-
-#page-mod-forum-discuss .indent .forumthread {
-    display:block;
-    margin-top:20px;
-}
-
-.forumpost {
-    background: #fafafa;
-    border-radius: 5px;
-}
-
-.forumpost .header {
-    border-bottom: 4px solid rgb(223, 223, 223);
-    margin-bottom: 10px;
-}
-
-.forumpost .header::after {
-    background-color: @themecolor;
-    content: "";
-    display: block;
-    height: 3px;
-    width: 120px;
-    position: relative;
-    top: 3px;
-}
-
-#page-mod-forum-discuss .forumpost{
-    position:relative;
-    padding:10px;
-}
-
-#page-mod-forum-discuss .forumpost .row{
-    position:static;
-}
-
-#page-mod-forum-discuss .forumpost .row .left{
-    width:80px;
-    padding:0;
-}
-
-.forumpost .row .left.picture img {
-    margin-right: 10px;
-}
-
-#page-mod-forum-discuss .forumpost .row .left.picture img{
-    width:60px;
-    height:60px;
-    padding:1px;
-    vertical-align:middle;
-    border:5px solid #fff;
-    border-radius: 270px;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.05);
-}
-
-#page-mod-forum-discuss .forumpost .row .left .grouppictures{
-    position:absolute;
-    top:25px;
-    right:24px;
-    margin-top: 15px;
-}
-
-#page-mod-forum-discuss .forumpost .row .left .grouppictures a{
-    display:inline-block;
-    padding:5px 6px;
-    margin:0 2px 5px;
-    background-color:#fff;
-    border-radius:50px;
-    box-shadow:0 2px 1px rgba(0,0,0,0.05);
-}
-
-.forumpost .row .left .grouppicture {
-    width: 25px;
-    height: 25px;
-    border-radius: 270px;
-}
-
-#page-mod-forum-discuss .forumpost .row.side .left{
-    display:none;
-}
-
-#page-mod-forum-discuss .forumpost .row .topic{
-    padding-bottom:55px;
-    padding-bottom:35px;
-    overflow:auto;
-}
-
-#page-mod-forum-discuss .forumpost .row .topic .subject{
-    display:none;
-}
-
-#page-mod-forum-discuss .forumpost .row .topic .author{
-    padding-top:0px;
-    font-size:11.9px;
-    color:#868686;
-}
-
-#page-mod-forum-discuss .forumpost .row .topic .author a{
-    margin-bottom:-2px;
-    font-size:14px;
-    font-weight:bold;
-}
-
-
-#page-mod-forum-discuss .forumpost .row .content{
-    padding:10px;
-}
-
-#page-mod-forum-discuss .forumpost .row .forum-post-rating{
-    display:inline-block;
-}
-
-#page-mod-forum-discuss .forumpost .row .forum-post-rating .iconhelp{
-    vertical-align:baseline;
-}
-
-#page-mod-forum-discuss .forumpost .row .options{
-    padding:10px;
-    margin-right:0;
-    margin-left:0;
-}
-
-#page-mod-forum-discuss .forumpost .row .options .commands{
-    display:inline-block;
-    float:right;
-    color: #fafafa;
-}
-
-#page-mod-forum-discuss .forumpost .row .options .commands a {
-    font-size:11.9px;
-    border: 1px solid #b4b4b7;
-    background: #ecedf0;
-    color: #333537;
-    padding: 9px 12px 9px;
-    line-height: 22px;
-    text-decoration: none;
-    border-radius: 3px;
-    -webkit-transition: 0.25s;
-    -moz-transition: 0.25s;
-    -o-transition: 0.25s;
-    transition: 0.25s;
-}
-
-#page-mod-forum-discuss .forumpost .row .options .commands a:hover {
-    background: #1990d5;
-    color: #fff;
-    font-weight: 600;
-}
-
-#page-mod-forum-discuss .forumpost.firstpost .row{
-    position:inherit;
-}
-
-#page-mod-forum-discuss .forumpost.firstpost .row .topic{
-    padding-bottom: 20px;
-}
-
-#page-mod-forum-discuss .forumpost.firstpost .row .topic .subject{
-    display:block;
-    padding-top:3px;
-    font-size:24px;
-    font-weight:100;
-    line-height:30px;
-    color:@headingcolor;
-}
-
-#page-mod-forum-discuss .forumpost.firstpost .row .topic .author{
-    margin-top:-2px;
-}
-
-#page-mod-forum-discuss .forumpost.firstpost .row .grouppictures{
-    top:-69px;
-    right:4px;
-}
-
-#page-mod-forum-discuss .forumpost.unread .row{
-    border-bottom:0;
-    border-radius:4px;
-}
-
-#page-mod-forum-discuss.dir-rtl .discussioncontrol{
-    float:left;
-}
-
-#page-mod-forum-discuss.dir-rtl .indent{
-    margin-right:80px;
-    margin-left:inherit;
-}
-
-#page-mod-forum-discuss.dir-rtl .forumpost .row .grouppictures{
-    right:inherit;
-    left:24px;
-}
-
-#page-mod-forum-discuss.dir-rtl .forumpost .row .forum-post-rating{
-    float:right;
-}
-
-#page-mod-forum-discuss.dir-rtl .forumpost .row .commands{
-    float:left;
-}
-
-#page-mod-forum-discuss.dir-rtl .forumpost.firstpost .row .grouppictures{
-    right:inherit;
-    left:4px;
-}
 
 /* @end */
 
@@ -1911,26 +1175,6 @@ table#user-grades th.userreport.c1 {
     font-size: .85em;
     padding-right: 10px;
 }
-
-// .coursebox .info {
-//     white-space: nowrap;
-//     color: #555;
-//     background-color: #f5f5f5;
-//     border-color: #ddd;
-//     padding: 10px 15px;
-//     border-bottom: 1px solid #ddd;
-// }
-
-// .coursebox .info .enrolmenticons {
-//     margin-top: -20px;
-// }
-
-// .coursebox .info h3 {
-//     padding: 0px;
-//     margin: 0px;
-//     -webkit-font-smoothing: antialiased;
-//     font: 100%/1.5em 'Roboto', sans-serif;
-// }
 
 .coursebox .content .teachers {
     padding-top: 0px;
@@ -2018,36 +1262,6 @@ table#user-grades th.userreport.c1 {
     font-family: "Roboto";
 }
 
-/* @end */
-
-/* @group Quiz */
-
-/* add space below nav tabs and questions */
-#page-mod-quiz-edit #region-main .nav {
-    padding-bottom: 10px;
-}
-
-/* adust the width of the container on question bank */
-.questionbankwindow .container {
-    padding: 0;
-}
-
-#page-mod-quiz-edit div.container div.generalbox {
-    padding: 0;
-}
-
-#page-mod-quiz-edit div.questionbank .categoryquestionscontainer {
-    margin: 0;
-}
-
-/* fix quiz question label controls */
-#page-mod-quiz-edit #quizquestions .questioncontentcontainer label {
-    display: block;
-}
-
-#page-mod-quiz-edit .questioncontainer input[type="text"] {
-    height: inherit;
-}
 
 /* @end */
 

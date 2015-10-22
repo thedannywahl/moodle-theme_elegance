@@ -32,15 +32,14 @@ $THEME->yuicssmodules = array();
 $THEME->name = 'elegance';
 $THEME->enable_dock = true;
 $THEME->parents = array('bootstrap');
+$THEME->sheets = array('custom');
 $THEME->lessfile = 'elegance';
 $THEME->parents_exclude_sheets = array('bootstrap' => array('moodle'));
 $THEME->lessvariablescallback = 'theme_elegance_less_variables';
 $THEME->extralesscallback = 'theme_elegance_extra_less';
-$THEME->sheets = array('custom');
-
 $THEME->supportscssoptimisation = false;
-
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
+$THEME->csspostprocess = 'theme_elegance_process_css';
 
 $themeconfig = get_config('theme_elegance');
 
