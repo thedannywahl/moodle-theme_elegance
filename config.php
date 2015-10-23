@@ -19,9 +19,8 @@
  * Renderers to align Moodle's HTML with that expected by elegance
  *
  * @package    theme_elegance
- * @copyright  2014 Julian Ridden http://moodleman.net
- * @authors    Julian Ridden - Bootstrap 3 work by Bas Brands and David Scotson.
- *                           - Contributions by Gareth J Barnard.
+ * @copyright  2015 Bas Brands http://basbrands.nl
+ * @authors    Bas Brands, David Scotson.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
