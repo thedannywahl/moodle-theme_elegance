@@ -4,25 +4,26 @@
 
 ### Features
 
-[Elegance](https://moodle.org/plugins/view.php?plugin=theme_elegance) is a beautiful three column Moodle theme with robust functionality and lots of custom settings.
+[Elegance](https://moodle.org/plugins/view.php?plugin=theme_elegance) is a beautiful Free Moodle theme with robust functionality and lots of custom settings. This theme is a full rewrite of the Moodle 2.8 theme elegance version.
 
-* [Font Awesome](http://fortawesome.github.io/Font-Awesome/) icons
-* [Google Web Fonts](http://www.google.com/fonts/)
-* Custom "Quick Links" and "Marketing" spots
-* Custom "Front Page Content" and "Footer" content
-* Custom colors
-* Custom "User Menu"
-* Custom log in screen
+If you have tried this theme and would like to have it customized and styled for your organisation in any way feel free to [contact me](http://theming.sonsbeekmedia.nl/blocks/dashboard/contact.php?dashboard=contact) to request a quotation. 
 
-### Demo
+Custom Settings
+* Custom "Quick Links".
+* "Marketing" spots.
+* Custom Footer.
+* A frontpage Slide Show.
+* Customizable colours.
+* Message notifications.
+* Login Page backgroud images.
+* Page loading indicator.
 
-A video showing many of the core features is available for viewing at [Vimeo](https://vimeo.com/channels/moodleman/87749717).
-
-If you would like to see it in action, head to the [2014 iMoot](http://2014.imoot.org) site.
-
-### Contributors
+### Contributors version 2.9
 
 *   [Emma Richardson](https://www.linkedin.com/in/edconsulting)
+
+### Contributors version 2.8
+
 *   [Danny Wahl](http://www.iyware.com)
 *   [Aaron Marr](https://github.com/aaronmarruk)
 *   [Julian Ridden](http://moodleman.net/)
@@ -38,9 +39,7 @@ If you would like to see it in action, head to the [2014 iMoot](http://2014.imoo
 
 [v2.9](https://github.com/bmbrands/moodle-theme_elegance)
 
-Version 2.9 is a complete rewrite of the Elegance theme. Most of the Elegance theme features are still available.
-
-New Features:
+### New Features:
 
 Mustache templates for widgets
 Support for columns left and right (configurable)
@@ -54,7 +53,7 @@ New Favicon
 Flexbox for marketing spots
 Option to have fixed navbar
 
-Removed:
+### Removed:
 Single section course navigation
 Replace Moodle icons with Glyphicons
 Category icon logic
