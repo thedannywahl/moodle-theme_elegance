@@ -21,7 +21,7 @@
  * @package    theme_elegance
  * @copyright  2014 Julian Ridden http://moodleman.net
  * @copyright  2015 Bas Brands http://basbrands.nl
- * @authors    Bas Brands -  Bootstrap 3 work by Bas Brands, David Scotson
+ * @authors    Bas Brands, Abstracting Theme settings: David Scotson
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
