@@ -81,4 +81,20 @@ class theme_elegance_core_renderer extends theme_bootstrap_core_renderer {
         }
         return $output;
     }
+
+    public function user_picture(stdClass $user, array $options = null) {
+        global $PAGE;
+        if ($PAGE->bodyid == 'page-mod-forum-discuss' || $PAGE->bodyid == 'page-site-index' || $PAGE->bodyid == 'page-mod-forum-post' ) {
+            $options = array('size' => '100');
+        }
+
+        $userpicture = new user_picture($user);
+        foreach ((array)$options as $key=>$value) {
+            if (array_key_exists($key, $userpicture)) {
+                $userpicture->$key = $value;
+            }
+        }
+        return $this->render($userpicture);
+    }
+
 }

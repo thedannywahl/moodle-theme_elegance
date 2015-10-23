@@ -22,11 +22,12 @@ If you would like to see it in action, head to the [2014 iMoot](http://2014.imoo
 
 ### Contributors
 
+*   [Emma Richardson](https://www.linkedin.com/in/edconsulting)
+*   [Danny Wahl](http://www.iyware.com)
 *   [Aaron Marr](https://github.com/aaronmarruk)
 *   [Julian Ridden](http://moodleman.net/)
 *   [Gareth J. Barnard](http://about.me/gjbarnard)
 *   [mpuusaar](https://github.com/mpuusaar)
-*   [Danny Wahl](http://www.iyware.com)
 *   [David Bezemer](http://www.davidbezemer.nl)
 
 ### Notes
@@ -35,22 +36,32 @@ If you would like to see it in action, head to the [2014 iMoot](http://2014.imoo
 
 ### Changelog
 
-[v2.9]
+[v2.9](https://github.com/bmbrands/moodle-theme_elegance)
+
+Version 2.9 is a complete rewrite of the Elegance theme. Most of the Elegance theme features are still available.
+
+New Features:
+
+Mustache templates for widgets
+Support for columns left and right (configurable)
 rewrote most renderers to use mustache templates
 Migrate from css to less
 Using one layout file only
-Removed category icon logic
-Removed custom login page
-Rewrote all settings options
-Using upstream bootstrap course renderer
-Cleanup navbar
-Using upstream user dropdown
-Using flexbox for marketing spots
-Removed most border-radius css
-Changed block headings
-Reset all font sizes / weight
-Many CSS cleanups
-New favicon
+Switch to Bootstrap Caroussel
+Rewrote all JS
+Rewrote all setting options
+New Favicon
+Flexbox for marketing spots
+Option to have fixed navbar
+
+Removed:
+Single section course navigation
+Replace Moodle icons with Glyphicons
+Category icon logic
+Custom login page
+Obsolete CSS
+Most renderers
+
 
 [v2.7.1](https://github.com/thedannywahl/moodle-theme_elegance/issues?q=milestone%3Av2.7.1+is%3Aclosed)
 fixed: show/hide resources broken

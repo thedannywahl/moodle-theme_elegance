@@ -26,7 +26,7 @@
  *
  * @package    theme_moomooc
  * @copyright  2015 Bas Brands, www.basbrands.nl
- * @authors    Bas Brands, David Scotson
+ * @authors    David Scotson, Bas Brands
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

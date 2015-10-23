@@ -20,7 +20,8 @@
  *
  * @package    theme_elegance
  * @copyright  2014 Julian Ridden http://moodleman.net
- * @authors    Julian Ridden -  Bootstrap 3 work by Bas Brands, David Scotson
+ * @copyright  2015 Bas Brands http://basbrands.nl
+ * @authors    Bas Brands -  Bootstrap 3 work by Bas Brands, David Scotson
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -31,356 +32,287 @@ require_once(__DIR__ . "/simple_theme_settings.class.php");
 
 defined('MOODLE_INTERNAL') || die;
 
-    global $PAGE;
+global $PAGE;
 
-    $ss = new elegance_simple_theme_settings($settings, 'theme_elegance');
+$ss = new elegance_simple_theme_settings($settings, 'theme_elegance');
 
-    $ADMIN->add('themes', new admin_category('theme_elegance', 'Elegance'));
+$ADMIN->add('themes', new admin_category('theme_elegance', 'Elegance'));
 
-    // "geneicsettings" settingpage
-    $temp = new admin_settingpage('theme_elegance_generic',  get_string('geneicsettings', 'theme_elegance'));
+// "geneicsettings" settingpage
+$temp = new admin_settingpage('theme_elegance_generic',  get_string('geneicsettings', 'theme_elegance'));
 
-    $temp->add($ss->add_checkbox('invert'));
+$temp->add($ss->add_checkbox('invert'));
 
-    $temp->add($ss->add_checkbox('fixednavbar'));
+$temp->add($ss->add_checkbox('fixednavbar'));
 
-    $temp->add($ss->add_text('maxwidth', '1100'));
+$temp->add($ss->add_text('maxwidth', '1100'));
 
-    $choices = array();
-    $choices[1] = get_string('blocksleftandright', 'theme_elegance');
-    $choices[2] = get_string('blocksleft', 'theme_elegance');
-    $choices[3] = get_string('blocksright', 'theme_elegance');
-    
-    $temp->add($ss->add_select('blocksconfig', '3', $choices));
+$choices = array();
+$choices[1] = get_string('blocksleftandright', 'theme_elegance');
+$choices[2] = get_string('blocksleft', 'theme_elegance');
+$choices[3] = get_string('blocksright', 'theme_elegance');
 
-    $temp->add($ss->add_htmleditor('frontpagecontent'));
+$temp->add($ss->add_select('blocksconfig', '3', $choices));
 
-    $temp->add($ss->add_text('frontpagecontent'));
+$temp->add($ss->add_htmleditor('frontpagecontent'));
 
-    $temp->add($ss->add_htmleditor('footnote'));
+$temp->add($ss->add_text('frontpagecontent'));
 
-    $temp->add($ss->add_text('videowidth'));
+$temp->add($ss->add_htmleditor('footnote'));
 
-    $temp->add($ss->add_checkbox('showoldmessages'));
+$temp->add($ss->add_text('videowidth'));
 
-    $temp->add($ss->add_textarea('customcss'));
+$temp->add($ss->add_checkbox('showoldmessages'));
 
-    $temp->add($ss->add_textarea('moodlemobilecss'));
+$temp->add($ss->add_textarea('customcss'));
 
-    $ADMIN->add('theme_elegance', $temp);
+$temp->add($ss->add_textarea('moodlemobilecss'));
 
-    /* Color and Logo Settings */
-    $temp = new admin_settingpage('theme_elegance_colors', get_string('colorsettings', 'theme_elegance'));
-    $temp->add(new admin_setting_heading('theme_elegance_colors', get_string('colorsettingssub', 'theme_elegance'),
-            format_text(get_string('colorsettingsdesc' , 'theme_elegance'), FORMAT_MARKDOWN)));
+$ADMIN->add('theme_elegance', $temp);
 
-    $temp->add($ss->add_colourpicker('themecolor', '#0098e0'));
+/* Color and Logo Settings */
+$temp = new admin_settingpage('theme_elegance_colors', get_string('colorsettings', 'theme_elegance'));
+$temp->add(new admin_setting_heading('theme_elegance_colors', get_string('colorsettingssub', 'theme_elegance'),
+        format_text(get_string('colorsettingsdesc' , 'theme_elegance'), FORMAT_MARKDOWN)));
 
-    $temp->add($ss->add_colourpicker('fontcolor', '#666'));
+$temp->add($ss->add_colourpicker('themecolor', '#0098e0'));
 
-    $temp->add($ss->add_colourpicker('headingcolor', '#27282a'));
+$temp->add($ss->add_colourpicker('fontcolor', '#666'));
 
-    $temp->add($ss->add_file('logo'));
+$temp->add($ss->add_colourpicker('headingcolor', '#27282a'));
 
-    $temp->add($ss->add_file('headerbg'));
+$temp->add($ss->add_file('logo'));
 
-    $temp->add($ss->add_file('bodybg'));
+$temp->add($ss->add_file('headerbg'));
 
-    $temp->add($ss->add_colourpicker('bodycolor', '#edecec'));
+$temp->add($ss->add_file('bodybg'));
 
-    // Set Transparency.
-    $choices = array(
-        '.10'=>'10%',
-        '.15'=>'15%',
-        '.20'=>'20%',
-        '.25'=>'25%',
-        '.30'=>'30%',
-        '.35'=>'35%',
-        '.40'=>'40%',
-        '.45'=>'45%',
-        '.50'=>'50%',
-        '.55'=>'55%',
-        '.60'=>'60%',
-        '.65'=>'65%',
-        '.70'=>'70%',
-        '.75'=>'75%',
-        '.80'=>'80%',
-        '.85'=>'85%',
-        '.90'=>'90%',
-        '.95'=>'95%',
-        '1'=>'100%');
+$temp->add($ss->add_colourpicker('bodycolor', '#edecec'));
 
-    $temp->add($ss->add_select('transparency', '1', $choices));
+// Set Transparency.
+$choices = array(
+    '.10'=>'10%',
+    '.15'=>'15%',
+    '.20'=>'20%',
+    '.25'=>'25%',
+    '.30'=>'30%',
+    '.35'=>'35%',
+    '.40'=>'40%',
+    '.45'=>'45%',
+    '.50'=>'50%',
+    '.55'=>'55%',
+    '.60'=>'60%',
+    '.65'=>'65%',
+    '.70'=>'70%',
+    '.75'=>'75%',
+    '.80'=>'80%',
+    '.85'=>'85%',
+    '.90'=>'90%',
+    '.95'=>'95%',
+    '1'=>'100%');
 
-    $ADMIN->add('theme_elegance', $temp);
+$temp->add($ss->add_select('transparency', '1', $choices));
 
-    /* Banner Settings */
-    $temp = new admin_settingpage('theme_elegance_banner', get_string('bannersettings', 'theme_elegance'));
-    $temp->add(new admin_setting_heading('theme_elegance_banner', get_string('bannersettingssub', 'theme_elegance'),
-            format_text(get_string('bannersettingsdesc' , 'theme_elegance'), FORMAT_MARKDOWN)));
+$ADMIN->add('theme_elegance', $temp);
 
+/* Banner Settings */
+$temp = new admin_settingpage('theme_elegance_banner', get_string('bannersettings', 'theme_elegance'));
+$temp->add(new admin_setting_heading('theme_elegance_banner', get_string('bannersettingssub', 'theme_elegance'),
+        format_text(get_string('bannersettingsdesc' , 'theme_elegance'), FORMAT_MARKDOWN)));
 
-    $choices = array();
-    $choices[1] = get_string('alwaysdisplay', 'theme_elegance');
-    $choices[2] = get_string('displaybeforelogin', 'theme_elegance');
-    $choices[3] = get_string('displayafterlogin', 'theme_elegance');
-    $choices[4] = get_string('dontdisplay', 'theme_elegance');
-    $temp->add($ss->add_select('togglebanner', '1', $choices));
 
-    $choices = range(0, 10);
+$choices = array();
+$choices[1] = get_string('alwaysdisplay', 'theme_elegance');
+$choices[2] = get_string('displaybeforelogin', 'theme_elegance');
+$choices[3] = get_string('displayafterlogin', 'theme_elegance');
+$choices[4] = get_string('dontdisplay', 'theme_elegance');
+$temp->add($ss->add_select('togglebanner', '1', $choices));
 
-    $temp->add($ss->add_select('slidenumber', '1', $choices));
+$choices = range(0, 10);
 
-    $temp->add($ss->add_text('slidespeed', '600'));
+$temp->add($ss->add_select('slidenumber', '1', $choices));
 
-    $hasslidenum = (!empty($PAGE->theme->settings->slidenumber));
-    if ($hasslidenum) {
-            $slidenum = $PAGE->theme->settings->slidenumber;
-    } else {
-        $slidenum = '1';
-    }
+$temp->add($ss->add_text('slidespeed', '600'));
 
-    $bannertitle = array('Slide One', 'Slide Two', 'Slide Three','Slide Four','Slide Five','Slide Six','Slide Seven', 'Slide Eight', 'Slide Nine', 'Slide Ten');
+$hasslidenum = (!empty($PAGE->theme->settings->slidenumber));
+if ($hasslidenum) {
+        $slidenum = $PAGE->theme->settings->slidenumber;
+} else {
+    $slidenum = '1';
+}
 
-    foreach (range(1, $slidenum) as $bannernumber) {
+$bannertitle = array('Slide One', 'Slide Two', 'Slide Three','Slide Four','Slide Five','Slide Six','Slide Seven', 'Slide Eight', 'Slide Nine', 'Slide Ten');
 
-        $temp->add($ss->add_headings('bannerindicator', $bannernumber));
+foreach (range(1, $slidenum) as $bannernumber) {
 
-        $temp->add($ss->add_checkboxes('enablebanner', $bannernumber));
+    $temp->add($ss->add_headings('bannerindicator', $bannernumber));
 
-        $temp->add($ss->add_texts('bannertitle', $bannernumber));
+    $temp->add($ss->add_checkboxes('enablebanner', $bannernumber));
 
-        $temp->add($ss->add_texts('bannertext', $bannernumber));
+    $temp->add($ss->add_texts('bannertitle', $bannernumber));
 
-        $temp->add($ss->add_texts('bannerlinktext', $bannernumber));
+    $temp->add($ss->add_texts('bannertext', $bannernumber));
 
-        $temp->add($ss->add_texts('bannerlinkurl', $bannernumber));
+    $temp->add($ss->add_texts('bannerlinktext', $bannernumber));
 
-        $temp->add($ss->add_files('bannerimage', $bannernumber));
+    $temp->add($ss->add_texts('bannerlinkurl', $bannernumber));
 
-        $temp->add($ss->add_colourpickers('bannercolor', '#000', $bannernumber));
+    $temp->add($ss->add_files('bannerimage', $bannernumber));
 
-    }
+    $temp->add($ss->add_colourpickers('bannercolor', '#000', $bannernumber));
 
-    $ADMIN->add('theme_elegance', $temp);
+}
 
-    /* Marketing Spot Settings */
-    $temp = new admin_settingpage('theme_elegance_marketing', get_string('marketingspots', 'theme_elegance'));
-    $temp->add(new admin_setting_heading('theme_elegance_marketing', get_string('marketingheadingsub', 'theme_elegance'),
-            format_text(get_string('marketingdesc' , 'theme_elegance'), FORMAT_MARKDOWN)));
+$ADMIN->add('theme_elegance', $temp);
 
-    $choices = array();
-    $choices[1] = get_string('alwaysdisplay', 'theme_elegance');
-    $choices[2] = get_string('displaybeforelogin', 'theme_elegance');
-    $choices[3] = get_string('displayafterlogin', 'theme_elegance');
-    $choices[4] = get_string('dontdisplay', 'theme_elegance');
-    $temp->add($ss->add_select('togglemarketing', '1', $choices));
+/* Marketing Spot Settings */
+$temp = new admin_settingpage('theme_elegance_marketing', get_string('marketingspots', 'theme_elegance'));
+$temp->add(new admin_setting_heading('theme_elegance_marketing', get_string('marketingheadingsub', 'theme_elegance'),
+        format_text(get_string('marketingdesc' , 'theme_elegance'), FORMAT_MARKDOWN)));
 
-    $temp->add($ss->add_text('marketingtitle'));
+$choices = array();
+$choices[1] = get_string('alwaysdisplay', 'theme_elegance');
+$choices[2] = get_string('displaybeforelogin', 'theme_elegance');
+$choices[3] = get_string('displayafterlogin', 'theme_elegance');
+$choices[4] = get_string('dontdisplay', 'theme_elegance');
+$temp->add($ss->add_select('togglemarketing', '1', $choices));
 
-    $temp->add($ss->add_text('marketingtitleicon'));
+$temp->add($ss->add_text('marketingtitle'));
 
-    $choices = array();
-    $choices[1] = 2;
-    $choices[2] = 4;
-    $choices[3] = 6;
-    $choices[4] = 8;
-    $temp->add($ss->add_select('marketingspotsinrow', '1', $choices));
+$temp->add($ss->add_text('marketingtitleicon'));
 
-    $choices = (range(0, 24));
+$choices = array();
+$choices[1] = 2;
+$choices[2] = 4;
+$choices[3] = 6;
+$choices[4] = 8;
+$temp->add($ss->add_select('marketingspotsinrow', '1', $choices));
 
-    $temp->add($ss->add_select('marketingspotsnr', '4', $choices));
+$choices = (range(0, 24));
 
-    $hasspotsnr = (!empty($PAGE->theme->settings->marketingspotsnr));
-    if ($hasspotsnr) {
-        $spotsnr = $PAGE->theme->settings->marketingspotsnr;
-    } else {
-        $spotsnr = '4';
-    }
+$temp->add($ss->add_select('marketingspotsnr', '4', $choices));
 
+$hasspotsnr = (!empty($PAGE->theme->settings->marketingspotsnr));
+if ($hasspotsnr) {
+    $spotsnr = $PAGE->theme->settings->marketingspotsnr;
+} else {
+    $spotsnr = '4';
+}
 
-    foreach (range(1, $spotsnr) as $spot) {
-        $temp->add($ss->add_headings('marketingheading', $spot));
 
-        $temp->add($ss->add_texts('marketingtitle', $spot));
+foreach (range(1, $spotsnr) as $spot) {
+    $temp->add($ss->add_headings('marketingheading', $spot));
 
-        $temp->add($ss->add_texts('marketingicon', $spot));
+    $temp->add($ss->add_texts('marketingtitle', $spot));
 
-        $temp->add($ss->add_texts('marketingurl', $spot));
+    $temp->add($ss->add_texts('marketingicon', $spot));
 
-        $temp->add($ss->add_htmleditors('marketingcontent', '', $spot));
-    }
+    $temp->add($ss->add_texts('marketingurl', $spot));
 
+    $temp->add($ss->add_htmleditors('marketingcontent', '', $spot));
+}
 
-    $ADMIN->add('theme_elegance', $temp);
 
-    /* Quick Link Settings */
-    $temp = new admin_settingpage('theme_elegance_quicklinks', get_string('quicklinksheading', 'theme_elegance'));
-    $temp->add(new admin_setting_heading('theme_elegance_quicklinks', get_string('quicklinksheadingsub', 'theme_elegance'),
-            format_text(get_string('quicklinksdesc' , 'theme_elegance'), FORMAT_MARKDOWN)));
+$ADMIN->add('theme_elegance', $temp);
 
-    $choices = array('1' => get_string('alwaysdisplay', 'theme_elegance'),
-        '2' => get_string('displaybeforelogin', 'theme_elegance'),
-        '3'=> get_string('displayafterlogin', 'theme_elegance'),
-        '0'=> get_string('dontdisplay', 'theme_elegance'));
+/* Quick Link Settings */
+$temp = new admin_settingpage('theme_elegance_quicklinks', get_string('quicklinksheading', 'theme_elegance'));
+$temp->add(new admin_setting_heading('theme_elegance_quicklinks', get_string('quicklinksheadingsub', 'theme_elegance'),
+        format_text(get_string('quicklinksdesc' , 'theme_elegance'), FORMAT_MARKDOWN)));
 
-    $temp->add($ss->add_select('togglequicklinks', '1', $choices));
+$choices = array('1' => get_string('alwaysdisplay', 'theme_elegance'),
+    '2' => get_string('displaybeforelogin', 'theme_elegance'),
+    '3'=> get_string('displayafterlogin', 'theme_elegance'),
+    '0'=> get_string('dontdisplay', 'theme_elegance'));
 
-    $choices = range(1, 12);
-    $temp->add($ss->add_select('quicklinksnumber', '4', $choices));
+$temp->add($ss->add_select('togglequicklinks', '1', $choices));
 
-    $temp->add($ss->add_text('quicklinkstitle'));
+$choices = range(1, 12);
+$temp->add($ss->add_select('quicklinksnumber', '4', $choices));
 
-    $temp->add($ss->add_text('quicklinksicon'));
+$temp->add($ss->add_text('quicklinkstitle'));
 
-    $hasquicklinksnum = (!empty($PAGE->theme->settings->quicklinksnumber));
-    if ($hasquicklinksnum) {
-        $quicklinksnum = $PAGE->theme->settings->quicklinksnumber;
-    } else {
-        $quicklinksnum = '4';
-    }
+$temp->add($ss->add_text('quicklinksicon'));
 
+$hasquicklinksnum = (!empty($PAGE->theme->settings->quicklinksnumber));
+if ($hasquicklinksnum) {
+    $quicklinksnum = $PAGE->theme->settings->quicklinksnumber;
+} else {
+    $quicklinksnum = '4';
+}
 
-    foreach (range(1, $quicklinksnum + 1) as $qln) {
 
-        $temp->add($ss->add_headings('quicklinks', $qln));
+foreach (range(1, $quicklinksnum + 1) as $qln) {
 
-        $temp->add($ss->add_texts('quicklinkicon', $qln));
+    $temp->add($ss->add_headings('quicklinks', $qln));
 
-        $temp->add($ss->add_colourpickers('quicklinkiconcolor', '', $qln));
+    $temp->add($ss->add_texts('quicklinkicon', $qln));
 
-        $temp->add($ss->add_texts('quicklinkbuttontext', $qln));
+    $temp->add($ss->add_colourpickers('quicklinkiconcolor', '', $qln));
 
-        $temp->add($ss->add_colourpickers('quicklinkbuttoncolor', '', $qln));
+    $temp->add($ss->add_texts('quicklinkbuttontext', $qln));
 
-        $temp->add($ss->add_texts('quicklinkbuttonurl', $qln));
-    }
+    $temp->add($ss->add_colourpickers('quicklinkbuttoncolor', '', $qln));
 
+    $temp->add($ss->add_texts('quicklinkbuttonurl', $qln));
+}
 
-    $ADMIN->add('theme_elegance', $temp);
 
-    /* Login Page Settings */
-    $temp = new admin_settingpage('theme_elegance_loginsettings', get_string('loginsettings', 'theme_elegance'));
-    $temp->add(new admin_setting_heading('theme_elegance_loginsettings', get_string('loginsettingssub', 'theme_elegance'),
-            format_text(get_string('loginsettingsdesc' , 'theme_elegance'), FORMAT_MARKDOWN)));
+$ADMIN->add('theme_elegance', $temp);
 
-    // Set Number of Slides.
-    $choices = range(0, 5);
-    $temp->add($ss->add_select('loginbgnumber', '1', $choices));
+/* Login Page Settings */
+$temp = new admin_settingpage('theme_elegance_loginsettings', get_string('loginsettings', 'theme_elegance'));
+$temp->add(new admin_setting_heading('theme_elegance_loginsettings', get_string('loginsettingssub', 'theme_elegance'),
+        format_text(get_string('loginsettingsdesc' , 'theme_elegance'), FORMAT_MARKDOWN)));
 
-    $hasloginbgnum = (!empty($PAGE->theme->settings->loginbgnumber));
-    if ($hasloginbgnum) {
-        $loginbgnum = $PAGE->theme->settings->loginbgnumber;
-    } else {
-        $loginbgnum = '3';
-    }
+// Set Number of Slides.
+$choices = range(0, 5);
+$temp->add($ss->add_select('loginbgnumber', '1', $choices));
 
-    foreach (range(1, $loginbgnum) as $i) {
-        $temp->add($ss->add_files('loginimage', $i));
-    }
+$hasloginbgnum = (!empty($PAGE->theme->settings->loginbgnumber));
+if ($hasloginbgnum) {
+    $loginbgnum = $PAGE->theme->settings->loginbgnumber;
+} else {
+    $loginbgnum = '3';
+}
 
-    $ADMIN->add('theme_elegance', $temp);
+foreach (range(1, $loginbgnum) as $i) {
+    $temp->add($ss->add_files('loginimage', $i));
+}
 
-    /* Social Network Settings */
-    $temp = new admin_settingpage('theme_elegance_social', get_string('socialheading', 'theme_elegance'));
-    $temp->add(new admin_setting_heading('theme_elegance_social', get_string('socialheadingsub', 'theme_elegance'),
-            format_text(get_string('socialdesc' , 'theme_elegance'), FORMAT_MARKDOWN)));
+$ADMIN->add('theme_elegance', $temp);
 
-    $temp->add($ss->add_text('website'));
+/* Social Network Settings */
+$temp = new admin_settingpage('theme_elegance_social', get_string('socialheading', 'theme_elegance'));
+$temp->add(new admin_setting_heading('theme_elegance_social', get_string('socialheadingsub', 'theme_elegance'),
+        format_text(get_string('socialdesc' , 'theme_elegance'), FORMAT_MARKDOWN)));
 
-    $temp->add($ss->add_text('blog'));
+$temp->add($ss->add_text('website'));
 
-    $temp->add($ss->add_text('facebook'));
+$temp->add($ss->add_text('blog'));
 
-    $temp->add($ss->add_text('flickr'));
+$temp->add($ss->add_text('facebook'));
 
-    $temp->add($ss->add_text('twitter'));
+$temp->add($ss->add_text('flickr'));
 
-    $temp->add($ss->add_text('googleplus'));
+$temp->add($ss->add_text('twitter'));
 
-    $temp->add($ss->add_text('linkedin'));
+$temp->add($ss->add_text('googleplus'));
 
-    $temp->add($ss->add_text('tumblr'));
+$temp->add($ss->add_text('linkedin'));
 
-    $temp->add($ss->add_text('pinterest'));
+$temp->add($ss->add_text('tumblr'));
 
-    $temp->add($ss->add_text('instagram'));
+$temp->add($ss->add_text('pinterest'));
 
-    $temp->add($ss->add_text('youtube'));
+$temp->add($ss->add_text('instagram'));
 
-    $temp->add($ss->add_text('vimeo'));
+$temp->add($ss->add_text('youtube'));
 
-    $temp->add($ss->add_text('skype'));
+$temp->add($ss->add_text('vimeo'));
 
-    $temp->add($ss->add_text('vk'));
+$temp->add($ss->add_text('skype'));
 
-    $ADMIN->add('theme_elegance', $temp);
+$temp->add($ss->add_text('vk'));
 
-    // /* Category Settings */
-    // $temp = new admin_settingpage('theme_elegance_categoryicon', get_string('categoryiconheading', 'theme_elegance'));
-
-    // $name = 'theme_elegance_categoryicon';
-    // $heading = get_string('categoryiconheadingsub', 'theme_elegance');
-    // $information = format_text(get_string('categoryiconheadingdesc' , 'theme_elegance'), FORMAT_MARKDOWN);
-    // $setting = new admin_setting_heading($name, $heading, $information);
-    // $temp->add($setting);
-
-    // // Category Icons.
-    // $name = 'theme_elegance/enablecategoryicon';
-    // $title = get_string('enablecategoryicon', 'theme_elegance');
-    // $description = get_string('enablecategoryicondesc', 'theme_elegance');
-    // $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
-    // $setting->set_updatedcallback('theme_reset_all_caches');
-    // $temp->add($setting);
-
-    // $temp->add($ss->add_checkbox($enablecategoryicon));
-
-    // // We only want to output category icon options if the parent setting is enabled
-    // $enablecategoryicon = (!empty($PAGE->theme->settings->enablecategoryicon));
-    // if($enablecategoryicon) {
-    
-    //     // Default Icon Selector.
-    //     $name = 'theme_elegance/defaultcategoryicon';
-    //     $title = get_string('defaultcategoryicon', 'theme_elegance');
-    //     $description = get_string('defaultcategoryicondesc', 'theme_elegance');
-    //     $default = 'folder-open';
-    //     $setting = new admin_setting_configtext($name, $title, $description, $default);
-    //     $setting->set_updatedcallback('theme_reset_all_caches');
-    //     $temp->add($setting);
-    
-    //     // This is the descriptor for Category Icons
-    //     $name = 'theme_elegance/categoryiconinfo';
-    //     $heading = get_string('categoryiconinfo', 'theme_elegance');
-    //     $information = get_string('categoryiconinfodesc', 'theme_elegance');
-    //     $setting = new admin_setting_heading($name, $heading, $information);
-    //     $temp->add($setting);
-        
-    //     // Get the default category icon
-    //     $defaultcategoryicon = (!empty($PAGE->theme->settings->defaultcategoryicon));
-    //     if($defaultcategoryicon) {
-    //         // Same as theme_elegance/defaultcategoryicon
-    //         $defaultcategoryicon = $PAGE->theme->settings->defaultcategoryicon;
-    //     } else {
-    //         $defaultcategoryicon = 'folder-open';
-    //     }
-        
-    //     // Get all category IDs and their pretty names
-    //     require_once($CFG->libdir. '/coursecatlib.php');
-    //     $coursecats = coursecat::make_categories_list();
-        
-    //     // Go through all categories and create the necessary settings
-    //     foreach($coursecats as $key => $value) {
-        
-    //         // Category Icons for each category.
-    //         $name = 'theme_elegance/categoryicon';
-    //         $title = $value;
-    //         $description = get_string('categoryicondesc', 'theme_elegance') . $value;
-    //         $default = $defaultcategoryicon;
-    //         $setting = new admin_setting_configtext($name.$key, $title, $description, $default);
-    //         $setting->set_updatedcallback('theme_reset_all_caches');
-    //         $temp->add($setting);
-    //     }
-    //     unset($coursecats);
-    // }
-
-    // $ADMIN->add('theme_elegance', $temp);
+$ADMIN->add('theme_elegance', $temp);

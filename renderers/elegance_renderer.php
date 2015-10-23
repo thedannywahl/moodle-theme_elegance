@@ -428,11 +428,10 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
             }
             $messagecount++;
         }
-        $messagemenutext = $messagecount . ' ';
-        if ($messagecount == 1) {
-             $messagemenutext .= get_string('message', 'message');
+        if ($messagecount == 0) {
+             $messagemenutext = ' <i class="glyphicon glyphicon-inbox"></i>';
         } else {
-             $messagemenutext .= get_string('messages', 'message');
+             $messagemenutext = ' <i class="glyphicon glyphicon-envelope"></i>';
         }
         $messagemenu = $menu->add(
             $messagemenutext,
