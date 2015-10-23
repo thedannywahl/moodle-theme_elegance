@@ -20744,12 +20744,14 @@ fieldset[disabled] .block_login .content .footer a.active {
 .block_myprofile .content {
   text-align: center;
 }
-.block_myprofile .profilepicture {
-  border-radius: 100%;
+.block_myprofile .content .myprofileitem.picture .userpicture {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
   box-shadow: 0 0 3px 0 #aaa;
   border: 5px solid #fff;
 }
-.block_myprofile .profilepicture:hover {
+.block_myprofile .content .myprofileitem.picture .userpicture:hover {
   border-color: #0098e0;
 }
 .dir-rtl .collapsed .tree_item.branch:before {
