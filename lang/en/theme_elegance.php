@@ -28,7 +28,7 @@ $string['choosereadme'] = '
 <div class="clearfix">
 <div class="well">
 <h2>Elegance Theme</h2>
-<p><img class=img-polaroid src="elegance/pix/screenshot.jpg" /></p>
+<p><img class=img-polaroid src="elegance/pix/screenshot.png" /></p>
 <p>Elegance is a 2 column, clean and highly customisable theme built on the Bootstrap 3 framework.</p>
 </div></div>';
 

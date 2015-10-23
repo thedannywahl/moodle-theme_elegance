@@ -60,6 +60,8 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
         }
 
         $template = new Object();
+
+        $template->slidespeed = $settings->slidespeed;
         $banners = array();
         $count = 0;
         foreach (range(1, $slidenum) as $bannernumber) {

@@ -132,7 +132,7 @@ $choices = range(0, 10);
 
 $temp->add($ss->add_select('slidenumber', '1', $choices));
 
-$temp->add($ss->add_text('slidespeed', '600'));
+$temp->add($ss->add_text('slidespeed', '3600'));
 
 $hasslidenum = (!empty($PAGE->theme->settings->slidenumber));
 if ($hasslidenum) {

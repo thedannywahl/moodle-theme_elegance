@@ -26,26 +26,6 @@ $( document ).ready(function(){
     $("#b-inc").click(function() { NProgress.inc(); });
     $("#b-100").click(function() { NProgress.done(); });
 
-    if ($('.carousel').length > 0 ) {
-        var ajaxurl = M.cfg.wwwroot+'/theme/elegance/ajax/themesettings.php';
-        $.ajax({
-          url: ajaxurl,
-          cache: false,
-          data: { setting: "slidespeed", sesskey: M.cfg.sesskey}
-        }).done(function( msg) {
-            if (msg.result == 'success') {
-                slidespeed = msg.slidespeed;
-                // $('.carousel').carousel({
-                //     interval: slidespeed
-                // });
-            } else {
-                $('.carousel').carousel({
-                    interval: 600
-                });
-            }
-        });
-    }
-
     if ($('#page-login-index').length > 0 ) {
         var ajaxurl = M.cfg.wwwroot+'/theme/elegance/ajax/themesettings.php';
         $.ajax({
