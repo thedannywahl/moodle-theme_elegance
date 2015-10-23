@@ -4,7 +4,7 @@
 
 ### Features
 
-[Elegance](https://moodle.org/plugins/view.php?plugin=theme_elegance) is a beautiful Free Moodle theme with robust functionality and lots of custom settings. This theme is a full rewrite of the Moodle 2.8 theme elegance version.
+[Elegance](https://moodle.org/plugins/view.php?plugin=theme_elegance) is a beautiful Free Moodle theme with robust functionality and lots of custom settings. This theme is a full rewrite of the Moodle 2.8 theme elegance version. This theme requires the theme "[Bootstrap](https://moodle.org/plugins/view.php?plugin=theme_bootstrap)". If you're using Moodle auto-updater it will automatically install it too.
 
 If you have tried this theme and would like to have it customized and styled for your organisation in any way feel free to [contact me](http://theming.sonsbeekmedia.nl/blocks/dashboard/contact.php?dashboard=contact) to request a quotation. 
 
@@ -32,7 +32,7 @@ Custom Settings
 *   [David Bezemer](http://www.davidbezemer.nl)
 
 ### Notes
-* This theme requires the theme "[Bootstrap](https://moodle.org/plugins/view.php?plugin=theme_bootstrap)".  If you're using Moodle auto-updater it will automatically install it too.
+* 
 * Please do not use the github version of this theme in a production environment.  The current plugin repository version will always be the most stable.
 
 ### Changelog
@@ -41,25 +41,26 @@ Custom Settings
 
 ### New Features:
 
-Mustache templates for widgets
-Support for columns left and right (configurable)
-rewrote most renderers to use mustache templates
-Migrate from css to less
-Using one layout file only
-Switch to Bootstrap Caroussel
-Rewrote all JS
-Rewrote all setting options
-New Favicon
-Flexbox for marketing spots
-Option to have fixed navbar
+* Mustache templates for widgets
+* Support for columns left and right (configurable)
+* rewrote most renderers to use mustache templates
+* Migrate from css to less
+* Using one layout file only
+* Switch to Bootstrap Caroussel
+* Rewrote all JS
+* Rewrote all setting options
+* New Favicon
+* Flexbox for marketing spots
+* Option to have fixed navbar
 
 ### Removed:
-Single section course navigation
-Replace Moodle icons with Glyphicons
-Category icon logic
-Custom login page
-Obsolete CSS
-Most renderers
+
+* Single section course navigation
+* Replace Moodle icons with Glyphicons
+* Category icon logic
+* Custom login page
+* Obsolete CSS
+* Most renderers
 
 
 [v2.7.1](https://github.com/thedannywahl/moodle-theme_elegance/issues?q=milestone%3Av2.7.1+is%3Aclosed)
