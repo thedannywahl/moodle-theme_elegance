@@ -19621,7 +19621,7 @@ body.pagelayout-maintenance {
 #page-content-wrapper {
   position: relative;
   min-height: 100%;
-  background-image: url("@bodybg");
+  background-image: url('[[pix:theme|bg/transparent]]');
   background-repeat: no-repeat;
   background-position: fixed center center;
   background-size: cover;
