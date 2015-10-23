@@ -53,8 +53,6 @@ defined('MOODLE_INTERNAL') || die;
     
     $temp->add($ss->add_select('blocksconfig', '3', $choices));
 
-    $temp->add($ss->add_checkbox('fonticons'));
-
     $temp->add($ss->add_htmleditor('frontpagecontent'));
 
     $temp->add($ss->add_text('frontpagecontent'));

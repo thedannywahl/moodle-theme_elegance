@@ -23,10 +23,14 @@
         </div>
         {{#hascustom}}
         <div id="moodle-navbar" class="navbar-collapse collapse navbar-right">
+            <ul class="nav navbar-nav pull-right">
             {{{custommenu}}}
-            <ul class="nav pull-right">
-                <li>{{{headingmenu}}}</li>
             </ul>
+            
+                <ul class="nav pull-right">
+                    <li>{{{headingmenu}}}</li>
+                </ul>
+            
         </div>
         {{/hascustom}}
     </div>

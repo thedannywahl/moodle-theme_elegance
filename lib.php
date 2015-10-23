@@ -230,4 +230,3 @@ function theme_elegance_set_transparency($css, $transparency) {
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
-

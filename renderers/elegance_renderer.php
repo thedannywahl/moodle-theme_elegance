@@ -358,7 +358,7 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
         $custommenu = $OUTPUT->custom_menu();
 
         $template->hascustom = false;
-        if (!empty($custommenu)) {
+        if (strlen($custommenu) > 0) {
             $template->custommenu = $custommenu;
             $template->hascustom = true;
         }
@@ -366,6 +366,7 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
         $headingmenu = $OUTPUT->page_heading_menu();
 
         if (!empty($headingmenu)) {
+            echo 'headingmenu';
             $template->headingmenu = $headingmenu;
             $template->hascustom = true;
         }
