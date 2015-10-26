@@ -41,6 +41,12 @@ $ADMIN->add('themes', new admin_category('theme_elegance', 'Elegance'));
 // "geneicsettings" settingpage
 $temp = new admin_settingpage('theme_elegance_generic',  get_string('geneicsettings', 'theme_elegance'));
 
+$choices = array('cerulean', 'cosmo', 'cyborg', 'darkly', 'default', 'flatly',
+    'global', 'journal', 'lumen', 'paper', 'readable', 'sandstone', 'simplex',
+    'slate', 'spacelab', 'superhero', 'united', 'yeti');
+
+$temp->add($ss->add_select('bootswatch', '1', $choices));
+
 $temp->add($ss->add_checkbox('invert'));
 
 $temp->add($ss->add_checkbox('fixednavbar'));

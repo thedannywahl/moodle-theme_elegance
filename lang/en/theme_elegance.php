@@ -40,6 +40,8 @@ $string['region-side-middle'] = 'Homepage Middle';
 $string['region-hidden-dock'] = 'Admin Only';
 
 $string['reader'] = 'Reader';
+$string['bootswatch'] = 'Bootswatch';
+$string['bootswatchdesc'] = 'Choose a bootswatch see <a href="https://bootswatch.com/">Bootswatches</a>';
 
 $string['mydashboard'] = 'My Dashboard';
 
