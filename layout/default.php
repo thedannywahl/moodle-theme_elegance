@@ -51,6 +51,7 @@ $hasquicklinks = (!empty($PAGE->layout_options['hasquicklinks']));
 $transparentmain = (!empty($PAGE->layout_options['transparentmain']));
 $hasmoodleheader = (empty($PAGE->layout_options['nomoodleheader']));
 $hassidemiddle = (!empty($PAGE->layout_options['hassidemiddle']));
+$hasfrontpagecontent = (!empty($PAGE->layout_options['hasfrontpagecontent']));
 
 
 if ($transparentmain) {
@@ -92,15 +93,17 @@ echo $OUTPUT->doctype() ?>
     <div class="container-fluid">
         <?php if ($hasmoodleheader) { ?>
         <header id="moodleheader" class="clearfix">
-            
             <div id="course-header" class="p-l-15 p-r-15 p-b-10 p-t-10">
                 <?php echo $OUTPUT->page_heading(); ?>
                 <?php echo $OUTPUT->course_header(); ?>
                 <?php echo $OUTPUT->course_content_header(); ?>
             </div>
 
+            <?php echo $widgets->frontpage_content($hasfrontpagecontent); ?>
+
         </header>
         <?php } ?>
+        
     </div>
 
     <?php echo $widgets->breadcrumb($hasbreadcrumb); ?>
@@ -143,12 +146,14 @@ echo $OUTPUT->doctype() ?>
                     <?php echo $OUTPUT->login_info(); ?>
                     <?php echo $widgets->footerright($hasfooter); ?>
                 </div>
+                <?php echo $OUTPUT->standard_end_of_body_html() ?>
             </div>
         </div>
     </div>
+    <?php echo $OUTPUT->standard_footer_html(); ?>
 </footer>
 
-<?php echo $OUTPUT->standard_end_of_body_html() ?>
+
 
 <script>
 

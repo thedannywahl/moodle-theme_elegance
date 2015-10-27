@@ -49,8 +49,8 @@ class elegance_simple_theme_settings {
         return get_string($setting, $this->themename, $additional);
     }
 
-    private function description_for($setting) {
-        return get_string($setting.'desc', $this->themename);
+    private function description_for($setting, $additional = null) {
+        return get_string($setting.'desc', $this->themename, $additional);
     }
 
     public function add_checkbox($setting, $default='0', $checked='1', $unchecked='0') {
@@ -78,6 +78,16 @@ class elegance_simple_theme_settings {
         $checkbox->set_updatedcallback('theme_reset_all_caches');
        return $checkbox;
     }
+
+    public function add_empty($setting, $varstitle='', $varsdesc = '') {
+        $empty = new admin_setting_configempty(
+            $this->name_for($setting),
+            $this->title_for($setting, $varstitle),
+            $this->description_for($setting, $varsdesc)
+        );
+        return $empty;
+    }
+
 
     public function add_text($setting, $default='') {
         $text = new admin_setting_configtext(

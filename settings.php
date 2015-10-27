@@ -41,12 +41,6 @@ $ADMIN->add('themes', new admin_category('theme_elegance', 'Elegance'));
 // "geneicsettings" settingpage
 $temp = new admin_settingpage('theme_elegance_generic',  get_string('geneicsettings', 'theme_elegance'));
 
-$choices = array('cerulean', 'cosmo', 'cyborg', 'darkly', 'default', 'flatly',
-    'global', 'journal', 'lumen', 'paper', 'readable', 'sandstone', 'simplex',
-    'slate', 'spacelab', 'superhero', 'united', 'yeti');
-
-$temp->add($ss->add_select('bootswatch', '1', $choices));
-
 $temp->add($ss->add_checkbox('invert'));
 
 $temp->add($ss->add_checkbox('fixednavbar'));
@@ -62,8 +56,6 @@ $temp->add($ss->add_select('blocksconfig', '3', $choices));
 
 $temp->add($ss->add_htmleditor('frontpagecontent'));
 
-$temp->add($ss->add_text('frontpagecontent'));
-
 $temp->add($ss->add_htmleditor('footnote'));
 
 $temp->add($ss->add_text('videowidth'));
@@ -73,6 +65,11 @@ $temp->add($ss->add_checkbox('showoldmessages'));
 $temp->add($ss->add_textarea('customcss'));
 
 $temp->add($ss->add_textarea('moodlemobilecss'));
+
+$url = new moodle_url($CFG->wwwroot . '/theme/styles_debug.php', array('theme' => 'elegance',
+    'type' => 'theme', 'sheet' => 'mobile'));
+
+$temp->add($ss->add_empty('moodlemobilecsssettings', '', $url->out()));
 
 $ADMIN->add('theme_elegance', $temp);
 
@@ -229,7 +226,7 @@ $temp->add(new admin_setting_heading('theme_elegance_quicklinks', get_string('qu
 $choices = array('1' => get_string('alwaysdisplay', 'theme_elegance'),
     '2' => get_string('displaybeforelogin', 'theme_elegance'),
     '3'=> get_string('displayafterlogin', 'theme_elegance'),
-    '0'=> get_string('dontdisplay', 'theme_elegance'));
+    '4'=> get_string('dontdisplay', 'theme_elegance'));
 
 $temp->add($ss->add_select('togglequicklinks', '1', $choices));
 

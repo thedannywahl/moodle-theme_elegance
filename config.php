@@ -31,7 +31,7 @@ $THEME->yuicssmodules = array();
 $THEME->name = 'elegance';
 $THEME->enable_dock = true;
 $THEME->parents = array('bootstrap');
-$THEME->sheets = array('custom');
+$THEME->sheets = array('custom', 'mobile');
 $THEME->lessfile = 'elegance';
 $THEME->parents_exclude_sheets = array('bootstrap' => array('moodle'));
 $THEME->lessvariablescallback = 'theme_elegance_less_variables';
@@ -94,7 +94,12 @@ $THEME->layouts = array(
         'file' => 'default.php',
         'regions' => array_merge($regions, $sidemiddle),
         'defaultregion' => $defaultregion,
-        'options' => array('nobreadcrumb' => true, 'hasbanner' => true, 'hasmarketing' => true, 'hasquicklinks' => true),
+        'options' => array(
+            'nobreadcrumb' => true,
+            'hasbanner' => true,
+            'hasmarketing' => true,
+            'hasquicklinks' => true,
+            'hasfrontpagecontent' => true),
     ),
     // Server administration scripts.
     'admin' => array(

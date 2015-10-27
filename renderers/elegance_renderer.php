@@ -242,6 +242,8 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
 
         $settings = $this->settings;
 
+        echo $settings->togglequicklinks;
+
         switch ($settings->togglequicklinks) {
             case 1:
                 break;
@@ -351,32 +353,35 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
             $template->navbartype .= ' navbar-fixed-top';
         }
 
-        $usermenu = $OUTPUT->user_menu();
+        if (!during_initial_install()) {
 
-        if (!empty($usermenu)) {
-            $template->usermenu = $usermenu;
-        }
+            $usermenu = $OUTPUT->user_menu();
 
-        $custommenu = $OUTPUT->custom_menu();
+            if (!empty($usermenu)) {
+                $template->usermenu = $usermenu;
+            }
 
-        $template->hascustom = false;
-        if (strlen($custommenu) > 0) {
-            $template->custommenu = $custommenu;
-            $template->hascustom = true;
-        }
+            $custommenu = $OUTPUT->custom_menu();
 
-        $headingmenu = $OUTPUT->page_heading_menu();
+            $template->hascustom = false;
+            if (strlen($custommenu) > 0) {
+                $template->custommenu = $custommenu;
+                $template->hascustom = true;
+            }
 
-        if (!empty($headingmenu)) {
-            echo 'headingmenu';
-            $template->headingmenu = $headingmenu;
-            $template->hascustom = true;
-        }
+            $headingmenu = $OUTPUT->page_heading_menu();
 
-        $messagemenu = $this->message_menu();
+            if (!empty($headingmenu)) {
+                echo 'headingmenu';
+                $template->headingmenu = $headingmenu;
+                $template->hascustom = true;
+            }
 
-        if (!empty($messagemenu)) {
-            $template->messagemenu = $messagemenu;
+            $messagemenu = $this->message_menu();
+
+            if (!empty($messagemenu)) {
+                $template->messagemenu = $messagemenu;
+            }
         }
 
         return $this->render_from_template('theme_elegance/navbar', $template);
@@ -528,5 +533,18 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
 
         $messagecontent->from = $DB->get_record('user', array('id' => $message->useridfrom));
         return $messagecontent;
+    }
+
+    public function frontpage_content($hasfrontpagecontent) {
+        if (!$hasfrontpagecontent) {
+            return '';
+        }
+        $template = new Object();
+
+        $settings = $this->settings;
+
+        $template->frontpagetext = $settings->frontpagecontent;
+
+        return $this->render_from_template('theme_elegance/frontpagetext', $template);
     }
 }

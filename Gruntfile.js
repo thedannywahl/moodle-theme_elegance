@@ -26,19 +26,7 @@ module.exports = function(grunt) {
     decachephp += 'theme_reset_all_caches();';
 
     grunt.initConfig({
-        less: {
-            // Compile moodle styles.
-            moodle: {
-                options: {
-                    compress: false,
-                    sourceMap: true,
-                    sourceMapRootpath: '/theme/' + THEMEDIR,
-                    sourceMapFilename: 'style/elegance.css'
-                },
-                src: 'less/elegance.less',
-                dest: 'style/elegance.css'
-            }
-        },
+
         exec: {
             decache: {
                 cmd: 'php -r "' + decachephp + '"',
@@ -54,50 +42,19 @@ module.exports = function(grunt) {
         watch: {
             // Watch for any changes to less files and compile.
             files: ["less/**/*.less"],
-            tasks: ["compile"],
+            tasks: ["decache"],
             options: {
                 spawn: false,
                 livereload: true
-            }
-        },
-        replace: {
-            font_fix: {
-                src: 'style/elegance.css',
-                    overwrite: true,
-                    replacements: [{
-                        from: 'glyphicons-halflings-regular.eot',
-                        to: 'glyphicons-halflings-regular.eot]]',
-                    }, {
-                        from: 'glyphicons-halflings-regular.svg',
-                        to: 'glyphicons-halflings-regular.svg]]',
-                    }, {
-                        from: 'glyphicons-halflings-regular.ttf',
-                        to: 'glyphicons-halflings-regular.ttf]]',
-                    }, {
-                        from: 'glyphicons-halflings-regular.woff',
-                        to: 'glyphicons-halflings-regular.woff]]',
-                    }]
-            },
-            sourcemap: {
-                src: ['style/elegance.css'],
-                    overwrite: true,
-                    replacements: [{
-                        from: 'sourceMappingURL=',
-                        to: 'sourceMappingURL=/theme/'+ THEMEDIR + '/style/'
-                    }]
             }
         }
     });
 
     // Load contrib tasks.
-    grunt.loadNpmTasks("grunt-contrib-less");
     grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks("grunt-exec");
-    grunt.loadNpmTasks("grunt-text-replace");
 
     // Register tasks.
     grunt.registerTask("default", ["watch"]);
     grunt.registerTask("decache", ["exec:decache"]);
-
-    grunt.registerTask("compile", ["less", "replace:font_fix", "replace:sourcemap", "decache"]);
 };

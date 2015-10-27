@@ -40,8 +40,6 @@ $string['region-side-middle'] = 'Homepage Middle';
 $string['region-hidden-dock'] = 'Admin Only';
 
 $string['reader'] = 'Reader';
-$string['bootswatch'] = 'Bootswatch';
-$string['bootswatchdesc'] = 'Choose a bootswatch see <a href="https://bootswatch.com/">Bootswatches</a>';
 
 $string['mydashboard'] = 'My Dashboard';
 
@@ -50,6 +48,9 @@ $string['customcssdesc'] = 'Whatever CSS rules you add to this textarea will be 
 
 $string['moodlemobilecss'] = 'Moodle Mobile CSS';
 $string['moodlemobilecssdesc'] = 'The Moodle Mobile Application allows you to define an external stylesheet to style the application.  Whatever CSS rules you add to this textarea will be displayed in the official Moodle Mobile application.  Simply copy the URL below and store it in the "mobilecssurl" setting under "Web Services -> Mobile".';
+
+$string['moodlemobilecsssettings'] = 'Mobile stylesheet';
+$string['moodlemobilecsssettingsdesc'] = '{$a}';
 
 $string['frontpagecontent'] = 'Frontpage Content';
 $string['frontpagecontentdesc'] = 'This location appears as a highlight under the slideshow on the frontpage.';

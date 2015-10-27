@@ -88,21 +88,12 @@ function theme_elegance_less_variables($theme) {
         }
     }
 
-    $textvars = array('themecolor', 'fontcolor', 'headingcolor', 'videowidth', 'transparency', 'bootswatch');
+    $textvars = array('themecolor', 'fontcolor', 'headingcolor', 'videowidth', 'transparency');
 
     foreach ($textvars as $textvar) {
         if (!empty($settings->$textvar)) {
             $variables[$textvar] = $settings->$textvar;
         }
-    }
-
-    $bootswatches = array('cerulean', 'cosmo', 'cyborg', 'darkly', 'default', 'flatly',
-    'global', 'journal', 'lumen', 'paper', 'readable', 'sandstone', 'simplex',
-    'slate', 'spacelab', 'superhero', 'united', 'yeti');
-    if (!empty($settings->bootswatch)) {
-        $variables['bootswatch'] = $bootswatches[$settings->bootswatch];
-    } else {
-        $variables['bootswatch'] = 'default';
     }
 
     if (!empty($settings->maxwidth)) {
