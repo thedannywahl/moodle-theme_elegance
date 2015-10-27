@@ -21,6 +21,8 @@ Custom Settings
 ### Contributors version 2.9
 
 *   [Emma Richardson](https://www.linkedin.com/in/edconsulting)
+*   [Mary Evans](https://moodle.org/user/profile.php?id=713800)
+*   [Usman Asar](https://moodle.org/user/profile.php?id=1183102)
 
 ### Contributors version 2.8
 
