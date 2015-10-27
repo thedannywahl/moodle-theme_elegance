@@ -242,8 +242,6 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
 
         $settings = $this->settings;
 
-        echo $settings->togglequicklinks;
-
         switch ($settings->togglequicklinks) {
             case 1:
                 break;
