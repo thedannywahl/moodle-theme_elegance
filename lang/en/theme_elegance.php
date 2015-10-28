@@ -84,6 +84,7 @@ $string['region-side-pre'] = 'Left';
 
 $string['showoldmessages'] = 'Show Old Messages';
 $string['showoldmessagesdesc'] = 'Show old messages on the message menu.';
+$string['unreadnewnotification'] = 'New notification';
 
 $string['visibleadminonly'] = 'Blocks moved into the area below will only be seen by admins.';
 
