@@ -99,7 +99,8 @@ $THEME->layouts = array(
             'hasbanner' => true,
             'hasmarketing' => true,
             'hasquicklinks' => true,
-            'hasfrontpagecontent' => true),
+            'hasfrontpagecontent' => true,
+            'nomoodleheader' => true),
     ),
     // Server administration scripts.
     'admin' => array(

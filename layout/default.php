@@ -89,6 +89,8 @@ echo $OUTPUT->doctype() ?>
 
     <?php echo $widgets->banner($hasbanner); ?>
 
+    <?php echo $widgets->frontpage_content($hasfrontpagecontent); ?>
+
     <?php echo $widgets->marketing_spots($hasmarketing, $hassidemiddle); ?>
     <div class="container-fluid">
         <?php if ($hasmoodleheader) { ?>
@@ -98,9 +100,6 @@ echo $OUTPUT->doctype() ?>
                 <?php echo $OUTPUT->course_header(); ?>
                 <?php echo $OUTPUT->course_content_header(); ?>
             </div>
-
-            <?php echo $widgets->frontpage_content($hasfrontpagecontent); ?>
-
         </header>
         <?php } ?>
         

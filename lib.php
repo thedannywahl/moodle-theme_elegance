@@ -33,7 +33,7 @@ function elegance_grid($hassidepre, $hassidepost) {
     } else if ($hassidepre && !$hassidepost) {
         $regions = array('content' => 'col-sm-9 col-sm-push-3');
         $regions['pre'] = 'col-sm-3 col-sm-pull-9';
-        $regions['post'] = 'emtpy';
+        $regions['post'] = 'empty';
     } else if (!$hassidepre && $hassidepost) {
         $regions = array('content' => 'col-sm-9');
         $regions['pre'] = 'empty';
