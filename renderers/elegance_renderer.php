@@ -511,7 +511,7 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
         $messagecontent = new stdClass();
 
         if ($message->notification) {
-            $messagecontent->text = get_string('unreadnewnotification', 'message');
+            $messagecontent->text = get_string('unreadnewnotification', 'theme_elegance');
         } else {
             if ($message->fullmessageformat == FORMAT_HTML) {
                 $message->smallmessage = html_to_text($message->smallmessage);
