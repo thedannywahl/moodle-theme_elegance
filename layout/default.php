@@ -92,6 +92,7 @@ echo $OUTPUT->doctype() ?>
     <?php echo $widgets->frontpage_content($hasfrontpagecontent); ?>
 
     <?php echo $widgets->marketing_spots($hasmarketing, $hassidemiddle); ?>
+    
     <div class="container-fluid">
         <?php if ($hasmoodleheader) { ?>
         <header id="moodleheader" class="clearfix">

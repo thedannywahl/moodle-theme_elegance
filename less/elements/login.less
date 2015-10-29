@@ -1,4 +1,7 @@
-
+.path-login #page-content-wrapper {
+    background-image: @loginbg;
+    background-color: @loginbgcolor;
+}
 .loginbox.twocolumns {
 	.loginpanel,
 	.signuppanel {
@@ -9,9 +12,9 @@
 	    -webkit-border-radius: 5px;
 	    -moz-border-radius: 5px;
 	    border-radius: 5px;
-	    -webkit-box-shadow: 8px 8px 21px -3px rgba(0,0,0,0.75);
-	    -moz-box-shadow: 8px 8px 21px -3px rgba(0,0,0,0.75);
-	    box-shadow: 8px 8px 21px -3px rgba(0,0,0,0.75);
+	    -webkit-box-shadow: 8px 8px 21px -3px rgba(0,0,0,@transparency);
+	    -moz-box-shadow: 8px 8px 21px -3px rgba(0,0,0,@transparency);
+	    box-shadow: 8px 8px 21px -3px rgba(0,0,0,@transparency);
 	    font-family: "Roboto";
 	}
 }

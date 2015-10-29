@@ -88,7 +88,7 @@ function theme_elegance_less_variables($theme) {
         }
     }
 
-    $textvars = array('themecolor', 'fontcolor', 'headingcolor', 'videowidth', 'transparency');
+    $textvars = array('themecolor', 'fontcolor', 'headingcolor', 'videowidth', 'transparency', 'bodycolor');
 
     foreach ($textvars as $textvar) {
         if (!empty($settings->$textvar)) {
@@ -102,6 +102,13 @@ function theme_elegance_less_variables($theme) {
 
     if (!empty($settings->fixednavbar)) {
         $variables['navbarpadding'] = '50px';
+    }
+
+    if (!empty($settings->loginbgnumber)) {
+        if ($settings->loginbgnumber > 0) {
+            $variables['loginbgcolor'] = 'transparent';
+            $variables['loginbg'] = 'none';
+        }
     }
 
     if (!empty($settings->bodybgconfig)) {
