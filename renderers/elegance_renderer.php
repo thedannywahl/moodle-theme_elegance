@@ -393,11 +393,16 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
         }
 
         $template = new Object();
+        $settings = $this->settings;
 
         $items = $this->page->navbar->get_items();
 
         $template->hascrumbs = false;
         $template->breadcrumbs = array();
+        $template->addclasses = ' m-t-5';
+        if (!empty($settings->bodybg)) {
+            $template->addclasses = 'bg-white p-5 eboxshadow m-t-5';
+        }
         $numitems = count($items);
         $cnt = 0;
         foreach ($items as $item) {

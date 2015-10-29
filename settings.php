@@ -90,6 +90,13 @@ $temp->add($ss->add_file('headerbg'));
 
 $temp->add($ss->add_file('bodybg'));
 
+$choices = array();
+$choices[1] = get_string('bodybgrepeat', 'theme_elegance');
+$choices[2] = get_string('bodybgfixed', 'theme_elegance');
+$choices[3] = get_string('bodybgscroll', 'theme_elegance');
+
+$temp->add($ss->add_select('bodybgconfig', '2', $choices));
+
 $temp->add($ss->add_colourpicker('bodycolor', '#edecec'));
 
 // Set Transparency.

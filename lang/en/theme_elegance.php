@@ -166,6 +166,14 @@ $string['bodybg'] = 'Background Image';
 $string['bodybgdesc'] = 'If you want to replace the default background you can upload your own here.<br>
 <strong>Cool Tip</strong>: You can use this to show through Moodle content using the transparency option below.';
 
+$choices = array();
+$string['bodybgrepeat'] = 'Repeat background (tile)';
+$string['bodybgfixed'] = 'Full, Fixed background, no scroll';
+$string['bodybgscroll'] = 'Full, Scroll with content';
+
+$string['bodybgconfig'] = 'Configure Body Background behaviour';
+$string['bodybgconfigdesc'] = 'Configure the preferred background behaviour, use a small images for repeat, larger images for full';
+
 $string['bodycolor'] = 'Background Colour';
 $string['bodycolordesc'] = 'If no image is uploaded Moodle will then default to this colour.';
 

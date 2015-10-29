@@ -104,6 +104,29 @@ function theme_elegance_less_variables($theme) {
         $variables['navbarpadding'] = '50px';
     }
 
+    if (!empty($settings->bodybgconfig)) {
+        switch($settings->bodybgconfig) {
+            case 1:
+                $variables['bodybgrepeat'] = 'repeat';
+                $variables['bodybgposition'] = 'initial';
+                $variables['bodybgsize'] = 'initial';
+                $variables['bodybgattach'] = 'initial';
+                break;
+            case 2:
+                $variables['bodybgrepeat'] = 'no-repeat';
+                $variables['bodybgposition'] = 'fixed center center';
+                $variables['bodybgsize'] = 'cover';
+                $variables['bodybgattach'] = 'fixed';
+                break;
+            case 3:
+                $variables['bodybgrepeat'] = 'no-repeat';
+                $variables['bodybgposition'] = 'fixed center center';
+                $variables['bodybgsize'] = 'cover';
+                $variables['bodybgattach'] = 'scroll';
+                break;
+        }
+    }
+
     foreach (range(1, 12) as $i) {
         $textvar = "quicklinkiconcolor" . $i;
         if (!empty($settings->$textvar)) {
