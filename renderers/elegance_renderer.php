@@ -223,7 +223,7 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
 
         $template = new Object();
 
-        $socialoptions = array('facebook', 'twitter', 'googleplus', 'linkedin', 'youtube', 'flickr', 'vk', 'pinterest',
+        $socialoptions = array('ios','android','windows','winphone','facebook', 'twitter', 'googleplus', 'linkedin', 'youtube', 'flickr', 'vk', 'pinterest',
             'instagram', 'skype', 'website', 'blog', 'vimeo', 'tumblr');
 
         foreach ($socialoptions as $so) {

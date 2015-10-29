@@ -1,5 +1,29 @@
 {{#hasicons}}
 <ul class="socials unstyled">
+    {{#ios}}
+        <a href={{{ios}}} class="socialicon ios">
+        <i class="fa fa-apple fa-inverse"></i>
+        <span class="sr-only">{{#str}} ios, theme_elegance{{/str}}</span>
+        </a>  
+    {{/ios}}
+    {{#android}}
+        <a href={{{android}}} class="socialicon android">
+        <i class="fa fa-android fa-inverse"></i>
+        <span class="sr-only">{{#str}} android, theme_elegance{{/str}}</span>
+        </a>  
+    {{/android}}
+    {{#winphone}}
+        <a href={{{winphone}}} class="socialicon winphone">
+        <i class="fa fa-windows fa-inverse"></i>
+        <span class="sr-only">{{#str}} winphone, theme_elegance{{/str}}</span>
+        </a>  
+    {{/winphone}}
+    {{#windows}}
+        <a href={{{windows}}} class="socialicon windows">
+        <i class="fa fa-windows fa-inverse"></i>
+        <span class="sr-only">{{#str}} windows, theme_elegance{{/str}}</span>
+        </a>  
+    {{/windows}}
     {{#facebook}}
         <a href={{{facebook}}} class="socialicon facebook">
         <i class="fa fa-facebook fa-inverse"></i>
