@@ -326,3 +326,23 @@ $temp->add($ss->add_text('skype'));
 $temp->add($ss->add_text('vk'));
 
 $ADMIN->add('theme_elegance', $temp);
+
+/* Moodle Mobile Application Settings */
+
+$temp = new admin_settingpage('theme_elegance_mobile', get_string('mobileappsheading', 'theme_elegance'));
+$temp->add(new admin_setting_heading('theme_elegance_mobileapps', get_string('mobileappsheadingsub', 'theme_elegance'),
+    format_text(get_string('mobileappsdesc', 'theme_elegance'), FORMAT_MARKDOWN)));
+
+// Android App url setting.
+$temp->add($ss->add_text('android'));
+
+// iOS App url setting.
+$temp->add($ss->add_text('ios'));
+
+// Windows App url setting.
+$temp->add($ss->add_text('windows'));
+
+// Windows PhoneApp url setting.
+$temp->add($ss->add_text('winphone'));
+
+$ADMIN->add('theme_elegance', $temp);
