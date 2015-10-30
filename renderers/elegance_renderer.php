@@ -113,6 +113,9 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
             }
             $banners[] = $banner;
         }
+        if ($count($banners) == 0) {
+            return '';
+        }
         $banners[0]->active = 'active';
         $template->banners = $banners;
 
@@ -196,6 +199,9 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
                 $marketingspot->url = $settings->$url;
             }
             $template->spots[] = $marketingspot;
+        }
+        if ($count($template->spots[]) == 0) {
+            return '';
         } 
 
         return $this->render_from_template('theme_elegance/marketingspots', $template);
@@ -292,8 +298,13 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
             $quicklink->buttonclass = $buttonclass;
             $template->quicklinks[] = $quicklink;
         }
+
         
         $count = count($template->quicklinks);
+
+        if ($count == 0) {
+            return '';
+        }
 
         if ($count < 4) {
             $template->classlarge = 'col-lg-' . (12 / $count);
@@ -427,7 +438,11 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
     }
 
     private function message_menu() {
-        global $OUTPUT, $USER;
+        global $USER, $PAGE;
+        // Changed from $OUTPUT -> bsrender because of bug when selecting this theme
+        // for the first time.
+        $bsrender = $PAGE->get_renderer('theme_elegance', 'core');
+
         $menu = new custom_menu();
 
         $messages = $this->get_user_messages();
@@ -455,7 +470,7 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
             }
             $senderpicture = new user_picture($message->from);
             $senderpicture->link = false;
-            $senderpicture = $OUTPUT->render($senderpicture);
+            $senderpicture = $bsrender->render($senderpicture);
 
             $messagecontent = $senderpicture;
             $messagecontent .= html_writer::start_span('msg-body');
@@ -473,7 +488,7 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
         }
         $content = '';
         foreach ($menu->get_children() as $item) {
-            $content .= $OUTPUT->render_custom_menu_item($item, 1);
+            $content .= $bsrender->render_custom_menu_item($item, 1);
         }
         return $content;
     }
