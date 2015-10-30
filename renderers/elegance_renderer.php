@@ -14,6 +14,8 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+defined('MOODLE_INTERNAL') || die();
+
 /**
  * Theme elegance widget renderers file.
  *
@@ -21,6 +23,7 @@
  * @copyright  2015 Bas Brands
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
 class theme_elegance_widgets_renderer extends plugin_renderer_base {
 
     private $theme;
@@ -427,7 +430,11 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
     }
 
     private function message_menu() {
-        global $OUTPUT, $USER;
+        global $USER, $PAGE;
+        // Changed from $OUTPUT -> bsrender because of bug when selecting this theme
+        // for the first time.
+        $bsrender = $PAGE->get_renderer('theme_elegance', 'core');
+
         $menu = new custom_menu();
 
         $messages = $this->get_user_messages();
@@ -455,7 +462,7 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
             }
             $senderpicture = new user_picture($message->from);
             $senderpicture->link = false;
-            $senderpicture = $OUTPUT->render($senderpicture);
+            $senderpicture = $bsrender->render($senderpicture);
 
             $messagecontent = $senderpicture;
             $messagecontent .= html_writer::start_span('msg-body');
@@ -473,7 +480,7 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
         }
         $content = '';
         foreach ($menu->get_children() as $item) {
-            $content .= $OUTPUT->render_custom_menu_item($item, 1);
+            $content .= $bsrender->render_custom_menu_item($item, 1);
         }
         return $content;
     }
