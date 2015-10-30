@@ -113,9 +113,6 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
             }
             $banners[] = $banner;
         }
-        if ($count($banners) == 0) {
-            return '';
-        }
         $banners[0]->active = 'active';
         $template->banners = $banners;
 
@@ -199,9 +196,6 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
                 $marketingspot->url = $settings->$url;
             }
             $template->spots[] = $marketingspot;
-        }
-        if ($count($template->spots[]) == 0) {
-            return '';
         } 
 
         return $this->render_from_template('theme_elegance/marketingspots', $template);
@@ -298,13 +292,8 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
             $quicklink->buttonclass = $buttonclass;
             $template->quicklinks[] = $quicklink;
         }
-
         
         $count = count($template->quicklinks);
-
-        if ($count == 0) {
-            return '';
-        }
 
         if ($count < 4) {
             $template->classlarge = 'col-lg-' . (12 / $count);
