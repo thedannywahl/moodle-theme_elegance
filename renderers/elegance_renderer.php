@@ -29,12 +29,23 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
     private $theme;
     private $settings;
 
+    /**
+     * The widget renderer for theme elegance generates the additional features this
+     * theme contains which are non-standard in Moodle. It renders banners, marketing spots,
+     * message menus and more.
+     * For each of the public methods used in this class there is a Mustache template
+     * located in the /templates folder
+     */
+
     public function __construct(moodle_page $page, $target) {
         $this->theme = theme_config::load('elegance');
         $this->settings = $this->theme->settings;
         parent::__construct($page, $target);
     }
     
+    /**
+     * Renders the slideshow of images on the frontpage
+     */
     public function banner($hasbanner) {
         if (!$hasbanner) {
             return '';
@@ -122,6 +133,9 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
         return $this->render_from_template('theme_elegance/banner', $template);
     }
 
+    /**
+     * Renders the marketing spots on the frontpage
+     */
     public function marketing_spots($hasmarketing, $hassidemiddle) {
         global $OUTPUT;
         if (!$hasmarketing) {
@@ -204,6 +218,9 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
         return $this->render_from_template('theme_elegance/marketingspots', $template);
     }
 
+    /**
+     * Renders the text area in the bottom left of the Footer
+     */
     public function footerleft($hasfooter) {
         if (!$hasfooter) {
             return '';
@@ -217,6 +234,9 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
         return $this->render_from_template('theme_elegance/footerleft', $template);
     }
 
+    /**
+     * Renders the social icons in the bottom right of the Footer
+     */
     public function footerright($hasfooter) {
         if (!$hasfooter) {
             return '';
@@ -238,6 +258,9 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
         return $this->render_from_template('theme_elegance/footerright', $template);
     }
 
+    /**
+     * Renders rows of links just above the content area on the front page
+     */
     public function quicklinks($hasquicklinks) {
         if (!$hasquicklinks) {
             return '';
@@ -312,6 +335,9 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
         return $this->render_from_template('theme_elegance/quicklinks', $template);
     }
 
+    /**
+     * This addes the hidden blocks (only viewable by admins) under the content area
+     */
     public function hiddenblocks() {
         global $OUTPUT;
 
@@ -325,6 +351,25 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
         return $this->render_from_template('theme_elegance/hiddenblocks', $template);
     }
 
+    /**
+     * Renders your custom content on the frontpage. Very simple, very boring.
+     */
+    public function frontpage_content($hasfrontpagecontent) {
+        if (!$hasfrontpagecontent) {
+            return '';
+        }
+        $template = new Object();
+
+        $settings = $this->settings;
+
+        $template->frontpagetext = $settings->frontpagecontent;
+
+        return $this->render_from_template('theme_elegance/frontpagetext', $template);
+    }
+
+    /**
+     * The renders to top navigation bar. Parts of this are rendered in core_renderer.php too.
+     */
     public function navbar($hasnavbar) {
 
         if (!$hasnavbar) {
@@ -388,6 +433,9 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
         return $this->render_from_template('theme_elegance/navbar', $template);
     }
 
+    /**
+     * Render the page breadcrumb including the breadcrumb button.
+     */ 
     public function breadcrumb($hasbreadcrumb) {
         global $OUTPUT;
 
@@ -429,6 +477,9 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
         return $this->render_from_template('theme_elegance/breadcrumb', $template);
     }
 
+    /**
+     * Adds a simple message menu to the page navbar.
+     */
     private function message_menu() {
         global $USER, $PAGE;
         // Changed from $OUTPUT -> bsrender because of bug when selecting this theme
@@ -485,6 +536,9 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
         return $content;
     }
 
+    /**
+     * Gets the user messages used by the message_menu() function
+     */
     protected function get_user_messages() {
         global $USER, $DB;
         $messagelist = array();
@@ -518,6 +572,10 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
         return $messagelist;
     }
 
+    /**
+     * Filters the messages, cleans them, link them to a user, filter old messages for messages
+     * used in the message_menu() function.
+     */
     protected function process_message($message) {
         global $DB;
         $messagecontent = new stdClass();
@@ -543,18 +601,5 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
 
         $messagecontent->from = $DB->get_record('user', array('id' => $message->useridfrom));
         return $messagecontent;
-    }
-
-    public function frontpage_content($hasfrontpagecontent) {
-        if (!$hasfrontpagecontent) {
-            return '';
-        }
-        $template = new Object();
-
-        $settings = $this->settings;
-
-        $template->frontpagetext = $settings->frontpagecontent;
-
-        return $this->render_from_template('theme_elegance/frontpagetext', $template);
     }
 }
