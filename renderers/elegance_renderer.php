@@ -14,6 +14,8 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+defined('MOODLE_INTERNAL') || die();
+
 /**
  * Theme elegance widget renderers file.
  *
@@ -21,6 +23,7 @@
  * @copyright  2015 Bas Brands
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
 class theme_elegance_widgets_renderer extends plugin_renderer_base {
 
     private $theme;

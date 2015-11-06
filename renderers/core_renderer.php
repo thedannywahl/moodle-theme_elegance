@@ -27,12 +27,28 @@ defined('MOODLE_INTERNAL') || die();
 
 class theme_elegance_core_renderer extends theme_bootstrap_core_renderer {
 
-
-
     protected function render_custom_menu(custom_menu $menu) {
 
-        // TODO: eliminate this duplicated logic, it belongs in core, not
-        // here. See MDL-39565.
+        $langs = get_string_manager()->get_list_of_translations();
+        $haslangmenu = $this->lang_menu() != '';
+
+        if (!$menu->has_children() && !$haslangmenu) {
+            return '';
+        }
+
+        if ($haslangmenu) {
+            $strlang =  get_string('language');
+            $currentlang = current_language();
+            if (isset($langs[$currentlang])) {
+                $currentlang = $langs[$currentlang];
+            } else {
+                $currentlang = $strlang;
+            }
+            $this->language = $menu->add($currentlang, new moodle_url('#'), $strlang, 10000);
+            foreach ($langs as $langtype => $langname) {
+                $this->language->add($langname, new moodle_url($this->page->url, array('lang' => $langtype)), $langname);
+            }
+        }
 
         $children = $menu->get_children();
         if (count($children) == 0) {
