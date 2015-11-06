@@ -1,0 +1,49 @@
+.navbar-default,
+.navbar-inverse {
+    .navbar-nav>li>a {
+        padding-bottom: 15px - @navbarborderwidth;
+        border-bottom: @navbarborderwidth solid transparent;
+    }
+    .navbar-nav>li>a:hover,
+    .navbar-nav>li>a:focus {
+        border-bottom: @navbarborderwidth solid @themecolor;
+    }
+    .usermenu>li>a {
+        color: @navbar-default-link-color;
+        padding-bottom: 10px - @navbarborderwidth;
+        border-bottom: @navbarborderwidth solid transparent;
+        &:hover,
+        &:focus {
+            border-bottom: @navbarborderwidth solid @themecolor;
+            background-color: @dropdown-link-hover-color;
+        }
+    }
+}
+
+.navbar-inverse {
+    .usermenu>li>a {
+        color: @navbar-inverse-link-color;
+        &:hover,
+        &:focus {
+            border-bottom: @navbarborderwidth solid @themecolor;
+            background-color: @navbar-inverse-link-hover-bg;
+        }
+    }
+    .dropdown>a .caret {
+        border-top-color: @themecolor;
+        border-bottom-color: @themecolor;
+        margin-left: 5px;
+    }
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+    background-color: @themecolor;
+    color: #fff;
+}
+
+.navbar .navbar-nav>.dropdown>a:hover .caret,
+.navbar .navbar-nav>.dropdown>a:focus .caret {
+    border-top-color: @themecolor;
+    border-bottom-color: @themecolor;
+}
