@@ -125,6 +125,13 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
             } else {
                 $banner->bannerlinktext = false;
             }
+
+            $bannerlinkurl = 'bannerlinkurl' . $bannernumber;
+            if (!empty($settings->$bannerlinkurl)) {
+                $banner->bannerlinkurl = $settings->$bannerlinkurl;
+            } else {
+                $banner->bannerlinkurl = false;
+            }
             $banners[] = $banner;
         }
         $banners[0]->active = 'active';
