@@ -139,18 +139,25 @@ echo $OUTPUT->doctype() ?>
     <div class="page-footer-inner">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-sm-6">
                     <?php echo $widgets->footerleft($hasfooter); ?>
+
                 </div>
-                <div class="col-md-6">
-                    <?php echo $OUTPUT->login_info(); ?>
+                <div class="col-sm-6">
+                    <div class="text-right m-b-10">
+                        <?php echo $OUTPUT->page_doc_link(); ?>
+                        <?php echo $OUTPUT->login_info(); ?>
+                    </div>
                     <?php echo $widgets->footerright($hasfooter); ?>
                 </div>
                 <?php echo $OUTPUT->standard_end_of_body_html() ?>
+                <div class="clearfix"></div>
             </div>
         </div>
+
+        <?php echo $OUTPUT->standard_footer_html(); ?>
     </div>
-    <?php echo $OUTPUT->standard_footer_html(); ?>
+    
 </footer>
 
 

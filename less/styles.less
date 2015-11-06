@@ -35,7 +35,7 @@ body.pagelayout-maintenance {
     min-height: 100%;
     position: relative;
     padding-top: 5px;
-    padding-bottom: 165px;
+    padding-bottom: @footerheight + 10px;
 }
 
 #page-content-wrapper {
@@ -51,7 +51,7 @@ body.pagelayout-maintenance {
 }
 
 #page-footer {
-    margin-top: -155px;
+    margin-top: -@footerheight;
     border: 0;
     padding: 0;
 }
@@ -133,16 +133,6 @@ body#page-site-index #page-content {
 }
 .navbar-nav {
     margin: 0;
-}
-
-.page-footer-inner {
-    position: relative;
-    border-top: 10px solid #acacae !important;
-    background: #d8d8db;
-    font-size: .8em;
-    padding: 30px 0px 0px 0px;
-    font-family: "Roboto" !important;
-    font-size: .9em;
 }
 
 .homelink a,
