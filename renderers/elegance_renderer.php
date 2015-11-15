@@ -53,7 +53,12 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
 
         $theme = $this->theme;
         $settings = $this->settings;
+
         $slidenum = $settings->slidenumber;
+
+        if ($slidenum == 0) {
+            return '';
+        }
 
         switch ($settings->togglebanner) {
             case 1:
@@ -173,6 +178,11 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
         }
 
         $spotsnr = $settings->marketingspotsnr;
+
+        if ($spotsnr == 0) {
+            return '';
+        }
+
         $template = new Object();
         $template->spots = array();
         $template->title = '';
@@ -298,8 +308,12 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
         $template->quicklinksicon = $settings->quicklinksicon;
         $template->quicklinkstitle = $settings->quicklinkstitle;
         $quicklinksnumber = $settings->quicklinksnumber;
+
+        if ($quicklinksnumber == 0) {
+            return '';
+        }
         $template->quicklinks = array();
-        foreach (range(1, $quicklinksnumber +1) as $i) {
+        foreach (range(1, $quicklinksnumber ) as $i) {
             $icon = 'quicklinkicon' . $i;
             $buttontext = 'quicklinkbuttontext' . $i;
             $url = 'quicklinkbuttonurl' . $i;
@@ -489,7 +503,11 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
      */
     private function message_menu() {
         global $USER, $PAGE;
-        // Changed from $OUTPUT -> bsrender because of bug when selecting this theme
+
+        if (!isloggedin() || isguestuser()) {
+            return false;
+        }
+         // Changed from $OUTPUT -> bsrender because of bug when selecting this theme
         // for the first time.
         $bsrender = $PAGE->get_renderer('theme_elegance', 'core');
 

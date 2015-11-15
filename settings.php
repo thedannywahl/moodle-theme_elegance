@@ -140,7 +140,7 @@ $temp->add($ss->add_select('togglebanner', '1', $choices));
 
 $choices = range(0, 10);
 
-$temp->add($ss->add_select('slidenumber', '1', $choices));
+$temp->add($ss->add_select('slidenumber', '0', $choices));
 
 $temp->add($ss->add_text('slidespeed', '3600'));
 
@@ -148,7 +148,7 @@ $hasslidenum = (!empty($PAGE->theme->settings->slidenumber));
 if ($hasslidenum) {
         $slidenum = $PAGE->theme->settings->slidenumber;
 } else {
-    $slidenum = '1';
+    $slidenum = '0';
 }
 
 $bannertitle = array('Slide One', 'Slide Two', 'Slide Three','Slide Four','Slide Five','Slide Six','Slide Seven', 'Slide Eight', 'Slide Nine', 'Slide Ten');
@@ -200,7 +200,7 @@ $temp->add($ss->add_select('marketingspotsinrow', '1', $choices));
 
 $choices = (range(0, 24));
 
-$temp->add($ss->add_select('marketingspotsnr', '4', $choices));
+$temp->add($ss->add_select('marketingspotsnr', '0', $choices));
 
 $hasspotsnr = (!empty($PAGE->theme->settings->marketingspotsnr));
 if ($hasspotsnr) {
@@ -237,8 +237,8 @@ $choices = array('1' => get_string('alwaysdisplay', 'theme_elegance'),
 
 $temp->add($ss->add_select('togglequicklinks', '1', $choices));
 
-$choices = range(1, 12);
-$temp->add($ss->add_select('quicklinksnumber', '4', $choices));
+$choices = range(0, 12);
+$temp->add($ss->add_select('quicklinksnumber', '0', $choices));
 
 $temp->add($ss->add_text('quicklinkstitle'));
 
@@ -252,7 +252,7 @@ if ($hasquicklinksnum) {
 }
 
 
-foreach (range(1, $quicklinksnum + 1) as $qln) {
+foreach (range(1, $quicklinksnum) as $qln) {
 
     $temp->add($ss->add_headings('quicklinks', $qln));
 
