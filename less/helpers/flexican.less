@@ -1,43 +1,45 @@
 html,body {
 	height:100%;
 }
-      
-.row-flex, 
-.row-flex > div[class*='col-'] {  
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    flex:1 1 auto;
-}
 
-.row-flex-wrap {
-	-webkit-flex-flow: row wrap;
-    flex-flow: row wrap;
-    align-content: flex-start;
-    flex:0;
-    margin-left: 0;
-    margin-right: 0;
-}
+@media (min-width: @screen-sm) {
+    .row-flex, 
+    .row-flex > div[class*='col-'] {  
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex:1 1 auto;
+    }
 
-.row-flex > div[class*='col-'], .container-flex > div[class*='col-'] {
-	 margin:-.2px; /* hack adjust for wrapping */
-}
+    .row-flex-wrap {
+    	-webkit-flex-flow: row wrap;
+        flex-flow: row wrap;
+        align-content: flex-start;
+        flex:0;
+        margin-left: 0;
+        margin-right: 0;
+    }
 
-.container-flex > div[class*='col-'] div,.row-flex > div[class*='col-'] div {
-	width:100%;
-}
+    .row-flex > div[class*='col-'], .container-flex > div[class*='col-'] {
+    	 margin:-.2px; /* hack adjust for wrapping */
+    }
 
-.flex-col {
-    display: flex;
-    display: -webkit-flex;
-    flex: 1 100%;
-	flex-flow: column nowrap;
-}
+    .container-flex > div[class*='col-'] div,.row-flex > div[class*='col-'] div {
+    	width:100%;
+    }
 
-.flex-grow {
-	display: flex;
-    -webkit-flex: 2;
-    flex: 2;
+    .flex-col {
+        display: flex;
+        display: -webkit-flex;
+        flex: 1 100%;
+    	flex-flow: column nowrap;
+    }
+
+    .flex-grow {
+    	display: flex;
+        -webkit-flex: 2;
+        flex: 2;
+    }
 }
