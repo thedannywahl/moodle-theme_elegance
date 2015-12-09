@@ -27,7 +27,6 @@
 $hassidepost = $PAGE->blocks->region_has_content('side-post', $OUTPUT);
 $hassidemiddle = $PAGE->blocks->region_has_content('side-middle', $OUTPUT);
 $hassidepre = $PAGE->blocks->region_has_content('side-pre', $OUTPUT);
-$hassidepost = $PAGE->blocks->region_has_content('side-post', $OUTPUT);
 
 $knownregionpre = $PAGE->blocks->is_known_region('side-pre');
 $knownregionpost = $PAGE->blocks->is_known_region('side-post');
