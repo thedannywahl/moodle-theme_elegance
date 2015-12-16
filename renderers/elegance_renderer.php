@@ -502,12 +502,17 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
      * Adds a simple message menu to the page navbar.
      */
     private function message_menu() {
-        global $USER, $PAGE;
+        global $USER, $PAGE, $CFG;
 
         if (!isloggedin() || isguestuser()) {
             return false;
         }
-         // Changed from $OUTPUT -> bsrender because of bug when selecting this theme
+        // Check to see if messaging is enabled.
+        if(!$CFG->messaging) {
+            return false;
+        }
+
+        // Changed from $OUTPUT -> bsrender because of bug when selecting this theme
         // for the first time.
         $bsrender = $PAGE->get_renderer('theme_elegance', 'core');
 
