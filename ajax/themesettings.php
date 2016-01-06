@@ -46,7 +46,7 @@ $settings = $theme->settings;
 if ($setting == 'loginbackgrounds') {
     $loginbgnumber = $settings->loginbgnumber;
     if ($loginbgnumber) {
-        $result = new Object;
+        $result = new stdClass();
         $result->result = 'success';
         $result->loginimages = array();
         foreach (range(1, $loginbgnumber) as $i) {
@@ -58,7 +58,7 @@ if ($setting == 'loginbackgrounds') {
         echo $OUTPUT->footer();
         die();
     } else {
-        $result = new Object;
+        $result = new stdClass();
         $result->result = 'failed';
         echo $OUTPUT->header();
         echo json_encode($result);
@@ -69,10 +69,10 @@ if ($setting == 'loginbackgrounds') {
 
 if ($setting == 'slidespeed') {
     $slidespeed = $settings->slidespeed;
-    $result = new Object;
+    $result = new stdClass();
     
     if ($slidespeed > 300) {
-        $result = new Object;
+        $result = new stdClass();
         $result->result = 'success';
         $result->slidespeed = intval($slidespeed);
     } else {
@@ -85,7 +85,7 @@ if ($setting == 'slidespeed') {
     die();
 }
 
-$result = new Object;
+$result = new stdClass();
 $result->result = 'no allowed setting found';
 echo $OUTPUT->header();
 echo json_encode($result);

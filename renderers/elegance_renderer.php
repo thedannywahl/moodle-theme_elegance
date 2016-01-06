@@ -78,13 +78,13 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
                 break;
         }
 
-        $template = new Object();
+        $template = new stdClass();
 
         $template->slidespeed = $settings->slidespeed;
         $banners = array();
         $count = 0;
         foreach (range(1, $slidenum) as $bannernumber) {
-            $banner = new Object();
+            $banner = new stdClass();
             $banner->active = '';
             $banner->count = $count++;
             $enablebanner = 'enablebanner' . $bannernumber;
@@ -183,7 +183,7 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
             return '';
         }
 
-        $template = new Object();
+        $template = new stdClass();
         $template->spots = array();
         $template->title = '';
         $template->marketingtitletitleicon = '';
@@ -216,7 +216,7 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
             $content = 'marketingcontent' . $spot;
             $url = 'marketingurl' . $spot;
 
-            $marketingspot = new Object();
+            $marketingspot = new stdClass();
             if (!empty($settings->$title)) {
                 $marketingspot->title = $settings->$title;
             }
@@ -245,7 +245,7 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
         $theme = $this->theme;
         $settings = $this->settings;
 
-        $template = new Object();
+        $template = new stdClass();
         $template->footnote = $settings->footnote;
 
         return $this->render_from_template('theme_elegance/footerleft', $template);
@@ -261,7 +261,7 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
         $theme = $this->theme;
         $settings = $this->settings;
 
-        $template = new Object();
+        $template = new stdClass();
 
         $socialoptions = array('ios','android','windows','winphone','facebook', 'twitter', 'googleplus', 'linkedin', 'youtube', 'flickr', 'vk', 'pinterest',
             'instagram', 'skype', 'website', 'blog', 'vimeo', 'tumblr');
@@ -303,7 +303,7 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
                 break;
         }
 
-        $template = new Object();
+        $template = new stdClass();
 
         $template->quicklinksicon = $settings->quicklinksicon;
         $template->quicklinkstitle = $settings->quicklinkstitle;
@@ -320,7 +320,7 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
             $iconclass = 'quicklinkiconcolor' . $i;
             $buttonclass = 'quicklinkbuttoncolor' . $i;
 
-            $quicklink = new Object();
+            $quicklink = new stdClass();
 
             if (!empty($settings->$icon)) {
                 $quicklink->icon = $settings->$icon;
@@ -366,7 +366,7 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
             return '';
         }
 
-        $template = new Object();
+        $template = new stdClass();
         $template->blocks = $OUTPUT->blocks('hidden-dock');
 
         return $this->render_from_template('theme_elegance/hiddenblocks', $template);
@@ -379,7 +379,7 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
         if (!$hasfrontpagecontent) {
             return '';
         }
-        $template = new Object();
+        $template = new stdClass();
 
         $settings = $this->settings;
 
@@ -398,7 +398,7 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
         }
 
         global $OUTPUT, $CFG, $SITE;
-        $template = new Object();
+        $template = new stdClass();
         
         $settings = $this->settings;
 
@@ -464,7 +464,7 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
             return '';
         }
 
-        $template = new Object();
+        $template = new stdClass();
         $settings = $this->settings;
 
         $items = $this->page->navbar->get_items();
@@ -478,7 +478,7 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
         $numitems = count($items);
         $cnt = 0;
         foreach ($items as $item) {
-            $crumb = new Object();
+            $crumb = new stdClass();
             $cnt++;
             $addclass = '';
             if ($cnt == $numitems) {
