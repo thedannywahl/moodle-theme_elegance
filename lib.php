@@ -150,6 +150,16 @@ function theme_elegance_less_variables($theme) {
 }
 
 function theme_elegance_process_css($css, $theme) {
+    global $CFG;
+
+    // Fix the version used as a cache killer.
+    if (!$CFG->slasharguments) {
+        $css = str_replace(
+            array('?v=', '?#iefix'),
+            array('&v=', '&#iefix'),
+            $css
+        );
+    }
 
     // Set the background image for the logo.
 
