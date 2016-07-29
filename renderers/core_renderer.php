@@ -100,7 +100,10 @@ class theme_elegance_core_renderer extends theme_bootstrap_core_renderer {
 
     public function user_picture(stdClass $user, array $options = null) {
         global $PAGE;
-        if ($PAGE->bodyid == 'page-mod-forum-discuss' || $PAGE->bodyid == 'page-site-index' || $PAGE->bodyid == 'page-mod-forum-post' ) {
+        if ($PAGE->bodyid == 'page-mod-forum-discuss' || $PAGE->bodyid == 'page-mod-forum-post' ) {
+            $options = array('size' => '100');
+        }
+        if ($PAGE->bodyid == 'page-site-index' && isset($options['courseid'])) {
             $options = array('size' => '100');
         }
 
