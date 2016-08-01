@@ -29,7 +29,7 @@ defined('MOODLE_INTERNAL') || die;
 
 $plugin->version   = 2016072900;
 $plugin->release = '3.1.0';
-$plugin->maturity = MATURITY_BETA;
+$plugin->maturity = MATURITY_STABLE;
 $plugin->requires  = 2016052300;
 $plugin->component = 'theme_elegance';
 $plugin->dependencies = array('theme_bootstrap' => 2016072900);
