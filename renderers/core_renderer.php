@@ -63,7 +63,7 @@ class theme_elegance_core_renderer extends theme_bootstrap_core_renderer {
         return $content;
     }
 
-    public function render_custom_menu_item(custom_menu_item $menunode, $level = 0, $direction = '') {
+    protected function render_custom_menu_item(custom_menu_item $menunode, $level = 0, $direction = '') {
         return theme_bootstrap_core_renderer::render_custom_menu_item($menunode, $level, $direction);
     }
 
