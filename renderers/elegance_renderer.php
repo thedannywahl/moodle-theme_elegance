@@ -561,7 +561,7 @@ class theme_elegance_widgets_renderer extends plugin_renderer_base {
         }
         $content = '';
         foreach ($menu->get_children() as $item) {
-            $content .= $bsrender->render_custom_menu_item($item, 1);
+            $content .= $bsrender->render_my_custom_menu_item($item, 1);
         }
         return $content;
     }

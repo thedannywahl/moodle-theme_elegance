@@ -64,6 +64,7 @@ $knownregionpost = $PAGE->blocks->is_known_region('side-post');
 $PAGE->set_popup_notification_allowed(false);
 
 $PAGE->requires->jquery();
+$PAGE->requires->js_call_amd('theme_bootstrap/optin', 'init');
 $PAGE->requires->jquery_plugin('fitvids', 'theme_elegance');
 $PAGE->requires->jquery_plugin('eventswipe', 'theme_elegance');
 $PAGE->requires->jquery_plugin('nprogress', 'theme_elegance');
