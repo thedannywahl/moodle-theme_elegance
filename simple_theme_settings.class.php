@@ -24,9 +24,8 @@
  * langstring is the same as the name, and that the description langstring
  * is the same as the title with 'desc' added to the end.
  *
- * @package    theme_moomooc
- * @copyright  2015 Bas Brands, www.basbrands.nl
- * @authors    David Scotson, Bas Brands
+ * @package    theme_elegance
+ * @copyright  @copyright  2019 Bas Brands <bas@sonsbeekmedia.nl>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

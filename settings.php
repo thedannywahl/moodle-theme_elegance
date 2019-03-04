@@ -20,13 +20,11 @@
  *
  * @package    theme_elegance
  * @copyright  2014 Julian Ridden http://moodleman.net
- * @copyright  2015 Bas Brands http://basbrands.nl
- * @authors    Bas Brands, Abstracting Theme settings: David Scotson
+ * @copyright  2019 Bas Brands <bas@sonsbeekmedia.nl>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 $settings = null;
-
 
 require_once(__DIR__ . "/simple_theme_settings.class.php");
 
@@ -41,35 +39,13 @@ $ADMIN->add('themes', new admin_category('theme_elegance', 'Elegance'));
 // "geneicsettings" settingpage
 $temp = new admin_settingpage('theme_elegance_generic',  get_string('geneicsettings', 'theme_elegance'));
 
-$temp->add($ss->add_checkbox('invert'));
-
-$temp->add($ss->add_checkbox('fixednavbar'));
-
 $temp->add($ss->add_text('maxwidth', '1100'));
-
-$choices = array();
-$choices[1] = get_string('blocksleftandright', 'theme_elegance');
-$choices[2] = get_string('blocksleft', 'theme_elegance');
-$choices[3] = get_string('blocksright', 'theme_elegance');
-
-$temp->add($ss->add_select('blocksconfig', '3', $choices));
 
 $temp->add($ss->add_htmleditor('frontpagecontent'));
 
 $temp->add($ss->add_htmleditor('footnote'));
 
-$temp->add($ss->add_text('videowidth'));
-
-$temp->add($ss->add_checkbox('showoldmessages'));
-
 $temp->add($ss->add_textarea('customcss'));
-
-$temp->add($ss->add_textarea('moodlemobilecss'));
-
-$url = new moodle_url($CFG->wwwroot . '/theme/styles_debug.php', array('theme' => 'elegance',
-    'type' => 'theme', 'sheet' => 'mobile'));
-
-$temp->add($ss->add_empty('moodlemobilecsssettings', '', $url->out()));
 
 $ADMIN->add('theme_elegance', $temp);
 
@@ -84,12 +60,6 @@ $temp->add($ss->add_colourpicker('fontcolor', '#666'));
 
 $temp->add($ss->add_colourpicker('headingcolor', '#27282a'));
 
-$temp->add($ss->add_file('logo'));
-
-$temp->add($ss->add_file('headerbg'));
-
-$temp->add($ss->add_file('bodybg'));
-
 $choices = array();
 $choices[1] = get_string('bodybgrepeat', 'theme_elegance');
 $choices[2] = get_string('bodybgfixed', 'theme_elegance');
@@ -99,37 +69,12 @@ $temp->add($ss->add_select('bodybgconfig', '2', $choices));
 
 $temp->add($ss->add_colourpicker('bodycolor', '#edecec'));
 
-// Set Transparency.
-$choices = array(
-    '.10'=>'10%',
-    '.15'=>'15%',
-    '.20'=>'20%',
-    '.25'=>'25%',
-    '.30'=>'30%',
-    '.35'=>'35%',
-    '.40'=>'40%',
-    '.45'=>'45%',
-    '.50'=>'50%',
-    '.55'=>'55%',
-    '.60'=>'60%',
-    '.65'=>'65%',
-    '.70'=>'70%',
-    '.75'=>'75%',
-    '.80'=>'80%',
-    '.85'=>'85%',
-    '.90'=>'90%',
-    '.95'=>'95%',
-    '1'=>'100%');
-
-$temp->add($ss->add_select('transparency', '1', $choices));
-
 $ADMIN->add('theme_elegance', $temp);
 
 /* Banner Settings */
 $temp = new admin_settingpage('theme_elegance_banner', get_string('bannersettings', 'theme_elegance'));
 $temp->add(new admin_setting_heading('theme_elegance_banner', get_string('bannersettingssub', 'theme_elegance'),
         format_text(get_string('bannersettingsdesc' , 'theme_elegance'), FORMAT_MARKDOWN)));
-
 
 $choices = array();
 $choices[1] = get_string('alwaysdisplay', 'theme_elegance');
@@ -219,6 +164,8 @@ foreach (range(1, $spotsnr) as $spot) {
 
     $temp->add($ss->add_texts('marketingurl', $spot));
 
+    $temp->add($ss->add_files('marketingimage', $spot));
+
     $temp->add($ss->add_htmleditors('marketingcontent', '', $spot));
 }
 
@@ -266,7 +213,6 @@ foreach (range(1, $quicklinksnum) as $qln) {
 
     $temp->add($ss->add_texts('quicklinkbuttonurl', $qln));
 }
-
 
 $ADMIN->add('theme_elegance', $temp);
 
@@ -324,25 +270,5 @@ $temp->add($ss->add_text('vimeo'));
 $temp->add($ss->add_text('skype'));
 
 $temp->add($ss->add_text('vk'));
-
-$ADMIN->add('theme_elegance', $temp);
-
-/* Moodle Mobile Application Settings */
-
-$temp = new admin_settingpage('theme_elegance_mobile', get_string('mobileappsheading', 'theme_elegance'));
-$temp->add(new admin_setting_heading('theme_elegance_mobileapps', get_string('mobileappsheadingsub', 'theme_elegance'),
-    format_text(get_string('mobileappsdesc', 'theme_elegance'), FORMAT_MARKDOWN)));
-
-// Android App url setting.
-$temp->add($ss->add_text('android'));
-
-// iOS App url setting.
-$temp->add($ss->add_text('ios'));
-
-// Windows App url setting.
-$temp->add($ss->add_text('windows'));
-
-// Windows PhoneApp url setting.
-$temp->add($ss->add_text('winphone'));
 
 $ADMIN->add('theme_elegance', $temp);

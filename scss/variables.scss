@@ -1,0 +1,182 @@
+// Elegance default variables
+
+$headerbg:              '[[pix:theme|bg/header]]' !default;
+$bodybg:                '[[pix:theme|bg/transparent]]' !default;
+$bodybgrepeat:          'no-repeat' !default;
+$bodybgposition:        'fixed center center' !default;
+$bodybgsize:            'cover' !default;
+$bodybgattach:          'fixed' !default;
+$logo:                  '[[pix:theme|bg/logo]]' !default;
+$themecolor:            #0098e0 !default;
+$bodycolor:             #edecec !default;
+$loginbgcolor:          $bodycolor !default;
+$loginbg:               'inherit' !default;
+$headingcolor:          #27282a !default;
+$videowidth:            '100%' !default;
+$maxwidth:              1100px !default;
+$transparency:          1 !default;
+$navbarpadding:         0px !default;
+$navbarborderwidth:     2px !default;
+$footertopborder:       #acacae !default;
+$footerbgcolor:         #d8d8db !default;
+$footerheight:          155px !default;
+
+$num-quicklinks: 12;
+$quicklinkiconcolor1: $themecolor !default;
+$quicklinkiconcolor2: $themecolor !default;
+$quicklinkiconcolor3: $themecolor !default;
+$quicklinkiconcolor4: $themecolor !default;
+$quicklinkiconcolor5: $themecolor !default;
+$quicklinkiconcolor6: $themecolor !default;
+$quicklinkiconcolor7: $themecolor !default;
+$quicklinkiconcolor8: $themecolor !default;
+$quicklinkiconcolor9: $themecolor !default;
+$quicklinkiconcolor10: $themecolor !default;
+$quicklinkiconcolor11: $themecolor !default;
+$quicklinkiconcolor12: $themecolor !default;
+
+$quicklinkcolors: (
+    1: $quicklinkiconcolor1,
+    2: $quicklinkiconcolor2,
+    3: $quicklinkiconcolor3,
+    4: $quicklinkiconcolor4,
+    5: $quicklinkiconcolor5,
+    6: $quicklinkiconcolor6,
+    7: $quicklinkiconcolor7,
+    8: $quicklinkiconcolor8,
+    9: $quicklinkiconcolor9,
+    10: $quicklinkiconcolor10,
+    11: $quicklinkiconcolor11,
+    12: $quicklinkiconcolor12
+);
+
+$quicklinkbuttoncolor1: #ecedf0 !default;
+$quicklinkbuttoncolor2: #ecedf0 !default;
+$quicklinkbuttoncolor3: #ecedf0 !default;
+$quicklinkbuttoncolor4: #ecedf0 !default;
+$quicklinkbuttoncolor5: #ecedf0 !default;
+$quicklinkbuttoncolor6: #ecedf0 !default;
+$quicklinkbuttoncolor7: #ecedf0 !default;
+$quicklinkbuttoncolor8: #ecedf0 !default;
+$quicklinkbuttoncolor9: #ecedf0 !default;
+$quicklinkbuttoncolor10: #ecedf0 !default;
+$quicklinkbuttoncolor11: #ecedf0 !default;
+$quicklinkbuttoncolor12: #ecedf0 !default;
+
+$quicklinkbuttoncolors: (
+    1: $quicklinkbuttoncolor1,
+    2: $quicklinkbuttoncolor2,
+    3: $quicklinkbuttoncolor3,
+    4: $quicklinkbuttoncolor4,
+    5: $quicklinkbuttoncolor5,
+    6: $quicklinkbuttoncolor6,
+    7: $quicklinkbuttoncolor7,
+    8: $quicklinkbuttoncolor8,
+    9: $quicklinkbuttoncolor9,
+    10: $quicklinkbuttoncolor10,
+    11: $quicklinkbuttoncolor11,
+    12: $quicklinkbuttoncolor12
+);
+
+// Bootstrap variables
+
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #495057 !default;
+$gray-800: #373a3c !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+$blue:    #1177d1 !default;
+$indigo:  #6610f2 !default;
+$purple:  #613d7c !default;
+$pink:    #e83e8c !default;
+$red:     #d9534f !default;
+$orange:  #f0ad4e !default;
+$yellow:  #ff7518 !default;
+$green:   #5cb85c !default;
+$teal:    #20c997 !default;
+$cyan:    #5bc0de !default;
+
+$primary:       $blue !default;
+$secondary:     $gray-800 !default;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $gray-100 !default;
+$dark:          $gray-800 !default;
+
+// Options
+$enable-rounded: true !default;
+
+// Body
+$body-color:    $gray-800 !default;
+
+// Fonts
+$font-size-base: 0.9375rem !default;
+$headings-font-weight:   300 !default;
+
+// Navbar
+$navbar-dark-hover-color:           rgba($white, 1) !default;
+$navbar-light-hover-color:          rgba($black, .9) !default;
+
+// Breadcrumbs
+$breadcrumb-padding-y:              .25rem !default;
+$breadcrumb-padding-x:              0 !default;
+$breadcrumb-item-padding:           .5rem !default;
+$breadcrumb-margin-bottom:          0 !default;
+$breadcrumb-bg:                     transparent !default;
+$breadcrumb-divider: "/" !default;
+$breadcrumb-divider-rtl: "/" !default;
+
+$font-family-sans-serif:  "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$font-size-h1:            36px;
+$font-size-h2:            24px;
+$font-size-h3:            21px;
+$font-size-h4:            18px;
+$font-size-h5:            16px;
+$font-size-h6:            12px;
+
+$navbar-padding-y:  1;
+
+$headings-font-family:    "Bree Serif", Roboto, sans-serif;
+$headings-font-weight:    300;
+
+$padding-base-vertical:     9px;
+$padding-base-horizontal:   12px;
+
+$font-size-small: 0.8rem;
+
+$dropdown-link-hover-color: $white;
+$dropdown-link-hover-bg: $themecolor;
+
+$grid-gutter-width: 20px;
+
+$navbar-default-bg: $white;
+$navbar-default-link-color: $body-color;
+$navbar-inverse-bg: rgba(51,53,55,1);
+$navbar-inverse-link-color: $white;
+$navbar-inverse-link-hover-bg: $black;
+
+// Alerts
+$alert-border-width:                0 !default;
+
+$card-group-margin: .5rem;
+
+$theme-colors: (
+    primary: $primary,
+    secondary: $gray-400,
+    success: $success,
+    info: $info,
+    warning: $orange,
+    danger: $danger,
+    light: $gray-100,
+    dark: $gray-800
+);

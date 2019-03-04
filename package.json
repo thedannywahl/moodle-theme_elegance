@@ -1,30 +1,43 @@
 {
-  "name": "theme-bootstrap-tasks",
+  "name": "theme-elegance-tasks",
   "version": "0.1.0",
-  "description": "Grunt tasks for Moodle Bootstrap theme.",
+  "description": "Grunt tasks for Moodle elegance theme.",
   "main": "Gruntfile.js",
   "author": {
-    "name": "Joby Harding",
-    "url": "http://www.iamjoby.com"
+    "name": "Bas Brands",
+    "url": "http://www.moodle.org"
   },
-  "contributors": [
-    { "name": "David Scotson" },
-    { "name": "Bas Brands", "url": "http://www.basbrands.nl" },
-    { "name": "Gareth J Barnard", "url": "http://about.me/gjbarnard" }
-  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/bmbrands/theme_bootstrap.git"
+    "url": "https://github.com/bmbrands/moodle-theme_elegance.git"
   },
-  "bugs": {
-    "url": "https://github.com/bmbrands/theme_bootstrap/issues"
+  "scripts": {
+    "postcss": "postcss --config postcss.js --output style/elegance.css style/elegance.css"
   },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.37",
+    "@babel/plugin-transform-modules-amd": "^7.2.0",
+    "autoprefixer": "^8.0.0",
+    "grunt": "^1.0.2",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-exec": "^3.0.0",
+    "grunt-sass": "^2.1.0",
+    "grunt-stylelint": "^0.9.0",
+    "postcss-cli-simple": "^1.0.4",
+    "postcss-flexbugs-fixes": "^3.3.0",
+    "stylelint": "^8.4.0",
+    "stylelint-checkstyle-formatter": "^0.1.1"
+  },
+  "license": "GPL-3.0+",
   "dependencies": {
-    "grunt": "~0.4.2",
-    "grunt-contrib-less": "~0.9.0",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-exec": "~0.4.3",
-    "grunt-text-replace": "~0.3.11"
-  },
-  "license": "GPL-3.0+"
+    "@babel/cli": "^7.0.0-beta.37",
+    "@babel/plugin-proposal-object-rest-spread": "^7.3.4",
+    "@babel/preset-env": "^7.0.0-beta.37",
+    "add": "^2.0.6",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-loader": "^8.0.0-beta.6",
+    "babel-plugin-transform-es2015-modules-amd": "^6.24.1"
+  }
 }

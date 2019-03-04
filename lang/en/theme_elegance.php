@@ -73,12 +73,6 @@ $string['blocksconfigdesc'] = 'Choose your preferred block setup';
 $string['maxwidth'] = 'Max page width';
 $string['maxwidthdesc'] = 'Please set this to a reasonable number between 850 - 1400 px';
 
-$string['fonticons'] = 'Use Icon Font';
-$string['fonticonsdesc'] = 'Enable this option to use the Glyphicon icon font.';
-
-$string['transparency'] = 'Content Transparency';
-$string['transparencydesc'] = 'Want to see more of your background show through? This setting changes the transparency of Moodle content and blocks.';
-
 $string['region-side-post'] = 'Right';
 $string['region-side-pre'] = 'Left';
 
@@ -106,46 +100,6 @@ $string['alwaysdisplay'] = 'Always Show';
 $string['displaybeforelogin'] = 'Show before login only';
 $string['displayafterlogin'] = 'Show after login only';
 $string['dontdisplay'] = 'Never Show';
-
-/* User Menu */
-
-$string['usermenusettings'] = 'User Menu';
-$string['usermenusettingssub'] = 'Options for logged in users.';
-$string['usermenusettingsdesc'] = 'Determine which links show in the logged in user menu.';
-
-$string['enablemy'] = 'My Dashboard';
-$string['enablemydesc'] = 'Display a link to the My Moodle page.';
-
-$string['enableprofile'] = 'User Profile';
-$string['enableprofiledesc'] = 'Display a link to the users profile.';
-
-$string['enableeditprofile'] = 'Edit Profile';
-$string['enableeditprofiledesc'] = 'Display a link to edit the users profile.';
-
-$string['enablebadges'] = 'Badges';
-$string['enablebadgesdesc'] = 'Display a link to the users badges.';
-
-$string['enablecalendar'] = 'User Calendar';
-$string['enablecalendardesc'] = 'Display a link to the users calendar.';
-
-$string['enableprivatefiles'] = 'Private Files';
-$string['enableprivatefilesdesc'] = 'Display a link to the users private files.';
-
-$string['usermenulinks'] = 'Number of Custom Links';
-$string['usermenulinksdesc'] = 'Set how many extra links you would like to add for your users.<br>You will need to save the settings for the new link options to appear.';
-
-$string['customlinkindicator'] = 'Custom Link Number ';
-$string['customlinkindicatordesc'] = 'Set up this custom link.';
-
-$string['customlinkicon'] = 'Link Icon';
-$string['customlinkicondesc'] = 'Name of the icon you wish to use next to your link.<br> List is <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_new">here</a>.  Just enter what is after the "fa-".';
-
-$string['customlinkname'] = 'Link Name';
-$string['customlinknamedesc'] = 'Name shown to users for your link.';
-
-$string['customlinkurl'] = 'Link Destination URL';
-$string['customlinkurldesc'] = 'The full or relative path for your destination URL.';
-
 
 /* Colors and Logos */
 
@@ -396,20 +350,3 @@ $string['sociotumblr'] = 'Find us on Tumblr';
 $string['socioinstagram'] = 'Find us on Instagram';
 $string['sociovk'] = 'Like us on VK';
 $string['socioskype'] = 'Call us on Skype';
-
-/* Moodle Mobile Application links */
-$string['mobileappsheading'] = 'Mobile App';
-$string['mobileappsheadingsub'] = 'Link to your app to get your students using mobiles';
-$string['mobileappsdesc'] = 'Have you got a web app on the App Store or Google Play Store? Provide a link here so your users can grab the apps online.';
-$string['android'] = 'Download the android app from Google Play';
-$string['androiddesc'] = 'Provide an URL to your mobile App on the Google Play Store. If you do not have one of your own maybe consider linking to the official Moodle Mobile app. (https://play.google.com/store/apps/details?id=com.moodle.moodlemobile)';
-$string['androidurl'] = 'Android (Google Play)';
-$string['windows'] = 'Download the desktop app from the Windows store';
-$string['windowsdesc'] = 'Provide an URL to your mobile App on the Windows Store. If you do not have one of your own maybe consider linking to the official Moodle Mobile app. (http://apps.microsoft.com/windows/en-us/app/9df51338-015c-41b7-8a85-db2fdfb870bc)';
-$string['windowsurl'] = 'Windows Desktop';
-$string['winphone'] = 'Download the mobile app from the Windows store';
-$string['winphonedesc'] = 'Provide an URL to your mobile App on the Windows Phone Store. If you do not have one of your own maybe consider linking to the official Moodle Mobile app. (http://www.windowsphone.com/en-us/store/app/moodlemobile/d0732b88-3c6d-4127-8f24-3fca2452a4dc)';
-$string['winphoneurl'] = 'Windows Mobile';
-$string['ios'] = 'Download the iPhone/iPad app from the app store';
-$string['iosdesc'] = 'Provide an URL to your mobile App on the App Store. If you do not have one of your own maybe consider linking to the official Moodle Mobile app (https://itunes.apple.com/en/app/moodle-mobile/id633359593).';
-$string['iosurl'] = 'iPhone/iPad (App Store)';

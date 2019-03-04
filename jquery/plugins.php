@@ -41,6 +41,6 @@ $plugins = array(
     'modernizr'     => array('files' => array('modernizr_2.8.3.js')),
     'eventswipe'     => array('files' => array('eventswipe_0.5.js')),
     'nprogress'     => array('files' => array('nprogress.js')),
-    'backstretch'     => array('files' => array('backstretch_2.0.6.js')),
+    'backstretch'     => array('files' => array('backstretch_2.1.17.js')),
     'elegance'     => array('files' => array('elegance.js')),
 );

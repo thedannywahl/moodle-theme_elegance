@@ -1,0 +1,15 @@
+// Get Boost Includes
+
+@import "variables";
+
+// Import FontAwesome.
+@import "../../boost/scss/fontawesome";
+
+// Import All of Bootstrap
+@import "../../boost/scss/bootstrap";
+
+// Import Core moodle CSS
+@import "../../boost/scss/moodle";
+
+// Theme Elegance Includes
+@import "post";

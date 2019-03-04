@@ -1,0 +1,82 @@
+{{!
+    This file is part of The elegance theme for Moodle.
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template theme_elegance/widget_banner
+
+
+    Example context (json):
+    {
+        "hascontent": "true",
+        "banners": [
+            {
+                "active": "true",
+                "bannerimage": "http://placekitten.com/200/300",
+                "bannercolor": "#FEFEFE",
+                "bannertitle": "Slide X",
+                "bannertext": "Lorum Ipsum Dolor Sit Amit",
+                "bannerlinktext": "Click me",
+                "bannerlinkurl": "http://moodle.org"
+            }
+        ]
+    }
+}}
+{{#hascontent}}
+<div class="widget widget_banner">
+    <div id="elegance_carousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            {{#banners}}
+                <li data-target="#elegance_carousel" data-slide-to="{{ count }}" class="{{ active }}"></li>
+            {{/banners}}
+        </ol>
+        <div class="carousel-inner">
+            {{#banners}}
+            <div class="carousel-item {{ active }}"
+                style="
+                background-image: url({{{ bannerimage }}});
+                background-size: cover;
+                min-height: 500px;
+                background-color: {{bannercolor}};"
+            >
+                <h1 class="display-4 headingshadow font-fun headingshadow text-center pt-4">
+                    {{ bannertitle }}
+                </h1>
+                <div class="carousel-caption d-none d-md-block">
+                    {{#bannertext}}
+                        <p class="bannertext">
+                            {{{ bannertext }}}
+                        </p>
+                    {{/bannertext}}
+                    {{#bannerlinktext}}
+                        <a class="btn btn-primary" href="{{bannerlinkurl}}">
+                            {{{ bannerlinktext }}}
+                        </a>
+                    {{/bannerlinktext}}
+                </div>
+            </div>
+            {{/banners}}
+        </div>
+        <a class="carousel-control-prev" href="#elegance_carousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">{{#str}} previous, core {{/str}}</span>
+        </a>
+        <a class="carousel-control-next" href="#elegance_carousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">{{#str}} next, core {{/str}}</span>
+        </a>
+    </div>
+</div>
+{{/hascontent}}

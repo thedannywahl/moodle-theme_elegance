@@ -1,0 +1,60 @@
+{{!
+    This file is part of The elegance theme for Moodle.
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template theme_elegance/widget_quicklinks
+
+
+    Example context (json):
+    {
+        "quicklinksicon": "superpowers",
+        "marketingtitle": "Site Info",
+        "spots": [
+            {
+                "url": "/course/view.php?id=5",
+                "icon": "meetup"
+                "title": "Meet us"
+            }
+        ]
+    }
+}}
+<div class="widget widget_quicklinks my-5">
+    <div id="heading" class="text-center">
+        <h2 class="quicklinksheader display-4 font-fun headingshadow mb-4">
+            <i class="fa fa-{{quicklinksicon}}"></i>
+            {{quicklinkstitle}}
+        </h2>
+    </div>
+
+    <div class="row" id="quicklinks">
+        {{#quicklinks}}
+            <div class="{{classlarge}} {{classmedium}} col-sm-4 col-xs-6" id="quicklink">
+                {{#url}}
+                <a href="{{{url}}}">
+                {{/url}}
+                    <div class="circle-highlight {{iconclass}}">
+                        <i class="fa fa-{{icon}}"></i>
+                    </div>
+                    <p class="btn btn-default {{buttonclass}}">
+                        {{buttontext}}
+                    </p>
+                {{#url}}
+                </a>
+                {{/url}}
+            </div>
+        {{/quicklinks}}
+    </div>
+</div>

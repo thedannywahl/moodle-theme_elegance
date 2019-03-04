@@ -15,67 +15,43 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * The Elegance theme is built upon  Bootstrapbase 3 (non-core).
+ * The Elegance theme is built upon theme boost.
  *
  * @package    theme
  * @subpackage theme_elegance
  * @author     Julian (@moodleman) Ridden
- * @author     Based on code originally written by G J Bernard, Mary Evans, Bas Brands, Stuart Lamour and David Scotson.
+ * @copyright  2019 Bas Brands <bas@sonsbeekmedia.nl>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-function elegance_grid($hassidepre, $hassidepost) {
+/**
+ * Returns the main SCSS content.
+ *
+ * @param theme_config $theme The theme config object.
+ * @return string
+ */
+function theme_elegance_get_main_scss_content($theme) {
+    global $CFG;
 
-    if ($hassidepre && $hassidepost) {
-        $regions = array('content' => 'col-sm-6 col-sm-push-3');
-        $regions['pre'] = 'col-sm-3 col-sm-pull-6';
-        $regions['post'] = 'col-sm-3';
-    } else if ($hassidepre && !$hassidepost) {
-        $regions = array('content' => 'col-sm-9 col-sm-push-3');
-        $regions['pre'] = 'col-sm-3 col-sm-pull-9';
-        $regions['post'] = 'empty';
-    } else if (!$hassidepre && $hassidepost) {
-        $regions = array('content' => 'col-sm-9');
-        $regions['pre'] = 'empty';
-        $regions['post'] = 'col-sm-3';
-    } else if (!$hassidepre && !$hassidepost) {
-        $regions = array('content' => 'col-md-12');
-        $regions['pre'] = 'empty';
-        $regions['post'] = 'empty';
-    }
+    $scss = file_get_contents($CFG->dirroot . '/theme/elegance/scss/variables.scss');
+    $scss .= file_get_contents($CFG->dirroot . '/theme/boost/scss/fontawesome.scss');
+    $scss .= file_get_contents($CFG->dirroot . '/theme/boost/scss/bootstrap.scss');
+    $scss .= file_get_contents($CFG->dirroot . '/theme/boost/scss/moodle.scss');
+    $scss .= file_get_contents($CFG->dirroot . '/theme/elegance/scss/post.scss');
 
-    if ('rtl' === get_string('thisdirection', 'langconfig')) {
-        if ($hassidepre && $hassidepost) {
-            $regions['pre'] = 'col-sm-3  col-sm-push-3';
-            $regions['post'] = 'col-sm-3 col-sm-pull-9';
-        } else if ($hassidepre && !$hassidepost) {
-            $regions = array('content' => 'col-sm-9');
-            $regions['pre'] = 'col-sm-3';
-            $regions['post'] = 'empty';
-        } else if (!$hassidepre && $hassidepost) {
-            $regions = array('content' => 'col-sm-9 col-sm-push-3');
-            $regions['pre'] = 'empty';
-            $regions['post'] = 'col-sm-3 col-sm-pull-9';
-        }
-    }
-    return $regions;
-}
-
-
-function theme_elegance_extra_less($theme) {
-
+    return $scss;
 }
 
 /**
- * Returns variables for LESS.
+ * Returns variables for Sass.
  *
- * We will inject some LESS variables from the settings that the user has defined
- * for the theme. No need to write some custom LESS for this.
+ * We will inject some Sass variables from the settings that the user has defined
+ * for the theme.
  *
  * @param theme_config $theme The theme config object.
- * @return array of LESS variables without the @.
+ * @return array of Sass variables without the $.
  */
-function theme_elegance_less_variables($theme) {
+function theme_elegance_get_pre_scss($theme) {
     $variables = array();
     $settings = $theme->settings;
 
@@ -84,7 +60,7 @@ function theme_elegance_less_variables($theme) {
     foreach ($images as $image) {
         if (!empty($settings->$image)) {
             $imagefile = $theme->setting_file_url($image, $image);
-            $variables[$image] = "'" . $imagefile . "'";
+            $variables[$image] = "url('" . $imagefile . "')";
         }
     }
 
@@ -146,22 +122,17 @@ function theme_elegance_less_variables($theme) {
         }
     }
 
-    return $variables;
+    $scss = '';
+    foreach ($variables as $key => $value) {
+        $scss .= "$" . $key . ": " . $value . ";\n";
+    }
+
+    return $scss;
 }
 
 function theme_elegance_process_css($css, $theme) {
     global $CFG;
 
-    // Fix the version used as a cache killer.
-    if (!$CFG->slasharguments) {
-        $css = str_replace(
-            array('?v=', '?#iefix'),
-            array('&v=', '&#iefix'),
-            $css
-        );
-    }
-
-    // Set the background image for the logo.
 
     // Set custom CSS.
     if (!empty($theme->settings->customcss)) {
@@ -214,59 +185,12 @@ function theme_elegance_pluginfile($course, $cm, $context, $filearea, $args, $fo
             return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
         } else if (preg_match('/loginimage\d+/', $filearea)) {
             return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
+        } else if (preg_match('/marketingimage\d+/', $filearea)) {
+            return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
         } else {
             send_file_not_found();
         }
     } else {
         send_file_not_found();
     }
-}
-
-/**
- * Adds any custom CSS to the CSS before it is cached.
- *
- * @param string $css The original CSS.
- * @param string $customcss The custom CSS to add.
- * @return string The CSS which now contains our custom CSS.
- */
-function theme_elegance_set_customcss($css, $customcss) {
-    $tag = "[[setting:customcss]]";
-    $replacement = $customcss;
-    if (is_null($replacement)) {
-        $replacement = '';
-    }
-
-    $css = str_replace($tag, $replacement, $css);
-
-    return $css;
-}
-
-/**
- * Adds any custom Moodle Mobile CSS to the CSS before it is cached.
- *
- * @param string $css The original CSS.
- * @param string $moodlemobilecss The custom CSS to add.
- * @return string The CSS which now contains our custom Moodle Mobile CSS.
- */
-function theme_elegance_set_moodlemobilecss($css, $moodlemobilecss) {
-    $tag = "[[setting:moodlemobilecss]]";
-    $replacement = $moodlemobilecss;
-    if (is_null($replacement)) {
-        $replacement = '';
-    }
-
-    $css = str_replace($tag, $replacement, $css);
-
-    return $css;
-}
-
-
-function theme_elegance_set_transparency($css, $transparency) {
-    $tag = '"[[setting:transparency]]"';
-    $replacement = $transparency;
-    if (is_null($replacement)) {
-        $replacement = '1';
-    }
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
 }

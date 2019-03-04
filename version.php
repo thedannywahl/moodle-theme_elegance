@@ -20,16 +20,14 @@
  *
  * @package    theme_elegance
  * @copyright  2014 Julian Ridden http://moodleman.net
- * @copyright  2015 Bas Brands http://basbrands.nl
- * @authors    Bas Brands -  Bootstrap 3 work by Bas Brands, David Scotson
+ * @copyright  2019 Bas Brands <bas@sonsbeekmedia.nl>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version   = 2018061900;
-$plugin->release = '3.1.0';
-$plugin->maturity = MATURITY_STABLE;
-$plugin->requires  = 2016052300;
+$plugin->version   = 2019030400;
+$plugin->release = '4.0.0';
+$plugin->maturity = MATURITY_BETA;
+$plugin->requires  = 2018120302;
 $plugin->component = 'theme_elegance';
-$plugin->dependencies = array('theme_bootstrap' => 2016080100);

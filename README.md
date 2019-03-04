@@ -1,12 +1,10 @@
 # Elegance
 
-## A Bootstrap 3 Moodle Theme
+## A Boost child theme
 
 ### Features
 
-[Elegance](https://moodle.org/plugins/view.php?plugin=theme_elegance) is a beautiful Free Moodle theme with robust functionality and lots of custom settings. This theme is a full rewrite of the Moodle 2.8 theme elegance version. This theme requires the theme "[Bootstrap](https://moodle.org/plugins/view.php?plugin=theme_bootstrap)". If you're using Moodle auto-updater it will automatically install it too.
-
-If you have tried this theme and would like to have it customized and styled for your organisation in any way feel free to [contact me](http://theming.sonsbeekmedia.nl/blocks/dashboard/contact.php?dashboard=contact) to request a quotation. 
+[Elegance](https://moodle.org/plugins/view.php?plugin=theme_elegance) is a beautiful Free Moodle theme with robust functionality and lots of custom settings. This theme is a full rewrite of the Moodle 2.8 theme elegance version.
 
 Custom Settings
 * Custom "Quick Links".
@@ -14,9 +12,7 @@ Custom Settings
 * Custom Footer.
 * A frontpage Slide Show.
 * Customizable colours.
-* Message notifications.
 * Login Page backgroud images.
-* Page loading indicator.
 
 ### Contributors version 2.9
 
@@ -34,10 +30,27 @@ Custom Settings
 *   [David Bezemer](http://www.davidbezemer.nl)
 
 ### Notes
-* 
+*
 * Please do not use the github version of this theme in a production environment.  The current plugin repository version will always be the most stable.
 
 ### Changelog
+
+### Version 3.0 Beta
+
+Moved to theme Boost as a parent theme_elegance.
+Removed options:
+
+* blocks configuration, the theme only has the right blocks column
+* videowidth
+* mobilecss
+* transparency
+
+Added features.
+
+* Show available courses on front page in a card layout
+* Use the Boost navdrawer
+* New Caroussel
+* New style marketing spot
 
 [v2.9](https://github.com/bmbrands/moodle-theme_elegance)
 

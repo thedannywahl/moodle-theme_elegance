@@ -1,0 +1,295 @@
+body, html {
+    font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    background-color: $bodycolor;
+}
+
+body,
+html {
+    &.path-login {
+        background-color: transparent;
+        background-image: none;
+        #region-main {
+            background-color: transparent;
+            box-shadow: none;
+        }
+    }
+}
+
+body.pagelayout-maintenance {
+    background-color: #FFF;
+}
+
+body:not(#page-login-index) #page-wrapper {
+    background-color: $bodycolor;
+    background-image: url($bodybg);
+    background-repeat: $bodybgrepeat;
+    background-position: $bodybgposition;
+    background-attachment: $bodybgattach;
+    background-size: $bodybgsize;
+    margin-top: $navbarpadding;
+}
+.pagelayout-mydashboard #region-main {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+}
+body:not(.pagelayout-mydashboard) {
+    #region-main,
+    #page-header .card {
+        @extend .eboxshadow;
+    }
+}
+
+body.drawer-open-left {
+    margin-left: 0;
+}
+
+.dashboard-card-deck,
+body.drawer-open-left .dashboard-card-deck{
+    @media (min-width: 576px) {
+        .dashboard-card {
+            width: calc(50% - #{$card-gutter});
+        }
+    }
+    @media (min-width: 840px) {
+        .dashboard-card {
+            width: calc(33.33% - #{$card-gutter});
+        }
+    }
+    @media (min-width: 1100px) {
+        .dashboard-card {
+            width: calc(25% - #{$card-gutter});
+        }
+    }
+    @media (min-width: 1360px) {
+        .dashboard-card {
+            width: calc(20% - #{$card-gutter});
+        }
+    }
+}
+
+#nav-drawer {
+    @extend .eboxshadow;
+}
+#page-footer {
+    border: 0;
+    padding: 0;
+}
+
+#theme_switch_link {
+    display: none;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+    margin-bottom: 21px;
+}
+
+a {
+    color: $themecolor;
+    outline: none;
+}
+
+.container-fluid {
+    max-width: $maxwidth;
+}
+
+a:hover, a:focus{
+    outline: none;
+    text-decoration: none;
+}
+
+.fa-muted {
+    color: #ddd;
+}
+
+
+#moodleheader {
+    @extend .eboxshadow;
+    background-image: url($headerbg);
+    background-color: $themecolor;
+}
+
+#logo {
+    background: url($logo) no-repeat;
+    height: 25px;
+    width: 120px;
+    background-size: contain;
+}
+
+/* $group Navbar */
+
+.course-content ul li.section.main {
+    padding-bottom: 20px;
+    border: none;
+    border-bottom: 1px dashed rgb(223, 223, 223);
+    margin-bottom: 30px;
+}
+
+.single-section h3.sectionname {
+    text-align: left;
+    font-family: "Roboto";
+    font-weight: 400;
+    color: $themecolor;
+    margin-left: 40px;
+    padding-bottom: 8px;
+    border-bottom: 1px d #eee;
+}
+
+
+.guestform {
+    border-top: 1px solid #ccc;
+    margin-top: 21px;
+    padding-top: 21px;
+}
+
+.mform .fitem .felement:first-child{
+    padding-left: 20px;
+}
+
+
+/* $group Tabs */
+.nav-tabs > li, .nav-pills > li {
+    float:none;
+    display:inline-block;
+}
+
+.nav-tabs, .nav-pills {
+    text-align:center;
+    margin: 0;
+}
+
+.nav > .disabled > a {
+    color: #000;
+    background: rgba(255,255,255,.50);
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus,
+.box.message .messagearea
+.messagehistory .messagehistorytype span.visible {
+    background: rgba(255,255,255,.50);
+}
+
+.nav > .disabled > a:hover {
+    border: 1px solid #ddd;
+}
+
+.nav-tabs > li > a {
+    color: #000;
+    cursor: default;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+    background: rgba(221,221,221,.50);
+    &:hover {
+         border: 1px solid #ccc;
+         background: rgba(221,221,221,.30);
+    }
+}
+
+.path-mod-glossary .glossarypost .concept h4 {
+    margin-bottom: 0px;
+}
+
+.path-mod-glossary .glossarypost .time {
+    font-size: .7em;
+}
+
+.back-to-top [class^="icon-"] {
+    font-size: 3em;
+}
+
+.back-to-top{
+    position: fixed;
+    top: 85%;
+    right: 15px;
+    display: none;
+    text-align:center;
+    font:9px;
+    text-transform:uppercase;
+    text-decoration:none;
+    -webkit-transition: all .3s ease 0s;
+    -moz-transition: all .3s ease 0s;
+    -o-transition: all .3s ease 0s;
+    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 0 0 1px #fff;
+    -moz-box-shadow: 0 0 1px #fff;
+    box-shadow: 0 0 1px #fff;
+    padding: 5px 12px;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.back-to-top:hover{
+    text-decoration: none;
+    color: #000;
+}
+
+.back-to-top a,
+.back-to-top a:visited {
+    color: #fff !important;
+}
+
+#page-calendar-view .maincalendar h2:before {
+    font-family: FontAwesome;
+    content:"\f073";
+    margin-right: 5px;
+    color: #999;
+}
+
+.path-calendar .maincalendar .calendarmonth {
+    background: rgba(255,255,255,.50);
+    box-shadow: 0px 3px 5px rgba(68,68,68,.30);
+    border-radius: 4px;
+}
+
+.block .content h3.eventskey {
+    font-size: 14px;
+    margin-left: 0.5em;
+}
+
+
+#site-news-forum h2::before {
+    font-family: FontAwesome;
+    content:"\f0a1";
+    margin-right: 5px;
+    color: #999;
+}
+
+
+.frontpage-course-list-enrolled .paging-morelink a:hover {
+    background: $themecolor;
+    color: #fff;
+}
+
+#frontpage-course-list h2::before,
+#frontpage-category-combo h2::before {
+    font-family: FontAwesome;
+    content:"\f109";
+    margin-right: 5px;
+    color: #999;
+}
+
+#frontpage-category-names h2::before {
+    font-family: FontAwesome;
+    content:"\f07c";
+    margin-right: 10px;
+    color: #999;
+}
+
+.guestform {
+    border-top: 0px none;
+}
+
+table.flexible, .generaltable {
+    font-size: .9em;
+}
+
+.userenrolment {
+    font-size: .8em;
+}
+
+.fluid-width-video-wrapper {
+    max-width: $videowidth;
+}

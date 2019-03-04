@@ -1,0 +1,253 @@
+.block {
+
+    @extend .eboxshadow;
+    @extend .bg-white;
+    font-family: "Roboto";
+
+    .card-title:before {
+        font-family: FontAwesome;
+        font-size: 1em;
+        margin-right: .3em;
+        color: #999;
+        content: "\f0c9";
+    }
+}
+
+
+.block_login {
+    label {
+        -webkit-font-smoothing: antialiased;
+        color: $themecolor;
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+
+    .username label:before {
+        content:"\f007";
+        font-family: FontAwesome;
+        margin-right: 5px;
+        color: #999;
+    }
+
+    .password label:before {
+        content:"\f084";
+        font-family: FontAwesome;
+        margin-right: 5px;
+        color: #999;
+    }
+
+    .c1.btn {
+        width: 100%;
+        border: 0;
+        padding: 0;
+        background-color: transparent;
+        border-radius: 0;
+    }
+
+    .btn input[type="submit"] {
+        @extend .btn-success;
+        width: 100%;
+        margin: 0;
+    }
+
+    .content .footer a {
+        @extend .btn;
+        @extend .btn-warning;
+        width: 100%;
+    }
+
+    input#login_username,
+    input#login_password {
+        width: 100%;
+    }
+
+    input:focus {
+        background: #fff;
+        outline: none;
+    }
+
+    input:-webkit-autofill {
+        background: #fff !important;
+    }
+
+    .content .footer div:nth-child(1) a {
+        @extend .btn-warning;
+    }
+
+    .content .footer div:nth-child(2) a {
+        @extend .btn-danger;
+    }
+}
+
+.block_myprofile .content {
+    text-align: center;
+}
+
+.block_myprofile .content {
+    .myprofileitem.picture {
+        .userpicture {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            box-shadow: 0 0 3px 0 #aaa;
+            border: 5px solid #fff;
+            &:hover {
+                border-color: $themecolor;
+            }
+        }
+    }
+}
+
+.collapsed .tree_item.branch:before { 
+    content: " \f053";
+    display: none;
+}
+
+.glyphicon-chevron-right:before {
+    content: "\e079";
+}
+
+.block_news_items .card-title:before {
+    content:"\f0a1";
+}
+
+.block_navigation .card-title:before {
+    content:"\f0e8";
+}
+
+.block_calendar_upcoming .card-title:before,
+.block_calendar_month .card-title:before {
+    content:"\f073";
+}
+
+.block_course_overview .coursebox {
+    border: 0px none;
+}
+
+.block_course_list .card-title:before {
+    content:"\f108";
+}
+
+.block_completionstatus .card-title:before,
+.block_selfcompletion .card-title:before {
+    content:"\f0e4";
+}
+
+.block_rss_client .card-title:before {
+    content:"\f09e";
+}
+
+.block_blog_menu .card-title:before {
+    content:"\f02d";
+}
+
+.block_quiz_results .card-title:before {
+    content:"\f080";
+}
+
+.block_quiz_navblock .card-title:before {
+    content:"\f126";
+}
+
+.block_glossary_random .card-title:before {
+    content:"\f0eb";
+}
+
+.block_book_toc .card-title:before {
+    content:"\f02d";
+}
+
+
+.block_participants .card-title:before,
+.block_online_users .card-title:before {
+    content:"\f0c0";
+}
+
+.block_html .card-title:before {
+    content:"\f022";
+}
+
+.block_section_links .card-title:before {
+    content:"\f02e";
+}
+
+.block_activity_modules .card-title:before {
+    content:"\f12e";
+}
+
+.block_comments .card-title:before {
+    content:"\f075";
+}
+
+.block_settings .card-title:before {
+    content:"\f085";
+}
+
+.block_admin_bookmarks .card-title:before{
+    content:"\f02e";
+}
+
+.block_blog_tags .card-title:before,
+.block_tags .card-title:before {
+    content:"\f02c";
+}
+
+.block_private_files .card-title:before {
+    content:"\f114";
+}
+
+.block_block_mentees .card-title:before {
+    content:"\f0c0";
+}
+
+.block_messages .card-title:before {
+    content:"\f0e0";
+}
+
+.block_community .card-title:before {
+    content:"\f0ac";
+}
+
+.block_login .card-title:before {
+    content:"\f007";
+}
+
+.block_recent_activity .card-title:before {
+    content:"\f017";
+}
+
+.block_search_forums .card-title:before {
+    content:"\f0e6";
+}
+
+.block_myprofile .card-title:before {
+    content:"\f007";
+}
+
+.block_adminblock .card-title:before {
+    content:"\f009";
+}
+
+.block_feedback .card-title:before {
+    content:"\f087";
+}
+
+.block_flickr .card-title:before {
+    content:"\f03e";
+}
+
+.block_youtube .card-title:before {
+    content:"\f145";
+}
+
+.block_course_badges .card-title:before {
+    content:"\f091";
+}
+
+.block_twitter_search .card-title:before {
+    content:"\f099";
+}
+
+.block_rss_client .card-title:before {
+    content:"\f086";
+}

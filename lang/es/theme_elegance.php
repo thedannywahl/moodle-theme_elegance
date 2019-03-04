@@ -107,46 +107,6 @@ $string['displaybeforelogin'] = 'Mostrar sólo antes de iniciar sesión';
 $string['displayafterlogin'] = 'Mostrar sólo después de iniciar sesión';
 $string['dontdisplay'] = 'No mostrar nunca';
 
-/* User Menu */
-
-$string['usermenusettings'] = 'Menú de usuario';
-$string['usermenusettingssub'] = 'Opciones para usuarios que iniciaron sesión.';
-$string['usermenusettingsdesc'] = 'Determina qué links mostrar en el menú de usuario, una vez iniciada la sesión.';
-
-$string['enablemy'] = 'Mi Tablero';
-$string['enablemydesc'] = 'Muestra un link a la página de Moodle del usuario.';
-
-$string['enableprofile'] = 'Mi Perfil';
-$string['enableprofiledesc'] = 'Muestra un link a la página de perfil.';
-
-$string['enableeditprofile'] = 'Editar Perfil';
-$string['enableeditprofiledesc'] = 'Muestra un link a la página de edición del perfil de usuario.';
-
-$string['enablebadges'] = 'Medallas';
-$string['enablebadgesdesc'] = 'Muestra un link a las medallas del usuario.';
-
-$string['enablecalendar'] = 'Mi Calendario';
-$string['enablecalendardesc'] = 'Muestra un link al calendario del usuario.';
-
-$string['enableprivatefiles'] = 'Archivos privados';
-$string['enableprivatefilesdesc'] = 'Muestra un link a los archivos privados del usaurio.';
-
-$string['usermenulinks'] = 'Número de Links Personalizados';
-$string['usermenulinksdesc'] = 'Determina cuántos links adicionales deseas agregar para los usuarios.<br>Deberás guardar la configuración para que aparezcan las opciones para configurar los nuevos links.';
-
-$string['customlinkindicator'] = 'Número del link personalizado ';
-$string['customlinkindicatordesc'] = 'Establece el número de este link personalizado.';
-
-$string['customlinkicon'] = 'Ícono del link';
-$string['customlinkicondesc'] = 'Nombre del ícono con el que deseas identificar el link.<br> La lista de opciones está <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_new">aquí</a>. Luego ingresa el nombre que se muestra luego de "fa-".';
-
-$string['customlinkname'] = 'Nombre del link';
-$string['customlinknamedesc'] = 'El nombre que se mostrará al usuario.';
-
-$string['customlinkurl'] = 'URL de destino del link';
-$string['customlinkurldesc'] = 'La URL absoluta o relativa de la página de destino del link.';
-
-
 /* Colors and Logos */
 
 $string['colorsettings'] = 'Logos & Colores';
@@ -396,20 +356,3 @@ $string['sociotumblr'] = 'Síguenos en Tumblr';
 $string['socioinstagram'] = 'Síguenos en Instagram';
 $string['sociovk'] = 'Me gusta en VK';
 $string['socioskype'] = 'Llámanos por Skype';
-
-/* Moodle Mobile Application links */
-$string['mobileappsheading'] = 'Applicación Móvil';
-$string['mobileappsheadingsub'] = 'Link a la App, para que los alumnos la utilicen';
-$string['mobileappsdesc'] = '¿Tienes una web app en el App Store o en Google Play Store? Ingresa un link aquí para que los usuarios puedan encontrarla online.';
-$string['android'] = 'Descargar la App para Android de Google Play';
-$string['androiddesc'] = 'Ingresa la URL to your mobile App on the Google Play Store. Si no tienes una App propia, considera agregar el link a la App oficial de Moodle (https://play.google.com/store/apps/details?id=com.moodle.moodlemobile)';
-$string['androidurl'] = 'Android (Google Play)';
-$string['windows'] = 'Descargar la aplicación de escritorio de Windows store';
-$string['windowsdesc'] = 'Ingresa la URL tu App en Windows Store. Si no tienes una App propia, considera agregar el link a la App oficial de Moodle (http://apps.microsoft.com/windows/en-us/app/9df51338-015c-41b7-8a85-db2fdfb870bc)';
-$string['windowsurl'] = 'Windows Desktop';
-$string['winphone'] = 'Descargar la aplicación móvil de Windows Phone Store';
-$string['winphonedesc'] = 'Ingresa la URL tu App para móvil en Windows Phone Store. Si no tienes una App propia, considera agregar el link a la App oficial de Moodle. (http://www.windowsphone.com/en-us/store/app/moodlemobile/d0732b88-3c6d-4127-8f24-3fca2452a4dc)';
-$string['winphoneurl'] = 'Windows Mobile';
-$string['ios'] = 'Descarga la app para iPhone/iPad del App store';
-$string['iosdesc'] = 'Ingresa la URL de tu App en el App Store. Si no tienes una App propia, considera agregar el link a la App oficial de Moodle. (https://itunes.apple.com/en/app/moodle-mobile/id633359593).';
-$string['iosurl'] = 'iPhone/iPad (App Store)';

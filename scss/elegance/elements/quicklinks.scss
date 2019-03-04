@@ -1,0 +1,34 @@
+.circle-highlight {
+    border-radius: 50%;
+    margin-bottom: 10px;
+    width: 80px;
+    height: 80px;
+    line-height: 97px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: #fff;
+    color: #FFF;
+    @extend .hovershadow;
+}
+
+@each $name, $value in $quicklinkcolors {
+    .quicklinkiconcolor#{$name} {
+         background-color: $value;
+    }
+}
+
+@each $icon, $color in $quicklinkbuttoncolors {
+    .quicklinkbuttoncolor#{$icon} {
+        background-color: $color;
+    }
+}
+
+.circle-highlight .fa {
+    font-size: 40px;
+}
+
+#quicklink {
+    margin-bottom: 10px;
+    text-align: center;
+}
