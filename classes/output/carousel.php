@@ -45,7 +45,7 @@ class carousel implements \templatable, \renderable {
      * @param renderer_base $output Used to do a final render of any components that need to be rendered for export.
      * @return array
      */
-    public function export_for_template($output) {
+    public function export_for_template(\renderer_base $output) {
         $theme = theme_config::load('elegance');
         $settings = $theme->settings;
         $slidenum = $settings->slidenumber;
